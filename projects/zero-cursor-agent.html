@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero // Advaith Narayana Sarva</title>
+  <meta name="description" content="An AI that lives on your cursor. Not a chatbot, not a sidebar: a layer that sits on your cursor. It already sees what you point at, including the element's name, type, app and what yo">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    .project-header-box {
+      border: 3px solid var(--border-color);
+      background: var(--bg-card);
+      padding: 36px;
+      box-shadow: 6px 6px 0px var(--shadow-color);
+      margin: 30px 0;
+    }
+    .breadcrumbs {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      margin-bottom: 16px;
+      color: var(--text-muted);
+    }
+    .breadcrumbs a {
+      color: var(--color-blueprint);
+      text-decoration: underline;
+    }
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .stat-tile {
+      border: 2px solid var(--border-color);
+      background: var(--bg-surface);
+      padding: 14px 18px;
+      box-shadow: 3px 3px 0px var(--shadow-color);
+    }
+    .stat-tile-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-blueprint);
+    }
+    .stat-tile-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .detail-section {
+      border: 3px solid var(--border-color);
+      background: var(--bg-card);
+      padding: 28px;
+      box-shadow: 5px 5px 0px var(--shadow-color);
+      margin-bottom: 24px;
+    }
+    .detail-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+    .highlight-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .highlight-list li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 12px;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .highlight-list li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--color-moss);
+      font-weight: 800;
+    }
+    .honest-box {
+      border: 2px solid var(--color-gold);
+      background: #FFFBEB;
+      padding: 18px;
+      border-left: 8px solid var(--color-gold);
+      margin-top: 16px;
+    }
+    [data-theme="dark"] .honest-box {
+      background: #242217;
+    }
+    .nav-pager {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand-link">
+        <span class="brand-feather">🪶</span>
+        <span class="brand-title">ADVAITH // SYSTEMS</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-tab">HOME</a>
+        <a href="../projects.html" class="nav-tab">PROJECTS (39)</a>
+        <a href="../resume.html" class="nav-tab">RESUME</a>
+        <a href="../index.html#terminal-section" class="nav-tab">TERMINAL</a>
+        <a href="../index.html#contact" class="nav-tab">CONTACT</a>
+      </nav>
+      <div class="header-controls">
+        <button id="themeToggle" class="neo-btn icon-btn" title="Toggle Light/Dark Theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container" style="max-width: 1000px; margin: 0 auto; padding: 20px;">
+    <div class="breadcrumbs">
+      <a href="../index.html">HOME</a> / <a href="../projects.html">PROJECTS</a> / <span>ZERO</span>
+    </div>
+
+    <div class="project-header-box">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px;">
+        <span class="badge-tag bg-blueprint text-white">IN PROGRESS</span>
+        <div><span style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; padding:8px 14px; background:var(--bg-surface); border:2px solid var(--border-color); font-weight:700;">PRIVATE REPOSITORY</span></div>
+      </div>
+      <h1 style="font-family:'Space Grotesk',sans-serif; font-size:2.4rem; font-weight:800; margin:16px 0 8px 0;">Zero</h1>
+      <p style="font-size:1.15rem; font-style:italic; opacity:0.9; margin-bottom:18px;">"An AI that lives on your cursor."</p>
+      
+      <div class="stats-strip"><div class="stat-tile"><div class="stat-tile-val">⚡</div><div class="stat-tile-label">8 ms cursor follow</div></div><div class="stat-tile"><div class="stat-tile-val">⚡</div><div class="stat-tile-label">7 interaction types detected</div></div><div class="stat-tile"><div class="stat-tile-val">⚡</div><div class="stat-tile-label">early stage</div></div></div>
+      
+      <div style="margin-top: 18px;">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:8px;">TECHNOLOGIES &amp; TOOLING:</span>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;"><span class="badge-tag tech-badge-item"><svg class="tech-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor"/><path d="M7 8h10M7 12h7M7 16h4" stroke="currentColor"/></svg><span>Electron</span></span><span class="badge-tag tech-badge-item"><svg class="tech-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor"/><path d="M7 8h10M7 12h7M7 16h4" stroke="currentColor"/></svg><span>Node.js</span></span><span class="badge-tag tech-badge-item"><svg class="tech-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="2.2" fill="#61DAFB"/><ellipse cx="12" cy="12" rx="10" ry="4.2" stroke="#61DAFB" stroke-width="1.6" transform="rotate(0 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" stroke="#61DAFB" stroke-width="1.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" stroke="#61DAFB" stroke-width="1.6" transform="rotate(120 12 12)"/></svg><span>Windows UI Automation</span></span></div>
+      </div>
+    </div>
+
+    <section class="detail-section">
+      <h2>01 // THE PROBLEM &amp; THE ARCHITECTURE</h2>
+      <p style="font-size:1.02rem; line-height:1.7; margin-bottom:16px;">
+        Not a chatbot, not a sidebar: a layer that sits on your cursor. It already sees what you point at, including the element's name, type, app and what you can do with it. Next it learns to act, and to teach you how it did it.
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h2>02 // VERIFIED RESULTS &amp; WHAT I BUILT</h2>
+      <ul class="highlight-list">
+        <li>**It can already see:** it reads the UI element under the cursor twice a second.</li><li>**Stays out of your way:** clicks pass straight through it.</li>
+      </ul>
+    </section>
+
+    
+
+    <section class="detail-section">
+      <h2>04 // HONEST ENGINEERING LIMITATIONS</h2>
+      <div class="honest-box">
+        <strong style="font-family:'IBM Plex Mono',monospace; font-size:0.85rem; display:block; margin-bottom:6px;">⚠️ TRANSPARENCY &amp; WHAT'S NEXT:</strong>
+        <p style="font-size:0.95rem; line-height:1.6; margin:0;">Early stage. It sees but doesn't act yet.</p>
+      </div>
+    </section>
+
+    <div class="nav-pager">
+      <a href="zero-code-review.html" class="neo-btn btn-secondary">← ZERO</a>
+      <a href="../projects.html" class="neo-btn btn-primary">ALL 39 PROJECTS ⊞</a>
+      <a href="zero-01.html" class="neo-btn btn-secondary">zero-01 →</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-stamp">© 2026 ADVAITH NARAYANA SARVA</span>
+        <span class="footer-sub">39 Verified Engineering Repositories</span>
+      </div>
+      <div class="footer-center">
+        <a href="../index.html">HOME</a> · 
+        <a href="../projects.html">PROJECTS (39)</a> · 
+        <a href="../resume.html">RESUME</a> · 
+        <a href="../index.html#terminal-section">TERMINAL</a> · 
+        <a href="../index.html#contact">CONTACT</a>
+      </div>
+      <div class="footer-right">
+        <span class="time-clock" id="liveClock">UTC+00:00</span>
+        <div class="footer-icons">
+          <a href="https://github.com/advaithsarva" target="_blank" rel="noreferrer" title="GitHub">GH</a>
+          <a href="https://www.linkedin.com/in/sarvaadvaithnarayana/" target="_blank" rel="noreferrer" title="LinkedIn">IN</a>
+          <a href="https://instagram.com/advaithsarva" target="_blank" rel="noreferrer" title="Instagram">IG</a>
+          <a href="mailto:advaithsarva@gmail.com" title="Email">EM</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('zer0-theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    if (toggleBtn) {
+      toggleBtn.querySelector('.theme-icon').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+      toggleBtn.addEventListener('click', () => {
+        const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('zer0-theme', next);
+        toggleBtn.querySelector('.theme-icon').textContent = next === 'dark' ? '☀️' : '🌙';
+      });
+    }
+    const clock = document.getElementById('liveClock');
+    if (clock) {
+      function tick() { clock.textContent = new Date().toUTCString().split(' ')[4] + ' UTC'; }
+      tick();
+      setInterval(tick, 1000);
+    }
+  </script>
+</body>
+</html>

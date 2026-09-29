@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advaith Narayana Sarva | AI & NLP Systems Engineer</title>
+  
+  <meta name="description" content="Portfolio of Advaith Narayana Sarva — AI & NLP Systems Engineer specializing in Meta-Inference, Graph-RAG, and Autonomous Agent Systems.">
+  <meta name="author" content="Advaith Narayana Sarva">
+  <meta name="theme-color" content="#2547C9">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Advaith Narayana Sarva — AI & NLP Systems Engineer">
+  <meta property="og:description" content="Interpretable Meta-Inference, Graph-RAG & Autonomous Agent Architectures.">
+  <meta property="og:image" content="assets/feather-mark.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/feather-mark.svg">
+  <link rel="alternate icon" href="assets/favicon.ico">
+
+  <!-- Fonts: IBM Plex Mono & Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Three.js for 3D Brain Visualizer -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="marquee-track">
+      <span>⚡ ADVAITH NARAYANA SARVA // GENAI & SYSTEMS ENGINEER // EXCH. SCHOLAR @ SAINT MARTIN'S UNIVERSITY (3.47 CGPA) // GRAPH-RAG // META-INFERENCE // AUTONOMOUS AGENTS //</span>
+      <span>⚡ ADVAITH NARAYANA SARVA // GENAI & SYSTEMS ENGINEER // EXCH. SCHOLAR @ SAINT MARTIN'S UNIVERSITY (3.47 CGPA) // GRAPH-RAG // META-INFERENCE // AUTONOMOUS AGENTS //</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#home" class="brand-badge">
+        <img src="assets/feather-mark.svg" alt="Feather Mark" class="brand-icon">
+        <span class="brand-name">ADVAITH<span class="slash">//</span>SARVA</span>
+      </a>
+
+      <!-- Desktop Nav Tabs -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html#home" class="nav-tab active">01_HOME</a>
+        <a href="projects.html" class="nav-tab">02_PROJECTS (39)</a>
+        <a href="resume.html" class="nav-tab">03_RESUME</a>
+        <a href="#achievements" class="nav-tab">04_HONORS</a>
+        <a href="#skills" class="nav-tab">05_SKILLS</a>
+        <a href="#experience" class="nav-tab">06_EXP</a>
+        <a href="#terminal-section" class="nav-tab">07_TERMINAL</a>
+      </nav>
+
+      <!-- Action & Theme Switcher -->
+      <div class="header-actions">
+        <button id="themeToggle" class="neo-btn icon-btn" aria-label="Toggle Theme" title="Switch Theme">
+          <span class="theme-icon">🌓</span>
+        </button>
+        <a href="#contact" class="neo-btn cta-btn">
+          LET'S CONNECT ↗
+        </a>
+        <button class="hamburger-btn" id="mobileMenuBtn" aria-label="Toggle Mobile Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-wrapper" id="home">
+
+    <!-- HERO SECTION (Bento Style aligned with Pinterest references) -->
+    <section class="hero-bento">
+      <!-- Left Column: Introduction & Call to Actions -->
+      <div class="hero-card hero-left">
+        <div class="hero-header-tags">
+          <span class="status-pill"><span class="pulse-dot"></span> ACTIVELY SEEKING GENAI INTERNSHIPS & JOBS</span>
+          <span class="badge-tag">EXCHANGE ALUM @ SMU (3.47 CGPA)</span>
+        </div>
+
+        <h1 class="hero-title">
+          ADVAITH<br>
+          <span class="title-accent">GENAI & SYSTEMS</span><br>
+          ENGINEER<span class="blink">_</span>
+        </h1>
+
+        <p class="hero-bio">
+          I build <strong>interpretable meta-inference pipelines</strong>, <strong>Graph-RAG</strong> knowledge engines, and <strong>autonomous multi-agent harnesses</strong>. Merging rigorous deep learning with robust systems engineering.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="neo-btn btn-primary">
+            VIEW PROJECTS ↘
+          </a>
+          <a href="resume.html" class="neo-btn btn-secondary" id="resumeViewBtn">
+            VIEW RESUME / CV ↗
+          </a>
+        </div>
+
+        <div class="hero-social-strip">
+          <span class="social-label">CONNECT:</span>
+          <a href="https://github.com/advaithsarva" target="_blank" rel="noreferrer" class="social-icon-btn" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/sarvaadvaithnarayana/" target="_blank" rel="noreferrer" class="social-icon-btn" title="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://instagram.com/advaithsarva" target="_blank" rel="noreferrer" class="social-icon-btn" title="Instagram (@advaithsarva)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="mailto:advaithsarva@gmail.com" class="social-icon-btn" title="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </a>
+          <span class="email-text">advaithsarva@gmail.com</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive 3D Neural Graph Brain + Monospace Card -->
+      <div class="hero-card hero-right">
+        <div class="card-window-header">
+          <span class="window-title">NEURAL_GRAPH_3D.EXE</span>
+          <div class="window-controls">
+            <span>_</span><span>□</span><span>×</span>
+          </div>
+        </div>
+
+        <div class="brain-container" id="brainCanvasContainer">
+          <!-- Three.js Canvas mounts here -->
+          <div class="brain-hint">DRAG TO ROTATE 3D NEURAL TOPOLOGY</div>
+        </div>
+
+        <!-- Floating Monospace Overlay Badge -->
+        <div class="floating-code-badge">
+          <div class="code-badge-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="badge-file">advaith.ts</span>
+          </div>
+          <pre><code><span class="keyword">const</span> <span class="var">engineer</span> = {
+  <span class="prop">name</span>: <span class="str">'Advaith Narayana Sarva'</span>,
+  <span class="prop">role</span>: <span class="str">'GenAI &amp; Systems Engineer'</span>,
+  <span class="prop">focus</span>: [<span class="str">'Graph-RAG'</span>, <span class="str">'Multi-Agent'</span>, <span class="str">'PyTorch'</span>],
+  <span class="prop">status</span>: <span class="str">'Seeking Internships &amp; Roles'</span>
+};</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS & STATS BAR (Inspired by carousel_ref.jpg STATS.JSON) -->
+    <section class="stats-strip">
+      <div class="stat-card">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">AI & NLP PIPELINES</div>
+        <div class="stat-sub">From Rhetoric Analysis to Graph-RAG</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3.47</div>
+        <div class="stat-label">CGPA EXCELLENCE</div>
+        <div class="stat-sub">Saint Martin's Exchange Alum (8.69 Woxsen)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">40+</div>
+        <div class="stat-label">VERIFIED REPOSITORIES</div>
+        <div class="stat-sub">Audited, Tested & Benchmarked Code</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2+ YRS</div>
+        <div class="stat-label">APPLIED ML SYSTEMS</div>
+        <div class="stat-sub">PyTorch, spaCy, Transformers</div>
+      </div>
+    </section>
+
+    <!-- 02 / FEATURED PROJECTS SECTION WITH INTERACTIVE CAROUSEL -->
+    <section class="section-container" id="projects">
+      <div class="section-header-row">
+        <div>
+          <span class="section-num">02 // PORTFOLIO</span>
+          <h2 class="section-title">FEATURED PROJECTS</h2>
+          <p class="section-desc">Production systems, NLP inference pipelines, and agent orchestration frameworks.</p>
+          <div style="margin-top: 10px;">
+            <a href="projects.html" class="neo-btn btn-primary" style="font-size:0.8rem; padding:8px 16px; display:inline-flex; align-items:center; gap:6px;">
+              EXPLORE ALL 39 PROJECTS IN CATALOG ↗
+            </a>
+          </div>
+        </div>
+        <div class="carousel-nav-controls">
+          <button class="carousel-arrow" id="prevProjectBtn" aria-label="Previous Project">❮</button>
+          <button class="carousel-arrow" id="nextProjectBtn" aria-label="Next Project">❯</button>
+        </div>
+      </div>
+
+      <!-- CAROUSEL TRACK (Aligned with carousel_ref.jpg card structure) -->
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="projectsTrack">
+
+          <!-- Card 01: media-nlp-pipeline -->
+          <article class="project-card" data-index="0">
+            <div class="project-index-badge">01 // NLP PIPELINE</div>
+            <div class="project-visual">
+              <img src="assets/projects/project-media-nlp.jpg" alt="Media NLP Pipeline Architecture" class="project-schematic-img">
+            </div>
+            <div class="project-info">
+              <h3 class="project-name">Media NLP Rhetoric & Bias Pipeline</h3>
+              <p class="project-summary">
+                Deterministic media-analysis NLP pipeline detecting propaganda, rhetorical fallacies, and manipulative framing with exact character-level verbatim evidence spans and DAG-based persuasion scoring.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">spaCy</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">PySBD</span>
+                <span class="tag">NLTK</span>
+                <span class="tag">DAG Inference</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/advaithsarva/media-nlp-pipeline" target="_blank" rel="noreferrer" class="btn-gh">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GITHUB ↗
+                </a>
+                <button class="neo-btn btn-sm open-modal-btn" data-modal="modal-medianlp">VIEW ARCHITECTURE ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 02: graph-rag-knowledge-system -->
+          <article class="project-card" data-index="1">
+            <div class="project-index-badge">02 // GRAPH-RAG</div>
+            <div class="project-visual">
+              <img src="assets/projects/project-graph-rag.jpg" alt="Hybrid Graph-RAG Architecture" class="project-schematic-img">
+            </div>
+            <div class="project-info">
+              <h3 class="project-name">Hybrid Graph-RAG Knowledge System</h3>
+              <p class="project-summary">
+                Credential-free hybrid RAG fusing BM25 lexical search, HNSW vector similarity, and Neo4j knowledge-graph multi-hop traversal to deliver verifiable, citation-backed factual synthesis.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">Neo4j</span>
+                <span class="tag">BM25</span>
+                <span class="tag">HNSW</span>
+                <span class="tag">LangChain</span>
+                <span class="tag">FastAPI</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/advaithsarva/graph-rag-knowledge-system" target="_blank" rel="noreferrer" class="btn-gh">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GITHUB ↗
+                </a>
+                <button class="neo-btn btn-sm open-modal-btn" data-modal="modal-graphrag">VIEW ARCHITECTURE ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 03: autonomous-performance-agent -->
+          <article class="project-card" data-index="2">
+            <div class="project-index-badge">03 // AUTONOMOUS AGENT</div>
+            <div class="project-visual">
+              <img src="assets/projects/project-perf-agent.jpg" alt="Autonomous Postgres Performance Agent Architecture" class="project-schematic-img">
+            </div>
+            <div class="project-info">
+              <h3 class="project-name">Autonomous Postgres Performance Agent</h3>
+              <p class="project-summary">
+                Autonomous database optimization agent that monitors live PostgreSQL queries, diagnoses execution plans, synthesizes indexes, benchmarks regressions, and safely rolls back failed migrations.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">EXPLAIN ANALYZE</span>
+                <span class="tag">Python</span>
+                <span class="tag">AsyncPG</span>
+                <span class="tag">Docker</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/advaithsarva/autonomous-performance-agent" target="_blank" rel="noreferrer" class="btn-gh">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GITHUB ↗
+                </a>
+                <button class="neo-btn btn-sm open-modal-btn" data-modal="modal-perfagent">VIEW ARCHITECTURE ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 04: superbrain_mcp -->
+          <article class="project-card" data-index="3">
+            <div class="project-index-badge">04 // MCP MEMORY</div>
+            <div class="project-visual">
+              <img src="assets/projects/project-superbrain.jpg" alt="SuperBrain MCP Server Architecture" class="project-schematic-img">
+            </div>
+            <div class="project-info">
+              <h3 class="project-name">SuperBrain MCP Multi-Agent Memory</h3>
+              <p class="project-summary">
+                Unified Model Context Protocol (MCP) server providing persistent cross-session vector memory, hierarchical state orchestration, and execution infrastructure with 41 tools across 8 operational domains.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">MCP Protocol</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">ChromaDB</span>
+                <span class="tag">Vector Memory</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/advaithsarva/superbrain_mcp" target="_blank" rel="noreferrer" class="btn-gh">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GITHUB ↗
+                </a>
+                <button class="neo-btn btn-sm open-modal-btn" data-modal="modal-superbrain">VIEW ARCHITECTURE ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 05: fact-checking-agent -->
+          <article class="project-card" data-index="4">
+            <div class="project-index-badge">05 // NLI AGENT</div>
+            <div class="project-visual">
+              <img src="assets/projects/project-fact-check.jpg" alt="Fact-Checking NLI Stance Agent Architecture" class="project-schematic-img">
+            </div>
+            <div class="project-info">
+              <h3 class="project-name">Fact-Checking NLI Stance Agent</h3>
+              <p class="project-summary">
+                Multi-step claim verification agent decomposing complex discourse into atomic propositions, running iterative stance-detection retrieval loops, and assigning cite-backed truth verdicts.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">NLI</span>
+                <span class="tag">spaCy</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">Transformers</span>
+                <span class="tag">Retrieval</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/advaithsarva/fact-checking-agent" target="_blank" rel="noreferrer" class="btn-gh">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GITHUB ↗
+                </a>
+                <button class="neo-btn btn-sm open-modal-btn" data-modal="modal-factcheck">VIEW ARCHITECTURE ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 06: transformer-from-scratch -->
+          <article class="project-card" data-index="5">
+            <div class="project-index-badge">06 // DEEP LEARNING</div>
+            <div class="project-visual">
+              <img src="assets/projects/project-transformer.jpg" alt="Decoder-Only Transformer Architecture" class="project-schematic-img">
+            </div>
+            <div class="project-info">
+              <h3 class="project-name">Transformer Architecture from Scratch</h3>
+              <p class="project-summary">
+                Decoder-only transformer implemented directly from PyTorch primitives, with mathematical causal masking, layer normalization, and verified convergence to 1.0059x the entropy floor.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">PyTorch</span>
+                <span class="tag">Tensors</span>
+                <span class="tag">Transformers</span>
+                <span class="tag">CUDA</span>
+                <span class="tag">Ablation</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/advaithsarva/transformer-from-scratch" target="_blank" rel="noreferrer" class="btn-gh">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GITHUB ↗
+                </a>
+                <button class="neo-btn btn-sm open-modal-btn" data-modal="modal-transformer">VIEW ARCHITECTURE ↗</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Carousel Pagination Dots -->
+      <div class="carousel-indicators" id="carouselIndicators">
+        <span class="dot-indicator active" data-slide="0"></span>
+        <span class="dot-indicator" data-slide="1"></span>
+        <span class="dot-indicator" data-slide="2"></span>
+        <span class="dot-indicator" data-slide="3"></span>
+        <span class="dot-indicator" data-slide="4"></span>
+        <span class="dot-indicator" data-slide="5"></span>
+      </div>
+    </section>
+
+    <!-- 03 / HONORS & VERIFIED ACHIEVEMENTS -->
+    <section class="section-container" id="achievements">
+      <div class="section-header-row">
+        <div>
+          <span class="section-num">03 // RECOGNITION</span>
+          <h2 class="section-title">HONORS & ACHIEVEMENTS</h2>
+          <p class="section-desc">Competitive hackathon rankings, critical algorithmic audits, and academic distinctions.</p>
+        </div>
+      </div>
+
+      <div class="achievements-grid">
+        <!-- Achievement 1: IBM BOB Hackathon Top 5 -->
+        <article class="achievement-card">
+          <div>
+            <span class="achievement-badge">🏆 TOP 5 SOUTH ZONE</span>
+            <h3 class="achievement-title">IBM BOB National Hackathon 2026</h3>
+            <div class="achievement-subtitle">Project: The Sentinel Grid · Disaster Intelligence Platform</div>
+            <p class="achievement-desc">
+              Engineered end-to-end disaster forecasting architecture comprising 6,957 lines of Python, 314 automated tests, and 104 formula audits. Achieved ROC-AUC of 0.9924 across 473k district-month soil moisture observations.
+            </p>
+          </div>
+        </article>
+
+        <!-- Achievement 2: Preventvital Clinical Audit -->
+        <article class="achievement-card">
+          <div>
+            <span class="achievement-badge badge-blue">🔍 ALGORITHMIC AUDIT</span>
+            <h3 class="achievement-title">Clinical Risk Engine Resolution</h3>
+            <div class="achievement-subtitle">Preventvital (GruentzigAI Pvt. Ltd.) · Healthcare Platform</div>
+            <p class="achievement-desc">
+              Identified and resolved a critical coefficient sign inversion in the cardiovascular (ASCVD) risk calculation engine that was artificially suppressing baseline risk to 0.1%. Verified and reproduced fix against published Goff 2014 trials.
+            </p>
+          </div>
+        </article>
+
+        <!-- Achievement 3: SMU Exchange Honors -->
+        <article class="achievement-card">
+          <div>
+            <span class="achievement-badge badge-moss">🎓 3.47 / 4.0 CGPA</span>
+            <h3 class="achievement-title">Saint Martin's University Exchange Honors</h3>
+            <div class="achievement-subtitle">Lacey, WA, USA · Completed May 2026</div>
+            <p class="achievement-desc">
+              Completed rigorous upper-division coursework in Distributed Systems, Machine Learning, and Computer Vision with a 3.47 CGPA while serving as a peer mentor in the Center for Student Success.
+            </p>
+          </div>
+        </article>
+
+        <!-- Achievement 4: CODE{X} Leadership -->
+        <article class="achievement-card">
+          <div>
+            <span class="achievement-badge badge-purple">⚡ EXECUTIVE LEADERSHIP</span>
+            <h3 class="achievement-title">CODE{X} Programming Club</h3>
+            <div class="achievement-subtitle">Woxsen University Campus Initiative · 200+ Members</div>
+            <p class="achievement-desc">
+              Spearheaded university-wide algorithmic hackathons, led weekly technical deep-dives on systems engineering and AI architectures, and conducted peer mentorship for 200+ student developers.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 04 / SKILLS & TECHNICAL STACK -->
+    <section class="section-container" id="skills">
+      <div class="section-header-row">
+        <div>
+          <span class="section-num">04 // CAPABILITIES</span>
+          <h2 class="section-title">TECHNICAL ARCHITECTURE</h2>
+          <p class="section-desc">Engineering proficiencies across language models, systems programming, and data engineering.</p>
+        </div>
+      </div>
+
+      <!-- Core Technology Logos & Tooling Grid -->
+      
+      <!-- Core Technology Logos & Tooling Grid (Only tools used in projects) -->
+      <div class="tech-stack-overview">
+        <div class="tech-stack-header">
+          <span class="tech-stack-tag">VERIFIED TOOLING &amp; TECHNOLOGIES</span>
+          <h3 class="tech-stack-title">CORE TOOLS UTILIZED ACROSS 39 REPOSITORIES</h3>
+          <p class="tech-stack-desc">Every tool listed here is backed by reproducible code in my public repositories and clinical audit work.</p>
+        </div>
+
+        <div class="tech-logos-grid">
+          <!-- Python -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#EBF3FA;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.92 2C6.98 2 7.28 4.14 7.28 4.14L7.3 6.34H12.1V7.07H5.32S2 6.7 2 11.66C2 16.62 4.9 16.36 4.9 16.36H6.55V14.07C6.55 11.38 8.87 11.45 8.87 11.45H13.68C15.93 11.45 16.14 9.35 16.14 9.35V4.32C16.14 4.32 16.51 2 11.92 2ZM9.07 3.51C9.64 3.51 10.1 3.97 10.1 4.54C10.1 5.11 9.64 5.57 9.07 5.57C8.5 5.57 8.04 5.11 8.04 4.54C8.04 3.97 8.5 3.51 9.07 3.51Z" fill="#3776AB"/><path d="M12.08 22C17.02 22 16.72 19.86 16.72 19.86L16.7 17.66H11.9V16.93H18.68S22 17.3 22 12.34C22 7.38 19.1 7.64 19.1 7.64H17.45V9.93C17.45 12.62 15.13 12.55 15.13 12.55H10.32C8.07 12.55 7.86 14.65 7.86 14.65V19.68C7.86 19.68 7.49 22 12.08 22ZM14.93 20.49C14.36 20.49 13.9 20.03 13.9 19.46C13.9 18.89 14.36 18.43 14.93 18.43C15.5 18.43 15.96 18.89 15.96 19.46C15.96 20.03 15.5 20.49 14.93 20.49Z" fill="#FFD43B"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Python</h4>
+              <span class="tech-logo-role">Core Lang · 34 Repositories</span>
+              <p class="tech-logo-desc">Primary language for ML, asynchronous agent harnesses, PyTorch neural networks, and automated test suites.</p>
+            </div>
+          </div>
+
+          <!-- PostgreSQL & SQL -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#EBF5FB;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3" fill="#336791" stroke="#131200"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">SQL (PostgreSQL &amp; SQLite)</h4>
+              <span class="tech-logo-role">Relational DBs &amp; Query Tuning</span>
+              <p class="tech-logo-desc">Schema architecture, EXPLAIN ANALYZE cost tuning, and autonomous index generation with AsyncPG.</p>
+            </div>
+          </div>
+
+          <!-- PyTorch -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#FDEEE9;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6 2.1a1 1 0 0 0-1.2 0L6.2 6.3a8.8 8.8 0 1 0 11.6 0L12.6 2.1zm-1.8 17.5a6.8 6.8 0 0 1-4.8-11.6l4.8-3.9 4.8 3.9a6.8 6.8 0 0 1-4.8 11.6z" fill="#EE4C2C"/><circle cx="15.8" cy="6.2" r="1.5" fill="#EE4C2C"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">PyTorch</h4>
+              <span class="tech-logo-role">Deep Learning &amp; Tensors</span>
+              <p class="tech-logo-desc">Built transformer decoders, causal self-attention, and training loops directly from PyTorch tensor primitives.</p>
+            </div>
+          </div>
+
+          <!-- Hugging Face & spaCy -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#FEF9E7;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#FFD21E"/><circle cx="8.5" cy="10" r="1.5" fill="#131200"/><circle cx="15.5" cy="10" r="1.5" fill="#131200"/><path d="M8 14.5s1.5 2.5 4 2.5 4-2.5 4-2.5" stroke="#131200" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Hugging Face &amp; spaCy</h4>
+              <span class="tech-logo-role">Transformers &amp; Linguistics</span>
+              <p class="tech-logo-desc">Cross-Encoder NLI stance classification, tokenization pipelines, and linguistic feature extraction.</p>
+            </div>
+          </div>
+
+          <!-- Neo4j -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#E6F5FC;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="18" r="3.5" fill="#008CC1"/><circle cx="18" cy="18" r="3.5" fill="#008CC1"/><circle cx="18" cy="6" r="3.5" fill="#008CC1"/><circle cx="6" cy="6" r="3.5" fill="#008CC1"/><path d="M8.5 7.5l7 7M8.5 16.5l7-7M6 9.5v5M18 9.5v5" stroke="#008CC1" stroke-width="2"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Neo4j Graph DB</h4>
+              <span class="tech-logo-role">Graph-RAG &amp; Cypher</span>
+              <p class="tech-logo-desc">Multi-hop graph traversals, entity relation extraction, and hybrid vector-graph retrieval systems.</p>
+            </div>
+          </div>
+
+          <!-- Docker -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#E8F4FD;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.6 11.2h2.2v2.2H4.6zm2.8 0h2.2v2.2H7.4zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm-5.6-2.8h2.2v2.2H7.4zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm-2.8-2.8h2.2v2.2h-2.2z" fill="#2496ED"/><path d="M22.5 11.5c-.5-.4-1.5-.5-2.2-.2-.2-.7-.7-1.4-1.4-1.8l-.6-.3-.4.6c-.4.6-.5 1.4-.4 2.1-.8.4-2.1.4-2.9 0H1c-.3 1.8.2 4.1 1.6 5.6 1.7 1.9 4.3 2.7 7.4 2.7 6.4 0 11.2-3.8 12.3-7.7.7-.2 1.4-.7 1.7-1.3l.1-.3-.6-.7h-.6z" fill="#2496ED"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Docker</h4>
+              <span class="tech-logo-role">Containers &amp; Microservices</span>
+              <p class="tech-logo-desc">Reproducible test environments, microservice isolation, and building container orchestrator from scratch.</p>
+            </div>
+          </div>
+
+          <!-- FastAPI & Flask -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#E6F7F5;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#009688"/><path d="M12.8 4.5L7.2 13.2h4.5l-1.5 6.3 6.6-9.6h-4.8l.8-5.4z" fill="#ffffff"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">FastAPI &amp; Flask</h4>
+              <span class="tech-logo-role">Backend REST APIs</span>
+              <p class="tech-logo-desc">Asynchronous streaming endpoints, Pydantic schemas, and web services for document intelligence.</p>
+            </div>
+          </div>
+
+          <!-- TypeScript & Node.js -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#EBF2FA;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="3" fill="#3178C6"/><path d="M4 10.5h6.5M7.25 10.5v8" stroke="#ffffff" stroke-width="2.2" stroke-linecap="square"/><path d="M13.5 17c1 .8 2.3 1.1 3.5.7 1.1-.4 1.8-1.5 1.5-2.6-.4-1.3-2.1-1.6-3.2-2.1-1-.4-1.8-1.2-1.6-2.3.2-1.1 1.2-1.9 2.3-1.9 1 0 2 .4 2.7 1" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">TypeScript &amp; Node.js</h4>
+              <span class="tech-logo-role">MCP Multi-Agent Systems</span>
+              <p class="tech-logo-desc">Developed Model Context Protocol (MCP) server with 41 tools for multi-agent memory and state persistence.</p>
+            </div>
+          </div>
+
+          <!-- AWS Cloud -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#FFF8E7;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.75 14.45c-2.3 1.55-5.35 2.37-8.25 2.37-4.1 0-7.8-1.5-10.6-4-.2-.18-.04-.42.2-.28 3.02 1.76 6.7 2.82 10.4 2.82 2.6 0 5.42-.64 7.95-1.97.38-.2.7.27.3.56z" fill="#FF9900"/><path d="M19.78 13.43c-.3-.37-1.92-.18-2.65-.09-.22.03-.26-.14-.06-.27 1.3-.87 3.42-.62 3.68-.3.26.32-.08 2.43-1.31 3.39-.19.15-.36.07-.27-.13.3-.67.91-2.23.61-2.6z" fill="#FF9900"/><path d="M6.5 8h1.8v4.5H6.5zm4 -2h1.8v6.5h-1.8zm4 2h1.8v4.5h-1.8z" fill="#232F3E"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">AWS Cloud</h4>
+              <span class="tech-logo-role">Cloud Infrastructure &amp; IaC</span>
+              <p class="tech-logo-desc">Cloud resource architectures, S3 vector storage, and building autonomous IaC Terraform drift detectors.</p>
+            </div>
+          </div>
+
+          <!-- Git & Linux -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#EAF8F2;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5" stroke="#10B981"/><line x1="12" y1="19" x2="20" y2="19" stroke="#10B981"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Git &amp; Linux</h4>
+              <span class="tech-logo-role">CI/CD &amp; Systems Tooling</span>
+              <p class="tech-logo-desc">Automated testing suites (314 tests in Sentinel Grid, 73 tests in Media NLP), POSIX shell, and version control.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+
+
+      <!-- Core Technology Logos & Tooling Grid -->
+      
+      <!-- Core Technology Logos & Tooling Grid (Only tools used in projects) -->
+      <div class="tech-stack-overview">
+        <div class="tech-stack-header">
+          <span class="tech-stack-tag">VERIFIED TOOLING &amp; TECHNOLOGIES</span>
+          <h3 class="tech-stack-title">CORE TOOLS UTILIZED ACROSS 39 REPOSITORIES</h3>
+          <p class="tech-stack-desc">Every tool listed here is backed by reproducible code in my public repositories and clinical audit work.</p>
+        </div>
+
+        <div class="tech-logos-grid">
+          <!-- Python -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#EBF3FA;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.92 2C6.98 2 7.28 4.14 7.28 4.14L7.3 6.34H12.1V7.07H5.32S2 6.7 2 11.66C2 16.62 4.9 16.36 4.9 16.36H6.55V14.07C6.55 11.38 8.87 11.45 8.87 11.45H13.68C15.93 11.45 16.14 9.35 16.14 9.35V4.32C16.14 4.32 16.51 2 11.92 2ZM9.07 3.51C9.64 3.51 10.1 3.97 10.1 4.54C10.1 5.11 9.64 5.57 9.07 5.57C8.5 5.57 8.04 5.11 8.04 4.54C8.04 3.97 8.5 3.51 9.07 3.51Z" fill="#3776AB"/><path d="M12.08 22C17.02 22 16.72 19.86 16.72 19.86L16.7 17.66H11.9V16.93H18.68S22 17.3 22 12.34C22 7.38 19.1 7.64 19.1 7.64H17.45V9.93C17.45 12.62 15.13 12.55 15.13 12.55H10.32C8.07 12.55 7.86 14.65 7.86 14.65V19.68C7.86 19.68 7.49 22 12.08 22ZM14.93 20.49C14.36 20.49 13.9 20.03 13.9 19.46C13.9 18.89 14.36 18.43 14.93 18.43C15.5 18.43 15.96 18.89 15.96 19.46C15.96 20.03 15.5 20.49 14.93 20.49Z" fill="#FFD43B"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Python</h4>
+              <span class="tech-logo-role">Core Lang · 34 Repositories</span>
+              <p class="tech-logo-desc">Primary language for ML, asynchronous agent harnesses, PyTorch neural networks, and automated test suites.</p>
+            </div>
+          </div>
+
+          <!-- PostgreSQL & SQL -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#EBF5FB;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3" fill="#336791" stroke="#131200"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">SQL (PostgreSQL &amp; SQLite)</h4>
+              <span class="tech-logo-role">Relational DBs &amp; Query Tuning</span>
+              <p class="tech-logo-desc">Schema architecture, EXPLAIN ANALYZE cost tuning, and autonomous index generation with AsyncPG.</p>
+            </div>
+          </div>
+
+          <!-- PyTorch -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#FDEEE9;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6 2.1a1 1 0 0 0-1.2 0L6.2 6.3a8.8 8.8 0 1 0 11.6 0L12.6 2.1zm-1.8 17.5a6.8 6.8 0 0 1-4.8-11.6l4.8-3.9 4.8 3.9a6.8 6.8 0 0 1-4.8 11.6z" fill="#EE4C2C"/><circle cx="15.8" cy="6.2" r="1.5" fill="#EE4C2C"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">PyTorch</h4>
+              <span class="tech-logo-role">Deep Learning &amp; Tensors</span>
+              <p class="tech-logo-desc">Built transformer decoders, causal self-attention, and training loops directly from PyTorch tensor primitives.</p>
+            </div>
+          </div>
+
+          <!-- Hugging Face & spaCy -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#FEF9E7;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#FFD21E"/><circle cx="8.5" cy="10" r="1.5" fill="#131200"/><circle cx="15.5" cy="10" r="1.5" fill="#131200"/><path d="M8 14.5s1.5 2.5 4 2.5 4-2.5 4-2.5" stroke="#131200" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Hugging Face &amp; spaCy</h4>
+              <span class="tech-logo-role">Transformers &amp; Linguistics</span>
+              <p class="tech-logo-desc">Cross-Encoder NLI stance classification, tokenization pipelines, and linguistic feature extraction.</p>
+            </div>
+          </div>
+
+          <!-- Neo4j -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#E6F5FC;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="18" r="3.5" fill="#008CC1"/><circle cx="18" cy="18" r="3.5" fill="#008CC1"/><circle cx="18" cy="6" r="3.5" fill="#008CC1"/><circle cx="6" cy="6" r="3.5" fill="#008CC1"/><path d="M8.5 7.5l7 7M8.5 16.5l7-7M6 9.5v5M18 9.5v5" stroke="#008CC1" stroke-width="2"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Neo4j Graph DB</h4>
+              <span class="tech-logo-role">Graph-RAG &amp; Cypher</span>
+              <p class="tech-logo-desc">Multi-hop graph traversals, entity relation extraction, and hybrid vector-graph retrieval systems.</p>
+            </div>
+          </div>
+
+          <!-- Docker -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#E8F4FD;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.6 11.2h2.2v2.2H4.6zm2.8 0h2.2v2.2H7.4zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm-5.6-2.8h2.2v2.2H7.4zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm-2.8-2.8h2.2v2.2h-2.2z" fill="#2496ED"/><path d="M22.5 11.5c-.5-.4-1.5-.5-2.2-.2-.2-.7-.7-1.4-1.4-1.8l-.6-.3-.4.6c-.4.6-.5 1.4-.4 2.1-.8.4-2.1.4-2.9 0H1c-.3 1.8.2 4.1 1.6 5.6 1.7 1.9 4.3 2.7 7.4 2.7 6.4 0 11.2-3.8 12.3-7.7.7-.2 1.4-.7 1.7-1.3l.1-.3-.6-.7h-.6z" fill="#2496ED"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Docker</h4>
+              <span class="tech-logo-role">Containers &amp; Microservices</span>
+              <p class="tech-logo-desc">Reproducible test environments, microservice isolation, and building container orchestrator from scratch.</p>
+            </div>
+          </div>
+
+          <!-- FastAPI & Flask -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#E6F7F5;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#009688"/><path d="M12.8 4.5L7.2 13.2h4.5l-1.5 6.3 6.6-9.6h-4.8l.8-5.4z" fill="#ffffff"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">FastAPI &amp; Flask</h4>
+              <span class="tech-logo-role">Backend REST APIs</span>
+              <p class="tech-logo-desc">Asynchronous streaming endpoints, Pydantic schemas, and web services for document intelligence.</p>
+            </div>
+          </div>
+
+          <!-- TypeScript & Node.js -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#EBF2FA;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="3" fill="#3178C6"/><path d="M4 10.5h6.5M7.25 10.5v8" stroke="#ffffff" stroke-width="2.2" stroke-linecap="square"/><path d="M13.5 17c1 .8 2.3 1.1 3.5.7 1.1-.4 1.8-1.5 1.5-2.6-.4-1.3-2.1-1.6-3.2-2.1-1-.4-1.8-1.2-1.6-2.3.2-1.1 1.2-1.9 2.3-1.9 1 0 2 .4 2.7 1" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">TypeScript &amp; Node.js</h4>
+              <span class="tech-logo-role">MCP Multi-Agent Systems</span>
+              <p class="tech-logo-desc">Developed Model Context Protocol (MCP) server with 41 tools for multi-agent memory and state persistence.</p>
+            </div>
+          </div>
+
+          <!-- AWS Cloud -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#FFF8E7;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.75 14.45c-2.3 1.55-5.35 2.37-8.25 2.37-4.1 0-7.8-1.5-10.6-4-.2-.18-.04-.42.2-.28 3.02 1.76 6.7 2.82 10.4 2.82 2.6 0 5.42-.64 7.95-1.97.38-.2.7.27.3.56z" fill="#FF9900"/><path d="M19.78 13.43c-.3-.37-1.92-.18-2.65-.09-.22.03-.26-.14-.06-.27 1.3-.87 3.42-.62 3.68-.3.26.32-.08 2.43-1.31 3.39-.19.15-.36.07-.27-.13.3-.67.91-2.23.61-2.6z" fill="#FF9900"/><path d="M6.5 8h1.8v4.5H6.5zm4 -2h1.8v6.5h-1.8zm4 2h1.8v4.5h-1.8z" fill="#232F3E"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">AWS Cloud</h4>
+              <span class="tech-logo-role">Cloud Infrastructure &amp; IaC</span>
+              <p class="tech-logo-desc">Cloud resource architectures, S3 vector storage, and building autonomous IaC Terraform drift detectors.</p>
+            </div>
+          </div>
+
+          <!-- Git & Linux -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#EAF8F2;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5" stroke="#10B981"/><line x1="12" y1="19" x2="20" y2="19" stroke="#10B981"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Git &amp; Linux</h4>
+              <span class="tech-logo-role">CI/CD &amp; Systems Tooling</span>
+              <p class="tech-logo-desc">Automated testing suites (314 tests in Sentinel Grid, 73 tests in Media NLP), POSIX shell, and version control.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+
+
+      <!-- Core Technology Logos & Tooling Grid -->
+      
+      <!-- Core Technology Logos & Tooling Grid (Only tools used in projects) -->
+      <div class="tech-stack-overview">
+        <div class="tech-stack-header">
+          <span class="tech-stack-tag">VERIFIED TOOLING &amp; TECHNOLOGIES</span>
+          <h3 class="tech-stack-title">CORE TOOLS UTILIZED ACROSS 39 REPOSITORIES</h3>
+          <p class="tech-stack-desc">Every tool listed here is backed by reproducible code in my public repositories and clinical audit work.</p>
+        </div>
+
+        <div class="tech-logos-grid">
+          <!-- Python -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#EBF3FA;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.92 2C6.98 2 7.28 4.14 7.28 4.14L7.3 6.34H12.1V7.07H5.32S2 6.7 2 11.66C2 16.62 4.9 16.36 4.9 16.36H6.55V14.07C6.55 11.38 8.87 11.45 8.87 11.45H13.68C15.93 11.45 16.14 9.35 16.14 9.35V4.32C16.14 4.32 16.51 2 11.92 2ZM9.07 3.51C9.64 3.51 10.1 3.97 10.1 4.54C10.1 5.11 9.64 5.57 9.07 5.57C8.5 5.57 8.04 5.11 8.04 4.54C8.04 3.97 8.5 3.51 9.07 3.51Z" fill="#3776AB"/><path d="M12.08 22C17.02 22 16.72 19.86 16.72 19.86L16.7 17.66H11.9V16.93H18.68S22 17.3 22 12.34C22 7.38 19.1 7.64 19.1 7.64H17.45V9.93C17.45 12.62 15.13 12.55 15.13 12.55H10.32C8.07 12.55 7.86 14.65 7.86 14.65V19.68C7.86 19.68 7.49 22 12.08 22ZM14.93 20.49C14.36 20.49 13.9 20.03 13.9 19.46C13.9 18.89 14.36 18.43 14.93 18.43C15.5 18.43 15.96 18.89 15.96 19.46C15.96 20.03 15.5 20.49 14.93 20.49Z" fill="#FFD43B"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Python</h4>
+              <span class="tech-logo-role">Core Lang · 34 Repositories</span>
+              <p class="tech-logo-desc">Primary language for ML, asynchronous agent harnesses, PyTorch neural networks, and automated test suites.</p>
+            </div>
+          </div>
+
+          <!-- PostgreSQL & SQL -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#EBF5FB;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3" fill="#336791" stroke="#131200"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">SQL (PostgreSQL &amp; SQLite)</h4>
+              <span class="tech-logo-role">Relational DBs &amp; Query Tuning</span>
+              <p class="tech-logo-desc">Schema architecture, EXPLAIN ANALYZE cost tuning, and autonomous index generation with AsyncPG.</p>
+            </div>
+          </div>
+
+          <!-- PyTorch -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#FDEEE9;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6 2.1a1 1 0 0 0-1.2 0L6.2 6.3a8.8 8.8 0 1 0 11.6 0L12.6 2.1zm-1.8 17.5a6.8 6.8 0 0 1-4.8-11.6l4.8-3.9 4.8 3.9a6.8 6.8 0 0 1-4.8 11.6z" fill="#EE4C2C"/><circle cx="15.8" cy="6.2" r="1.5" fill="#EE4C2C"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">PyTorch</h4>
+              <span class="tech-logo-role">Deep Learning &amp; Tensors</span>
+              <p class="tech-logo-desc">Built transformer decoders, causal self-attention, and training loops directly from PyTorch tensor primitives.</p>
+            </div>
+          </div>
+
+          <!-- Hugging Face & spaCy -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#FEF9E7;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#FFD21E"/><circle cx="8.5" cy="10" r="1.5" fill="#131200"/><circle cx="15.5" cy="10" r="1.5" fill="#131200"/><path d="M8 14.5s1.5 2.5 4 2.5 4-2.5 4-2.5" stroke="#131200" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Hugging Face &amp; spaCy</h4>
+              <span class="tech-logo-role">Transformers &amp; Linguistics</span>
+              <p class="tech-logo-desc">Cross-Encoder NLI stance classification, tokenization pipelines, and linguistic feature extraction.</p>
+            </div>
+          </div>
+
+          <!-- Neo4j -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#E6F5FC;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="18" r="3.5" fill="#008CC1"/><circle cx="18" cy="18" r="3.5" fill="#008CC1"/><circle cx="18" cy="6" r="3.5" fill="#008CC1"/><circle cx="6" cy="6" r="3.5" fill="#008CC1"/><path d="M8.5 7.5l7 7M8.5 16.5l7-7M6 9.5v5M18 9.5v5" stroke="#008CC1" stroke-width="2"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Neo4j Graph DB</h4>
+              <span class="tech-logo-role">Graph-RAG &amp; Cypher</span>
+              <p class="tech-logo-desc">Multi-hop graph traversals, entity relation extraction, and hybrid vector-graph retrieval systems.</p>
+            </div>
+          </div>
+
+          <!-- Docker -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#E8F4FD;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.6 11.2h2.2v2.2H4.6zm2.8 0h2.2v2.2H7.4zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm-5.6-2.8h2.2v2.2H7.4zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm-2.8-2.8h2.2v2.2h-2.2z" fill="#2496ED"/><path d="M22.5 11.5c-.5-.4-1.5-.5-2.2-.2-.2-.7-.7-1.4-1.4-1.8l-.6-.3-.4.6c-.4.6-.5 1.4-.4 2.1-.8.4-2.1.4-2.9 0H1c-.3 1.8.2 4.1 1.6 5.6 1.7 1.9 4.3 2.7 7.4 2.7 6.4 0 11.2-3.8 12.3-7.7.7-.2 1.4-.7 1.7-1.3l.1-.3-.6-.7h-.6z" fill="#2496ED"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Docker</h4>
+              <span class="tech-logo-role">Containers &amp; Microservices</span>
+              <p class="tech-logo-desc">Reproducible test environments, microservice isolation, and building container orchestrator from scratch.</p>
+            </div>
+          </div>
+
+          <!-- FastAPI & Flask -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#E6F7F5;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#009688"/><path d="M12.8 4.5L7.2 13.2h4.5l-1.5 6.3 6.6-9.6h-4.8l.8-5.4z" fill="#ffffff"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">FastAPI &amp; Flask</h4>
+              <span class="tech-logo-role">Backend REST APIs</span>
+              <p class="tech-logo-desc">Asynchronous streaming endpoints, Pydantic schemas, and web services for document intelligence.</p>
+            </div>
+          </div>
+
+          <!-- TypeScript & Node.js -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#EBF2FA;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="3" fill="#3178C6"/><path d="M4 10.5h6.5M7.25 10.5v8" stroke="#ffffff" stroke-width="2.2" stroke-linecap="square"/><path d="M13.5 17c1 .8 2.3 1.1 3.5.7 1.1-.4 1.8-1.5 1.5-2.6-.4-1.3-2.1-1.6-3.2-2.1-1-.4-1.8-1.2-1.6-2.3.2-1.1 1.2-1.9 2.3-1.9 1 0 2 .4 2.7 1" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">TypeScript &amp; Node.js</h4>
+              <span class="tech-logo-role">MCP Multi-Agent Systems</span>
+              <p class="tech-logo-desc">Developed Model Context Protocol (MCP) server with 41 tools for multi-agent memory and state persistence.</p>
+            </div>
+          </div>
+
+          <!-- AWS Cloud -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#FFF8E7;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.75 14.45c-2.3 1.55-5.35 2.37-8.25 2.37-4.1 0-7.8-1.5-10.6-4-.2-.18-.04-.42.2-.28 3.02 1.76 6.7 2.82 10.4 2.82 2.6 0 5.42-.64 7.95-1.97.38-.2.7.27.3.56z" fill="#FF9900"/><path d="M19.78 13.43c-.3-.37-1.92-.18-2.65-.09-.22.03-.26-.14-.06-.27 1.3-.87 3.42-.62 3.68-.3.26.32-.08 2.43-1.31 3.39-.19.15-.36.07-.27-.13.3-.67.91-2.23.61-2.6z" fill="#FF9900"/><path d="M6.5 8h1.8v4.5H6.5zm4 -2h1.8v6.5h-1.8zm4 2h1.8v4.5h-1.8z" fill="#232F3E"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">AWS Cloud</h4>
+              <span class="tech-logo-role">Cloud Infrastructure &amp; IaC</span>
+              <p class="tech-logo-desc">Cloud resource architectures, S3 vector storage, and building autonomous IaC Terraform drift detectors.</p>
+            </div>
+          </div>
+
+          <!-- Git & Linux -->
+          <div class="tech-logo-card">
+            <div class="tech-logo-icon-wrap" style="background:#EAF8F2;">
+              <svg class="tech-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5" stroke="#10B981"/><line x1="12" y1="19" x2="20" y2="19" stroke="#10B981"/></svg>
+            </div>
+            <div class="tech-logo-info">
+              <h4 class="tech-logo-name">Git &amp; Linux</h4>
+              <span class="tech-logo-role">CI/CD &amp; Systems Tooling</span>
+              <p class="tech-logo-desc">Automated testing suites (314 tests in Sentinel Grid, 73 tests in Media NLP), POSIX shell, and version control.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+
+
+      <div class="skills-grid">
+        <!-- Terminal Box: NLP & Deep Learning -->
+        <div class="terminal-card">
+          <div class="terminal-bar">
+            <span class="term-title">NLP_AND_AI_CORE.EXE</span>
+            <div class="term-btns"><span>_</span><span>□</span><span>×</span></div>
+          </div>
+          <div class="terminal-body">
+            <div class="skill-meter-row">
+              <span class="skill-name">PyTorch & Transformers</span>
+              <span class="skill-meter">██████████ <span class="pct">95%</span></span>
+            </div>
+            <div class="skill-meter-row">
+              <span class="skill-name">spaCy & NLTK (Linguistics)</span>
+              <span class="skill-meter">██████████ <span class="pct">96%</span></span>
+            </div>
+            <div class="skill-meter-row">
+              <span class="skill-name">Graph-RAG & Neo4j</span>
+              <span class="skill-meter">█████████░ <span class="pct">90%</span></span>
+            </div>
+            <div class="skill-meter-row">
+              <span class="skill-name">Meta-Inference & Fallacy Analysis</span>
+              <span class="skill-meter">█████████░ <span class="pct">92%</span></span>
+            </div>
+            <div class="skill-meter-row">
+              <span class="skill-name">DSPy & Prompt Optimization</span>
+              <span class="skill-meter">████████░░ <span class="pct">88%</span></span>
+            </div>
+            <div class="skill-meter-row">
+              <span class="skill-name">HuggingFace & Model Finetuning</span>
+              <span class="skill-meter">████████░░ <span class="pct">85%</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal Box: Languages & Backend -->
+        <div class="terminal-card">
+          <div class="terminal-bar">
+            <span class="term-title">LANGUAGES_AND_SYSTEMS.EXE</span>
+            <div class="term-btns"><span>_</span><span>□</span><span>×</span></div>
+          </div>
+          <div class="terminal-body">
+            <div class="skill-meter-row">
+              <span class="skill-name">Python (Advanced Async / CFFI)</span>
+              <span class="skill-meter">██████████ <span class="pct">98%</span></span>
+            </div>
+            <div class="skill-meter-row">
+              <span class="skill-name">TypeScript & Node.js</span>
+              <span class="skill-meter">█████████░ <span class="pct">90%</span></span>
+            </div>
+            <div class="skill-meter-row">
+              <span class="skill-name">FastAPI & REST / WebSockets</span>
+              <span class="skill-meter">█████████░ <span class="pct">92%</span></span>
+            </div>
+            <div class="skill-meter-row">
+              <span class="skill-name">C++ & Low-Level Kernels</span>
+              <span class="skill-meter">███████░░░ <span class="pct">78%</span></span>
+            </div>
+            <div class="skill-meter-row">
+              <span class="skill-name">Docker & Containerization</span>
+              <span class="skill-meter">████████░░ <span class="pct">86%</span></span>
+            </div>
+            <div class="skill-meter-row">
+              <span class="skill-name">Git & CI/CD Automated Pipelines</span>
+              <span class="skill-meter">█████████░ <span class="pct">94%</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 / EXPERIENCE & LEADERSHIP (Aligned with layout_ref.jpg timeline) -->
+    <section class="section-container" id="experience">
+      <div class="section-header-row">
+        <div>
+          <span class="section-num">05 // TRAJECTORY</span>
+          <h2 class="section-title">EXPERIENCE & LEADERSHIP</h2>
+          <p class="section-desc">Academic excellence, club executive leadership, and research initiatives.</p>
+        </div>
+      </div>
+
+      <div class="experience-timeline">
+        <!-- Item 0: Current Internship -->
+        <div class="timeline-row">
+          <div class="timeline-meta">
+            <span class="timeline-period">SEP 2026 — PRESENT</span>
+            <span class="timeline-loc">HYDERABAD, INDIA</span>
+          </div>
+          <div class="timeline-node"><div class="node-marker active-marker"></div></div>
+          <div class="timeline-card highlight-card">
+            <div class="card-status-badge">CURRENT INTERNSHIP</div>
+            <h3 class="role-title">AI/ML Engineer Intern</h3>
+            <div class="org-name">Preventvital (GruentzigAI Pvt. Ltd.) · Preventive Healthcare Platform</div>
+            <p class="role-desc">
+              Auditing backend healthcare ML architecture, resolving algorithmic issues in cardiovascular risk calculation, and authoring RAG and LLM safety requirements on clinical-signoff protocols mapped to ICMR 2023 guidelines.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 1: Saint Martin's University Exchange -->
+        <div class="timeline-row">
+          <div class="timeline-meta">
+            <span class="timeline-period">AUG 2025 — MAY 2026</span>
+            <span class="timeline-loc">LACEY, WA, USA</span>
+          </div>
+          <div class="timeline-node"><div class="node-marker"></div></div>
+          <div class="timeline-card">
+            <h3 class="role-title">International Exchange Student (BS Computer Science - AI/ML)</h3>
+            <div class="org-name">Saint Martin's University · Center for Student Success (CGPA: 3.47 / 4.0)</div>
+            <p class="role-desc">
+              Completed rigorous coursework in Machine Learning, Distributed Systems, and Advanced Algorithms. Maintained a 3.47 CGPA across two semesters while serving in academic student success programs and peer mentorship (Exchange completed May 2026).
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2: Woxsen University Primary Degree -->
+        <div class="timeline-row">
+          <div class="timeline-meta">
+            <span class="timeline-period">2023 — 2027 (EXP. 08/2027)</span>
+            <span class="timeline-loc">HYDERABAD, INDIA</span>
+          </div>
+          <div class="timeline-node"><div class="node-marker"></div></div>
+          <div class="timeline-card">
+            <h3 class="role-title">B.Tech in Computer Science & Engineering (AI & ML)</h3>
+            <div class="org-name">Woxsen University · Primary Degree (CGPA: 8.69 / 10)</div>
+            <p class="role-desc">
+              Primary degree-granting program specializing in Artificial Intelligence, Deep Learning, Computational Semantics, and Algorithmic Design. Lead researcher in logical fallacy and multi-agent systems.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 3: CODE{X} Programming Club -->
+        <div class="timeline-row">
+          <div class="timeline-meta">
+            <span class="timeline-period">MAR 2024 — AUG 2025</span>
+            <span class="timeline-loc">CAMPUS INITIATIVE</span>
+          </div>
+          <div class="timeline-node"><div class="node-marker"></div></div>
+          <div class="timeline-card">
+            <h3 class="role-title">Executive Leader</h3>
+            <div class="org-name">CODE{X} — The Programming Club</div>
+            <p class="role-desc">
+              Organized algorithmic hackathons, conducted peer code reviews, coordinated competitive programming workshops, and mentored junior developers in Python and modern full-stack workflows.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 4: AI Research Centre -->
+        <div class="timeline-row">
+          <div class="timeline-meta">
+            <span class="timeline-period">FEB 2024 — APR 2024</span>
+            <span class="timeline-loc">ACADEMIC RESEARCH</span>
+          </div>
+          <div class="timeline-node"><div class="node-marker"></div></div>
+          <div class="timeline-card">
+            <h3 class="role-title">Research Intern</h3>
+            <div class="org-name">AI Research Centre · Woxsen University</div>
+            <p class="role-desc">
+              Built Django-based web modules and UI interfaces applying applied ML methods to academic research tools.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 / INTERACTIVE TERMINAL PLAYGROUND (Aligned with terminal.sh in carousel_ref.jpg) -->
+    <section class="section-container" id="terminal-section">
+      <div class="terminal-card full-terminal">
+        <div class="terminal-bar">
+          <span class="term-title">terminal.sh // Systems Interactive Console</span>
+          <div class="term-btns"><span>_</span><span>□</span><span>×</span></div>
+        </div>
+        <div class="terminal-body interactive-console" id="consoleOutput">
+          <p class="term-line text-blue">System Kernel v4.2.1 [Advaith Narayana Sarva - Interactive Environment]</p>
+          <p class="term-line">Type <span class="cmd-highlight">help</span> to view available commands or try <span class="cmd-highlight">whoami</span>, <span class="cmd-highlight">projects</span>, <span class="cmd-highlight">skills</span>, <span class="cmd-highlight">pokedex</span>.</p>
+          <div class="term-input-row">
+            <span class="term-prompt">advaith@systems:~$</span>
+            <input type="text" id="terminalInput" class="term-input" autocomplete="off" spellcheck="false" placeholder="type a command...">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & CALL TO ACTION SECTION -->
+    <section class="section-container" id="contact">
+      <div class="cta-banner">
+        <div class="cta-content">
+          <span class="badge-tag bg-oxide text-white">LET'S CONNECT</span>
+          <h2 class="cta-title">BUILD SOMETHING REMARKABLE TOGETHER.</h2>
+          <p class="cta-desc">
+            Whether you are exploring research partnerships, engineering internships, or full-time GenAI and systems engineering roles, my inbox is always open.
+          </p>
+          <div class="cta-buttons">
+            <a href="mailto:advaithsarva@gmail.com" class="neo-btn btn-primary">
+              SEND DIRECT EMAIL ✉
+            </a>
+            <button class="neo-btn btn-secondary" id="copyEmailBtn">
+              COPY EMAIL 📋
+            </button>
+          </div>
+        </div>
+        <div class="cta-sticker">
+          <div class="sticker-star">
+            <span>READY<br>TO SHIP<br>★</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RETRO 8-BIT CYBER PIKACHU RAG CHATBOT (PIKACHU.EXE) -->
+  <aside class="pokemon-widget" id="pokedexWidget">
+    <div class="pokemon-bar" id="pokedexBar">
+      <span class="pkmn-title">⚡ PIKACHU.EXE // ADVAITH'S AI BUDDY</span>
+      <div class="term-btns">
+        <button id="pkmnRagInspectBtn" class="pkmn-control-btn" title="Inspect Live Vector RAG Pipeline">🔍 RAG HUD</button>
+        <button id="pkmnMinBtn" class="pkmn-control-btn" title="Toggle Minimize">_ MINIMIZE</button>
+      </div>
+    </div>
+    <div class="pokemon-body" id="pokedexBody">
+      <div class="pokemon-screen">
+        <!-- Cute Pikachu Avatar from user image -->
+        <div class="pokemon-sprite" id="pokemonSprite" title="Tap Pikachu for sparks!">
+          <img src="assets/pikachu.png" alt="Pikachu AI Companion" class="pixel-pikachu" id="pikachuImg">
+          <span class="sprite-tap-hint">TAP ME! ⚡</span>
+        </div>
+        <div class="pokemon-stats">
+          <div class="pkmn-name">PIKACHU <span class="pkmn-lvl" id="pkmnLevel">Lv.50</span></div>
+          <div class="hp-row">
+            <span class="hp-label">HP</span>
+            <div class="hp-track"><div class="hp-fill" id="hpFill" style="width: 100%;"></div></div>
+            <span class="hp-val" id="hpVal">100/100</span>
+          </div>
+          <div class="pkmn-meta">TYPE: ELECTRIC / RAG-AI</div>
+        </div>
+      </div>
+
+      <!-- Live RAG Inspector HUD -->
+      <div class="rag-inspector-panel" id="ragInspectorPanel" style="display: none;">
+        <div class="rag-hud-header">
+          <span class="rag-hud-title">⚡ VECTOR RAG PIPELINE (LIVE)</span>
+          <span class="rag-hud-badge">52 CHUNKS · 64-DIM</span>
+        </div>
+        <div class="rag-hud-metric" id="ragHudMetric">Status: Vector Subspace Ready (Cosine Sim + BM25)</div>
+        <div class="rag-hud-chunks" id="ragHudChunks">
+          <div style="color:var(--text-muted); font-size:0.68rem;">Ask any question to inspect vector cosine scores and retrieved chunks!</div>
+        </div>
+      </div>
+
+      <!-- Interactive RAG Chat Log -->
+      <div class="pkmn-chat-log" id="pkmnChatLog" role="log" aria-live="polite">
+        <!-- Initial Welcome Message from Pikachu -->
+        <div class="chat-msg bot-msg">
+          <span class="chat-speaker">⚡ PIKACHU:</span>
+          Pika-pika! ⚡ Hey there! I'm Pikachu, Advaith's genuine in-browser RAG companion! Powered by a 52-chunk semantic vector index over his 39 projects, SMU 3.47 CGPA exchange, chess tactics, football, beatboxing, and global news—just don't mention ghosts! 👻
+        </div>
+      </div>
+
+      <!-- Quick Interactive Topic Chips -->
+      <div class="pkmn-quick-chips" id="pkmnQuickChips">
+        <button type="button" class="chip-btn" data-query="What are Advaith's hobbies and sports?">♟️ Chess &amp; Football</button>
+        <button type="button" class="chip-btn" data-query="Tell me about his beatboxing and debate skills!">🎤 Beatbox &amp; Debate</button>
+        <button type="button" class="chip-btn" data-query="What was his academic CGPA at SMU?">🎓 SMU 3.47 CGPA</button>
+        <button type="button" class="chip-btn" data-query="What did he do during the clinical audit at Preventvital?">🔍 Clinical ML Audit</button>
+        <button type="button" class="chip-btn" data-query="Tell me about The Sentinel Grid IBM hackathon">🏆 IBM BOB Top 5</button>
+        <button type="button" class="chip-btn" data-query="Tell me about the Multimodal Document Agent">🚀 Multimodal Doc Agent</button>
+        <button type="button" class="chip-btn" data-query="Is he really scared of ghosts?">👻 Scared of Ghosts?!</button>
+        <button type="button" class="chip-btn" data-query="How do I get in touch with Advaith?">💬 Connect Info</button>
+      </div>
+
+      <!-- Chat Input Form -->
+      <form class="pkmn-input-form" id="pkmnChatForm">
+        <input type="text" id="pkmnChatInput" class="pkmn-chat-input" placeholder="Ask Pikachu anything about Advaith..." autocomplete="off">
+        <button type="submit" class="pkmn-send-btn" id="pkmnSendBtn" title="Send Question">⚡ SEND</button>
+      </form>
+
+      <!-- Utility Actions -->
+      <div class="pokemon-actions">
+        <button type="button" id="pkmnChimeBtn" class="pkmn-action-btn" title="Synthesize Pikachu electro chime">⚡ SPARK SOUND</button>
+        <button type="button" id="pkmnFeedBtn" class="pkmn-action-btn" title="Feed compute to gain EXP">🍖 COMPUTE (+EXP)</button>
+        <button type="button" id="pkmnClearBtn" class="pkmn-action-btn" title="Clear chat history">🧹 CLEAR</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Project Details Modal Template -->
+  <div class="modal-backdrop" id="projectModal" aria-hidden="true">
+    <div class="modal-window">
+      <div class="modal-bar">
+        <span class="modal-title" id="modalTitle">PROJECT_SPEC.JSON</span>
+        <button class="modal-close-btn" id="modalCloseBtn">×</button>
+      </div>
+      <div class="modal-content" id="modalContent">
+        <!-- Injected via script -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-stamp">© 2026 ADVAITH NARAYANA SARVA</span>
+        <span class="footer-sub">39 Verified Engineering Repositories</span>
+      </div>
+      <div class="footer-center">
+        <a href="index.html">HOME</a> · 
+        <a href="projects.html">PROJECTS (39)</a> · 
+        <a href="resume.html">RESUME</a> · 
+        <a href="#terminal-section">TERMINAL</a> · 
+        <a href="#contact">CONTACT</a>
+      </div>
+      <div class="footer-right">
+        <span class="time-clock" id="liveClock">UTC+00:00</span>
+        <div class="footer-icons">
+          <a href="https://github.com/advaithsarva" target="_blank" rel="noreferrer" title="GitHub">GH</a>
+          <a href="https://www.linkedin.com/in/sarvaadvaithnarayana/" target="_blank" rel="noreferrer" title="LinkedIn">IN</a>
+          <a href="https://instagram.com/advaithsarva" target="_blank" rel="noreferrer" title="Instagram">IG</a>
+          <a href="mailto:advaithsarva@gmail.com" title="Email">EM</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="rag-engine.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>

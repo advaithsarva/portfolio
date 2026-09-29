@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advaith Narayana Sarva — Resume // GenAI & Systems Engineer</title>
+  <meta name="description" content="Resume of Advaith Narayana Sarva — GenAI & Systems Engineer. Graph-RAG, Multi-Agent Harnesses, and PyTorch Deep Learning.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/feather-mark.svg">
+
+  <!-- Typography: IBM Plex Mono & Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* --------------------------------------------------------------------------
+       ZER0 Brandkit & Neo-Brutalist Design Tokens
+       -------------------------------------------------------------------------- */
+    :root {
+      --bg-canvas: #FAF6ED;
+      --bg-card: #FFFFFF;
+      --bg-surface: #F3EBD9;
+      --text-main: #131200;
+      --text-muted: #55554E;
+      --border-color: #131200;
+      --shadow-color: #131200;
+      --color-gold: #FBBF24;
+      --color-oxide: #D63031;
+      --color-blueprint: #2547C9;
+      --color-moss: #0D9488;
+      --color-purple: #4F46E5;
+    }
+
+    [data-theme="dark"] {
+      --bg-canvas: #12121A;
+      --bg-card: #1B1B26;
+      --bg-surface: #262638;
+      --text-main: #F4F4F9;
+      --text-muted: #A0A0B5;
+      --border-color: #3F3F5A;
+      --shadow-color: #08080C;
+      --color-gold: #FBBF24;
+      --color-oxide: #EF4444;
+      --color-blueprint: #60A5FA;
+      --color-moss: #14B8A6;
+      --color-purple: #818CF8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: 'IBM Plex Mono', monospace;
+      line-height: 1.5;
+      padding: 30px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Print / View Action Bar */
+    .action-bar {
+      max-width: 960px;
+      margin: 0 auto 24px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .action-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .resume-btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border: 2px solid var(--border-color);
+      box-shadow: 3px 3px 0px var(--shadow-color);
+      text-decoration: none;
+      color: var(--text-main);
+      background-color: var(--bg-card);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.1s;
+    }
+
+    .resume-btn:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px var(--shadow-color);
+      background-color: var(--color-gold);
+      color: #131200;
+    }
+
+    .resume-btn.btn-accent {
+      background-color: var(--color-blueprint);
+      color: #FFFFFF;
+    }
+
+    .resume-btn.btn-accent:hover {
+      background-color: #1D3AA8;
+      color: #FFFFFF;
+    }
+
+    /* Resume Document Wrapper (Sheet) */
+    .resume-sheet {
+      max-width: 960px;
+      margin: 0 auto;
+      background-color: var(--bg-card);
+      border: 3px solid var(--border-color);
+      box-shadow: 6px 6px 0px var(--shadow-color);
+      padding: 44px;
+    }
+
+    /* Header Section */
+    .resume-header {
+      border-bottom: 3px solid var(--border-color);
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+
+    .header-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .name-block h1 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .name-block .role-tag {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-blueprint);
+      display: inline-block;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--bg-surface);
+      border: 2px solid var(--border-color);
+      padding: 6px 12px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      box-shadow: 2px 2px 0px var(--shadow-color);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #16A34A;
+      display: inline-block;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.5; }
+    }
+
+    .header-contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding-top: 10px;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .contact-item:hover {
+      color: var(--color-blueprint);
+      text-decoration: underline;
+    }
+
+    /* Section Component */
+    .resume-section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title span.sec-code {
+      color: var(--color-oxide);
+      font-size: 0.85rem;
+    }
+
+    /* Executive Summary */
+    .summary-text {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-main);
+      background-color: var(--bg-surface);
+      border: 2px solid var(--border-color);
+      padding: 14px 18px;
+      box-shadow: 3px 3px 0px var(--shadow-color);
+    }
+
+    /* Experience & Education Items */
+    .timeline-item {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .item-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .item-date {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-oxide);
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      padding: 2px 8px;
+    }
+
+    .item-sub {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-blueprint);
+      margin-bottom: 8px;
+    }
+
+    .item-bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .item-bullets li {
+      font-size: 0.84rem;
+      line-height: 1.6;
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .item-bullets li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--color-oxide);
+      font-weight: 700;
+    }
+
+    /* Honors & Achievements Grid */
+    .achievements-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .achieve-box {
+      border: 2px solid var(--border-color);
+      background-color: var(--bg-surface);
+      padding: 14px;
+      box-shadow: 3px 3px 0px var(--shadow-color);
+    }
+
+    .achieve-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 6px;
+      background-color: var(--color-gold);
+      color: #131200;
+    }
+
+    .achieve-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .achieve-text {
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: var(--text-main);
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .project-resume-card {
+      border: 2px solid var(--border-color);
+      background-color: var(--bg-card);
+      padding: 16px;
+      box-shadow: 3px 3px 0px var(--shadow-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .proj-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .proj-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.98rem;
+      font-weight: 800;
+    }
+
+    .proj-gh-btn {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+
+    .proj-gh-btn:hover {
+      background-color: var(--color-gold);
+      color: #131200;
+    }
+
+    .proj-desc {
+      font-size: 0.8rem;
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .proj-tags {
+      font-size: 0.72rem;
+      color: var(--color-blueprint);
+      font-weight: 600;
+    }
+
+    /* Skills Matrix */
+    .skills-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .skill-col {
+      border: 2px solid var(--border-color);
+      background-color: var(--bg-surface);
+      padding: 14px;
+      box-shadow: 2px 2px 0px var(--shadow-color);
+    }
+
+    .skill-cat {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--color-oxide);
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 4px;
+    }
+
+    .skill-list {
+      font-size: 0.78rem;
+      line-height: 1.6;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .resume-sheet {
+        padding: 24px 18px;
+      }
+      .achievements-table,
+      .projects-grid,
+      .skills-matrix {
+        grid-template-columns: 1fr;
+      }
+      .name-block h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* --------------------------------------------------------------------------
+       Print Styles (Primacy for PDF Generation & Paper Printing)
+       -------------------------------------------------------------------------- */
+    @media print {
+      body {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+        padding: 0 !important;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .resume-sheet {
+        max-width: 100% !important;
+        margin: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+
+      .summary-text,
+      .achieve-box,
+      .project-resume-card,
+      .skill-col,
+      .status-badge,
+      .item-date,
+      .proj-gh-btn {
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+        border: 1px solid #000000 !important;
+      }
+
+      .pulse-dot {
+        display: none !important;
+      }
+
+      .section-title {
+        border-bottom: 2px solid #000000 !important;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: #000000 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar (Screen Only) -->
+  <header class="action-bar">
+    <div class="action-group">
+      <a href="index.html" class="resume-btn">
+        ← BACK TO PORTFOLIO
+      </a>
+      <a href="projects.html" class="resume-btn">
+        PROJECTS (39) ⊞
+      </a>
+      <a href="https://github.com/advaithsarva" target="_blank" rel="noreferrer" class="resume-btn">
+        GITHUB PROFILE ↗
+      </a>
+    </div>
+
+    <div class="action-group">
+      <button onclick="copyEmail()" class="resume-btn" id="copyBtn">
+        📋 COPY EMAIL
+      </button>
+      <button onclick="window.print()" class="resume-btn btn-accent">
+        🖨️ PRINT / SAVE AS PDF
+      </button>
+    </div>
+  </header>
+
+  <!-- Resume Sheet (Neo-Brutalist Layout) -->
+  <main class="resume-sheet">
+
+    <!-- Header Block -->
+    <header class="resume-header">
+      <div class="header-top-row">
+        <div class="name-block">
+          <h1>ADVAITH NARAYANA SARVA</h1>
+          <span class="role-tag">GENAI &amp; SYSTEMS ENGINEER</span>
+        </div>
+        <div class="status-badge">
+          <span class="pulse-dot"></span>
+          <span>ACTIVELY SEEKING INTERNSHIPS &amp; JOBS (US / INDIA / GLOBAL)</span>
+        </div>
+      </div>
+
+      <div class="header-contact-grid">
+        <a href="mailto:advaithsarva@gmail.com" class="contact-item">
+          <strong>✉</strong> advaithsarva@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/sarvaadvaithnarayana/" target="_blank" rel="noreferrer" class="contact-item">
+          <strong>in</strong> linkedin.com/in/sarvaadvaithnarayana
+        </a>
+        <a href="https://github.com/advaithsarva" target="_blank" rel="noreferrer" class="contact-item">
+          <strong>GH</strong> github.com/advaithsarva
+        </a>
+        <a href="https://instagram.com/advaithsarva" target="_blank" rel="noreferrer" class="contact-item">
+          <strong>IG</strong> @advaithsarva
+        </a>
+        <span class="contact-item">
+          <strong>📍</strong> Lacey, WA, USA · Hyderabad, India
+        </span>
+      </div>
+    </header>
+
+    <!-- Executive Profile -->
+    <section class="resume-section">
+      <h2 class="section-title"><span class="sec-code">01 //</span> PROFILE SUMMARY</h2>
+      <div class="summary-text">
+        GenAI & Systems Engineer specializing in <strong>interpretable Graph-RAG knowledge systems</strong>, <strong>autonomous multi-agent harnesses</strong>, and <strong>low-level PyTorch tensor primitives</strong>. Proven record auditing complex clinical ML inference code, building fault-tolerant agent execution infrastructure, and deploying mathematical deep learning models verified to theoretical entropy floors.
+      </div>
+    </section>
+
+    <!-- Verified Honors & Key Achievements -->
+    <section class="resume-section">
+      <h2 class="section-title"><span class="sec-code">02 //</span> HONORS & VERIFIED ACHIEVEMENTS</h2>
+      <div class="achievements-table">
+        <div class="achieve-box">
+          <span class="achieve-badge">🏆 TOP 5 SOUTH ZONE</span>
+          <div class="achieve-title">IBM BOB National Hackathon 2026</div>
+          <div class="achieve-text">
+            Engineered <em>The Sentinel Grid</em> disaster forecasting system (6,957 LOC Python, 314 automated tests, 104 formula audits). Attained <strong>0.9924 ROC-AUC</strong> across 473k district-month soil moisture observations.
+          </div>
+        </div>
+
+        <div class="achieve-box">
+          <span class="achieve-badge" style="background:#60A5FA; color:#FFF;">🔍 CLINICAL ALGORITHM AUDIT</span>
+          <div class="achieve-title">ASCVD Risk Engine Inversion Fix</div>
+          <div class="achieve-text">
+            Audited Preventvital's cardiovascular risk calculation engine, caught a sign inversion bug artificially collapsing baseline risk to 0.1%, and validated correction against published Goff 2014 trials.
+          </div>
+        </div>
+
+        <div class="achieve-box">
+          <span class="achieve-badge" style="background:#0D9488; color:#FFF;">🎓 3.47 / 4.0 CGPA DEAN'S HONORS</span>
+          <div class="achieve-title">Saint Martin's University Honors</div>
+          <div class="achieve-text">
+            Completed rigorous upper-division coursework in Distributed Systems, Machine Learning, and Algorithms across two semesters (Completed May 2026). Peer mentor at Center for Student Success.
+          </div>
+        </div>
+
+        <div class="achieve-box">
+          <span class="achieve-badge" style="background:#4F46E5; color:#FFF;">⚡ EXECUTIVE LEADERSHIP</span>
+          <div class="achieve-title">CODE{X} Programming Club</div>
+          <div class="achieve-text">
+            Spearheaded university hackathons, technical problem-solving sessions, and hands-on workshops in systems and deep learning for 200+ undergraduate developers.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="resume-section">
+      <h2 class="section-title"><span class="sec-code">03 //</span> WORK EXPERIENCE</h2>
+
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-title">AI/ML Engineer Intern</span>
+          <span class="item-date">SEP 2026 — PRESENT</span>
+        </div>
+        <div class="item-sub">Preventvital (GruentzigAI Pvt. Ltd.) · Hyderabad, India</div>
+        <ul class="item-bullets">
+          <li>Audited backend machine learning inference pipelines and cardiovascular risk scoring algorithms across clinical sign-off protocols mapped to ICMR 2023 guidelines.</li>
+          <li>Identified and corrected an inverted coefficient in the ASCVD clinical estimation formula, preventing systematic misclassification of patient risk tiers.</li>
+          <li>Authored technical specifications and evaluation harnesses for Graph-RAG diagnostic knowledge retrieval and doctor-in-the-loop LLM guardrails.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-title">Executive Club Leader</span>
+          <span class="item-date">MAR 2024 — AUG 2025</span>
+        </div>
+        <div class="item-sub">CODE{X} — The Programming Club · Woxsen University</div>
+        <ul class="item-bullets">
+          <li>Directed competitive programming challenges, algorithmic sprints, and modern software development workshops for a community of 200+ members.</li>
+          <li>Mentored student engineering teams in Git workflows, Python backend microservices, and AI model deployment best practices.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-title">Research Intern</span>
+          <span class="item-date">FEB 2024 — APR 2024</span>
+        </div>
+        <div class="item-sub">AI Research Centre · Woxsen University</div>
+        <ul class="item-bullets">
+          <li>Engineered Django web modules and UI architectures integrating applied machine learning routines for academic research initiatives.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="resume-section">
+      <h2 class="section-title"><span class="sec-code">04 //</span> EDUCATION</h2>
+
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-title">Saint Martin's University</span>
+          <span class="item-date">AUG 2025 — MAY 2026</span>
+        </div>
+        <div class="item-sub">International Exchange Student — BS Computer Science (AI/ML) · Lacey, WA, USA</div>
+        <ul class="item-bullets">
+          <li><strong>CGPA: 3.47 / 4.0</strong> · Dean's List Honors (Exchange Completed May 2026).</li>
+          <li>Advanced Coursework: Distributed Systems, Machine Learning, Computer Vision, Advanced Algorithms.</li>
+          <li>Student Success Peer Mentor at the Center for Student Success.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-title">Woxsen University</span>
+          <span class="item-date">2023 — 2027 (EXP. AUG 2027)</span>
+        </div>
+        <div class="item-sub">B.Tech in Computer Science &amp; Engineering (AI &amp; ML) · Hyderabad, India</div>
+        <ul class="item-bullets">
+          <li><strong>CGPA: 8.69 / 10</strong> · Primary degree program specializing in Artificial Intelligence and Systems.</li>
+          <li>Coursework: Deep Learning, Data Structures & Algorithms, Operating Systems, Database Management Systems, Theory of Computation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Featured Projects (Google XYZ Format with GitHub Links) -->
+    <section class="resume-section">
+      <h2 class="section-title"><span class="sec-code">05 //</span> SELECTED PRODUCTION &amp; RESEARCH PROJECTS</h2>
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-resume-card">
+          <div>
+            <div class="proj-head">
+              <span class="proj-title">Media NLP Rhetoric &amp; Bias Pipeline</span>
+              <a href="https://github.com/advaithsarva/media-nlp-pipeline" target="_blank" rel="noreferrer" class="proj-gh-btn">
+                GH ↗
+              </a>
+            </div>
+            <p class="proj-desc">
+              Engineered deterministic NLP pipeline detecting 23 rhetorical manipulation tactics and logical fallacies with exact character-level verbatim evidence spans. Achieved a low false positive rate of <strong>0.175 per 1,000 words</strong> verified over 164 unit/integration tests.
+            </p>
+          </div>
+          <div class="proj-tags">spaCy · PyTorch · PySBD · NLTK · DAG Inference</div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-resume-card">
+          <div>
+            <div class="proj-head">
+              <span class="proj-title">Hybrid Graph-RAG Knowledge System</span>
+              <a href="https://github.com/advaithsarva/graph-rag-knowledge-system" target="_blank" rel="noreferrer" class="proj-gh-btn">
+                GH ↗
+              </a>
+            </div>
+            <p class="proj-desc">
+              Constructed hybrid retrieval engine fusing BM25 lexical search, HNSW vector similarity, and Neo4j multi-hop graph traversals with Reciprocal Rank Fusion (RRF), eliminating vector hallucination and securing 10/10 verified factual recall benchmarks.
+            </p>
+          </div>
+          <div class="proj-tags">Neo4j · BM25 · LangChain · FastAPI · HNSW</div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-resume-card">
+          <div>
+            <div class="proj-head">
+              <span class="proj-title">Autonomous Postgres Performance Agent</span>
+              <a href="https://github.com/advaithsarva/autonomous-performance-agent" target="_blank" rel="noreferrer" class="proj-gh-btn">
+                GH ↗
+              </a>
+            </div>
+            <p class="proj-desc">
+              Built autonomous DB optimization agent that monitors PostgreSQL query plans, analyzes EXPLAIN cost nodes, generates tailored indexes, and benchmarks regressions. Demonstrated an average <strong>11.7x query execution speedup</strong> with automated rollback guards.
+            </p>
+          </div>
+          <div class="proj-tags">PostgreSQL · Python · AsyncPG · Docker · EXPLAIN ANALYZE</div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-resume-card">
+          <div>
+            <div class="proj-head">
+              <span class="proj-title">SuperBrain MCP Multi-Agent Memory</span>
+              <a href="https://github.com/advaithsarva/superbrain_mcp" target="_blank" rel="noreferrer" class="proj-gh-btn">
+                GH ↗
+              </a>
+            </div>
+            <p class="proj-desc">
+              Developed Model Context Protocol (MCP) server providing cross-session persistent vector memory and hierarchical execution state for autonomous multi-agent systems. Bundles 41 tools across 8 domains with sub-2ms protocol invocation overhead.
+            </p>
+          </div>
+          <div class="proj-tags">TypeScript · Node.js · MCP Protocol · ChromaDB · Vector DB</div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-resume-card">
+          <div>
+            <div class="proj-head">
+              <span class="proj-title">Fact-Checking NLI Stance Agent</span>
+              <a href="https://github.com/advaithsarva/fact-checking-agent" target="_blank" rel="noreferrer" class="proj-gh-btn">
+                GH ↗
+              </a>
+            </div>
+            <p class="proj-desc">
+              Created multi-step claim verification agent that decomposes discourse into atomic propositions, queries external evidence, and executes Cross-Encoder Natural Language Inference stance classification, achieving <strong>9/10 verdict accuracy</strong>.
+            </p>
+          </div>
+          <div class="proj-tags">Transformers · PyTorch · NLI · Cross-Encoder · spaCy</div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-resume-card">
+          <div>
+            <div class="proj-head">
+              <span class="proj-title">Transformer Architecture from Scratch</span>
+              <a href="https://github.com/advaithsarva/transformer-from-scratch" target="_blank" rel="noreferrer" class="proj-gh-btn">
+                GH ↗
+              </a>
+            </div>
+            <p class="proj-desc">
+              Implemented decoder-only transformer exclusively from PyTorch tensor primitives with causal masking, multi-head self-attention, and layer normalization. Verified convergence to <strong>1.0059x theoretical entropy floor</strong> with 1e-5 mathematical parity.
+            </p>
+          </div>
+          <div class="proj-tags">PyTorch Primitives · CUDA · Tensor Algebra · Ablation Studies</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Technical Stack & Core Competencies -->
+    <section class="resume-section">
+      <h2 class="section-title"><span class="sec-code">06 //</span> TECHNICAL STACK &amp; CAPABILITIES</h2>
+      <div class="skills-matrix">
+        <div class="skill-col">
+          <div class="skill-cat">GENAI &amp; AGENTS</div>
+          <div class="skill-list">
+            • Graph-RAG &amp; Hybrid Retrieval<br>
+            • Multi-Agent Swarms &amp; Harnesses<br>
+            • Model Context Protocol (MCP)<br>
+            • DSPy &amp; Prompt Optimization<br>
+            • ChromaDB, Qdrant, Neo4j<br>
+            • Tool Calling &amp; Reasoning Loops
+          </div>
+        </div>
+
+        <div class="skill-col">
+          <div class="skill-cat">DEEP LEARNING &amp; NLP</div>
+          <div class="skill-list">
+            • PyTorch &amp; Tensor Primitives<br>
+            • Transformers &amp; Attention Models<br>
+            • HuggingFace Ecosystem<br>
+            • spaCy, PySBD, NLTK<br>
+            • Natural Language Inference (NLI)<br>
+            • Causal Masking &amp; Convergence
+          </div>
+        </div>
+
+        <div class="skill-col">
+          <div class="skill-cat">SYSTEMS &amp; ENGINEERING</div>
+          <div class="skill-list">
+            • Python (AsyncIO, CFFI, Metaclasses)<br>
+            • TypeScript &amp; Node.js<br>
+            • FastAPI &amp; REST Microservices<br>
+            • PostgreSQL &amp; Query Tuning<br>
+            • Docker &amp; Containerization<br>
+            • Git, CI/CD, Linux Tooling
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function copyEmail() {
+      navigator.clipboard.writeText('advaithsarva@gmail.com').then(() => {
+        const btn = document.getElementById('copyBtn');
+        const orig = btn.textContent;
+        btn.textContent = '✓ COPIED!';
+        setTimeout(() => btn.textContent = orig, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

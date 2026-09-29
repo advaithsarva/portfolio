@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects // Advaith Narayana Sarva — 39 Verified Repositories</title>
+  <meta name="description" content="39 verified repositories by Advaith Narayana Sarva across AI Agents, NLP, Graph-RAG, Systems from Scratch, and Full-Stack.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Header layout lock - prevent orphan wrap of theme toggle */
+    .header-inner {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      flex-wrap: nowrap !important;
+    }
+    .header-controls {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Page container */
+    .catalog-main {
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 30px 20px 60px 20px;
+    }
+
+    /* Sleek, clean catalog heading */
+    .catalog-title-strip {
+      margin-bottom: 24px;
+    }
+    .catalog-title-strip h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin: 0 0 6px 0;
+      letter-spacing: -0.02em;
+    }
+    .catalog-title-strip p {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Category Headings Tabs (Right at the top, clean, no clutter) */
+    .category-tabs-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .cat-tab-btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border: 2px solid var(--border-color);
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      cursor: pointer;
+      box-shadow: 2px 2px 0px var(--shadow-color);
+      transition: all 0.12s ease;
+    }
+    .cat-tab-btn:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px var(--shadow-color);
+    }
+    .cat-tab-btn.active {
+      background-color: #FACC15 !important;
+      color: #131200 !important;
+      border-color: #000000 !important;
+      font-weight: 800;
+      box-shadow: 3px 3px 0px var(--shadow-color);
+    }
+
+    /* Tools Filter Bar (ONLY tools Advaith used) */
+    .tools-filter-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--bg-surface);
+      border: 2px solid var(--border-color);
+      padding: 10px 14px;
+      margin-bottom: 24px;
+      box-shadow: 3px 3px 0px var(--shadow-color);
+    }
+    .tools-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--color-blueprint);
+      margin-right: 4px;
+      white-space: nowrap;
+    }
+    .tool-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border: 1.5px solid var(--border-color);
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      cursor: pointer;
+      box-shadow: 1.5px 1.5px 0px var(--shadow-color);
+      transition: all 0.1s ease;
+    }
+    .tool-chip:hover {
+      background-color: #FEF9C3;
+      transform: translate(-1px, -1px);
+    }
+    .tool-chip.active {
+      background-color: var(--color-blueprint) !important;
+      color: #FFFFFF !important;
+      border-color: var(--border-color) !important;
+      box-shadow: 2px 2px 0px var(--shadow-color);
+    }
+
+    /* Search & Stats Strip */
+    .catalog-search-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .catalog-search-box {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+      padding: 8px 14px;
+      border: 2px solid var(--border-color);
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      width: 320px;
+      box-shadow: 2.5px 2.5px 0px var(--shadow-color);
+    }
+    .catalog-search-box:focus {
+      outline: none;
+      border-color: var(--color-blueprint);
+    }
+    .catalog-count-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    /* Crisp, High-Impact Project Cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card-box {
+      border: 2.5px solid var(--border-color);
+      background-color: var(--bg-card);
+      box-shadow: 4px 4px 0px var(--shadow-color);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+    .project-card-box:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 7px 7px 0px var(--shadow-color);
+    }
+
+    /* Category Top Borders */
+    .border-cat-hackathon { border-top: 5px solid #FACC15; }
+    .border-cat-ai-agents { border-top: 5px solid #8B5CF6; }
+    .border-cat-nlp-rag { border-top: 5px solid #06B6D4; }
+    .border-cat-ml-data { border-top: 5px solid #10B981; }
+    .border-cat-systems { border-top: 5px solid #F97316; }
+    .border-cat-full-stack { border-top: 5px solid #2563EB; }
+    .border-cat-in-progress { border-top: 5px solid #F43F5E; }
+
+    .card-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .cat-badge-pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border: 1.5px solid #000;
+      letter-spacing: 0.04em;
+    }
+    .cat-badge-hackathon { background-color: #FACC15; color: #131200; }
+    .cat-badge-ai-agents { background-color: #8B5CF6; color: #FFF; }
+    .cat-badge-nlp-rag { background-color: #06B6D4; color: #131200; }
+    .cat-badge-ml-data { background-color: #10B981; color: #FFF; }
+    .cat-badge-systems { background-color: #F97316; color: #FFF; }
+    .cat-badge-full-stack { background-color: #2563EB; color: #FFF; }
+    .cat-badge-in-progress { background-color: #F43F5E; color: #FFF; }
+
+    .card-slug-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .project-card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 0 0 6px 0;
+    }
+
+    .project-card-tagline {
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--color-blueprint);
+      margin-bottom: 12px;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+
+    .project-card-desc {
+      font-size: 0.86rem;
+      line-height: 1.55;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    /* Key Proof Metric Badge */
+    .project-stat-pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      background-color: var(--bg-surface);
+      border: 1.5px dashed var(--border-color);
+      padding: 5px 8px;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+
+    .project-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .project-card-actions {
+      display: flex;
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1.5px solid var(--border-color);
+    }
+
+    .btn-project-primary {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 7px 14px;
+      border: 2px solid #000;
+      background-color: #FACC15;
+      color: #131200;
+      text-decoration: none;
+      box-shadow: 2px 2px 0px var(--shadow-color);
+      transition: all 0.1s ease;
+    }
+    .btn-project-primary:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px var(--shadow-color);
+      background-color: #EAB308;
+    }
+
+    .btn-project-secondary {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 7px 12px;
+      border: 2px solid var(--border-color);
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+      text-decoration: none;
+      box-shadow: 2px 2px 0px var(--shadow-color);
+      transition: all 0.1s ease;
+    }
+    .btn-project-secondary:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px var(--shadow-color);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html#home" class="brand-badge">
+        <img src="assets/feather-mark.svg" alt="Feather Mark" class="brand-icon">
+        <span class="brand-name">ADVAITH<span class="slash">//</span>SARVA</span>
+      </a>
+
+      <!-- Desktop Nav Tabs -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html#home" class="nav-tab">HOME</a>
+        <a href="projects.html" class="nav-tab active">PROJECTS (39)</a>
+        <a href="resume.html" class="nav-tab">RESUME</a>
+        <a href="index.html#terminal-section" class="nav-tab">TERMINAL</a>
+        <a href="index.html#contact" class="nav-tab">CONTACT</a>
+      </nav>
+
+      <!-- Action & Theme Switcher -->
+      <div class="header-actions">
+        <button id="themeToggle" class="neo-btn icon-btn" aria-label="Toggle Theme" title="Switch Theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="catalog-main">
+    <!-- Title Strip -->
+    <div class="catalog-title-strip">
+      <h1>ENGINEERING REPOSITORIES &amp; ARCHITECTURES</h1>
+      <p>"I build systems, then prove they work." 39 verified repositories with reproducible code, automated test suites, and honest limitations.</p>
+    </div>
+
+    <!-- 01 // Category Headings Tabs (Clean at the top) -->
+    <div class="category-tabs-bar" id="categoryTabs">
+      <button class="cat-tab-btn active" data-cat="All">ALL (39)</button>
+      <button class="cat-tab-btn" data-cat="Hackathon">HACKATHON (1)</button>
+      <button class="cat-tab-btn" data-cat="AI Agents">AI AGENTS (9)</button>
+      <button class="cat-tab-btn" data-cat="NLP &amp; RAG">NLP &amp; RAG (8)</button>
+      <button class="cat-tab-btn" data-cat="ML &amp; Data">ML &amp; DATA (5)</button>
+      <button class="cat-tab-btn" data-cat="Systems from Scratch">SYSTEMS (6)</button>
+      <button class="cat-tab-btn" data-cat="Full-Stack">FULL-STACK (6)</button>
+      <button class="cat-tab-btn" data-cat="In Progress">IN PROGRESS (4)</button>
+    </div>
+
+    <!-- 02 // Tools Filter Bar (ONLY real tools Advaith used) -->
+    <div class="tools-filter-strip">
+      <span class="tools-label">⚡ FILTER BY TOOLS USED:</span>
+      <button type="button" class="tool-chip active" data-tool="all">ALL TOOLS</button>
+      <button type="button" class="tool-chip" data-tool="python">
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.92 2C6.98 2 7.28 4.14 7.28 4.14L7.3 6.34H12.1V7.07H5.32S2 6.7 2 11.66C2 16.62 4.9 16.36 4.9 16.36H6.55V14.07C6.55 11.38 8.87 11.45 8.87 11.45H13.68C15.93 11.45 16.14 9.35 16.14 9.35V4.32C16.14 4.32 16.51 2 11.92 2ZM9.07 3.51C9.64 3.51 10.1 3.97 10.1 4.54C10.1 5.11 9.64 5.57 9.07 5.57C8.5 5.57 8.04 5.11 8.04 4.54C8.04 3.97 8.5 3.51 9.07 3.51Z" fill="#3776AB"/><path d="M12.08 22C17.02 22 16.72 19.86 16.72 19.86L16.7 17.66H11.9V16.93H18.68S22 17.3 22 12.34C22 7.38 19.1 7.64 19.1 7.64H17.45V9.93C17.45 12.62 15.13 12.55 15.13 12.55H10.32C8.07 12.55 7.86 14.65 7.86 14.65V19.68C7.86 19.68 7.49 22 12.08 22ZM14.93 20.49C14.36 20.49 13.9 20.03 13.9 19.46C13.9 18.89 14.36 18.43 14.93 18.43C15.5 18.43 15.96 18.89 15.96 19.46C15.96 20.03 15.5 20.49 14.93 20.49Z" fill="#FFD43B"/></svg>
+        <span>Python</span>
+      </button>
+      <button type="button" class="tool-chip" data-tool="sql">
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3" fill="#336791" stroke="#131200"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        <span>PostgreSQL / SQL</span>
+      </button>
+      <button type="button" class="tool-chip" data-tool="pytorch">
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6 2.1a1 1 0 0 0-1.2 0L6.2 6.3a8.8 8.8 0 1 0 11.6 0L12.6 2.1zm-1.8 17.5a6.8 6.8 0 0 1-4.8-11.6l4.8-3.9 4.8 3.9a6.8 6.8 0 0 1-4.8 11.6z" fill="#EE4C2C"/><circle cx="15.8" cy="6.2" r="1.5" fill="#EE4C2C"/></svg>
+        <span>PyTorch</span>
+      </button>
+      <button type="button" class="tool-chip" data-tool="neo4j">
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="18" r="3.5" fill="#008CC1"/><circle cx="18" cy="18" r="3.5" fill="#008CC1"/><circle cx="18" cy="6" r="3.5" fill="#008CC1"/><circle cx="6" cy="6" r="3.5" fill="#008CC1"/><path d="M8.5 7.5l7 7M8.5 16.5l7-7M6 9.5v5M18 9.5v5" stroke="#008CC1" stroke-width="2"/></svg>
+        <span>Neo4j</span>
+      </button>
+      <button type="button" class="tool-chip" data-tool="docker">
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.6 11.2h2.2v2.2H4.6zm2.8 0h2.2v2.2H7.4zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm-5.6-2.8h2.2v2.2H7.4zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm-2.8-2.8h2.2v2.2h-2.2z" fill="#2496ED"/><path d="M22.5 11.5c-.5-.4-1.5-.5-2.2-.2-.2-.7-.7-1.4-1.4-1.8l-.6-.3-.4.6c-.4.6-.5 1.4-.4 2.1-.8.4-2.1.4-2.9 0H1c-.3 1.8.2 4.1 1.6 5.6 1.7 1.9 4.3 2.7 7.4 2.7 6.4 0 11.2-3.8 12.3-7.7.7-.2 1.4-.7 1.7-1.3l.1-.3-.6-.7h-.6z" fill="#2496ED"/></svg>
+        <span>Docker</span>
+      </button>
+      <button type="button" class="tool-chip" data-tool="fastapi">
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#009688"/><path d="M12.8 4.5L7.2 13.2h4.5l-1.5 6.3 6.6-9.6h-4.8l.8-5.4z" fill="#ffffff"/></svg>
+        <span>FastAPI &amp; Flask</span>
+      </button>
+      <button type="button" class="tool-chip" data-tool="node">
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="3" fill="#3178C6"/><path d="M4 10.5h6.5M7.25 10.5v8" stroke="#ffffff" stroke-width="2.2" stroke-linecap="square"/><path d="M13.5 17c1 .8 2.3 1.1 3.5.7 1.1-.4 1.8-1.5 1.5-2.6-.4-1.3-2.1-1.6-3.2-2.1-1-.4-1.8-1.2-1.6-2.3.2-1.1 1.2-1.9 2.3-1.9 1 0 2 .4 2.7 1" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <span>TypeScript &amp; Node</span>
+      </button>
+      <button type="button" class="tool-chip" data-tool="aws">
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.75 14.45c-2.3 1.55-5.35 2.37-8.25 2.37-4.1 0-7.8-1.5-10.6-4-.2-.18-.04-.42.2-.28 3.02 1.76 6.7 2.82 10.4 2.82 2.6 0 5.42-.64 7.95-1.97.38-.2.7.27.3.56z" fill="#FF9900"/><path d="M19.78 13.43c-.3-.37-1.92-.18-2.65-.09-.22.03-.26-.14-.06-.27 1.3-.87 3.42-.62 3.68-.3.26.32-.08 2.43-1.31 3.39-.19.15-.36.07-.27-.13.3-.67.91-2.23.61-2.6z" fill="#FF9900"/><path d="M6.5 8h1.8v4.5H6.5zm4 -2h1.8v6.5h-1.8zm4 2h1.8v4.5h-1.8z" fill="#232F3E"/></svg>
+        <span>AWS Cloud</span>
+      </button>
+      <button type="button" class="tool-chip" data-tool="linux">
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5" stroke="#10B981"/><line x1="12" y1="19" x2="20" y2="19" stroke="#10B981"/></svg>
+        <span>Git &amp; Linux</span>
+      </button>
+    </div>
+
+    <!-- 03 // Search Bar & Count Strip -->
+    <div class="catalog-search-strip">
+      <input type="text" id="projectSearch" class="catalog-search-box" placeholder="🔍 Search projects by keyword, metric, or stack...">
+      <div class="catalog-count-label">
+        Showing <span id="matchCount" style="color:var(--color-blueprint); font-weight:800;">39</span> of 39 verified repositories
+      </div>
+    </div>
+
+    <!-- 04 // 39 Project Cards Grid -->
+    <div class="projects-grid" id="projectsGrid"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-stamp">© 2026 ADVAITH NARAYANA SARVA</span>
+        <span class="footer-sub">39 Verified Engineering Repositories</span>
+      </div>
+      <div class="footer-center">
+        <a href="index.html">HOME</a> · 
+        <a href="projects.html">PROJECTS (39)</a> · 
+        <a href="resume.html">RESUME</a> · 
+        <a href="index.html#terminal-section">TERMINAL</a> · 
+        <a href="index.html#contact">CONTACT</a>
+      </div>
+      <div class="footer-right">
+        <span class="time-clock" id="liveClock">UTC+00:00</span>
+        <div class="footer-icons">
+          <a href="https://github.com/advaithsarva" target="_blank" rel="noreferrer" title="GitHub">GH</a>
+          <a href="https://www.linkedin.com/in/sarvaadvaithnarayana/" target="_blank" rel="noreferrer" title="LinkedIn">IN</a>
+          <a href="https://instagram.com/advaithsarva" target="_blank" rel="noreferrer" title="Instagram">IG</a>
+          <a href="mailto:advaithsarva@gmail.com" title="Email">EM</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="projects-data.js"></script>
+  <script src="tech-icons.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Theme Toggle
+      const toggleBtn = document.getElementById('themeToggle');
+      const html = document.documentElement;
+      const savedTheme = localStorage.getItem('zer0-theme') || 'light';
+      html.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+
+      toggleBtn.addEventListener('click', () => {
+        const current = html.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('zer0-theme', next);
+        updateThemeIcon(next);
+      });
+
+      function updateThemeIcon(theme) {
+        const icon = document.querySelector('.theme-icon');
+        if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      }
+
+      // Live UTC Clock
+      function updateClock() {
+        const clock = document.getElementById('liveClock');
+        if (clock) {
+          const now = new Date();
+          clock.textContent = now.toUTCString().split(' ')[4] + ' UTC';
+        }
+      }
+      updateClock();
+      setInterval(updateClock, 1000);
+
+      // Category Styles Map
+      function getCategoryStyles(cat) {
+        const c = String(cat).toLowerCase();
+        if (c.includes('hackathon')) return { badge: 'cat-badge-hackathon', border: 'border-cat-hackathon' };
+        if (c.includes('agent')) return { badge: 'cat-badge-ai-agents', border: 'border-cat-ai-agents' };
+        if (c.includes('nlp') || c.includes('rag')) return { badge: 'cat-badge-nlp-rag', border: 'border-cat-nlp-rag' };
+        if (c.includes('ml') || c.includes('data')) return { badge: 'cat-badge-ml-data', border: 'border-cat-ml-data' };
+        if (c.includes('system')) return { badge: 'cat-badge-systems', border: 'border-cat-systems' };
+        if (c.includes('full-stack') || c.includes('fullstack')) return { badge: 'cat-badge-full-stack', border: 'border-cat-full-stack' };
+        if (c.includes('progress')) return { badge: 'cat-badge-in-progress', border: 'border-cat-in-progress' };
+        return { badge: 'cat-badge-hackathon', border: 'border-cat-hackathon' };
+      }
+
+      // Matching Tools Helper
+      function matchesTool(p, toolKey) {
+        if (!toolKey || toolKey === 'all') return true;
+        const allText = (p.tags.join(' ') + ' ' + p.overview + ' ' + p.title).toLowerCase();
+        if (toolKey === 'python') return allText.includes('python');
+        if (toolKey === 'sql') return allText.includes('sql') || allText.includes('postgres') || allText.includes('sqlite') || allText.includes('database');
+        if (toolKey === 'pytorch') return allText.includes('pytorch') || allText.includes('torch') || allText.includes('machine learning');
+        if (toolKey === 'neo4j') return allText.includes('neo4j') || allText.includes('graph') || allText.includes('cypher');
+        if (toolKey === 'docker') return allText.includes('docker') || allText.includes('container');
+        if (toolKey === 'fastapi') return allText.includes('fastapi') || allText.includes('flask') || allText.includes('api');
+        if (toolKey === 'node') return allText.includes('node') || allText.includes('typescript') || allText.includes('javascript');
+        if (toolKey === 'aws') return allText.includes('aws') || allText.includes('cloud') || allText.includes('terraform');
+        if (toolKey === 'linux') return allText.includes('linux') || allText.includes('bash') || allText.includes('shell') || allText.includes('operating systems');
+        return true;
+      }
+
+      // Filter state
+      let currentCat = 'All';
+      let currentTool = 'all';
+      let searchQuery = '';
+
+      const grid = document.getElementById('projectsGrid');
+      const catBtns = document.querySelectorAll('.cat-tab-btn');
+      const toolBtns = document.querySelectorAll('.tool-chip');
+      const searchInput = document.getElementById('projectSearch');
+      const matchCountSpan = document.getElementById('matchCount');
+
+      function render() {
+        grid.innerHTML = '';
+        const filtered = window.ALL_PROJECTS.filter(p => {
+          const matchCat = (currentCat === 'All' || p.category === currentCat || (currentCat === 'Systems from Scratch' && p.category.includes('System')));
+          const matchT = matchesTool(p, currentTool);
+          const q = searchQuery.toLowerCase();
+          const matchQ = !q || 
+            p.title.toLowerCase().includes(q) || 
+            p.tagline.toLowerCase().includes(q) || 
+            p.overview.toLowerCase().includes(q) || 
+            p.tags.some(t => t.toLowerCase().includes(q)) || 
+            p.stats.toLowerCase().includes(q);
+          return matchCat && matchT && matchQ;
+        });
+
+        matchCountSpan.textContent = filtered.length;
+
+        if (filtered.length === 0) {
+          grid.innerHTML = '<div style="grid-column: 1/-1; padding: 40px; text-align: center; border: 2px dashed var(--border-color); background:var(--bg-card); font-family: monospace;">No projects match your current filter. Try selecting "ALL TOOLS" or clearing keywords.</div>';
+          return;
+        }
+
+        filtered.forEach(p => {
+          const card = document.createElement('div');
+          const styles = getCategoryStyles(p.category);
+          card.className = `project-card-box ${styles.border}`;
+
+          // GitHub link button
+          let repoBtn = '';
+          if (p.links && p.links.startsWith('http')) {
+            repoBtn = `<a href="${p.links}" target="_blank" rel="noreferrer" class="btn-project-secondary">GITHUB ↗</a>`;
+          } else {
+            repoBtn = `<span style="font-family:'IBM Plex Mono',monospace; font-size:0.7rem; padding:6px 10px; background:var(--bg-surface); border:1.5px solid var(--border-color); color:var(--text-muted);">PRIVATE REPO</span>`;
+          }
+
+          // Tech tags with logos
+          const tagsHtml = p.tags.map(t => window.TechIcons ? window.TechIcons.renderTechBadge(t) : `<span class="badge-tag">${t}</span>`).join('');
+
+          card.innerHTML = `
+            <div>
+              <div class="card-meta-row">
+                <span class="cat-badge-pill ${styles.badge}">${p.category.toUpperCase()}</span>
+                <span class="card-slug-label">#${p.slug}</span>
+              </div>
+              <h2 class="project-card-title">${p.title}</h2>
+              <div class="project-card-tagline">"${p.tagline}"</div>
+              <p class="project-card-desc">${p.card || p.overview}</p>
+              
+              <div class="project-stat-pill">
+                ⚡ ${p.stats}
+              </div>
+
+              <div class="project-tags-row">
+                ${tagsHtml}
+              </div>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="project.html?id=${p.slug}" class="btn-project-primary">DEEP DIVE →</a>
+              ${repoBtn}
+            </div>
+          `;
+
+          grid.appendChild(card);
+        });
+      }
+
+      // Category tab click
+      catBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          catBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCat = btn.getAttribute('data-cat');
+          render();
+        });
+      });
+
+      // Tool chip click
+      toolBtns.forEach(chip => {
+        chip.addEventListener('click', () => {
+          toolBtns.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          currentTool = chip.getAttribute('data-tool');
+          render();
+        });
+      });
+
+      // Search input
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim();
+        render();
+      });
+
+      // Initial render
+      render();
+    });
+  </script>
+</body>
+</html>
