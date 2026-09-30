@@ -950,73 +950,108 @@
 
   </main>
 
-  <!-- THE TECHNOLOGY CORRESPONDENT (PRESS BUREAU WIRE DESK) -->
-  <aside class="pokemon-widget" id="pokedexWidget">
-    <div class="pokemon-bar" id="pokedexBar">
-      <span class="pkmn-title">⚡ CORRESPONDENCE BUREAU // WIRE DESK</span>
+  <!-- THE ARCHIVE DETECTIVE (1920s NEWSPAPER INVESTIGATION COLUMN // DETECTIVE PIKACHU) -->
+  <aside class="pokemon-widget detective-widget" id="pokedexWidget">
+    <div class="pokemon-bar detective-bar" id="pokedexBar">
+      <div class="pkmn-title">
+        <span class="detective-badge-icon">🔎</span>
+        <span class="detective-header-title">THE ARCHIVE DETECTIVE</span>
+        <span class="detective-case-tag">CASE No. 001</span>
+      </div>
       <div class="term-btns">
-        <button id="pkmnRagInspectBtn" class="pkmn-control-btn" title="Inspect Live Vector RAG Pipeline">🔍 RAG HUD</button>
+        <button id="pkmnRagInspectBtn" class="pkmn-control-btn" title="Inspect Archival Evidence Pipeline">🔍 EVIDENCE HUD</button>
         <button id="pkmnMinBtn" class="pkmn-control-btn" title="Toggle Minimize">_ MINIMIZE</button>
       </div>
     </div>
-    <div class="pokemon-body" id="pokedexBody">
-      <div class="pokemon-screen">
-        <!-- Pikachu Avatar with Press Pass Badge -->
-        <div class="pokemon-sprite" id="pokemonSprite" title="Technology Correspondent Press Accreditation">
-          <img src="assets/pikachu.png" alt="Pikachu Technology Correspondent" class="pixel-pikachu" id="pikachuImg">
-          <span class="sprite-tap-hint">PRESS PASS ⚡</span>
+    
+    <div class="detective-subhead-rule">
+      <span>INVESTIGATING THE TECHNICAL ARCHIVES · THE ADVAITH DAILY</span>
+    </div>
+
+    <div class="pokemon-body detective-body" id="pokedexBody">
+      <!-- Detective Pikachu Archival Plate Frame -->
+      <div class="detective-plate" id="detectivePlate">
+        <div class="detective-avatar-frame" id="pokemonSprite" title="Tap to consult Chief Investigator Detective Pikachu">
+          <img src="assets/pikachu.png" alt="Detective Pikachu · Chief Archive Investigator" class="detective-img" id="pikachuImg">
+          <span class="detective-fig-caption">FIG. DET-01</span>
         </div>
-        <div class="pokemon-stats">
-          <div class="pkmn-name">TECHNOLOGY CORRESPONDENT</div>
-          <div class="pkmn-meta">ACCREDITED WIRE DESK · AI &amp; ARCHIVES</div>
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--text-muted); margin-top:2px;">STATUS: 39 AUDITED DISPATCHES</div>
+        <div class="detective-meta-box">
+          <div class="detective-dept">SPECIAL INVESTIGATIONS BRANCH</div>
+          <div class="detective-name">DETECTIVE PIKACHU</div>
+          <div class="detective-role">CHIEF ARCHIVE INVESTIGATOR</div>
+          <div class="detective-status">
+            <span class="status-indicator-dot"></span>
+            <span>CASE No. 001 · 39 DOSSIERS INDEXED</span>
+          </div>
         </div>
       </div>
 
-      <!-- Live RAG Inspector HUD -->
+      <!-- Dynamic Investigation Status Ticker -->
+      <div class="investigation-ticker-bar" id="investigationTicker">
+        <span class="ticker-label">STATUS:</span>
+        <span class="ticker-text" id="tickerText">CASE FILE OPENED · STANDBY FOR INQUIRY</span>
+      </div>
+
+      <!-- Live RAG Evidence Inspector HUD -->
       <div class="rag-inspector-panel" id="ragInspectorPanel" style="display: none;">
         <div class="rag-hud-header">
-          <span class="rag-hud-title">⚡ ARCHIVAL RETRIEVAL PIPELINE (LIVE HUD)</span>
-          <span class="rag-hud-badge">52 CHUNKS · 64-DIM</span>
+          <span class="rag-hud-title">🔍 ARCHIVAL EVIDENCE RETRIEVAL (LIVE HUD)</span>
+          <span class="rag-hud-badge">55 CHUNKS · 64-DIM RRF</span>
         </div>
         <div class="rag-hud-metric" id="ragHudMetric">Status: Hybrid Dense + BM25 Subspace Active</div>
         <div class="rag-hud-chunks" id="ragHudChunks">
-          <div style="color:var(--text-muted); font-size:0.68rem;">Inquire with the correspondent to inspect retrieval citations &amp; similarity scores.</div>
+          <div style="color:var(--text-muted); font-size:0.68rem;">Submit a case to inspect archival citations &amp; similarity metrics.</div>
         </div>
       </div>
 
-      <!-- Interactive RAG Chat Log -->
-      <div class="pkmn-chat-log" id="pkmnChatLog" role="log" aria-live="polite">
-        <!-- Initial Welcome Message from Correspondent -->
-        <div class="chat-msg bot-msg">
-          <span class="chat-speaker">⚡ THE CORRESPONDENT:</span>
-          Pika! ⚡ Welcome to The Advaith Daily newsroom! I am your technology correspondent, equipped with hybrid retrieval across Advaith's 39 verified reports, his SMU exchange (3.47 CGPA), clinical audit at Preventvital, and tactical pursuits in chess and football. Ask me anything from the archives!
+      <!-- Interactive Archive Detective Case Log -->
+      <div class="pkmn-chat-log detective-chat-log" id="pkmnChatLog" role="log" aria-live="polite">
+        <!-- Initial Case Opening Welcome Message -->
+        <div class="chat-msg bot-msg detective-msg">
+          <div class="case-header-stamp">
+            <span class="chat-speaker">🔎 THE ARCHIVE DETECTIVE // CASE No. 001</span>
+            <span class="case-stamp-tag">OFFICIAL INQUIRY</span>
+          </div>
+          <div class="findings-body">
+            Pika! 🔎 Detective Pikachu at your service. I investigate Advaith's technical archives and cross-examine evidence across 39 verified repositories, his SMU exchange honors (3.47 CGPA), clinical ML audit at Preventvital, and tactical pursuits in chess and systems engineering.
+            <br><br>
+            Submit an inquiry below or select a case topic to inspect the archival record.
+          </div>
+          <div class="evidence-consulted-box">
+            <span class="evidence-header-label">ARCHIVE JURISDICTION:</span>
+            <div class="archive-topics-hint">
+              <span>• REPOSITORIES (39)</span>
+              <span>• CLINICAL AUDIT</span>
+              <span>• ACADEMIC CREDENTIALS</span>
+              <span>• SYSTEMS &amp; RAG</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Quick Interactive Topic Chips -->
-      <div class="pkmn-quick-chips" id="pkmnQuickChips">
-        <button type="button" class="chip-btn" data-query="What are Advaith's hobbies and sports?">♟️ Chess &amp; Football</button>
-        <button type="button" class="chip-btn" data-query="Tell me about his beatboxing and debate skills!">🎤 Beatbox &amp; Debate</button>
-        <button type="button" class="chip-btn" data-query="What was his academic CGPA at SMU?">🎓 SMU 3.47 CGPA</button>
-        <button type="button" class="chip-btn" data-query="What did he do during the clinical audit at Preventvital?">🔍 Clinical ML Audit</button>
+      <!-- Quick Interactive Case Chips -->
+      <div class="pkmn-quick-chips detective-quick-chips" id="pkmnQuickChips">
+        <button type="button" class="chip-btn" data-query="What projects involve RAG?">📂 RAG Systems</button>
+        <button type="button" class="chip-btn" data-query="What did he audit at Preventvital?">🔍 Preventvital Audit</button>
+        <button type="button" class="chip-btn" data-query="What was his academic CGPA at SMU?">🎓 SMU Honors (3.47)</button>
+        <button type="button" class="chip-btn" data-query="Tell me about the Autonomous Postgres Performance Agent">⚡ Postgres Agent (11.7x)</button>
         <button type="button" class="chip-btn" data-query="Tell me about The Sentinel Grid IBM hackathon">🏆 IBM BOB Top 5</button>
-        <button type="button" class="chip-btn" data-query="Tell me about the Multimodal Document Agent">🚀 Multimodal Doc Agent</button>
-        <button type="button" class="chip-btn" data-query="Is he really scared of ghosts?">👻 Scared of Ghosts?!</button>
-        <button type="button" class="chip-btn" data-query="How do I get in touch with Advaith?">💬 Connect Info</button>
+        <button type="button" class="chip-btn" data-query="What chess opening does Advaith play?">♟️ Sicilian Defense</button>
+        <button type="button" class="chip-btn" data-query="Tell me about his beatboxing and debate skills!">🎤 Beatbox &amp; Debate</button>
+        <button type="button" class="chip-btn" data-query="Is he really scared of ghosts?">👻 Fear of Ghosts?!</button>
       </div>
 
       <!-- Chat Input Form -->
-      <form class="pkmn-input-form" id="pkmnChatForm">
-        <input type="text" id="pkmnChatInput" class="pkmn-chat-input" placeholder="Inquire with the Technology Correspondent..." autocomplete="off">
-        <button type="submit" class="pkmn-send-btn" id="pkmnSendBtn" title="Transmit Inquiry">⚡ SEND</button>
+      <form class="pkmn-input-form detective-input-form" id="pkmnChatForm">
+        <input type="text" id="pkmnChatInput" class="pkmn-chat-input detective-chat-input" placeholder="Submit a case to the Archive Detective..." autocomplete="off">
+        <button type="submit" class="pkmn-send-btn detective-send-btn" id="pkmnSendBtn" title="Investigate Archival Record">🔎 INVESTIGATE</button>
       </form>
 
       <!-- Utility Actions -->
-      <div class="pokemon-actions">
-        <button type="button" id="pkmnChimeBtn" class="pkmn-action-btn" title="Synthesize wire chime">⚡ WIRE CHIME</button>
-        <button type="button" id="pkmnFeedBtn" class="pkmn-action-btn" title="Sync index and citations">📡 WIRE SYNC</button>
-        <button type="button" id="pkmnClearBtn" class="pkmn-action-btn" title="Clear wire dispatch log">🧹 CLEAR WIRE</button>
+      <div class="pokemon-actions detective-actions">
+        <button type="button" id="pkmnChimeBtn" class="pkmn-action-btn" title="Synthesize case evidence chime">⚡ CASE CHIME</button>
+        <button type="button" id="pkmnFeedBtn" class="pkmn-action-btn" title="Sync archival index &amp; citations">📡 ARCHIVE SYNC</button>
+        <button type="button" id="pkmnClearBtn" class="pkmn-action-btn" title="Clear case dossier log">🧹 NEW CASE</button>
       </div>
     </div>
   </aside>

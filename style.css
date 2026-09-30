@@ -1543,13 +1543,16 @@ pre {
 }
 
 /* --------------------------------------------------------------------------
-   THE ADVAITH DAILY — CORRESPONDENCE BUREAU // WIRE DESK
+   THE ADVAITH DAILY — THE ARCHIVE DETECTIVE (CHIEF INVESTIGATOR PIKACHU)
+   1920s Newspaper Technical Archive Detective Column
    -------------------------------------------------------------------------- */
-.pokemon-widget {
+.pokemon-widget,
+.detective-widget {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 360px;
+  width: 380px;
+  max-width: calc(100vw - 32px);
   border: 2px solid var(--border-color);
   background-color: var(--bg-surface);
   box-shadow: none;
@@ -1558,11 +1561,14 @@ pre {
   font-family: 'IBM Plex Mono', monospace;
 }
 
-.pokemon-widget.minimized .pokemon-body {
+.pokemon-widget.minimized .pokemon-body,
+.detective-widget.minimized .detective-body,
+.detective-widget.minimized .detective-subhead-rule {
   display: none;
 }
 
-.pokemon-bar {
+.pokemon-bar,
+.detective-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1581,6 +1587,43 @@ pre {
   display: flex;
   align-items: center;
   gap: 6px;
+  min-width: 0;
+}
+
+.detective-badge-icon {
+  font-size: 0.85rem;
+}
+
+.detective-header-title {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.detective-case-tag {
+  font-size: 0.58rem;
+  background-color: var(--color-oxide);
+  color: #fff;
+  padding: 1px 5px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-left: 2px;
+}
+
+.detective-subhead-rule {
+  background-color: var(--bg-canvas);
+  border-bottom: 1px solid var(--border-color);
+  padding: 3px 10px;
+  text-align: center;
+  font-size: 0.56rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .pkmn-control-btn {
@@ -1590,7 +1633,7 @@ pre {
   font-weight: 800;
   cursor: pointer;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   padding: 2px 6px;
   transition: all 0.1s ease;
 }
@@ -1600,31 +1643,29 @@ pre {
   color: var(--text-main);
 }
 
-.pokemon-body {
-  padding: 12px;
+.pokemon-body,
+.detective-body {
+  padding: 10px;
   background-color: var(--bg-canvas);
 }
 
-.pokemon-screen {
+/* Detective Pikachu Newspaper Engraved Plate */
+.detective-plate {
   border: 1px solid var(--border-color);
   background-color: var(--bg-surface);
   color: var(--text-main);
-  padding: 10px;
+  padding: 8px 10px;
   display: flex;
   gap: 12px;
   align-items: center;
-  margin-bottom: 8px;
-  box-shadow: none;
+  margin-bottom: 6px;
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
 }
 
-[data-theme="dark"] .pokemon-screen {
-  background-color: var(--bg-card);
-  color: var(--text-main);
-}
-
-.pokemon-sprite {
-  width: 58px;
-  height: 58px;
+.detective-avatar-frame {
+  width: 68px;
+  height: 76px;
   cursor: pointer;
   flex-shrink: 0;
   display: flex;
@@ -1633,67 +1674,185 @@ pre {
   justify-content: center;
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
-  padding: 3px;
-  box-shadow: none;
-  overflow: hidden;
+  padding: 4px 2px 2px 2px;
   box-sizing: border-box;
-  transition: transform 0.15s ease;
+  text-align: center;
+  position: relative;
+  transition: border-color 0.15s ease;
 }
 
-.pokemon-sprite:hover {
+.detective-avatar-frame:hover {
+  border-color: var(--color-oxide);
+}
+
+.detective-img {
+  max-width: 100%;
+  max-height: 52px;
+  object-fit: contain;
+  display: block;
+  /* Authentic 1920s newspaper halftone/inkprint treatment: high contrast, slight desaturation, subtle sepia */
+  filter: contrast(120%) grayscale(25%) sepia(12%);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.detective-avatar-frame:hover .detective-img {
+  filter: contrast(125%) grayscale(10%) sepia(8%);
   transform: scale(1.05);
 }
 
-.pixel-pikachu {
-  max-width: 100%;
-  max-height: 42px;
-  object-fit: contain;
-  display: block;
-  filter: contrast(105%) sepia(10%);
-}
-
-.sprite-tap-hint {
-  font-size: 0.5rem;
-  font-weight: 800;
-  color: var(--color-oxide);
-  line-height: 1;
-  margin-top: 2px;
+.detective-fig-caption {
+  font-size: 0.52rem;
   font-family: 'IBM Plex Mono', monospace;
-  white-space: nowrap;
-  letter-spacing: 0.06em;
-}
-
-.pokemon-stats {
-  flex: 1;
-}
-
-.pkmn-name {
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--text-main);
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  margin-top: 2px;
   text-transform: uppercase;
 }
 
-.pkmn-meta {
-  font-size: 0.65rem;
+.detective-meta-box {
+  flex: 1;
+  min-width: 0;
+}
+
+.detective-dept {
+  font-size: 0.56rem;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 700;
   color: var(--color-oxide);
-  margin-top: 2px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1px;
 }
 
-.hp-row {
-  display: none;
+.detective-name {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--text-main);
+  text-transform: uppercase;
+  line-height: 1.15;
 }
 
-.pkmn-chat-log {
+.detective-role {
+  font-size: 0.60rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  margin-top: 1px;
+}
+
+.detective-status {
+  font-size: 0.56rem;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--text-main);
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.status-indicator-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-moss);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Dynamic Investigation Ticker Bar */
+.investigation-ticker-bar {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
-  padding: 10px 12px;
-  height: 190px;
-  overflow-y: auto;
+  padding: 4px 8px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.60rem;
+}
+
+.ticker-label {
+  font-weight: 800;
+  color: var(--color-oxide);
+  letter-spacing: 0.06em;
+}
+
+.ticker-text {
+  color: var(--text-main);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* RAG Live Evidence Inspector HUD */
+.rag-inspector-panel {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 8px 10px;
   margin-bottom: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.rag-hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 4px;
+}
+
+.rag-hud-title {
+  font-size: 0.64rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.06em;
+}
+
+.rag-hud-badge {
+  font-size: 0.55rem;
+  background-color: var(--text-main);
+  color: var(--bg-canvas);
+  padding: 1px 4px;
+  font-weight: 700;
+}
+
+.rag-hud-metric {
+  font-size: 0.62rem;
+  color: var(--color-oxide);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.rag-hud-chunks {
+  font-size: 0.64rem;
+  line-height: 1.4;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+/* Case Log Window */
+.pkmn-chat-log,
+.detective-chat-log {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  height: 200px;
+  overflow-y: auto;
+  margin-bottom: 6px;
   font-family: 'Newsreader', Georgia, serif;
   scrollbar-width: thin;
 }
@@ -1717,39 +1876,200 @@ pre {
   background-color: var(--bg-surface);
   border-left: 3px solid var(--text-main);
   color: var(--text-main);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.case-header-stamp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .chat-speaker {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 800;
-  font-size: 0.68rem;
+  font-size: 0.64rem;
   letter-spacing: 0.08em;
-  margin-bottom: 4px;
   display: block;
   color: var(--color-oxide);
   text-transform: uppercase;
+}
+
+.case-stamp-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.52rem;
+  font-weight: 700;
+  border: 1px solid var(--border-subtle);
+  padding: 1px 4px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.findings-body {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 0.90rem;
+  line-height: 1.55;
+  color: var(--text-main);
+}
+
+.findings-body strong {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.findings-body code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 1px 4px;
+}
+
+/* Evidence Consulted Box */
+.evidence-consulted-box {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border-color);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.evidence-header-label {
+  font-size: 0.60rem;
+  font-weight: 800;
+  color: var(--color-oxide);
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.evidence-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.evidence-list li {
+  font-size: 0.68rem;
+  line-height: 1.45;
+  margin-bottom: 2px;
+}
+
+.evidence-link {
+  color: var(--text-main);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.evidence-link:hover {
+  color: var(--color-oxide);
+}
+
+.evidence-report-action {
+  font-size: 0.60rem;
+  font-weight: 800;
+  color: var(--color-oxide);
+  margin-left: 4px;
+}
+
+.archive-topics-hint {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.60rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Dynamic Investigation Flow Card */
+.investigation-flow-card {
+  background-color: var(--bg-card);
+  border: 1px dashed var(--border-color);
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.64rem;
+}
+
+.inv-stage-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+  color: var(--text-muted);
+}
+
+.inv-stage-indicator:last-child {
+  margin-bottom: 0;
+}
+
+.inv-stage-indicator.active {
+  color: var(--color-oxide);
+  font-weight: 800;
+}
+
+.inv-badge {
+  font-size: 0.52rem;
+  padding: 1px 4px;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-surface);
+  font-weight: 700;
+}
+
+.inv-stage-indicator.active .inv-badge {
+  background-color: var(--color-oxide);
+  color: #fff;
+  border-color: var(--color-oxide);
+}
+
+/* Ghost Scare Animation */
+.chat-msg.ghost-scared {
+  border-left-color: #DC2626;
+  background-color: #FEF2F2;
+}
+
+[data-theme="dark"] .chat-msg.ghost-scared {
+  background-color: #2A1010;
 }
 
 .chat-msg.ghost-scared .chat-speaker {
   color: #DC2626;
 }
 
+.scared-shake {
+  animation: detective-shake 0.5s ease-in-out;
+}
+
+@keyframes detective-shake {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  20% { transform: translateX(-4px) rotate(-6deg); }
+  40% { transform: translateX(4px) rotate(6deg); }
+  60% { transform: translateX(-3px) rotate(-4deg); }
+  80% { transform: translateX(3px) rotate(4deg); }
+}
+
 /* Quick Topic Chips */
-.pkmn-quick-chips {
+.pkmn-quick-chips,
+.detective-quick-chips {
   display: flex;
   gap: 5px;
   overflow-x: auto;
   padding-bottom: 6px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   scrollbar-width: thin;
 }
 
 .chip-btn {
   white-space: nowrap;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.64rem;
+  font-size: 0.62rem;
   font-weight: 700;
   padding: 3px 8px;
   border: 1px solid var(--border-color);
@@ -1768,16 +2088,18 @@ pre {
 }
 
 /* Input Form */
-.pkmn-input-form {
+.pkmn-input-form,
+.detective-input-form {
   display: flex;
   gap: 6px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
-.pkmn-chat-input {
+.pkmn-chat-input,
+.detective-chat-input {
   flex: 1;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   padding: 6px 10px;
   border: 1px solid var(--border-color);
   background-color: var(--bg-surface);
@@ -1786,13 +2108,15 @@ pre {
   box-shadow: none;
 }
 
-.pkmn-chat-input:focus {
+.pkmn-chat-input:focus,
+.detective-chat-input:focus {
   border-color: var(--text-main);
 }
 
-.pkmn-send-btn {
+.pkmn-send-btn,
+.detective-send-btn {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 800;
   padding: 6px 12px;
   border: 1px solid var(--border-color);
@@ -1804,13 +2128,16 @@ pre {
   white-space: nowrap;
 }
 
-.pkmn-send-btn:hover {
-  background-color: transparent;
-  color: var(--text-main);
+.pkmn-send-btn:hover,
+.detective-send-btn:hover {
+  background-color: var(--color-oxide);
+  border-color: var(--color-oxide);
+  color: #fff;
   transform: none;
 }
 
-.pokemon-actions {
+.pokemon-actions,
+.detective-actions {
   display: flex;
   gap: 6px;
 }
@@ -1822,9 +2149,9 @@ pre {
   border: 1px solid var(--border-color);
   box-shadow: none;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.64rem;
+  font-size: 0.60rem;
   font-weight: 700;
-  padding: 5px 3px;
+  padding: 4px 2px;
   cursor: pointer;
   text-align: center;
   transition: all 0.1s ease;

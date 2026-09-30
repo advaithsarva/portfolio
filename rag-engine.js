@@ -5102,7 +5102,7 @@
     if (isGreeting) {
       return {
         isGhost: false,
-        answer: "Pika-pika! ⚡ Hey there! I'm Pikachu, Advaith's AI companion & portfolio guide! I can walk you through his 39 engineering repositories, Graph-RAG architectures, SMU exchange (3.47 CGPA), clinical ML audit at Preventvital, or even his chess tactics and beatboxing! What would you like to explore?",
+        answer: "Pika! 🔎 Detective Pikachu on duty. Welcome to the technical archives of The Advaith Daily. I examine case evidence across Advaith's 39 audited repositories, his SMU exchange (3.47 CGPA), Preventvital clinical audit, and systems code. Submit a case to begin your investigation!",
         retrieval: retrieval,
         citations: [
           {"title": "Engineering Profile & Bio", "url": "index.html#home"},
@@ -5116,7 +5116,7 @@
     if (isIdentity) {
       return {
         isGhost: false,
-        answer: "Pika! ⚡ I'm Pikachu, the AI companion for Advaith Narayana Sarva's portfolio! I'm wired directly into his 55 verified knowledge documents covering his deep learning systems, autonomous agents, and systems code. Ask me anything about what he's built!",
+        answer: "Pika! 🔎 I am Detective Pikachu, Chief Archive Investigator for The Advaith Daily. I investigate the verified technical record of Advaith Narayana Sarva across 39 audited repositories and 55 archival dossiers. Submit a case or technical topic to examine the evidence!",
         retrieval: retrieval,
         citations: [{"title": "About Advaith", "url": "index.html#home"}]
       };
@@ -5127,13 +5127,13 @@
     if (isHelp) {
       return {
         isGhost: false,
-        answer: "Pika! ⚡ Here are some great questions to try asking me:<br><br>" +
+        answer: "Pika! 🔎 As Chief Archive Investigator, I can examine any aspect of Advaith's technical record. Recommended case inquiries:<br><br>" +
           "• 🏆 <strong>Hackathons:</strong> <em>'Tell me about The Sentinel Grid at IBM BOB'</em><br>" +
-          "• 🔍 <strong>Clinical Audit:</strong> <em>'What did Advaith do at Preventvital?'</em><br>" +
-          "• ⚡ <strong>Projects:</strong> <em>'Tell me about Graph-RAG'</em> or <em>'What is SuperBrain MCP?'</em><br>" +
+          "• 🔍 <strong>Clinical Audit:</strong> <em>'What did Advaith audit at Preventvital?'</em><br>" +
+          "• ⚡ <strong>Systems:</strong> <em>'Tell me about the Postgres Performance Agent'</em> or <em>'Graph-RAG'</em><br>" +
           "• 🎓 <strong>Education:</strong> <em>'What was his CGPA at Saint Martin\'s University?'</em><br>" +
-          "• ♟️ <strong>Hobbies:</strong> <em>'What chess opening does he play?'</em> or <em>'Can he beatbox?'</em><br>" +
-          "• 👻 <strong>Easter Egg:</strong> <em>'Is he afraid of ghosts?!'</em>",
+          "• ♟️ <strong>Tactics & Pursuits:</strong> <em>'What chess opening does he play?'</em> or <em>'Can he beatbox?'</em><br>" +
+          "• 👻 <strong>Unresolved Mystery:</strong> <em>'Is he afraid of ghosts?!'</em>",
         retrieval: retrieval,
         citations: [{"title": "Projects Catalog", "url": "projects.html"}]
       };
@@ -5144,7 +5144,7 @@
     if (isHowAreYou) {
       return {
         isGhost: false,
-        answer: "Pika-chuuu! ⚡ My electrical cheeks are fully charged with 64-dimensional embeddings and ready to roll! How can I help you navigate Advaith's portfolio today?",
+        answer: "Pika! 🔎 Case logs are sharp and evidence indexes are calibrated across 39 verified repositories. Ready to investigate your case.",
         retrieval: retrieval,
         citations: []
       };
@@ -5155,7 +5155,7 @@
     if (isThanks) {
       return {
         isGhost: false,
-        answer: "Pika! ⚡ You're very welcome! Let me know if you want to explore more projects, see his resume, or get in touch with Advaith!",
+        answer: "Pika! 🔎 Case filed. Glad to help clarify the technical record. Let me know if you wish to inspect further evidence or review his credentials!",
         retrieval: retrieval,
         citations: [{"title": "View Resume", "url": "resume.html"}]
       };
@@ -5166,7 +5166,7 @@
     if (isBye) {
       return {
         isGhost: false,
-        answer: "Pika-pi! ⚡ Thanks for stopping by Advaith's portfolio! Feel free to reach out to him directly at advaithsarva@gmail.com anytime. Have an awesome day!",
+        answer: "Pika! 🔎 Case adjourned. Thank you for examining The Advaith Daily archives. Correspondence can be dispatched directly to advaithsarva@gmail.com anytime.",
         retrieval: retrieval,
         citations: [{"title": "Contact Advaith", "url": "mailto:advaithsarva@gmail.com"}]
       };
@@ -5177,7 +5177,7 @@
     if (isWhoIsAdvaith) {
       return {
         isGhost: false,
-        answer: "Pika! ⚡ Advaith Narayana Sarva is an AI & Systems Engineer specializing in interpretable Graph-RAG knowledge systems, autonomous multi-agent harnesses, and low-level PyTorch tensor primitives. He completed an academic exchange at Saint Martin's University (3.47 CGPA, Dean's List), holds an 8.69 CGPA at Woxsen University, audited clinical ML at Preventvital, and placed Top 5 in the IBM BOB National Hackathon with The Sentinel Grid!",
+        answer: "Pika! 🔎 Advaith Narayana Sarva is an AI & Systems Engineer specializing in interpretable Graph-RAG architectures, autonomous multi-agent harnesses, and low-level PyTorch tensor primitives. Archive records confirm an international exchange at Saint Martin's University (3.47 CGPA, Dean's List), an 8.69 CGPA at Woxsen University, a clinical ML audit at Preventvital (ASCVD risk fix), and Top 5 in the IBM BOB National Hackathon with The Sentinel Grid (0.9924 ROC-AUC).",
         retrieval: retrieval,
         citations: [
           {"title": "Profile Summary", "url": "index.html#home"},
@@ -5189,7 +5189,7 @@
     if (!top || top.length === 0 || top[0].rrfScore < 0.01) {
       return {
         isGhost: false,
-        answer: "Pikachu! ⚡ Advaith is an AI & Systems Engineer with 39 verified repositories covering Graph-RAG, autonomous agents, and systems from scratch. What project or skill would you like to explore?",
+        answer: "Pika! 🔎 Advaith is an AI & Systems Engineer with 39 verified repositories covering Graph-RAG, autonomous agents, and systems from scratch. What project or case file would you like to examine?",
         retrieval: retrieval,
         citations: []
       };
@@ -5201,21 +5201,21 @@
 
     // Exact answers
     if (qLower.includes('roc') || qLower.includes('sentinel') || qLower.includes('bob')) {
-      text = "In the IBM BOB National Hackathon 2026, Advaith led engineering for <strong>The Sentinel Grid</strong>, placing <strong>Top 5 in the South Zone</strong>! The disaster-intelligence system comprises 6,957 lines of Python, 314 automated checks, and achieved a verified <strong>ROC-AUC of 0.9924</strong> on 473,000 soil moisture observations in Coimbatore. Pika!";
+      text = "In the IBM BOB National Hackathon 2026, Advaith led engineering for <strong>The Sentinel Grid</strong>, placing <strong>Top 5 in the South Zone</strong>! The disaster-intelligence system comprises 6,957 lines of Python, 314 automated checks, and achieved a verified <strong>ROC-AUC of 0.9924</strong> on 473,000 soil moisture observations in Coimbatore. Case verified. Pika!";
     } else if (qLower.includes('postgres') || qLower.includes('speedup') || qLower.includes('slow query')) {
-      text = "The <strong>Autonomous Postgres Performance Agent</strong> diagnoses live query bottlenecks via EXPLAIN ANALYZE, formulates index hypotheses, and executes migrations with an automated rollback guard. It achieved an <strong>11.7x query speedup</strong> on real database workloads. Pika pika!";
+      text = "The <strong>Autonomous Postgres Performance Agent</strong> diagnoses live query bottlenecks via EXPLAIN ANALYZE, formulates index hypotheses, and executes migrations with an automated rollback guard. It achieved an <strong>11.7x query speedup</strong> on real database workloads. Case verified. Pika!";
     } else if (qLower.includes('smu') || (qLower.includes('saint') && qLower.includes('martin')) || qLower.includes('3.47')) {
-      text = "Pika! Advaith completed his international exchange at <strong>Saint Martin's University</strong> in Lacey, WA (completed May 2026 across two semesters) in BS CS (AI & ML), graduating with a <strong>3.47 / 4.0 CGPA</strong> and Dean's List honors!";
+      text = "Pika! Advaith completed his international exchange at <strong>Saint Martin's University</strong> in Lacey, WA (completed May 2026 across two semesters) in BS CS (AI & ML), graduating with a <strong>3.47 / 4.0 CGPA</strong> and Dean's List honors! Case verified.";
     } else if (qLower.includes('woxsen') || qLower.includes('8.69')) {
-      text = "Advaith is pursuing his B.Tech in CSE (AI & ML) at <strong>Woxsen University</strong> (Hyderabad, India) with an <strong>8.69 / 10.0 CGPA</strong>, expected graduation August 2027. Pika!";
+      text = "Advaith is pursuing his B.Tech in CSE (AI & ML) at <strong>Woxsen University</strong> (Hyderabad, India) with an <strong>8.69 / 10.0 CGPA</strong>, expected graduation August 2027. Case verified. Pika!";
     } else if (qLower.includes('preventvital') || qLower.includes('clinical') || qLower.includes('ascvd') || qLower.includes('goff')) {
-      text = "At Preventvital (GruentzigAI), Advaith caught a critical coefficient sign inversion in the ASCVD clinical risk calculation that was artificially calculating 0.1% baseline risk for untreated patients (expected 2.1% from Goff 2014 trial baseline). He authored the formal bug report and authored RAG & safety rules adhering to ICMR 2023 guidelines on an 'engine computes, LLM explains, clinician signs' protocol. Pika!";
+      text = "At Preventvital (GruentzigAI), Advaith caught a critical coefficient sign inversion in the ASCVD clinical risk calculation that was artificially calculating 0.1% baseline risk for untreated patients (expected 2.1% from Goff 2014 trial baseline). He authored the formal bug report and authored RAG & safety rules adhering to ICMR 2023 guidelines on an 'engine computes, LLM explains, clinician signs' protocol. Case verified. Pika!";
     } else if (qLower.includes('media nlp') || qLower.includes('rhetoric') || qLower.includes('fallacy') || qLower.includes('0.175')) {
-      text = "The <strong>Media NLP Pipeline</strong> is a deterministic rhetoric analysis engine featuring 23 informal fallacy detectors with character-level verbatim evidence spans, achieving a false positive rate of <strong>0.175 per 1,000 words</strong> evaluated on Wikipedia neutral ground truth with 164 automated tests. Pika!";
+      text = "The <strong>Media NLP Pipeline</strong> is a deterministic rhetoric analysis engine featuring 23 informal fallacy detectors with character-level verbatim evidence spans, achieving a false positive rate of <strong>0.175 per 1,000 words</strong> evaluated on Wikipedia neutral ground truth with 164 automated tests. Case verified. Pika!";
     } else if (qLower.includes('mcp') || qLower.includes('superbrain')) {
-      text = "<strong>SuperBrain MCP</strong> is a Model Context Protocol server featuring <strong>41 specialized tools</strong> across 8 domains, providing persistent cross-session vector memory and sub-2ms protocol overhead. Pika pika!";
+      text = "<strong>SuperBrain MCP</strong> is a Model Context Protocol server featuring <strong>41 specialized tools</strong> across 8 domains, providing persistent cross-session vector memory and sub-2ms protocol overhead. Case verified. Pika!";
     } else if (qLower.includes('transformer') && qLower.includes('scratch')) {
-      text = "Advaith built a <strong>Decoder-Only Transformer</strong> from scratch in PyTorch primitives, implementing multi-head self-attention, rotary positional embeddings (RoPE), KV-cache for generation, and LayerNorm directly without high-level wrappers. Pika!";
+      text = "Advaith built a <strong>Decoder-Only Transformer</strong> from scratch in PyTorch primitives, implementing multi-head self-attention, rotary positional embeddings (RoPE), KV-cache for generation, and LayerNorm directly without high-level wrappers. Case verified. Pika!";
     } else if (best.slug) {
       text = `Pika! <strong>${best.name}</strong> (${best.category}):<br>${best.content}<br><em>Key Verified Metrics:</em> <code>${best.stats || 'Audited repository'}</code>.`;
       if (top[1] && (qLower.includes('both') || qLower.includes('which projects') || qLower.includes('and'))) {
@@ -5223,15 +5223,16 @@
         text += `<br><br>Additionally, <strong>${b2.name}</strong>:<br>${b2.content}`;
       }
     } else {
-      text = `⚡ Pika! Based on verified portfolio knowledge:<br>${best.content}`;
+      text = `Pika! Based on verified archival evidence:<br>${best.content}`;
     }
 
-    // Append Clickable Sources (Section 12)
+    // Append Clickable Sources in structured format
     if (sources.length > 0) {
-      text += `<br><br><span style="font-size:0.75rem; color:var(--text-muted); font-weight:700;">SOURCES:</span><br>`;
+      text += `<div class="evidence-consulted-box"><span class="evidence-header-label">EVIDENCE CONSULTED:</span><ul class="evidence-list">`;
       sources.forEach(s => {
-        text += `• <a href="${s.url}" class="text-blue" style="font-weight:700; text-decoration:underline;">${s.title}</a><br>`;
+        text += `<li>• <a href="${s.url}" class="evidence-link">${s.title}</a> <span class="evidence-report-action">[READ REPORT →]</span></li>`;
       });
+      text += `</ul></div>`;
     }
 
     return {

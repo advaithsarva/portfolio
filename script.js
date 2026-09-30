@@ -435,8 +435,8 @@ function initTerminal() {
   beatbox       - Play 8-bit live beatbox synth & soundwave
   ghost / spook - ⚠️ Test Advaith & Pikachu's greatest fear!
   matrix        - Stream digital cyber cascade
-  pokedex       - Pikachu AI companion stats
-  rag <query>   - Query Pikachu's RAG knowledge engine directly in CLI!
+  detective     - The Archive Detective (Detective Pikachu) dossier
+  rag <query>   - Query Detective Pikachu's RAG knowledge engine directly in CLI!
   quote         - Random engineering maxim
   clear         - Clear the screen
   theme         - Toggle light / dark mode
@@ -524,15 +524,29 @@ Challenge Advaith to a match:
 • Chess.com / Lichess: @advaithsarva
 • Email: advaithsarva@gmail.com (Open for 3+2 blitz or 10m rapid!)`,
 
-    pokedex: `POKEDEX ENTRY #025: PIKACHU
-Type   : Electric / RAG Companion | Level: 50 | Ability: Lightning Rod
-Status : "Advaith's AI partner! Knows all about his GenAI systems, chess tactics,
-football games, beatbox patterns, global news, and why he screams at ghosts! 👻"`,
+    detective: `THE ARCHIVE DETECTIVE // CASE No. 001
+Character: Detective Pikachu · Chief Archive Investigator
+Department: Special Investigations Branch · The Advaith Daily
+Jurisdiction: 39 Verified Engineering Repositories & Academic Archives
+Grounded Evidence:
+  • SMU International Exchange (3.47 / 4.0 CGPA, Dean's List)
+  • Woxsen University B.Tech AI/ML (8.69 / 10.0 CGPA)
+  • Preventvital Clinical Audit (ASCVD Risk Fix, ICMR 2023 Rules)
+  • IBM BOB South Zone Top 5 (The Sentinel Grid, 0.9924 ROC-AUC)
+  • Autonomous Postgres Performance Agent (11.7x Speedup)
+Status: Active. Type 'rag <query>' or inquire via the bottom-right Archive Detective!`,
 
-    pikachu: `POKEDEX ENTRY #025: PIKACHU
-Type   : Electric / RAG Companion | Level: 50 | Ability: Lightning Rod
-Status : "Advaith's AI partner! Knows all about his GenAI systems, chess tactics,
-football games, beatbox patterns, global news, and why he screams at ghosts! 👻"`,
+    pokedex: `THE ARCHIVE DETECTIVE // CASE No. 001
+Character: Detective Pikachu · Chief Archive Investigator
+Department: Special Investigations Branch · The Advaith Daily
+Audit Record: 39 Repositories · 55 Chunks · Hybrid Dense & Sparse RRF
+Status: Active. Type 'rag <query>' or use the Archive Detective console!`,
+
+    pikachu: `THE ARCHIVE DETECTIVE // CASE No. 001
+Character: Detective Pikachu · Chief Archive Investigator
+Department: Special Investigations Branch · The Advaith Daily
+Audit Record: 39 Repositories · 55 Chunks · Hybrid Dense & Sparse RRF
+Status: Active. Type 'rag <query>' or use the Archive Detective console!`,
 
     ls: `total 48
 -rw-r--r-- 1 advaith staff  3.4K  resume.md
@@ -676,8 +690,8 @@ FAVORITE_OPENING="1. e4 c5 (Sicilian Defense)"`
         lines.forEach(l => l.remove());
       } else if (cmd === 'archive' || cmd === 'archives' || cmd === 'reports') {
         appendOutput(staticResponses.projects);
-      } else if (cmd === 'correspondent') {
-        appendOutput(staticResponses.pokedex);
+      } else if (cmd === 'correspondent' || cmd === 'detective' || cmd === 'case' || cmd === 'pokedex' || cmd === 'pikachu') {
+        appendOutput(staticResponses.detective);
       } else if (cmd === 'credentials' || cmd === 'academics') {
         appendOutput(virtualFiles['academics.txt']);
       } else if (cmd === 'theme') {
@@ -804,7 +818,7 @@ Drop an email to jam or challenge him to a freestyle beat!"`;
 }
 
 /* --------------------------------------------------------------------------
-   7. Retro 8-bit Cyber-Pikachu RAG Chatbot (PIKACHU.EXE)
+   7. The Archive Detective (Detective Pikachu) Technical Archive RAG System
    -------------------------------------------------------------------------- */
 function initPokemonCompanion() {
   const sprite = document.getElementById('pokemonSprite');
@@ -818,61 +832,159 @@ function initPokemonCompanion() {
   const chimeBtn = document.getElementById('pkmnChimeBtn');
   const feedBtn = document.getElementById('pkmnFeedBtn');
   const clearBtn = document.getElementById('pkmnClearBtn');
+  const tickerText = document.getElementById('tickerText');
 
   if (!chatLog) return;
 
+  // Contextual memory tracking for multi-turn queries
+  let lastInvestigatedSubject = null;
+
+  function setTicker(text) {
+    if (tickerText) tickerText.textContent = text;
+  }
+
+  // Escape HTML helper
+  function escapeHtml(str) {
+    return str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
   // Append message to chat log
-  function appendChat(speaker, text, isUser = false, isGhost = false) {
+  function appendChat(speaker, text, isUser = false, isGhost = false, citations = null) {
     const msg = document.createElement('div');
     msg.className = `chat-msg ${isUser ? 'user-msg' : 'bot-msg'}${isGhost ? ' ghost-scared' : ''}`;
 
-    const label = document.createElement('span');
-    label.className = 'chat-speaker';
-    label.textContent = speaker;
-    msg.appendChild(label);
+    if (isUser) {
+      msg.innerHTML = `
+        <span class="chat-speaker">${speaker}</span>
+        <div class="user-query-text">${escapeHtml(text)}</div>
+      `;
+    } else {
+      let citationsHtml = '';
+      // If text doesn't already contain evidence block and citations exist
+      if (!text.includes('evidence-consulted-box') && citations && citations.length > 0) {
+        citationsHtml = `
+          <div class="evidence-consulted-box">
+            <span class="evidence-header-label">EVIDENCE CONSULTED:</span>
+            <ul class="evidence-list">
+              ${citations.map(c => `<li>• <a href="${c.url}" class="evidence-link">${c.title}</a> <span class="evidence-report-action">[READ REPORT →]</span></li>`).join('')}
+            </ul>
+          </div>
+        `;
+      }
 
-    const body = document.createElement('span');
-    body.innerHTML = text;
-    msg.appendChild(body);
+      msg.innerHTML = `
+        <div class="case-header-stamp">
+          <span class="chat-speaker">${speaker}</span>
+          <span class="case-stamp-tag">${isGhost ? 'SPECTRAL ANOMALY' : 'VERIFIED ARCHIVAL EVIDENCE'}</span>
+        </div>
+        <div class="findings-body">${text}</div>
+        ${citationsHtml}
+      `;
+    }
 
     chatLog.appendChild(msg);
     chatLog.scrollTop = chatLog.scrollHeight;
   }
 
-  // Handle Query Submission (Asynchronous with serverless / local fallback)
+  // Handle Query Submission with 3-Stage Investigation Pipeline
   async function handleQuery(queryText) {
     if (!queryText || !queryText.trim()) return;
     const cleanQuery = queryText.trim();
 
-    // 1. Add User Message
-    appendChat('YOU:', cleanQuery, true, false);
+    // Contextual pronoun / follow-up resolution (e.g. "what was its speedup?")
+    let queryToSearch = cleanQuery;
+    const isFollowUp = (
+      /\b(it|its|that|this|the project|the system|the agent|speedup|roc|auc|precision|recall)\b/i.test(cleanQuery) ||
+      (/^\b(what|how|why|tell me more|details|metrics|results|link|repo|code)\b/i.test(cleanQuery) && cleanQuery.split(/\s+/).length <= 6)
+    );
+    if (isFollowUp && lastInvestigatedSubject) {
+      queryToSearch = `${lastInvestigatedSubject} ${cleanQuery}`;
+    }
 
-    // 2. Play Spark
+    // 1. Add User Case Inquiry
+    appendChat('📁 CASE INQUIRY SUBMITTED:', cleanQuery, true, false);
+
+    // 2. Play subtle spark chime
     playPikachuSound('spark');
 
-    // 3. Retrieve Answer via Pikachu RAG (Asynchronous or Local Sync)
+    // 3. Stage 1: Case File Opened
+    setTicker('STAGE 1: CASE FILE OPENED · INVESTIGATING...');
+
+    // Temporary investigation progress stepper
+    const stepper = document.createElement('div');
+    stepper.className = 'investigation-flow-card';
+    stepper.innerHTML = `
+      <div class="inv-stage-indicator active" id="invStage1"><span class="inv-badge">STAGE 1</span> CASE FILE OPENED</div>
+      <div class="inv-stage-indicator" id="invStage2"><span class="inv-badge">STAGE 2</span> SEARCHING THE ARCHIVES...</div>
+      <div class="inv-stage-indicator" id="invStage3"><span class="inv-badge">STAGE 3</span> EVIDENCE FOUND</div>
+    `;
+    chatLog.appendChild(stepper);
+    chatLog.scrollTop = chatLog.scrollHeight;
+
+    // Transition to Stage 2 after 100ms
+    setTimeout(() => {
+      setTicker('STAGE 2: SEARCHING THE ARCHIVES... 39 REPOSITORIES');
+      const s2 = stepper.querySelector('#invStage2');
+      if (s2) s2.classList.add('active');
+    }, 100);
+
+    // Execute async RAG query with fallback
+    let responseData = null;
+    let isGhost = false;
+
     if (window.AdvaithRAG && typeof window.AdvaithRAG.queryAsync === 'function') {
       try {
-        const resp = await window.AdvaithRAG.queryAsync(cleanQuery);
-        if (resp.isGhost) {
-          playPikachuSound('ghost');
-          if (sprite) {
-            sprite.classList.add('scared-shake');
-            setTimeout(() => sprite.classList.remove('scared-shake'), 600);
-          }
-        }
-        updateRagHud(resp);
-        appendChat('⚡ THE CORRESPONDENT:', resp.answer, false, resp.isGhost);
-        return;
+        responseData = await window.AdvaithRAG.queryAsync(queryToSearch);
       } catch (err) {
         console.warn('Async query failed, utilizing local sync fallback:', err);
       }
     }
 
+    if (!responseData) {
+      responseData = queryPikachuRAG(queryToSearch);
+      responseData.answer = responseData.text;
+    }
+
+    // Track active project subject for subsequent multi-turn queries
+    if (responseData.retrieval && responseData.retrieval.topChunks && responseData.retrieval.topChunks[0]) {
+      const topChunk = responseData.retrieval.topChunks[0].chunk;
+      if (topChunk && (topChunk.type === 'project' || topChunk.slug)) {
+        lastInvestigatedSubject = topChunk.name;
+      }
+    }
+
+    isGhost = responseData.isGhost || false;
+
+    // Stage 3: Evidence Found
     setTimeout(() => {
-      const resp = queryPikachuRAG(cleanQuery);
-      appendChat('⚡ THE CORRESPONDENT:', resp.text, false, resp.isGhost);
-    }, 150);
+      setTicker('STAGE 3: EVIDENCE FOUND · COMPILING FINDINGS');
+      const s3 = stepper.querySelector('#invStage3');
+      if (s3) s3.classList.add('active');
+    }, 180);
+
+    // Render Final Detective Case Findings
+    setTimeout(() => {
+      if (stepper && stepper.parentNode) {
+        stepper.parentNode.removeChild(stepper);
+      }
+
+      if (isGhost) {
+        playPikachuSound('ghost');
+        if (sprite) {
+          sprite.classList.add('scared-shake');
+          setTimeout(() => sprite.classList.remove('scared-shake'), 600);
+        }
+      }
+
+      updateRagHud(responseData);
+      appendChat('🔎 THE ARCHIVE DETECTIVE // CASE FINDINGS:', responseData.answer, false, isGhost, responseData.citations);
+      setTicker('EVIDENCE RETRIEVED · CASE No. 001');
+    }, 280);
   }
 
   // Event Listeners: Quick Topic Chips
@@ -893,39 +1005,52 @@ function initPokemonCompanion() {
     });
   }
 
-  // Event Listener: Sprite Click (Electro Spark)
+  // Event Listener: Detective Avatar Tap
   if (sprite) {
     sprite.addEventListener('click', () => {
       playPikachuSound('spark');
-      sprite.style.transform = 'scale(1.15) rotate(4deg)';
+      sprite.style.transform = 'scale(1.1) rotate(3deg)';
       setTimeout(() => sprite.style.transform = 'scale(1) rotate(0deg)', 180);
-      appendChat('⚡ THE CORRESPONDENT:', "Pika-CHUUU! ⚡ Press pass accredited! The Technology Desk is ready to answer any inquiry across Advaith's 39 verified reports!", false, false);
+      appendChat(
+        '🔎 DETECTIVE PIKACHU // ARCHIVE DISPATCH:',
+        "Pika! 🔎 Case file active! I am cross-examining Advaith's 39 verified repositories and technical dossiers. Submit any case or inquiry to examine the evidence!",
+        false,
+        false
+      );
     });
   }
 
-  // Event Listener: Wire Chime Button
+  // Event Listener: Case Chime Button
   if (chimeBtn) {
     chimeBtn.addEventListener('click', () => {
       playPikachuSound('spark');
-      appendChat('⚡ THE CORRESPONDENT:', "Pika-pi! ⚡ Transmitting wire electro chime from the correspondence bureau!", false, false);
+      appendChat('🔎 DETECTIVE PIKACHU // CASE CHIME:', "Pika-pi! ⚡ Case evidence transmission chime verified.", false, false);
     });
   }
 
-  // Event Listener: Wire Sync Button
+  // Event Listener: Archive Sync Button
   if (feedBtn) {
     feedBtn.addEventListener('click', () => {
       playPikachuSound('levelup');
-      appendChat('⚡ THE CORRESPONDENT:', "Wire sync confirmed! ⚡ Subspace vector index re-verified across 39 audited repositories and 52 archival documents.", false, false);
+      appendChat('🔎 DETECTIVE PIKACHU // ARCHIVE SYNC:', "Archive sync complete! ⚡ Verified 55 knowledge chunks and 39 audited repositories across hybrid RRF subspace.", false, false);
+      setTicker('ARCHIVE SYNC CONFIRMED · 39 REPOSITORIES');
     });
   }
 
-  // Event Listener: Clear Button
+  // Event Listener: Clear Button / New Case
   if (clearBtn) {
     clearBtn.addEventListener('click', () => {
+      lastInvestigatedSubject = null;
+      setTicker('CASE FILE OPENED · STANDBY FOR INQUIRY');
       chatLog.innerHTML = `
-        <div class="chat-msg bot-msg">
-          <span class="chat-speaker">⚡ PIKACHU:</span>
-          Pika-pika! ⚡ Chat log cleared! Ask me anything about Advaith—chess, football, beatboxing, geopolitics, GenAI, or his fear of ghosts! 👻
+        <div class="chat-msg bot-msg detective-msg">
+          <div class="case-header-stamp">
+            <span class="chat-speaker">🔎 THE ARCHIVE DETECTIVE // CASE No. 001</span>
+            <span class="case-stamp-tag">NEW CASE FILE</span>
+          </div>
+          <div class="findings-body">
+            Pika! 🔎 Case dossier cleared. Ready for your next investigation. What technical record or project shall we examine?
+          </div>
         </div>
       `;
     });
@@ -948,7 +1073,7 @@ function initPokemonCompanion() {
       e.stopPropagation();
       const isHidden = ragHudPanel.style.display === 'none';
       ragHudPanel.style.display = isHidden ? 'block' : 'none';
-      ragInspectBtn.textContent = isHidden ? '✖ CLOSE HUD' : '🔍 RAG HUD';
+      ragInspectBtn.textContent = isHidden ? '✖ CLOSE HUD' : '🔍 EVIDENCE HUD';
     });
   }
 
