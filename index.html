@@ -19,6 +19,13 @@
   <link rel="icon" type="image/svg+xml" href="assets/feather-mark.svg">
   <link rel="alternate icon" href="assets/favicon.ico">
 
+  <!-- Broadsheet Style Sheet per design_skill_expanded.md -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Broadsheet Typography: Playfair Display, Newsreader & IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet">
 
   <!-- Three.js for 3D Brain Visualizer -->
   <script type="importmap">
@@ -111,6 +118,10 @@
           <span class="news-nav-sep">|</span>
           <a href="index.html#frontDetectiveSection" class="news-nav-link nav-tab">ARCHIVE DETECTIVE</a>
           <span class="news-nav-sep">|</span>
+          <a href="index.html#technicalIndex" class="news-nav-link nav-tab">TECHNICAL INDEX</a>
+          <span class="news-nav-sep">|</span>
+          <a href="index.html#terminalSection" class="news-nav-link nav-tab">ENGINEERING TERMINAL</a>
+          <span class="news-nav-sep">|</span>
           <a href="resume.html" class="news-nav-link nav-tab">CAREER RECORD</a>
           <span class="news-nav-sep">|</span>
           <a href="mailto:advaithsarva@gmail.com" class="news-nav-link nav-tab">CORRESPONDENCE</a>
@@ -160,10 +171,9 @@
           </div>
         </article>
 
-        <!-- Box 2: Recognition & Portrait (Lincoln Woodcut equivalent) -->
+        <!-- Box 2: Recognition & Portrait -->
         <article class="broadsheet-box lead-recognition-box">
           <div class="box-kicker">NATIONAL RECOGNITION // VERIFIED RECORD</div>
-          <div class="woodcut-caption">ADVAITH NARAYANA SARVA · RECORD OF SERVICE</div>
           <h3 class="box-subhead-bold">IBM BOB NATIONAL HACKATHON 2026</h3>
           <div class="box-highlight-banner">TOP 5 SOUTH ZONE // ROC-AUC: 0.9924</div>
           <p class="newspaper-body">
@@ -279,6 +289,7 @@
             <!-- Left: Detective Pikachu Engraving -->
             <div class="detective-plate-col">
               <div class="detective-avatar-frame" id="pokemonSpriteFront" title="Consult Chief Investigator Detective Pikachu">
+                <img src="assets/pikachu.png" alt="Detective Pikachu" class="detective-avatar-img">
                 <span class="detective-fig-caption">FIG. DET-01 · CHIEF INVESTIGATOR</span>
               </div>
               <div class="detective-creds-caption">
@@ -423,7 +434,101 @@
 
       </aside>
 
-    </div>
+    </div> <!-- /.broadsheet-front-spread -->
+
+    <!-- =========================================================================
+         DEPARTMENT OF TECHNICAL RECORDS: TECHNICAL INDEX
+         Classification of capabilities, tools, and systems (§10)
+         ========================================================================= -->
+    <section class="technical-index-section" id="technicalIndex">
+      <div class="tech-index-header">
+        <h2 class="tech-index-title">TECHNICAL INDEX // REGISTER OF CAPABILITIES</h2>
+        <span class="tech-index-tag">CLASSIFICATION RECORD · 39 VERIFIED REPOSITORIES</span>
+      </div>
+      <div class="tech-index-grid">
+        <!-- Col 1: Languages -->
+        <div class="tech-index-col">
+          <h3 class="tech-col-title">LANGUAGES &amp; RUNTIMES</h3>
+          <ul class="tech-index-list">
+            <li class="tech-index-item"><span class="tech-item-name">Python</span><span class="tech-item-dots"></span><span class="tech-item-desc">Async, CFFI, CUDA</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">TypeScript</span><span class="tech-item-dots"></span><span class="tech-item-desc">Node.js, MCP</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">SQL</span><span class="tech-index-dots"></span><span class="tech-item-desc">PostgreSQL, Indexing</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">C++</span><span class="tech-item-dots"></span><span class="tech-item-desc">Systems &amp; Kernels</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">HTML &amp; CSS</span><span class="tech-item-dots"></span><span class="tech-item-desc">Broadsheet Layout</span></li>
+          </ul>
+        </div>
+        <!-- Col 2: AI & ML -->
+        <div class="tech-index-col">
+          <h3 class="tech-col-title">AI • DEEP LEARNING • NLP</h3>
+          <ul class="tech-index-list">
+            <li class="tech-index-item"><span class="tech-item-name">PyTorch</span><span class="tech-item-dots"></span><span class="tech-item-desc">Tensors from Scratch</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">Transformers</span><span class="tech-item-dots"></span><span class="tech-item-desc">Causal Self-Attention</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">NLI Stance</span><span class="tech-item-dots"></span><span class="tech-item-desc">Cross-Encoder Logic</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">spaCy &amp; NLTK</span><span class="tech-item-dots"></span><span class="tech-item-desc">23 Bias Detectors</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">Hugging Face</span><span class="tech-item-dots"></span><span class="tech-item-desc">Model Hub &amp; Datasets</span></li>
+          </ul>
+        </div>
+        <!-- Col 3: Retrieval & RAG -->
+        <div class="tech-index-col">
+          <h3 class="tech-col-title">RETRIEVAL &amp; KNOWLEDGE</h3>
+          <ul class="tech-index-list">
+            <li class="tech-index-item"><span class="tech-item-name">Graph-RAG</span><span class="tech-item-dots"></span><span class="tech-item-desc">Multi-Hop Traversal</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">Neo4j</span><span class="tech-item-dots"></span><span class="tech-item-desc">Cypher Topological</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">HNSW Vectors</span><span class="tech-item-dots"></span><span class="tech-item-desc">Dense Cosine Similarity</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">BM25 Search</span><span class="tech-item-dots"></span><span class="tech-item-desc">Sparse Lexical Tokens</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">RRF Fusion</span><span class="tech-item-dots"></span><span class="tech-item-desc">Reciprocal Rank Mix</span></li>
+          </ul>
+        </div>
+        <!-- Col 4: Systems & Agents -->
+        <div class="tech-index-col">
+          <h3 class="tech-col-title">SYSTEMS &amp; AGENT SWARMS</h3>
+          <ul class="tech-index-list">
+            <li class="tech-index-item"><span class="tech-item-name">MCP Protocol</span><span class="tech-item-dots"></span><span class="tech-item-desc">41 Tools / 8 Domains</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">Autonomous Tuner</span><span class="tech-item-dots"></span><span class="tech-item-desc">11.7x Query Speedup</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">FastAPI</span><span class="tech-item-dots"></span><span class="tech-item-desc">Async REST Interfaces</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">Docker</span><span class="tech-item-dots"></span><span class="tech-item-desc">Isolated Test Beds</span></li>
+            <li class="tech-index-item"><span class="tech-item-name">Automated Tests</span><span class="tech-item-dots"></span><span class="tech-item-desc">164+ Unit Benchmarks</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         ENGINEERING ARCHIVE TERMINAL (1980s AMBER PHOSPHOR CRT ARTIFACT)
+         An early interface to the technical record (§25, §26, §30)
+         ========================================================================= -->
+    <section class="archive-terminal-section" id="terminalSection">
+      <div class="terminal-section-header">
+        <div class="terminal-section-title">
+          <span class="ornament-bullet">✦</span>
+          <span>ENGINEERING ARCHIVE TERMINAL // SYSTEM No. 001</span>
+        </div>
+        <span class="terminal-meta-tag">AMBER PHOSPHOR CRT INTERFACE · TTY01 ONLINE</span>
+      </div>
+
+      <div class="terminal-card">
+        <div class="terminal-screen-outer">
+          <!-- Terminal HUD Bar -->
+          <div class="terminal-hud-bar">
+            <span class="hud-title">ARCHIVE://advaith/systems (v2.6-phosphor)</span>
+            <span>BAUD: 9600 · PARITY: NONE · BUFFER: READY</span>
+          </div>
+
+          <!-- Console Output Area -->
+          <div class="console-output" id="consoleOutput" role="region" aria-label="Terminal Console Output">
+            <p class="term-line">ENGINEERING ARCHIVE TERMINAL — SYSTEM No. 001</p>
+            <p class="term-line">CONNECTED TO ARCHIVAL DISPATCH RECORD // 39 VERIFIED REPOSITORIES</p>
+            <p class="term-line">Type '<span class="text-blue">help</span>' for available commands, '<span class="text-blue">projects</span>' to inspect repositories, or '<span class="text-blue">rag &lt;query&gt;</span>' for the RAG engine.</p>
+            <p class="term-line" style="color:var(--crt-amber-dim); margin-bottom:8px;">--------------------------------------------------------------------------------</p>
+            <div class="term-input-line">
+              <span class="term-prompt">ARCHIVE://advaith/systems&gt;&nbsp;</span>
+              <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal command prompt">
+              <span class="term-cursor"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
 
@@ -464,6 +569,7 @@
           <a href="https://instagram.com/advaithsarva" target="_blank" rel="noreferrer" title="Instagram">IG</a>
           <a href="mailto:advaithsarva@gmail.com" title="Email">EM</a>
         </div>
+      </div>
     </div>
   </footer>
 

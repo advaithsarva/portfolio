@@ -1,1 +1,2093 @@
-/* No styles — stripped per user directive */
+/* ==========================================================================
+   THE ADVAITH DAILY — AUTHENTIC 1920s BROADSHEET DESIGN SYSTEM
+   Visual & Interaction Language per design_skill_expanded.md
+   Publication: THE ADVAITH DAILY
+   Descriptor:  AI • COMPUTING • RESEARCH & ENGINEERING
+   Metaphor:    1920s Newspaper Broadsheet + 1980s CRT Terminal + Detective Archive
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & Color Palette (§3 & §4)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paper Palette — Warm Printed Stock (§3) */
+  --bg-canvas: #E8DCC2;          /* Primary Warm Aged Newsprint */
+  --bg-surface: #EDE4CC;         /* Box & Column Surface Paper */
+  --bg-card: #DFCFB0;            /* Elevated Story Surface / Inner Log */
+  --bg-card-alt: #F4ECD8;        /* Subtle Highlight Paper Surface */
+
+  /* Ink Palette — Printer's Carbon Black (§3) */
+  --text-main: #171512;          /* Primary Printer's Carbon Black */
+  --text-muted: #3A3731;         /* Secondary Editorial Ink */
+  --border-color: #292621;       /* Rules, Hairlines and Borders */
+  --border-subtle: #61594B;      /* Subtle Hairline Column Divider */
+  --rule-color: #292621;         /* Heavy & Double Rules */
+
+  /* Restrained Accents (Used Sparingly per §3) */
+  --color-oxide: #6F2923;        /* Preferred Editorial Accent (Oxblood Ink) */
+  --color-navy: #263A42;         /* Alternative Editorial Accent (Prussian Navy) */
+  --color-blueprint: #263A42;    /* Slate/Prussian Navy */
+  --color-moss: #171512;         /* Printer's Ink */
+  --color-gold: #171512;         /* Printer's Ink */
+  --color-purple: #171512;       /* Printer's Ink */
+
+  /* Engineering Archive Terminal — Amber Phosphor CRT (§26) */
+  --crt-bg: #0C0A06;             /* Deep CRT Void Ground */
+  --crt-bezel: #1F1B16;          /* Hard Physical Bezel */
+  --crt-amber: #FFB000;          /* Amber Phosphor Active Luminescence */
+  --crt-amber-glow: rgba(255, 176, 0, 0.45); /* Phosphor Bloom */
+  --crt-amber-dim: #996A00;      /* Inactive Phosphor Trace */
+
+  /* Typography Families (§4) */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Newsreader', 'Libre Baskerville', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+
+  /* Editorial Leading & Metrics */
+  --lh-tight: 1.12;
+  --lh-title: 1.02;
+  --lh-body: 1.55;
+}
+
+/* Archival Carbon Negative Print (Dark Ink Mode / High Contrast) */
+[data-theme="dark"] {
+  --bg-canvas: #151311;          /* Carbon Newsprint Ground */
+  --bg-surface: #1E1B17;         /* Dense Slate Story Surface */
+  --bg-card: #27231E;            /* Elevated Carbon Card */
+  --bg-card-alt: #302B24;        /* Highlight Paper Surface */
+
+  --text-main: #EDE4CC;          /* Warm Bleached Bone Ink */
+  --text-muted: #B8AD98;         /* Subdued Lead Ink */
+  --border-color: #4A4235;       /* Weathered Brass Rule */
+  --border-subtle: #383228;      /* Hairline Partition */
+  --rule-color: #4A4235;
+
+  --color-oxide: #C45A4C;        /* Illuminated Brick Accent */
+  --color-navy: #5B8A99;         /* Cyanotype Indigo */
+  --color-blueprint: #7FAEC2;    /* Soft Slate Cyan */
+  --color-moss: #8FD175;         /* Soft Phosphor Moss */
+  --color-gold: #EDE4CC;         /* Bone White */
+  --color-purple: #EDE4CC;       /* Bone White */
+
+  --crt-bg: #060504;
+  --crt-bezel: #14120E;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Global Base Typography
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  line-height: var(--lh-body);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle Newsprint Fiber Texture (§12) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: radial-gradient(var(--text-main) 1px, transparent 0);
+  background-size: 4px 4px;
+}
+
+a {
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.12s ease;
+}
+
+a:hover {
+  color: var(--color-oxide);
+}
+
+button, input, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3. Broadsheet Framing System (§5 & §6)
+   -------------------------------------------------------------------------- */
+.broadsheet-frame-outer {
+  max-width: 1440px;
+  margin: 14px auto 32px auto;
+  padding: 10px;
+  background-color: var(--bg-canvas);
+  border: 2px solid var(--border-color);
+  box-shadow: 0 0 0 1px var(--bg-canvas), 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.broadsheet-frame-inner {
+  border: 1px solid var(--border-color);
+  padding: 14px 18px 24px 18px;
+  background-color: var(--bg-canvas);
+}
+
+/* Top Broadside Ribbon with Filigree Flourish (§6) */
+.masthead-ribbon-ornament {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 5px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.flourish-img {
+  max-height: 18px;
+  width: auto;
+  filter: grayscale(100%) contrast(120%);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* --------------------------------------------------------------------------
+   4. Grand Newspaper Masthead (§6)
+   -------------------------------------------------------------------------- */
+.newspaper-masthead-wrap {
+  margin-bottom: 12px;
+}
+
+/* Dateline Bar */
+.newspaper-topbar {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 4px 0;
+  margin-bottom: 8px;
+}
+
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.topbar-left, .topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.topbar-center {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-main);
+}
+
+.topbar-inner .sep {
+  opacity: 0.6;
+}
+
+/* Main Nameplate with Ears */
+.masthead-main {
+  padding: 10px 0 14px 0;
+  border-bottom: 3px double var(--rule-color);
+}
+
+.masthead-inner {
+  display: grid;
+  grid-template-columns: 190px 1fr 190px;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Left & Right Ears */
+.masthead-ear {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px 10px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  text-align: center;
+  font-family: var(--font-mono);
+  min-height: 84px;
+}
+
+.ear-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--color-oxide);
+  margin-bottom: 2px;
+}
+
+.ear-number {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--text-main);
+  margin-bottom: 3px;
+}
+
+.ear-sub {
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.ear-tag {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 3px;
+  color: var(--text-main);
+}
+
+/* Center Brand Nameplate */
+.masthead-brand {
+  text-align: center;
+}
+
+.masthead-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.masthead-hatch-panel {
+  flex: 1;
+  height: 12px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--border-color),
+    var(--border-color) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  opacity: 0.75;
+}
+
+.masthead-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.2vw, 4.8rem);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: var(--lh-title);
+  color: var(--text-main);
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.masthead-subtitle {
+  font-family: var(--font-mono);
+  font-size: clamp(0.72rem, 1.2vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-top: 6px;
+  color: var(--text-main);
+}
+
+.masthead-motto {
+  margin-top: 6px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   5. Newspaper Editorial Navigation Bar (§8)
+   -------------------------------------------------------------------------- */
+.newspaper-nav-bar {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 3px double var(--rule-color);
+  padding: 6px 0;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  background-color: var(--bg-canvas);
+}
+
+.newspaper-nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.news-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.news-nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: var(--text-main);
+  padding: 3px 6px;
+  transition: all 0.12s ease;
+  white-space: nowrap;
+}
+
+.news-nav-link:hover {
+  color: var(--color-oxide);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.news-nav-link.active {
+  background-color: var(--text-main);
+  color: var(--bg-canvas);
+  text-decoration: none;
+}
+
+.news-nav-sep {
+  color: var(--border-subtle);
+  font-size: 0.8rem;
+  user-select: none;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.neo-btn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.12s ease;
+  white-space: nowrap;
+}
+
+.neo-btn:hover {
+  background-color: var(--text-main);
+  color: var(--bg-canvas);
+  border-color: var(--text-main);
+}
+
+.cta-btn {
+  background-color: var(--text-main);
+  color: var(--bg-canvas);
+}
+
+.cta-btn:hover {
+  background-color: var(--color-oxide);
+  color: #FFFFFF;
+  border-color: var(--color-oxide);
+}
+
+.hamburger-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  padding: 6px 8px;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--text-main);
+}
+
+/* --------------------------------------------------------------------------
+   6. Broadsheet Front Page Grid (§5 & §7)
+   Direct 1:1 Editorial Layout matching reference broadsheet
+   -------------------------------------------------------------------------- */
+.broadsheet-front-spread {
+  display: grid;
+  grid-template-columns: 24% 48% 28%;
+  gap: 16px;
+  align-items: start;
+}
+
+.broadsheet-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.broadsheet-col-left {
+  border-right: 1px solid var(--border-color);
+  padding-right: 16px;
+}
+
+.broadsheet-col-center {
+  border-right: 1px solid var(--border-color);
+  padding-right: 16px;
+}
+
+.broadsheet-col-right {
+  padding-left: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   7. Broadsheet Boxes & Editorial Typography (§4 & §9)
+   -------------------------------------------------------------------------- */
+.broadsheet-box {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.box-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-oxide);
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 3px;
+}
+
+.box-headline-serif {
+  font-family: var(--font-display);
+  font-size: 1.32rem;
+  font-weight: 900;
+  line-height: var(--lh-tight);
+  color: var(--text-main);
+  text-transform: uppercase;
+  margin: 4px 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+.box-headline-serif-italic {
+  font-family: var(--font-display);
+  font-size: 1.48rem;
+  font-style: italic;
+  font-weight: 800;
+  line-height: var(--lh-tight);
+  color: var(--text-main);
+  margin: 4px 0 4px 0;
+  letter-spacing: -0.01em;
+}
+
+.box-subhead-bold {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin: 6px 0 4px 0;
+  color: var(--text-main);
+}
+
+.box-deck-italic {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.box-rule-thin {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 8px 0;
+}
+
+.newspaper-body {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: var(--lh-body);
+  color: var(--text-main);
+  text-align: justify;
+  hyphens: auto;
+  margin-bottom: 8px;
+}
+
+.newspaper-body strong {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Authentic Newspaper Drop Cap (§4) */
+.newspaper-drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  line-height: 0.8;
+  padding-right: 7px;
+  padding-top: 4px;
+  font-weight: 900;
+  color: var(--text-main);
+}
+
+.box-dateline {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 8px;
+  border-top: 1px dotted var(--border-subtle);
+  padding-top: 4px;
+}
+
+.box-action-wrap {
+  margin-top: 10px;
+}
+
+.newspaper-link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-oxide);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  display: inline-block;
+}
+
+.newspaper-link:hover {
+  color: var(--text-main);
+}
+
+/* Woodcut Image Frame (§10) */
+.woodcut-frame {
+  border: 1px solid var(--border-color);
+  padding: 4px;
+  background: var(--bg-card);
+  margin: 8px 0;
+  text-align: center;
+}
+
+.woodcut-frame img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(120%);
+}
+
+.woodcut-caption {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 6px 0;
+  text-align: center;
+}
+
+.box-highlight-banner {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: var(--text-main);
+  color: var(--bg-canvas);
+  padding: 4px 8px;
+  margin: 6px 0 8px 0;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   8. Center Lead Spread (§7)
+   -------------------------------------------------------------------------- */
+.broadsheet-center-lead-header {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.kicker-lead {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-oxide);
+  margin-bottom: 6px;
+}
+
+.broadsheet-main-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  font-weight: 900;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin: 6px 0 10px 0;
+}
+
+.broadsheet-lead-deck {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.byline-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 5px;
+}
+
+.byline-strip .sep {
+  color: var(--color-oxide);
+}
+
+/* Two-Column Sub-Stories Grid */
+.broadsheet-two-col-stories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+
+.sub-col-story {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-col-left {
+  border-right: 1px solid var(--border-color);
+  padding-right: 16px;
+}
+
+.sub-col-header {
+  margin-bottom: 8px;
+}
+
+.sub-col-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--color-oxide);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.sub-col-headline {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.metric-highlight-bar {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-navy);
+  background: var(--bg-card);
+  padding: 3px 6px;
+  border-left: 3px solid var(--color-navy);
+  margin-bottom: 8px;
+}
+
+.story-proof-pill {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 700;
+  padding: 4px 6px;
+  border: 1px dotted var(--border-color);
+  background: var(--bg-card-alt);
+  margin: 6px 0 8px 0;
+  color: var(--text-main);
+}
+
+/* Clinical Audit Box */
+.clinical-audit-box {
+  background-color: var(--bg-surface);
+  border-left: 4px solid var(--color-oxide);
+}
+
+/* --------------------------------------------------------------------------
+   9. The Archive Detective (Detective Pikachu) (§13–§24)
+   A Technical Dossier Living Naturally Inside The Broadsheet
+   -------------------------------------------------------------------------- */
+.detective-feature-box {
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-surface);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border-top: 3px double var(--rule-color);
+}
+
+.detective-feature-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.detective-feature-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.ornament-bullet {
+  color: var(--color-oxide);
+  font-size: 0.85rem;
+}
+
+.detective-case-badge {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  background-color: var(--text-main);
+  color: var(--bg-canvas);
+  padding: 2px 8px;
+}
+
+.detective-feature-body {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+}
+
+/* Left: Pikachu Halftone Engraving Frame (§16 & §19) */
+.detective-plate-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detective-avatar-frame {
+  width: 130px;
+  height: 145px;
+  border: 1px solid var(--border-color);
+  padding: 6px;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  user-select: none;
+}
+
+.detective-avatar-frame:hover {
+  transform: scale(1.02);
+  border-color: var(--color-oxide);
+}
+
+.detective-avatar-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  /* Monochromatic halftone print styling per §16 */
+  filter: grayscale(100%) contrast(120%) brightness(95%);
+  transition: filter 0.2s ease;
+}
+
+.detective-avatar-frame:hover .detective-avatar-img {
+  filter: grayscale(80%) contrast(110%);
+}
+
+.detective-fig-caption {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  border-top: 1px solid var(--border-subtle);
+  width: 100%;
+  padding-top: 3px;
+}
+
+.detective-creds-caption {
+  margin-top: 8px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+.detective-creds-caption strong {
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.06em;
+}
+
+.creds-status {
+  color: var(--color-oxide);
+  font-weight: 700;
+}
+
+/* Right: Detective Case Files & Inquiry Flow */
+.detective-inquiry-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.detective-intro-text {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.detective-intro-text strong {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Investigation Ticker Bar (§20) */
+.investigation-ticker-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  margin-bottom: 10px;
+}
+
+.ticker-label {
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--color-oxide);
+}
+
+.ticker-text {
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: 0.04em;
+}
+
+/* Investigation Stepper Indicator */
+.investigation-flow-card {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+  padding: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+}
+
+.inv-stage-indicator {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 4px;
+  text-align: center;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.inv-stage-indicator.active {
+  background-color: var(--text-main);
+  color: var(--bg-canvas);
+  opacity: 1;
+  border-color: var(--text-main);
+}
+
+.inv-badge {
+  font-weight: 800;
+  margin-right: 2px;
+}
+
+/* Detective Chat Log Window */
+.detective-chat-log {
+  max-height: 260px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card-alt);
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-msg {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+}
+
+.user-msg {
+  border-left: 3px solid var(--color-navy);
+  background-color: var(--bg-card);
+}
+
+.bot-msg {
+  border-left: 3px solid var(--color-oxide);
+}
+
+.case-header-stamp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+}
+
+.chat-speaker {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-oxide);
+}
+
+.case-stamp-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--text-main);
+  color: var(--bg-canvas);
+  padding: 1px 6px;
+}
+
+.user-query-text {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.findings-body {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+
+.findings-body em {
+  font-style: italic;
+}
+
+/* Evidence Consulted Clippings (§19) */
+.evidence-consulted-box {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border: 1px dashed var(--border-color);
+  background-color: var(--bg-card);
+}
+
+.evidence-header-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  margin-bottom: 4px;
+}
+
+.evidence-list {
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.evidence-link {
+  font-weight: 700;
+  color: var(--color-oxide);
+}
+
+.evidence-report-action {
+  font-size: 0.64rem;
+  color: var(--text-muted);
+}
+
+.archive-topics-hint {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Ghost Scared Animation (§21) */
+.ghost-scared {
+  border: 2px dashed var(--color-oxide) !important;
+  background: #FFF0ED !important;
+}
+
+[data-theme="dark"] .ghost-scared {
+  background: #2E1513 !important;
+}
+
+@keyframes scaredShake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-3px, 2px) rotate(-2deg); }
+  40% { transform: translate(3px, -2px) rotate(2deg); }
+  60% { transform: translate(-3px, -1px) rotate(-1deg); }
+  80% { transform: translate(2px, 2px) rotate(1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.scared-shake {
+  animation: scaredShake 0.4s ease-in-out infinite;
+}
+
+/* Quick Inquiry Chips */
+.detective-quick-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.chip-btn {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 4px 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.chip-btn:hover {
+  background-color: var(--text-main);
+  color: var(--bg-canvas);
+}
+
+/* Chat Input Form */
+.detective-input-form {
+  display: flex;
+  gap: 6px;
+}
+
+.detective-chat-input {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 7px 10px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card-alt);
+  color: var(--text-main);
+}
+
+.detective-chat-input:focus {
+  outline: none;
+  border-color: var(--color-oxide);
+  background-color: var(--bg-surface);
+}
+
+.detective-send-btn {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 7px 14px;
+  background-color: var(--text-main);
+  color: var(--bg-canvas);
+  border: 1px solid var(--text-main);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.12s ease;
+}
+
+.detective-send-btn:hover {
+  background-color: var(--color-oxide);
+  border-color: var(--color-oxide);
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   10. Right Column: Feature Plate, Register & Classifieds (§5 & §10)
+   -------------------------------------------------------------------------- */
+/* Feature Plate (Plate I) */
+.feature-plate-box {
+  padding: 10px 12px;
+}
+
+.plate-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.plate-label {
+  color: var(--text-main);
+}
+
+.plate-fig-tag {
+  color: var(--color-oxide);
+}
+
+.brain-container {
+  width: 100%;
+  height: 240px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.brain-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.brain-hint {
+  position: absolute;
+  bottom: 6px;
+  left: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  background: rgba(232, 220, 194, 0.85);
+  padding: 2px 6px;
+  border: 1px solid var(--border-subtle);
+  pointer-events: none;
+}
+
+[data-theme="dark"] .brain-hint {
+  background: rgba(21, 19, 17, 0.85);
+}
+
+.plate-caption {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.plate-caption em {
+  font-weight: 700;
+}
+
+/* Technology Desk Overview Box */
+.tech-desk-overview-box {
+  background-color: var(--bg-surface);
+}
+
+/* Vintage Newspaper Classified Advertisements Group (§10) */
+.broadsheet-classifieds-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.classified-ad-box {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  padding: 10px 12px;
+}
+
+.ad-woodcut-thumb {
+  width: 100%;
+  max-height: 70px;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(120%);
+  border: 1px solid var(--border-color);
+  margin-bottom: 6px;
+}
+
+.ad-headline {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+
+.ad-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-oxide);
+  margin-bottom: 5px;
+}
+
+.ad-text {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.ad-link {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ad-link:hover {
+  color: var(--color-oxide);
+}
+
+/* Colophon Box */
+.broadsheet-colophon {
+  border-top: 1px solid var(--border-color);
+  padding-top: 8px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   11. Engineering Archive Terminal (§25, §26, §30)
+   1980s Amber Phosphor CRT Artifact Living Inside The Archive
+   -------------------------------------------------------------------------- */
+.archive-terminal-section {
+  margin: 20px 0 24px 0;
+  border-top: 3px double var(--rule-color);
+  border-bottom: 3px double var(--rule-color);
+  padding: 16px 0;
+}
+
+.terminal-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.terminal-section-title {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terminal-meta-tag {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* CRT Physical Bezel */
+.terminal-card {
+  background-color: var(--crt-bezel);
+  border: 3px solid var(--border-color);
+  padding: 12px;
+  position: relative;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.terminal-screen-outer {
+  background-color: var(--crt-bg);
+  border: 1px solid #332B1E;
+  padding: 16px 18px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* CRT Scanlines Overlay */
+.terminal-screen-outer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background: repeating-linear-gradient(
+    rgba(18, 16, 14, 0) 0px,
+    rgba(18, 16, 14, 0) 2px,
+    rgba(0, 0, 0, 0.28) 2px,
+    rgba(0, 0, 0, 0.28) 4px
+  );
+}
+
+/* Top Screen HUD Bar */
+.terminal-hud-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--crt-amber-dim);
+  border-bottom: 1px solid #332B1E;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 3;
+}
+
+.hud-title {
+  color: var(--crt-amber);
+  text-shadow: 0 0 4px var(--crt-amber-glow);
+}
+
+/* Terminal Console Output */
+.console-output {
+  min-height: 220px;
+  max-height: 380px;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--crt-amber);
+  text-shadow: 0 0 5px var(--crt-amber-glow);
+  position: relative;
+  z-index: 3;
+}
+
+.term-line {
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.term-prompt {
+  color: #FFA000;
+  font-weight: 800;
+  user-select: none;
+}
+
+.text-blue {
+  color: #7FB0D0 !important;
+  text-shadow: 0 0 4px rgba(127, 176, 208, 0.5) !important;
+}
+
+.text-moss {
+  color: #8FD175 !important;
+  text-shadow: 0 0 4px rgba(143, 209, 117, 0.5) !important;
+}
+
+.text-oxide {
+  color: #E26D5C !important;
+  text-shadow: 0 0 4px rgba(226, 109, 92, 0.5) !important;
+}
+
+/* Terminal Interactive Input Line */
+.term-input-line {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+  position: relative;
+  z-index: 3;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--crt-amber);
+  text-shadow: 0 0 5px var(--crt-amber-glow);
+  caret-color: var(--crt-amber);
+}
+
+/* Blinking Amber CRT Cursor */
+@keyframes crtBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.term-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background: var(--crt-amber);
+  box-shadow: 0 0 6px var(--crt-amber-glow);
+  animation: crtBlink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   12. Technical Index & Department Registry (§10)
+   -------------------------------------------------------------------------- */
+.technical-index-section {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.tech-index-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+
+.tech-index-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.tech-index-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--color-oxide);
+}
+
+.tech-index-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.tech-index-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-col-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.tech-index-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tech-index-item {
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  line-height: 1.4;
+  color: var(--text-main);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.tech-item-name {
+  font-weight: 700;
+}
+
+.tech-item-dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--border-subtle);
+  margin: 0 6px;
+  opacity: 0.6;
+}
+
+.tech-item-desc {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   13. Engineering Report Modal (§9)
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(23, 21, 18, 0.75);
+  backdrop-filter: blur(2px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-window {
+  width: 100%;
+  max-width: 680px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background-color: var(--bg-canvas);
+  border: 3px double var(--rule-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--text-main);
+  color: var(--bg-canvas);
+  padding: 8px 14px;
+}
+
+.modal-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--bg-canvas);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-content {
+  padding: 20px;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-main);
+}
+
+.modal-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.btn-gh {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 8px 14px;
+  background: var(--text-main);
+  color: var(--bg-canvas);
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.btn-gh:hover {
+  background: var(--color-oxide);
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   14. Broadsheet Site Footer (§6)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  border-top: 3px double var(--rule-color);
+  padding-top: 12px;
+  margin-top: 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-stamp {
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--text-main);
+}
+
+.footer-sub {
+  font-size: 0.64rem;
+  color: var(--text-muted);
+}
+
+.footer-center {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-center a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer-center a:hover {
+  color: var(--color-oxide);
+  text-decoration: underline;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.time-clock {
+  font-weight: 800;
+  color: var(--color-oxide);
+}
+
+.footer-icons {
+  display: flex;
+  gap: 4px;
+}
+
+.footer-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 24px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.65rem;
+  transition: all 0.12s ease;
+}
+
+.footer-icons a:hover {
+  background: var(--text-main);
+  color: var(--bg-canvas);
+}
+
+/* --------------------------------------------------------------------------
+   15. Technology Desk Projects Page Integration (projects.html)
+   -------------------------------------------------------------------------- */
+.newspaper-masthead {
+  border-bottom: 3px double var(--rule-color);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.masthead-ears {
+  display: grid;
+  grid-template-columns: 180px 1fr 180px;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.masthead-ear-box {
+  border: 1px solid var(--border-color);
+  padding: 8px 10px;
+  background: var(--bg-surface);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+}
+
+.ear-vol, .ear-edition {
+  display: block;
+  font-weight: 800;
+  color: var(--color-oxide);
+  margin-bottom: 2px;
+}
+
+.ear-geo, .ear-circ {
+  display: block;
+  color: var(--text-muted);
+}
+
+.masthead-ear-center {
+  text-align: center;
+}
+
+.masthead-brand-link {
+  text-decoration: none;
+  display: block;
+}
+
+.masthead-sub {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--text-main);
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+.masthead-dateline-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 4px 0;
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.masthead-nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.masthead-nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  text-decoration: none;
+  padding: 3px 6px;
+}
+
+.masthead-nav-link:hover {
+  color: var(--color-oxide);
+  text-decoration: underline;
+}
+
+.masthead-nav-link.active {
+  background: var(--text-main);
+  color: var(--bg-canvas);
+}
+
+.masthead-theme-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 3px 8px;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* --------------------------------------------------------------------------
+   16. Responsive Breakpoints (§27)
+   -------------------------------------------------------------------------- */
+/* Tablet (768px – 1100px) */
+@media (max-width: 1100px) {
+  .broadsheet-front-spread {
+    grid-template-columns: 32% 68%;
+  }
+
+  .broadsheet-col-right {
+    grid-column: 1 / -1;
+    border-right: none;
+    border-top: 2px solid var(--border-color);
+    padding-top: 16px;
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .broadsheet-col-right .broadsheet-colophon {
+    grid-column: 1 / -1;
+  }
+
+  .tech-index-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (<768px) */
+@media (max-width: 768px) {
+  .broadsheet-frame-outer {
+    margin: 4px;
+    padding: 6px;
+  }
+
+  .broadsheet-frame-inner {
+    padding: 10px 12px;
+  }
+
+  .masthead-ribbon-ornament {
+    font-size: 0.58rem;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .topbar-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+
+  .masthead-inner, .masthead-ears {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .masthead-ear, .masthead-ear-box {
+    display: none; /* Hide ears on small mobile to maximize headline punch */
+  }
+
+  .masthead-title {
+    font-size: 2.2rem;
+  }
+
+  .newspaper-nav-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .news-nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding-top: 8px;
+  }
+
+  .news-nav-links.open {
+    display: flex;
+  }
+
+  .news-nav-sep {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .header-actions {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .broadsheet-front-spread {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .broadsheet-col-left, .broadsheet-col-center, .broadsheet-col-right {
+    border-right: none;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .broadsheet-col-left {
+    order: 2;
+    border-top: 2px solid var(--border-color);
+    padding-top: 16px;
+    margin-top: 14px;
+  }
+
+  .broadsheet-col-center {
+    order: 1;
+  }
+
+  .broadsheet-col-right {
+    order: 3;
+    grid-template-columns: 1fr;
+  }
+
+  .broadsheet-two-col-stories {
+    grid-template-columns: 1fr;
+  }
+
+  .sub-col-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-right: 0;
+    padding-bottom: 12px;
+  }
+
+  .detective-feature-body {
+    grid-template-columns: 1fr;
+  }
+
+  .detective-plate-col {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .tech-index-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   17. Accessibility & Reduced Motion Support (§28 & §29)
+   -------------------------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--color-oxide);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

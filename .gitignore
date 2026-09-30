@@ -15,3 +15,8 @@ Thumbs.db
 *.swo
 .vscode/
 .idea/
+
+# Scratch & Temporary
+scratch/
+*.log
+.pytest_cache/

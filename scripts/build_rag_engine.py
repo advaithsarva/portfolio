@@ -14,7 +14,7 @@ Fuses:
 import json
 import os
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CORPUS_FILE = os.path.join(BASE_DIR, "data", "knowledge_corpus.json")
 EMBEDDINGS_FILE = os.path.join(BASE_DIR, "data", "knowledge_embeddings.json")
 TARGET_FILE = os.path.join(BASE_DIR, "rag-engine.js")
@@ -530,39 +530,12 @@ js_content = f"""/* ============================================================
     }};
   }}
 
-  // 11. Public Asynchronous Query Interface (Connects to /api/chat with instant fallback)
+  // 11. Public Asynchronous Query Interface (Direct Client-Side Static Execution)
   async function queryAsync(rawQuery) {{
     const retrieval = retrieve(rawQuery, 4);
 
     // Save to conversation history
     SessionMemory.history.push({{ role: 'user', content: rawQuery }});
-
-    try {{
-      const resp = await fetch('/api/chat', {{
-        method: 'POST',
-        headers: {{ 'Content-Type': 'application/json' }},
-        body: JSON.stringify({{
-          query: rawQuery,
-          history: SessionMemory.history.slice(-4),
-          topChunks: retrieval.topChunks
-        }})
-      }});
-
-      if (resp.ok) {{
-        const data = await resp.json();
-        if (data.answer) {{
-          SessionMemory.history.push({{ role: 'bot', content: data.answer }});
-          return {{
-            isGhost: data.isGhost || false,
-            answer: data.answer,
-            retrieval: retrieval,
-            citations: data.sources || []
-          }};
-        }}
-      }}
-    }} catch (e) {{
-      // Offline or static server preview fallback
-    }}
 
     const localResult = synthesizeLocal(rawQuery, retrieval);
     SessionMemory.history.push({{ role: 'bot', content: localResult.answer }});
