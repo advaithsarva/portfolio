@@ -5072,7 +5072,7 @@
     if (['ghost', 'ghosts', 'gengar', 'gastly', 'haunter', 'horror', 'scary', 'spooky'].some(w => qLower.includes(w))) {
       return {
         isGhost: true,
-        answer: "P-Pika-PI?! 👻⚡ <em>*shivers and cowers behind tail*</em> SHHHH! Don't summon Gengar! Between you and me, Advaith is <strong>genuinely terrified of ghosts</strong>, haunted houses, horror movies, and Ghost-type Pokémon! He will literally sprint across the pitch to escape! Please, let's stick to chess, PyTorch, or Electric types! 🙈⚡",
+        answer: "P-Pika-PI?! <em>*retreats behind the newsroom teletype*</em> Hush! Do not summon spectral entities! According to confidential editorial lore, Advaith harbors an absolute dread of ghosts, haunted halls, horror cinema, and spectral manifestations! He will literally sprint across the field to escape! Pray, let us return to verified matters like chess, PyTorch, or electrical apparatus!",
         retrieval: retrieval,
         citations: [{"title": "Technical & Personal Interests", "url": "index.html#home"}]
       };
@@ -5102,7 +5102,7 @@
     if (isGreeting) {
       return {
         isGhost: false,
-        answer: "Pika! 🔎 Detective Pikachu on duty. Welcome to the technical archives of The Advaith Daily. I examine case evidence across Advaith's 39 audited repositories, his SMU exchange (3.47 CGPA), Preventvital clinical audit, and systems code. Submit a case to begin your investigation!",
+        answer: "Pika! Detective Pikachu reporting for duty. Welcome to the technical archives of The Advaith Daily. I examine documented case evidence across Advaith's 39 audited repositories, his SMU exchange (3.47 CGPA), Preventvital clinical audit, and systems code. Submit an enquiry to commence your investigation.",
         retrieval: retrieval,
         citations: [
           {"title": "Engineering Profile & Bio", "url": "index.html#home"},
@@ -5116,7 +5116,7 @@
     if (isIdentity) {
       return {
         isGhost: false,
-        answer: "Pika! 🔎 I am Detective Pikachu, Chief Archive Investigator for The Advaith Daily. I investigate the verified technical record of Advaith Narayana Sarva across 39 audited repositories and 55 archival dossiers. Submit a case or technical topic to examine the evidence!",
+        answer: "Pika! I am Detective Pikachu, Chief Archive Investigator for The Advaith Daily. I investigate the verified technical record of Advaith Narayana Sarva across 39 audited repositories and 55 archival dossiers. Submit a case or technical topic to examine the evidence.",
         retrieval: retrieval,
         citations: [{"title": "About Advaith", "url": "index.html#home"}]
       };
@@ -5127,13 +5127,13 @@
     if (isHelp) {
       return {
         isGhost: false,
-        answer: "Pika! 🔎 As Chief Archive Investigator, I can examine any aspect of Advaith's technical record. Recommended case inquiries:<br><br>" +
-          "• 🏆 <strong>Hackathons:</strong> <em>'Tell me about The Sentinel Grid at IBM BOB'</em><br>" +
-          "• 🔍 <strong>Clinical Audit:</strong> <em>'What did Advaith audit at Preventvital?'</em><br>" +
-          "• ⚡ <strong>Systems:</strong> <em>'Tell me about the Postgres Performance Agent'</em> or <em>'Graph-RAG'</em><br>" +
-          "• 🎓 <strong>Education:</strong> <em>'What was his CGPA at Saint Martin\'s University?'</em><br>" +
-          "• ♟️ <strong>Tactics & Pursuits:</strong> <em>'What chess opening does he play?'</em> or <em>'Can he beatbox?'</em><br>" +
-          "• 👻 <strong>Unresolved Mystery:</strong> <em>'Is he afraid of ghosts?!'</em>",
+        answer: "Pika! As Chief Archive Investigator, I can examine any aspect of Advaith's technical record. Recommended case enquiries:<br><br>" +
+          "• <strong>Hackathons & Competitions:</strong> <em>'Tell me about The Sentinel Grid at IBM BOB'</em><br>" +
+          "• <strong>Clinical ML Audit:</strong> <em>'What did Advaith audit at Preventvital?'</em><br>" +
+          "• <strong>Systems & Primitives:</strong> <em>'Tell me about the Postgres Performance Agent'</em> or <em>'Graph-RAG'</em><br>" +
+          "• <strong>Academic Record:</strong> <em>'What was his CGPA at Saint Martin\'s University?'</em><br>" +
+          "• <strong>Tactics & Pursuits:</strong> <em>'What chess opening does he play?'</em> or <em>'Can he beatbox?'</em><br>" +
+          "• <strong>The Spectral Mystery:</strong> <em>'Is he afraid of ghosts?!'</em>",
         retrieval: retrieval,
         citations: [{"title": "Projects Catalog", "url": "projects.html"}]
       };
@@ -5144,7 +5144,7 @@
     if (isHowAreYou) {
       return {
         isGhost: false,
-        answer: "Pika! 🔎 Case logs are sharp and evidence indexes are calibrated across 39 verified repositories. Ready to investigate your case.",
+        answer: "Pika! The case ledger is in order and evidence indexes are calibrated across 39 verified repositories. Standing by for your enquiry.",
         retrieval: retrieval,
         citations: []
       };
@@ -5155,7 +5155,7 @@
     if (isThanks) {
       return {
         isGhost: false,
-        answer: "Pika! 🔎 Case filed. Glad to help clarify the technical record. Let me know if you wish to inspect further evidence or review his credentials!",
+        answer: "Pika! Case filed. Honored to clarify the technical record. Inform me if you wish to inspect further evidence or review his credentials.",
         retrieval: retrieval,
         citations: [{"title": "View Resume", "url": "resume.html"}]
       };
@@ -5166,7 +5166,7 @@
     if (isBye) {
       return {
         isGhost: false,
-        answer: "Pika! 🔎 Case adjourned. Thank you for examining The Advaith Daily archives. Correspondence can be dispatched directly to advaithsarva@gmail.com anytime.",
+        answer: "Pika! Case adjourned. Thank you for examining The Advaith Daily archives. Formal correspondence can be dispatched directly to advaithsarva@gmail.com anytime.",
         retrieval: retrieval,
         citations: [{"title": "Contact Advaith", "url": "mailto:advaithsarva@gmail.com"}]
       };
@@ -5177,7 +5177,7 @@
     if (isWhoIsAdvaith) {
       return {
         isGhost: false,
-        answer: "Pika! 🔎 Advaith Narayana Sarva is an AI & Systems Engineer specializing in interpretable Graph-RAG architectures, autonomous multi-agent harnesses, and low-level PyTorch tensor primitives. Archive records confirm an international exchange at Saint Martin's University (3.47 CGPA, Dean's List), an 8.69 CGPA at Woxsen University, a clinical ML audit at Preventvital (ASCVD risk fix), and Top 5 in the IBM BOB National Hackathon with The Sentinel Grid (0.9924 ROC-AUC).",
+        answer: "Pika! Advaith Narayana Sarva is an AI & Systems Engineer specializing in interpretable Graph-RAG architectures, autonomous multi-agent harnesses, and low-level PyTorch tensor primitives. Archive records confirm an international exchange at Saint Martin's University (3.47 CGPA, Dean's List), an 8.69 CGPA at Woxsen University, a clinical ML audit at Preventvital (ASCVD risk fix), and Top 5 in the IBM BOB National Hackathon with The Sentinel Grid (0.9924 ROC-AUC).",
         retrieval: retrieval,
         citations: [
           {"title": "Profile Summary", "url": "index.html#home"},
@@ -5189,7 +5189,7 @@
     if (!top || top.length === 0 || top[0].rrfScore < 0.01) {
       return {
         isGhost: false,
-        answer: "Pika! 🔎 Advaith is an AI & Systems Engineer with 39 verified repositories covering Graph-RAG, autonomous agents, and systems from scratch. What project or case file would you like to examine?",
+        answer: "Pika! Advaith is an AI & Systems Engineer with 39 verified repositories covering Graph-RAG, autonomous agents, and systems from scratch. What project or case file would you like to examine?",
         retrieval: retrieval,
         citations: []
       };

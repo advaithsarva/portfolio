@@ -43,7 +43,7 @@ function initTheme() {
 function updateThemeIcon(theme) {
   const icon = document.querySelector('.theme-icon');
   if (icon) {
-    icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    icon.textContent = 'CONTRAST';
   }
 }
 
@@ -402,7 +402,7 @@ function queryPikachuRAG(rawQuery) {
   // Fallback if RAG engine hasn't loaded yet
   return {
     isGhost: false,
-    text: "Pikachu! ⚡ Advaith is a GenAI & Systems Engineer (SMU 3.47 CGPA, Woxsen 8.69 CGPA) building Graph-RAG architectures. Check out his projects in the catalog!"
+    text: "Pikachu! Advaith is a GenAI & Systems Engineer (SMU 3.47 CGPA, Woxsen 8.69 CGPA) building Graph-RAG architectures. Inspect the technology desk catalog for verified reports."
   };
 }
 
@@ -433,7 +433,7 @@ function initTerminal() {
   neofetch      - System specs, stack overview & ASCII badge
   chess         - Interactive Sicilian board & challenge link
   beatbox       - Play 8-bit live beatbox synth & soundwave
-  ghost / spook - ⚠️ Test Advaith & Pikachu's greatest fear!
+  ghost / spook - Test the engineer's archival aversion to spectral apparitions!
   matrix        - Stream digital cyber cascade
   detective     - The Archive Detective (Detective Pikachu) dossier
   rag <query>   - Query Detective Pikachu's RAG knowledge engine directly in CLI!
@@ -503,8 +503,8 @@ Instagram: @advaithsarva (https://instagram.com/advaithsarva)`,
                       CPU      : Neural Engine (PyTorch, DSPy, Transformers)
                       Memory   : 41 MCP Tools @ 8 Domains
                       Academia : SMU (3.47 CGPA) | Woxsen (8.69 CGPA)
-                      Hobbies  : Chess ♟️, Football ⚽, Beatbox 🎤, Debate 🎙️
-                      Fear     : Ghosts 👻 (Error 404: Courage not found)`,
+                      Hobbies  : Chess (Sicilian Defense), Football, Beatbox, Debate
+                      Dread    : Spectral Entities & Haunted Halls (Code 404: Fortitude Not Found)`,
 
     chess: `    +-----------------+
   8 | r  n  b  q  k  b  n  r |
@@ -600,7 +600,7 @@ PyTorch, Graph-RAG, DSPy, Transformers, MCP Protocol, FastAPI, PostgreSQL, TypeS
 • News Maniac : Obsessive consumer of global news, arXiv preprints, geopolitics
 • Culture     : Grounded in timeless heritage, classical philosophy, deep cultural roots
 • Pokémon     : Lifelong trainer, competitive synergy geek, partner of Pikachu #025
-• Weakness    : GHOSTS! 👻 Absolutely terrified of spooky things!`,
+• Archival Dread : GHOSTS! An enduring, humorous dread of supernatural manifestations.`,
 
     'stack.json': `{\n  "genai": ["Graph-RAG", "Multi-Agent Swarms", "MCP Protocol", "DSPy", "ChromaDB", "Qdrant", "Neo4j"],\n  "deep_learning": ["PyTorch", "Transformers", "CUDA", "HuggingFace", "spaCy", "NLI"],\n  "systems_and_web": ["Python (Async/CFFI)", "TypeScript", "FastAPI", "PostgreSQL", "Docker", "Node.js"]\n}`,
 
@@ -615,7 +615,7 @@ PyTorch, Graph-RAG, DSPy, Transformers, MCP Protocol, FastAPI, PostgreSQL, TypeS
    - Status : Expected August 2027
    - CGPA   : 8.69 / 10.0`,
 
-    'secret.env': `TOP_SECRET_WEAKNESS="Genuinely terrified of ghosts, haunted houses, and Gengar 👻"
+    'secret.env': `TOP_SECRET_ARCHIVAL_NOTE="A well-documented dread of ghosts, haunted halls, and horror films."
 DREAM="Pioneering autonomous multi-agent systems and verified Graph-RAG"
 DAILY_FUEL="Coffee, arXiv preprints, geopolitical feeds & beatbox rhythms"
 FAVORITE_OPENING="1. e4 c5 (Sicilian Defense)"`
@@ -708,10 +708,10 @@ FAVORITE_OPENING="1. e4 c5 (Sicilian Defense)"`
       } else if (cmd === 'beatbox' || cmd === 'dropbeat') {
         playPikachuSound('beatbox');
         const beatAnim = `[BEATBOX_ENGINE] Synthesizing 8-bit live vocal beatbox loop...
-♫  | █ ▅ ▃ ▇ █ ▄ ▆ █ ▅ ▃ ▇ █ |  ♫
+[CADENCE] | █ ▅ ▃ ▇ █ ▄ ▆ █ ▅ ▃ ▇ █ | [CADENCE END]
 Pattern: [B]oom (Kick) -> [t]sh (Hi-hat) -> [K]a (Snare) -> [t]sh (Hi-hat)
 "Advaith drops rhythmic basslines and acoustic beatbox patterns between model training.
-Drop an email to jam or challenge him to a freestyle beat!"`;
+Drop an enquiry to jam or challenge him to a freestyle beat!"`;
         appendOutput(beatAnim, false, 'text-moss');
       } else if (cmd === 'ghost' || cmd === 'spook' || cmd === 'boo') {
         playPikachuSound('ghost');
@@ -724,11 +724,11 @@ Drop an email to jam or challenge him to a freestyle beat!"`;
           sprite.classList.add('scared-shake');
           setTimeout(() => sprite.classList.remove('scared-shake'), 600);
         }
-        const spookLog = `⚠️  [CRITICAL KERNEL PANIC 0xGHOST]:
-👻  UNIDENTIFIED SPECTRAL ENTITY DETECTED IN SECTOR 4!
-⚡  Pikachu panicked! Threw Thunderbolt at the terminal screen!
-😱  Advaith deployed emergency blankets and closed 47 browser tabs!
->> "FATAL: Advaith is terrified of ghosts! Please return to safe topics like PyTorch, Chess, or Football!"`;
+        const spookLog = `[CRITICAL TELETYPE ALARM // CODE SPECTRE]:
+UNIDENTIFIED SUPERNATURAL MANIFESTATION IN SECTOR 4!
+Detective Pikachu retreats behind the teletype machine!
+The engineer has evacuated the pressroom under three woolen blankets!
+>> "FATAL: Advaith harbors an absolute dread of ghosts! Please return to verified topics like PyTorch, Chess, or Football!"`;
         appendOutput(spookLog, false, 'text-oxide');
       } else if (cmd === 'matrix') {
         const matrixLines = [
@@ -738,7 +738,7 @@ Drop an email to jam or challenge him to a freestyle beat!"`;
           'MCP_ORCHESTRATOR: 41 tools loaded across 8 operational domains',
           'Wake up, Developer...',
           'The Matrix has you.',
-          'Follow the yellow Pikachu. ⚡',
+          'Follow the Chief Archive Investigator.',
           '[STREAM COMPLETE: Neural link established.]'
         ];
         appendOutput(matrixLines.join('\n'), false, 'text-moss');
@@ -763,7 +763,7 @@ Drop an email to jam or challenge him to a freestyle beat!"`;
           appendOutput(`git: '${argStr}' is not a recognized demo git command. Try 'git log' or 'git status'.`);
         }
       } else if (cmd === 'sudo') {
-        appendOutput(`[sudo] password for advaith:\nadvaith is not in the sudoers file. This incident will be reported to Pikachu. ⚡`, false, 'text-oxide');
+        appendOutput(`[sudo] password for advaith:\nadvaith is not in the sudoers ledger. This incident will be reported to the Gazette archives.`, false, 'text-oxide');
       } else if (cmd === 'ping') {
         const target = argStr || 'github.com';
         const pingLog = `PING ${target} (140.82.121.4): 56 data bytes\n64 bytes from 140.82.121.4: icmp_seq=0 ttl=117 time=14.32 ms\n64 bytes from 140.82.121.4: icmp_seq=1 ttl=117 time=13.88 ms\n64 bytes from 140.82.121.4: icmp_seq=2 ttl=117 time=14.05 ms\n--- ${target} ping statistics ---\n3 packets transmitted, 3 packets received, 0.0% packet loss\nround-trip min/avg/max = 13.88/14.08/14.32 ms`;
@@ -776,7 +776,7 @@ Drop an email to jam or challenge him to a freestyle beat!"`;
           if (window.AdvaithRAG) {
             const ret = window.AdvaithRAG.retrieve(debugQuery, 3);
             const ansObj = window.AdvaithRAG.query(debugQuery);
-            let dbgText = `⚡ [VECTOR RAG PIPELINE DIAGNOSTICS]\nQuery: "${debugQuery}"\nLatency: ${ret.latencyMs}ms | Corpus: 52 Chunks | Space: 64-Dim\nTop Retrieved Chunks:`;
+            let dbgText = `[ARCHIVAL RAG PIPELINE DIAGNOSTICS]\nQuery: "${debugQuery}"\nLatency: ${ret.latencyMs}ms | Corpus: 52 Chunks | Space: 64-Dim\nTop Retrieved Chunks:`;
             ret.topChunks.forEach((c, idx) => {
               dbgText += `\n[${idx+1}] ${c.chunk.title}\n    Score: ${c.score} (CosSim: ${c.cosSim} | BM25: ${c.bm25})\n    Category: ${c.chunk.category}`;
             });
@@ -793,7 +793,7 @@ Drop an email to jam or challenge him to a freestyle beat!"`;
             .replace(/<\/?code>/gi, '')
             .replace(/<a[^>]*>(.*?)<\/a>/gi, '$1');
           const meta = resp.retrieval && resp.retrieval.topChunks[0] ? ` [Score: ${resp.retrieval.topChunks[0].score}, ${resp.retrieval.latencyMs}ms]` : '';
-          appendOutput(`⚡ [PIKACHU VECTOR RAG ENGINE]${meta}:\n${cleanText}`, false, resp.isGhost ? 'text-oxide' : 'text-blue');
+          appendOutput(`[THE ARCHIVE DETECTIVE // INTELLIGENCE DOSSIER]${meta}:\n${cleanText}`, false, resp.isGhost ? 'text-oxide' : 'text-blue');
         }
       } else if (cmd === 'history') {
         const histLog = history.map((h, i) => `  ${String(i + 1).padStart(3, ' ')}  ${h}`).join('\n');
@@ -907,7 +907,7 @@ function initPokemonCompanion() {
     }
 
     // 1. Add User Case Inquiry
-    appendChat('📁 CASE INQUIRY SUBMITTED:', cleanQuery, true, false);
+    appendChat('CASE ENQUIRY SUBMITTED:', cleanQuery, true, false);
 
     // 2. Play subtle spark chime
     playPikachuSound('spark');
@@ -982,7 +982,7 @@ function initPokemonCompanion() {
       }
 
       updateRagHud(responseData);
-      appendChat('🔎 THE ARCHIVE DETECTIVE // CASE FINDINGS:', responseData.answer, false, isGhost, responseData.citations);
+      appendChat('THE ARCHIVE DETECTIVE // CASE FINDINGS:', responseData.answer, false, isGhost, responseData.citations);
       setTicker('EVIDENCE RETRIEVED · CASE No. 001');
     }, 280);
   }
@@ -1012,8 +1012,8 @@ function initPokemonCompanion() {
       sprite.style.transform = 'scale(1.1) rotate(3deg)';
       setTimeout(() => sprite.style.transform = 'scale(1) rotate(0deg)', 180);
       appendChat(
-        '🔎 DETECTIVE PIKACHU // ARCHIVE DISPATCH:',
-        "Pika! 🔎 Case file active! I am cross-examining Advaith's 39 verified repositories and technical dossiers. Submit any case or inquiry to examine the evidence!",
+        'THE ARCHIVE DETECTIVE // OFFICIAL DISPATCH:',
+        "Pika! Case file active. I am cross-examining Advaith's 39 verified repositories and technical dossiers. Submit any enquiry to inspect the documented evidence.",
         false,
         false
       );
@@ -1024,7 +1024,7 @@ function initPokemonCompanion() {
   if (chimeBtn) {
     chimeBtn.addEventListener('click', () => {
       playPikachuSound('spark');
-      appendChat('🔎 DETECTIVE PIKACHU // CASE CHIME:', "Pika-pi! ⚡ Case evidence transmission chime verified.", false, false);
+      appendChat('THE ARCHIVE DETECTIVE // SIGNAL BELL:', "Pika-pi! Editorial wire transmission chime verified.", false, false);
     });
   }
 
@@ -1032,7 +1032,7 @@ function initPokemonCompanion() {
   if (feedBtn) {
     feedBtn.addEventListener('click', () => {
       playPikachuSound('levelup');
-      appendChat('🔎 DETECTIVE PIKACHU // ARCHIVE SYNC:', "Archive sync complete! ⚡ Verified 55 knowledge chunks and 39 audited repositories across hybrid RRF subspace.", false, false);
+      appendChat('THE ARCHIVE DETECTIVE // ARCHIVE SYNC:', "Archive index synchronized. Verified 55 knowledge dossiers across 39 audited repositories in the hybrid broadsheet register.", false, false);
       setTicker('ARCHIVE SYNC CONFIRMED · 39 REPOSITORIES');
     });
   }
@@ -1041,15 +1041,15 @@ function initPokemonCompanion() {
   if (clearBtn) {
     clearBtn.addEventListener('click', () => {
       lastInvestigatedSubject = null;
-      setTicker('CASE FILE OPENED · STANDBY FOR INQUIRY');
+      setTicker('CASE FILE OPENED · STANDBY FOR ENQUIRY');
       chatLog.innerHTML = `
         <div class="chat-msg bot-msg detective-msg">
           <div class="case-header-stamp">
-            <span class="chat-speaker">🔎 THE ARCHIVE DETECTIVE // CASE No. 001</span>
+            <span class="chat-speaker">THE ARCHIVE DETECTIVE // SPECIAL ENQUIRY No. 001</span>
             <span class="case-stamp-tag">NEW CASE FILE</span>
           </div>
           <div class="findings-body">
-            Pika! 🔎 Case dossier cleared. Ready for your next investigation. What technical record or project shall we examine?
+            Pika! Case dossier cleared. Standing by for your next enquiry. What technical record or project shall we investigate?
           </div>
         </div>
       `;
@@ -1061,7 +1061,7 @@ function initPokemonCompanion() {
     minBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       widget.classList.toggle('minimized');
-      minBtn.textContent = widget.classList.contains('minimized') ? '▲ EXPAND' : '_ MINIMIZE';
+      minBtn.textContent = widget.classList.contains('minimized') ? 'EXPAND ▲' : 'MINIMIZE _';
     });
   }
 
@@ -1073,7 +1073,7 @@ function initPokemonCompanion() {
       e.stopPropagation();
       const isHidden = ragHudPanel.style.display === 'none';
       ragHudPanel.style.display = isHidden ? 'block' : 'none';
-      ragInspectBtn.textContent = isHidden ? '✖ CLOSE HUD' : '🔍 EVIDENCE HUD';
+      ragInspectBtn.textContent = isHidden ? 'CLOSE DOSSIER' : 'EVIDENCE DOSSIER';
     });
   }
 
@@ -1297,9 +1297,9 @@ function initCopyEmail() {
     try {
       await navigator.clipboard.writeText('advaithsarva@gmail.com');
       const originalText = copyBtn.textContent;
-      copyBtn.textContent = 'COPIED TO CLIPBOARD! ✓';
-      copyBtn.style.backgroundColor = '#168F3E';
-      copyBtn.style.color = '#FFFFFF';
+      copyBtn.textContent = 'TELEGRAPH ADDRESS COPIED';
+      copyBtn.style.backgroundColor = 'var(--text-main)';
+      copyBtn.style.color = 'var(--bg-canvas)';
       setTimeout(() => {
         copyBtn.textContent = originalText;
         copyBtn.style.backgroundColor = '';

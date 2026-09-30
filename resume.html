@@ -554,15 +554,15 @@
 
     <div class="action-group">
       <button onclick="copyEmail()" class="resume-btn" id="copyBtn">
-        📋 COPY EMAIL
+        COPY TELEGRAPH ADDRESS
       </button>
       <button onclick="window.print()" class="resume-btn btn-accent">
-        🖨️ PRINT RECORD / SAVE AS PDF
+        PRINT OFFICIAL DOSSIER
       </button>
     </div>
   </header>
 
-  <!-- Resume Sheet (Neo-Brutalist Layout) -->
+  <!-- Resume Sheet (Broadsheet Archival Layout) -->
   <main class="resume-sheet">
 
     <!-- Header Block -->
@@ -580,10 +580,10 @@
 
       <div class="header-contact-grid">
         <a href="mailto:advaithsarva@gmail.com" class="contact-item">
-          <strong>✉</strong> advaithsarva@gmail.com
+          <strong>EM</strong> advaithsarva@gmail.com
         </a>
         <a href="https://www.linkedin.com/in/sarvaadvaithnarayana/" target="_blank" rel="noreferrer" class="contact-item">
-          <strong>in</strong> linkedin.com/in/sarvaadvaithnarayana
+          <strong>IN</strong> linkedin.com/in/sarvaadvaithnarayana
         </a>
         <a href="https://github.com/advaithsarva" target="_blank" rel="noreferrer" class="contact-item">
           <strong>GH</strong> github.com/advaithsarva
@@ -598,7 +598,7 @@
           <strong>IG</strong> @advaithsarva
         </a>
         <span class="contact-item">
-          <strong>📍</strong> Lacey, WA, USA · Hyderabad, India
+          <strong>LOC</strong> Lacey, WA, USA · Hyderabad, India
         </span>
       </div>
     </header>
@@ -616,7 +616,7 @@
       <h2 class="section-title"><span class="sec-code">02 //</span> HONORS & VERIFIED ACHIEVEMENTS</h2>
       <div class="achievements-table">
         <div class="achieve-box">
-          <span class="achieve-badge">🏆 TOP 5 SOUTH ZONE</span>
+          <span class="achieve-badge">TOP 5 SOUTH ZONE</span>
           <div class="achieve-title">IBM BOB National Hackathon 2026</div>
           <div class="achieve-text">
             Engineered <em>The Sentinel Grid</em> disaster forecasting system (6,957 LOC Python, 314 automated tests, 104 formula audits). Attained <strong>0.9924 ROC-AUC</strong> across 473k district-month soil moisture observations.
@@ -624,7 +624,7 @@
         </div>
 
         <div class="achieve-box">
-          <span class="achieve-badge" style="background:#60A5FA; color:#FFF;">🔍 CLINICAL ALGORITHM AUDIT</span>
+          <span class="achieve-badge">CLINICAL ALGORITHM AUDIT</span>
           <div class="achieve-title">ASCVD Risk Engine Inversion Fix</div>
           <div class="achieve-text">
             Audited Preventvital's cardiovascular risk calculation engine, caught a sign inversion bug artificially collapsing baseline risk to 0.1%, and validated correction against published Goff 2014 trials.
@@ -632,7 +632,7 @@
         </div>
 
         <div class="achieve-box">
-          <span class="achieve-badge" style="background:#0D9488; color:#FFF;">🎓 3.47 / 4.0 CGPA DEAN'S HONORS</span>
+          <span class="achieve-badge">3.47 / 4.0 CGPA DEAN'S HONORS</span>
           <div class="achieve-title">Saint Martin's University Honors</div>
           <div class="achieve-text">
             Completed rigorous upper-division coursework in Distributed Systems, Machine Learning, and Algorithms across two semesters (Completed May 2026). Peer mentor at Center for Student Success.
@@ -640,7 +640,7 @@
         </div>
 
         <div class="achieve-box">
-          <span class="achieve-badge" style="background:#4F46E5; color:#FFF;">⚡ EXECUTIVE LEADERSHIP</span>
+          <span class="achieve-badge">EXECUTIVE LEADERSHIP</span>
           <div class="achieve-title">CODE{X} Programming Club</div>
           <div class="achieve-text">
             Spearheaded university hackathons, technical problem-solving sessions, and hands-on workshops in systems and deep learning for 200+ undergraduate developers.
@@ -890,7 +890,7 @@
       navigator.clipboard.writeText('advaithsarva@gmail.com').then(() => {
         const btn = document.getElementById('copyBtn');
         const orig = btn.textContent;
-        btn.textContent = '✓ COPIED!';
+        btn.textContent = 'COPIED TO CLIPBOARD';
         setTimeout(() => btn.textContent = orig, 2000);
       });
     }
