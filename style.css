@@ -9,20 +9,21 @@
 
 :root,
 html[data-theme="light"] {
-  /* 1920s Editorial Newsprint & Ink Palette */
-  --bg-canvas: #F6F1E8;          /* Warm Newsprint / Aged Paper */
-  --bg-card: #ECE4D6;            /* Shaded Editorial Column / Box */
-  --bg-surface: #FAF7F0;         /* Fresh Newsprint Surface */
-  --text-main: #141414;          /* Dense Printer's Carbon Black */
-  --text-muted: #4A463F;         /* Typesetter Charcoal */
-  --border-color: #141414;       /* Cast-Iron Lead Newspaper Rules */
-  --border-subtle: #8A847A;      /* Hairline Column Divider */
-  --color-blueprint: #1B365D;    /* Historic Newsroom Navy */
-  --color-oxide: #87201C;        /* Letterpress Oxblood Red */
-  --color-moss: #225C38;         /* Archival Olive/Dark Green */
-  --color-gold: #D4AF37;         /* Antique Brass */
-  --shadow-color: #141414;
-  --grid-line: rgba(20, 20, 20, 0.14);
+  /* 1920s Editorial Newsprint & Ink Palette (Calibrated to Reference Broadsheet) */
+  --bg-canvas: #E6D8BE;          /* Warm Newsprint / Aged Paper from reference */
+  --bg-card: #DFCFB0;            /* Shaded Editorial Column / Box Tint */
+  --bg-surface: #EDE3CF;         /* Elevated Newsprint Box Surface */
+  --text-main: #16130E;          /* Dense Printer's Carbon Black */
+  --text-muted: #4F473B;         /* Typesetter Antique Charcoal */
+  --border-color: #16130E;       /* Cast-Iron Lead Newspaper Rules */
+  --border-subtle: #7A7060;      /* Hairline Column Divider */
+  --rule-color: #16130E;
+  --color-blueprint: #16130E;    /* Pure Monochrome Black Ink */
+  --color-oxide: #16130E;        /* Pure Monochrome Black Ink */
+  --color-moss: #16130E;         /* Pure Monochrome Black Ink */
+  --color-gold: #16130E;         /* Pure Monochrome Black Ink */
+  --shadow-color: #16130E;
+  --grid-line: rgba(22, 19, 14, 0.14);
 
   /* Terminal Amber Phosphor CRT (Strictly localized to terminal) */
   --term-amber: #FFB000;
@@ -33,7 +34,7 @@ html[data-theme="light"] {
 }
 
 html[data-theme="dark"] {
-  /* Archival Carbon Negative Print (Preserves historic feel in dark mode) */
+  /* Archival Carbon Negative Print (Preserves historic broadsheet in dark mode) */
   --bg-canvas: #151413;          /* Dark Carbon Archive */
   --bg-card: #1F1D1B;            /* Dark Charcoal Column */
   --bg-surface: #272522;         /* Elevated Archival Slab */
@@ -41,10 +42,11 @@ html[data-theme="dark"] {
   --text-muted: #A6A095;         /* Muted Carbon Type */
   --border-color: #EFE8DC;       /* Ivory Cast Rule */
   --border-subtle: #57524A;      /* Subtle Hairline */
-  --color-blueprint: #4E7AC7;    /* Slate Blue */
-  --color-oxide: #C94C47;        /* Historic Vermilion */
-  --color-moss: #429E65;         /* Archival Sage */
-  --color-gold: #E5C158;
+  --rule-color: #EFE8DC;
+  --color-blueprint: #EFE8DC;
+  --color-oxide: #EFE8DC;
+  --color-moss: #EFE8DC;
+  --color-gold: #EFE8DC;
   --shadow-color: #000000;
   --grid-line: rgba(239, 232, 220, 0.1);
 
@@ -88,12 +90,67 @@ a {
 }
 
 /* --------------------------------------------------------------------------
+   GLOBAL BLACK & WHITE HALFTONE / ENGRAVING PRINT RULE
+   Every image, schematic, portrait, and illustration renders in 100% monochrome ink
+   -------------------------------------------------------------------------- */
+img,
+.project-schematic-img,
+.detective-avatar,
+.avatar-img,
+.author-portrait,
+.plate-img,
+.evidence-photo,
+.project-visual img,
+.project-preview-mockup img,
+.assistant-avatar,
+.chat-avatar img {
+  filter: grayscale(100%) contrast(130%) brightness(95%) !important;
+  -webkit-filter: grayscale(100%) contrast(130%) brightness(95%) !important;
+  border: 1px solid var(--border-color);
+}
+
+.project-card:hover .project-schematic-img,
+img:hover {
+  filter: grayscale(100%) contrast(145%) brightness(90%) !important;
+  -webkit-filter: grayscale(100%) contrast(145%) brightness(90%) !important;
+}
+
+/* --------------------------------------------------------------------------
+   AUTHENTIC 1920s BROADSHEET PAGE FRAMING
+   Double-rule lead border enclosing the newspaper broadsheet page
+   -------------------------------------------------------------------------- */
+.broadsheet-frame-outer {
+  max-width: 1380px;
+  margin: 12px auto 40px;
+  padding: 6px;
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-canvas);
+  box-shadow: 0 4px 20px rgba(22, 19, 14, 0.12);
+  position: relative;
+}
+
+.broadsheet-frame-inner {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-canvas);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .broadsheet-frame-outer {
+    margin: 4px;
+    padding: 3px;
+    border-width: 1px;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Top Marquee Announcement Bar
    -------------------------------------------------------------------------- */
 .announcement-bar {
-  background-color: var(--color-blueprint);
-  color: #FFFFFF;
-  font-size: 0.75rem;
+  background-color: var(--text-main);
+  color: var(--bg-canvas);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   padding: 6px 0;
@@ -123,6 +180,30 @@ a {
   position: relative;
 }
 
+/* Top Ornate Ribbon with Filigree Flourish */
+.masthead-ribbon-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  padding: 5px 16px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+}
+
+.ornament-flourish {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+}
+
 .newspaper-topbar {
   border-bottom: 1px solid var(--border-color);
   padding: 6px 20px;
@@ -131,7 +212,7 @@ a {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background-color: var(--bg-card);
+  background-color: var(--bg-surface);
   color: var(--text-muted);
 }
 
@@ -210,6 +291,34 @@ a {
   text-align: center;
 }
 
+.masthead-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.masthead-hatch-panel {
+  flex: 1;
+  height: 24px;
+  background-color: var(--bg-card);
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--border-color),
+    var(--border-color) 1.5px,
+    transparent 1.5px,
+    transparent 4px
+  );
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+@media (max-width: 900px) {
+  .masthead-hatch-panel {
+    display: none;
+  }
+}
+
 .masthead-title {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(2.2rem, 5.2vw, 4.2rem);
@@ -219,6 +328,7 @@ a {
   color: var(--text-main);
   text-transform: uppercase;
   margin: 0;
+  white-space: nowrap;
 }
 
 .masthead-subtitle {
@@ -1144,19 +1254,12 @@ pre {
   text-transform: uppercase;
 }
 
-.achievement-badge.badge-blue {
-  background-color: var(--color-blueprint);
-  color: #FFFFFF;
-}
-
-.achievement-badge.badge-moss {
-  background-color: var(--color-moss);
-  color: #FFFFFF;
-}
-
+.achievement-badge.badge-blue,
+.achievement-badge.badge-moss,
 .achievement-badge.badge-purple {
-  background-color: var(--color-oxide);
-  color: #FFFFFF;
+  background-color: var(--text-main);
+  color: var(--bg-canvas) !important;
+  border: 1px solid var(--border-color);
 }
 
 .achievement-title {
@@ -1690,13 +1793,15 @@ pre {
   max-height: 52px;
   object-fit: contain;
   display: block;
-  /* Authentic 1920s newspaper halftone/inkprint treatment: high contrast, slight desaturation, subtle sepia */
-  filter: contrast(120%) grayscale(25%) sepia(12%);
+  /* Authentic 1920s newspaper halftone/inkprint treatment: 100% monochrome black-and-white ink engraving */
+  filter: grayscale(100%) contrast(140%) brightness(95%) !important;
+  -webkit-filter: grayscale(100%) contrast(140%) brightness(95%) !important;
   transition: transform 0.15s ease, filter 0.15s ease;
 }
 
 .detective-avatar-frame:hover .detective-img {
-  filter: contrast(125%) grayscale(10%) sepia(8%);
+  filter: grayscale(100%) contrast(155%) brightness(90%) !important;
+  -webkit-filter: grayscale(100%) contrast(155%) brightness(90%) !important;
   transform: scale(1.05);
 }
 

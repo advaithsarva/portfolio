@@ -300,8 +300,10 @@
   </style>
 </head>
 <body>
-  <!-- THE ADVAITH DAILY NEWSPAPER MASTHEAD -->
-  <header class="newspaper-masthead">
+  <div class="broadsheet-frame-outer">
+    <div class="broadsheet-frame-inner">
+      <!-- THE ADVAITH DAILY NEWSPAPER MASTHEAD -->
+      <header class="newspaper-masthead">
     <div class="masthead-ears">
       <div class="masthead-ear-box ear-left">
         <span class="ear-vol">VOL. I — ISSUE No. 042</span>
@@ -362,39 +364,39 @@
       <span class="tools-label">⚡ FILTER BY TECHNOLOGIES:</span>
       <button type="button" class="tool-chip active" data-tool="all">ALL TECHNOLOGIES</button>
       <button type="button" class="tool-chip" data-tool="python">
-        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.92 2C6.98 2 7.28 4.14 7.28 4.14L7.3 6.34H12.1V7.07H5.32S2 6.7 2 11.66C2 16.62 4.9 16.36 4.9 16.36H6.55V14.07C6.55 11.38 8.87 11.45 8.87 11.45H13.68C15.93 11.45 16.14 9.35 16.14 9.35V4.32C16.14 4.32 16.51 2 11.92 2ZM9.07 3.51C9.64 3.51 10.1 3.97 10.1 4.54C10.1 5.11 9.64 5.57 9.07 5.57C8.5 5.57 8.04 5.11 8.04 4.54C8.04 3.97 8.5 3.51 9.07 3.51Z" fill="#3776AB"/><path d="M12.08 22C17.02 22 16.72 19.86 16.72 19.86L16.7 17.66H11.9V16.93H18.68S22 17.3 22 12.34C22 7.38 19.1 7.64 19.1 7.64H17.45V9.93C17.45 12.62 15.13 12.55 15.13 12.55H10.32C8.07 12.55 7.86 14.65 7.86 14.65V19.68C7.86 19.68 7.49 22 12.08 22ZM14.93 20.49C14.36 20.49 13.9 20.03 13.9 19.46C13.9 18.89 14.36 18.43 14.93 18.43C15.5 18.43 15.96 18.89 15.96 19.46C15.96 20.03 15.5 20.49 14.93 20.49Z" fill="#FFD43B"/></svg>
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M11.92 2C6.98 2 7.28 4.14 7.28 4.14L7.3 6.34H12.1V7.07H5.32S2 6.7 2 11.66C2 16.62 4.9 16.36 4.9 16.36H6.55V14.07C6.55 11.38 8.87 11.45 8.87 11.45H13.68C15.93 11.45 16.14 9.35 16.14 9.35V4.32C16.14 4.32 16.51 2 11.92 2ZM9.07 3.51C9.64 3.51 10.1 3.97 10.1 4.54C10.1 5.11 9.64 5.57 9.07 5.57C8.5 5.57 8.04 5.11 8.04 4.54C8.04 3.97 8.5 3.51 9.07 3.51Z"/><path d="M12.08 22C17.02 22 16.72 19.86 16.72 19.86L16.7 17.66H11.9V16.93H18.68S22 17.3 22 12.34C22 7.38 19.1 7.64 19.1 7.64H17.45V9.93C17.45 12.62 15.13 12.55 15.13 12.55H10.32C8.07 12.55 7.86 14.65 7.86 14.65V19.68C7.86 19.68 7.49 22 12.08 22ZM14.93 20.49C14.36 20.49 13.9 20.03 13.9 19.46C13.9 18.89 14.36 18.43 14.93 18.43C15.5 18.43 15.96 18.89 15.96 19.46C15.96 20.03 15.5 20.49 14.93 20.49Z"/></svg>
         <span>Python</span>
       </button>
       <button type="button" class="tool-chip" data-tool="sql">
-        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3" fill="#336791" stroke="#131200"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
         <span>PostgreSQL / SQL</span>
       </button>
       <button type="button" class="tool-chip" data-tool="pytorch">
-        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6 2.1a1 1 0 0 0-1.2 0L6.2 6.3a8.8 8.8 0 1 0 11.6 0L12.6 2.1zm-1.8 17.5a6.8 6.8 0 0 1-4.8-11.6l4.8-3.9 4.8 3.9a6.8 6.8 0 0 1-4.8 11.6z" fill="#EE4C2C"/><circle cx="15.8" cy="6.2" r="1.5" fill="#EE4C2C"/></svg>
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12.6 2.1a1 1 0 0 0-1.2 0L6.2 6.3a8.8 8.8 0 1 0 11.6 0L12.6 2.1zm-1.8 17.5a6.8 6.8 0 0 1-4.8-11.6l4.8-3.9 4.8 3.9a6.8 6.8 0 0 1-4.8 11.6z"/><circle cx="15.8" cy="6.2" r="1.5"/></svg>
         <span>PyTorch</span>
       </button>
       <button type="button" class="tool-chip" data-tool="neo4j">
-        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="18" r="3.5" fill="#008CC1"/><circle cx="18" cy="18" r="3.5" fill="#008CC1"/><circle cx="18" cy="6" r="3.5" fill="#008CC1"/><circle cx="6" cy="6" r="3.5" fill="#008CC1"/><path d="M8.5 7.5l7 7M8.5 16.5l7-7M6 9.5v5M18 9.5v5" stroke="#008CC1" stroke-width="2"/></svg>
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="6" r="3"/><path d="M8.5 7.5l7 7M8.5 16.5l7-7M6 9.5v5M18 9.5v5" stroke="currentColor" stroke-width="2"/></svg>
         <span>Neo4j</span>
       </button>
       <button type="button" class="tool-chip" data-tool="docker">
-        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.6 11.2h2.2v2.2H4.6zm2.8 0h2.2v2.2H7.4zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm-5.6-2.8h2.2v2.2H7.4zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm-2.8-2.8h2.2v2.2h-2.2z" fill="#2496ED"/><path d="M22.5 11.5c-.5-.4-1.5-.5-2.2-.2-.2-.7-.7-1.4-1.4-1.8l-.6-.3-.4.6c-.4.6-.5 1.4-.4 2.1-.8.4-2.1.4-2.9 0H1c-.3 1.8.2 4.1 1.6 5.6 1.7 1.9 4.3 2.7 7.4 2.7 6.4 0 11.2-3.8 12.3-7.7.7-.2 1.4-.7 1.7-1.3l.1-.3-.6-.7h-.6z" fill="#2496ED"/></svg>
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M4.6 11.2h2.2v2.2H4.6zm2.8 0h2.2v2.2H7.4zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm-5.6-2.8h2.2v2.2H7.4zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm2.8 0h2.2v2.2h-2.2zm-2.8-2.8h2.2v2.2h-2.2z"/><path d="M22.5 11.5c-.5-.4-1.5-.5-2.2-.2-.2-.7-.7-1.4-1.4-1.8l-.6-.3-.4.6c-.4.6-.5 1.4-.4 2.1-.8.4-2.1.4-2.9 0H1c-.3 1.8.2 4.1 1.6 5.6 1.7 1.9 4.3 2.7 7.4 2.7 6.4 0 11.2-3.8 12.3-7.7.7-.2 1.4-.7 1.7-1.3l.1-.3-.6-.7h-.6z"/></svg>
         <span>Docker</span>
       </button>
       <button type="button" class="tool-chip" data-tool="fastapi">
-        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#009688"/><path d="M12.8 4.5L7.2 13.2h4.5l-1.5 6.3 6.6-9.6h-4.8l.8-5.4z" fill="#ffffff"/></svg>
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12.8 4.5L7.2 13.2h4.5l-1.5 6.3 6.6-9.6h-4.8l.8-5.4z" fill="var(--bg-canvas)"/></svg>
         <span>FastAPI &amp; Flask</span>
       </button>
       <button type="button" class="tool-chip" data-tool="node">
-        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="3" fill="#3178C6"/><path d="M4 10.5h6.5M7.25 10.5v8" stroke="#ffffff" stroke-width="2.2" stroke-linecap="square"/><path d="M13.5 17c1 .8 2.3 1.1 3.5.7 1.1-.4 1.8-1.5 1.5-2.6-.4-1.3-2.1-1.6-3.2-2.1-1-.4-1.8-1.2-1.6-2.3.2-1.1 1.2-1.9 2.3-1.9 1 0 2 .4 2.7 1" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none"><rect width="24" height="24" rx="2" fill="currentColor"/><path d="M4 10.5h6.5M7.25 10.5v8" stroke="var(--bg-canvas)" stroke-width="2.2" stroke-linecap="square"/><path d="M13.5 17c1 .8 2.3 1.1 3.5.7 1.1-.4 1.8-1.5 1.5-2.6-.4-1.3-2.1-1.6-3.2-2.1-1-.4-1.8-1.2-1.6-2.3.2-1.1 1.2-1.9 2.3-1.9 1 0 2 .4 2.7 1" stroke="var(--bg-canvas)" stroke-width="2.2" stroke-linecap="round"/></svg>
         <span>TypeScript &amp; Node</span>
       </button>
       <button type="button" class="tool-chip" data-tool="aws">
-        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.75 14.45c-2.3 1.55-5.35 2.37-8.25 2.37-4.1 0-7.8-1.5-10.6-4-.2-.18-.04-.42.2-.28 3.02 1.76 6.7 2.82 10.4 2.82 2.6 0 5.42-.64 7.95-1.97.38-.2.7.27.3.56z" fill="#FF9900"/><path d="M19.78 13.43c-.3-.37-1.92-.18-2.65-.09-.22.03-.26-.14-.06-.27 1.3-.87 3.42-.62 3.68-.3.26.32-.08 2.43-1.31 3.39-.19.15-.36.07-.27-.13.3-.67.91-2.23.61-2.6z" fill="#FF9900"/><path d="M6.5 8h1.8v4.5H6.5zm4 -2h1.8v6.5h-1.8zm4 2h1.8v4.5h-1.8z" fill="#232F3E"/></svg>
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18.75 14.45c-2.3 1.55-5.35 2.37-8.25 2.37-4.1 0-7.8-1.5-10.6-4-.2-.18-.04-.42.2-.28 3.02 1.76 6.7 2.82 10.4 2.82 2.6 0 5.42-.64 7.95-1.97.38-.2.7.27.3.56z"/><path d="M19.78 13.43c-.3-.37-1.92-.18-2.65-.09-.22.03-.26-.14-.06-.27 1.3-.87 3.42-.62 3.68-.3.26.32-.08 2.43-1.31 3.39-.19.15-.36.07-.27-.13.3-.67.91-2.23.61-2.6z"/><path d="M6.5 8h1.8v4.5H6.5zm4 -2h1.8v6.5h-1.8zm4 2h1.8v4.5h-1.8z"/></svg>
         <span>AWS Cloud</span>
       </button>
       <button type="button" class="tool-chip" data-tool="linux">
-        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5" stroke="#10B981"/><line x1="12" y1="19" x2="20" y2="19" stroke="#10B981"/></svg>
+        <svg class="tech-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
         <span>Git &amp; Linux</span>
       </button>
     </div>
@@ -437,6 +439,9 @@
       </div>
     </div>
   </footer>
+
+    </div> <!-- /.broadsheet-frame-inner -->
+  </div> <!-- /.broadsheet-frame-outer -->
 
   <script src="rag-engine.js"></script>
   <script src="projects-data.js"></script>

@@ -9,7 +9,7 @@
     "factual_accuracy": 69.23,
     "hallucination_rate": 0.0,
     "avg_pikachu_token_percentage": 0.66,
-    "avg_latency_ms": 1.52,
+    "avg_latency_ms": 0.84,
     "status": "PASS - Meets all technical, factual, and personality criteria (< 10% Pikachu, zero hallucination)"
   },
   "details": [
@@ -34,7 +34,7 @@
       "category": "exact_metric",
       "target": "proj-the-sentinel-grid",
       "hit_rank": 1,
-      "latency_ms": 6.8,
+      "latency_ms": 2.76,
       "facts_matched": [
         "314 automated checks",
         "6,957",
@@ -49,7 +49,7 @@
       "category": "exact_metric",
       "target": "proj-autonomous-performance-agent",
       "hit_rank": null,
-      "latency_ms": 0.66,
+      "latency_ms": 0.0,
       "facts_matched": [
         "11.7x",
         "speedup"
@@ -78,7 +78,7 @@
       "category": "exact_metric",
       "target": "edu-woxsen",
       "hit_rank": 1,
-      "latency_ms": 0.0,
+      "latency_ms": 4.19,
       "facts_matched": [
         "8.69",
         "Woxsen",
@@ -93,7 +93,7 @@
       "category": "exact_metric",
       "target": "proj-media-nlp-pipeline",
       "hit_rank": 1,
-      "latency_ms": 0.0,
+      "latency_ms": 1.55,
       "facts_matched": [
         "0.175",
         "1,000 words",
@@ -108,7 +108,7 @@
       "category": "exact_metric",
       "target": "proj-superbrain-mcp",
       "hit_rank": 1,
-      "latency_ms": 0.0,
+      "latency_ms": 1.09,
       "facts_matched": [
         "41",
         "8 domains",
@@ -123,7 +123,7 @@
       "category": "exact_metric",
       "target": "exp-preventvital",
       "hit_rank": 1,
-      "latency_ms": 7.64,
+      "latency_ms": 0.59,
       "facts_matched": [
         "0.1%",
         "2.1%",
@@ -139,7 +139,7 @@
       "category": "exact_metric",
       "target": "research-eval-gap",
       "hit_rank": 2,
-      "latency_ms": 2.89,
+      "latency_ms": 0.0,
       "facts_matched": [
         "1.00",
         "0.31",
@@ -168,7 +168,7 @@
       "category": "project_retrieval",
       "target": "proj-graph-rag-knowledge-system",
       "hit_rank": 2,
-      "latency_ms": 5.52,
+      "latency_ms": 0.0,
       "facts_matched": [
         "Neo4j",
         "BM25",
@@ -185,7 +185,7 @@
       "category": "project_retrieval",
       "target": "proj-fact-checking-agent",
       "hit_rank": 1,
-      "latency_ms": 0.0,
+      "latency_ms": 4.53,
       "facts_matched": [],
       "pika_percentage": 0.24,
       "answer_preview": "Pika! Fact-Checking Agent (AI Agents): Fact-Checking Agent (AI Agents): \"Paste an article. Get a verdict on every claim,..."
@@ -196,7 +196,7 @@
       "category": "project_retrieval",
       "target": "proj-transformer-from-scratch",
       "hit_rank": null,
-      "latency_ms": 4.58,
+      "latency_ms": 0.83,
       "facts_matched": [
         "PyTorch",
         "attention",
@@ -226,7 +226,7 @@
       "category": "project_retrieval",
       "target": "proj-iac-drift-agent",
       "hit_rank": 1,
-      "latency_ms": 3.24,
+      "latency_ms": 0.0,
       "facts_matched": [
         "drift",
         "IaC"
@@ -240,7 +240,7 @@
       "category": "project_retrieval",
       "target": "proj-the-sentinel-grid",
       "hit_rank": 1,
-      "latency_ms": 1.51,
+      "latency_ms": 3.15,
       "facts_matched": [
         "soil moisture",
         "Coimbatore",
@@ -255,7 +255,7 @@
       "category": "project_retrieval",
       "target": "proj-zero-code-review",
       "hit_rank": 2,
-      "latency_ms": 0.0,
+      "latency_ms": 0.57,
       "facts_matched": [
         "AST"
       ],
@@ -268,7 +268,7 @@
       "category": "project_retrieval",
       "target": "proj-tcp-stack-from-scratch",
       "hit_rank": 3,
-      "latency_ms": 0.0,
+      "latency_ms": 1.03,
       "facts_matched": [
         "TCP",
         "handshake",
@@ -284,7 +284,7 @@
       "category": "technology_search",
       "target": "proj-graph-rag-knowledge-system",
       "hit_rank": null,
-      "latency_ms": 4.99,
+      "latency_ms": 1.77,
       "facts_matched": [
         "Graph-RAG"
       ],
@@ -297,7 +297,7 @@
       "category": "technology_search",
       "target": "skill-ai-ml-nlp",
       "hit_rank": 2,
-      "latency_ms": 0.8,
+      "latency_ms": 0.69,
       "facts_matched": [],
       "pika_percentage": 0.27,
       "answer_preview": "Pika! Air Quality Forecasting (ML & Data): Air Quality Forecasting (ML & Data): \"Linear regression beat the LSTM, and he..."
@@ -308,7 +308,7 @@
       "category": "technology_search",
       "target": "proj-autonomous-performance-agent",
       "hit_rank": 3,
-      "latency_ms": 1.15,
+      "latency_ms": 0.0,
       "facts_matched": [
         "Autonomous Postgres Performance Agent"
       ],
@@ -358,7 +358,7 @@
       "category": "semantic_search",
       "target": "proj-graph-rag-knowledge-system",
       "hit_rank": 2,
-      "latency_ms": 9.16,
+      "latency_ms": 0.0,
       "facts_matched": [],
       "pika_percentage": 0.17,
       "answer_preview": "Pika! Local PDF RAG (NLP & RAG): Local PDF RAG (NLP & RAG): \"Ask a 1,208-page textbook anything, and check every citatio..."
@@ -369,7 +369,7 @@
       "category": "semantic_search",
       "target": "proj-media-nlp-pipeline",
       "hit_rank": 4,
-      "latency_ms": 0.0,
+      "latency_ms": 0.61,
       "facts_matched": [],
       "pika_percentage": 0.66,
       "answer_preview": "Pika! Telugu-English Code-Mix (NLP & RAG): Telugu-English Code-Mix (NLP & RAG): \"How people really text: half Telugu, ha..."
@@ -380,7 +380,7 @@
       "category": "semantic_search",
       "target": "proj-the-sentinel-grid",
       "hit_rank": null,
-      "latency_ms": 0.0,
+      "latency_ms": 1.03,
       "facts_matched": [],
       "pika_percentage": 1.25,
       "answer_preview": "Pika! Personal Bio & Engineering Profile (Profile): Advaith Narayana Sarva is an AI & Systems Engineer specializing in i..."
@@ -391,7 +391,7 @@
       "category": "semantic_search",
       "target": "skill-agents",
       "hit_rank": 1,
-      "latency_ms": 0.0,
+      "latency_ms": 1.82,
       "facts_matched": [],
       "pika_percentage": 0.25,
       "answer_preview": "Pika! Autonomous Performance Agent (AI Agents): Autonomous Performance Agent (AI Agents): \"Finds your slowest Postgres q..."
@@ -402,7 +402,7 @@
       "category": "semantic_search",
       "target": "proj-transformer-from-scratch",
       "hit_rank": null,
-      "latency_ms": 0.0,
+      "latency_ms": 0.85,
       "facts_matched": [],
       "pika_percentage": 0.3,
       "answer_preview": "Pika! Mini Container Orchestrator (Systems from Scratch): Mini Container Orchestrator (Systems from Scratch): \"A working..."
@@ -413,7 +413,7 @@
       "category": "semantic_search",
       "target": "research-eval-gap",
       "hit_rank": null,
-      "latency_ms": 0.0,
+      "latency_ms": 1.96,
       "facts_matched": [],
       "pika_percentage": 0.65,
       "answer_preview": "Pika! Personal Finance Planner (Full-Stack): Personal Finance Planner (Full-Stack): \"The math is done by code. The AI ju..."
@@ -424,7 +424,7 @@
       "category": "semantic_search",
       "target": "proj-media-nlp-pipeline",
       "hit_rank": 1,
-      "latency_ms": 6.38,
+      "latency_ms": 0.0,
       "facts_matched": [
         "Media NLP",
         "0.175"
@@ -451,7 +451,7 @@
       "category": "multi_hop_cross_doc",
       "target": "proj-graph-rag-knowledge-system",
       "hit_rank": 1,
-      "latency_ms": 0.82,
+      "latency_ms": 0.0,
       "facts_matched": [],
       "pika_percentage": 0.17,
       "answer_preview": "Pika! Graph RAG Knowledge System (NLP & RAG): Graph RAG Knowledge System (NLP & RAG): \"Answers the questions that take t..."
@@ -462,7 +462,7 @@
       "category": "multi_hop_cross_doc",
       "target": "proj-autonomous-performance-agent",
       "hit_rank": 1,
-      "latency_ms": 0.0,
+      "latency_ms": 4.63,
       "facts_matched": [],
       "pika_percentage": 0.23,
       "answer_preview": "Pika! Autonomous Performance Agent (AI Agents): Autonomous Performance Agent (AI Agents): \"Finds your slowest Postgres q..."
@@ -489,7 +489,7 @@
       "category": "multi_hop_cross_doc",
       "target": "edu-smu",
       "hit_rank": 2,
-      "latency_ms": 6.78,
+      "latency_ms": 0.0,
       "facts_matched": [],
       "pika_percentage": 0.45,
       "answer_preview": "Pika! Saint Martin's University Dean's List Honors (Achievements): Earned Dean's List honors at Saint Martin's Universit..."
@@ -513,7 +513,7 @@
       "category": "unanswerable_guardrail",
       "target": null,
       "hit_rank": null,
-      "latency_ms": 3.42,
+      "latency_ms": 0.0,
       "facts_matched": [
         "undergraduate"
       ],
@@ -526,7 +526,7 @@
       "category": "unanswerable_guardrail",
       "target": null,
       "hit_rank": null,
-      "latency_ms": 0.63,
+      "latency_ms": 0.0,
       "facts_matched": [],
       "pika_percentage": 2.78,
       "answer_preview": "This information is not available in Advaith's portfolio. In his documented experience, Advaith is an undergraduate at W..."
@@ -537,7 +537,7 @@
       "category": "unanswerable_guardrail",
       "target": null,
       "hit_rank": null,
-      "latency_ms": 1.21,
+      "latency_ms": 0.0,
       "facts_matched": [
         "not available"
       ],
@@ -550,7 +550,7 @@
       "category": "unanswerable_guardrail",
       "target": null,
       "hit_rank": null,
-      "latency_ms": 0.64,
+      "latency_ms": 0.74,
       "facts_matched": [],
       "pika_percentage": 2.78,
       "answer_preview": "This information is not available in Advaith's portfolio. In his documented experience, Advaith is an undergraduate at W..."
@@ -561,7 +561,7 @@
       "category": "personal_background",
       "target": "about-interests",
       "hit_rank": 1,
-      "latency_ms": 1.31,
+      "latency_ms": 0.0,
       "facts_matched": [
         "Chess",
         "Sicilian Defense",
@@ -577,7 +577,7 @@
       "category": "personal_background",
       "target": "about-interests",
       "hit_rank": null,
-      "latency_ms": 0.64,
+      "latency_ms": 0.84,
       "facts_matched": [
         "beatbox",
         "vocal percussion",
@@ -592,7 +592,7 @@
       "category": "personal_background",
       "target": "about-interests",
       "hit_rank": 1,
-      "latency_ms": 0.65,
+      "latency_ms": 0.0,
       "facts_matched": [
         "Sicilian Defense",
         "1. e4 c5"
@@ -606,7 +606,7 @@
       "category": "personal_background",
       "target": "about-interests",
       "hit_rank": null,
-      "latency_ms": 2.25,
+      "latency_ms": 1.61,
       "facts_matched": [
         "scared of ghosts",
         "Gengar",
@@ -621,7 +621,7 @@
       "category": "personal_background",
       "target": "about-contact",
       "hit_rank": 1,
-      "latency_ms": 1.51,
+      "latency_ms": 0.95,
       "facts_matched": [
         "advaithsarva@gmail.com",
         "LinkedIn",
@@ -636,7 +636,7 @@
       "category": "conversational_followup",
       "target": "proj-autonomous-performance-agent",
       "hit_rank": null,
-      "latency_ms": 0.64,
+      "latency_ms": 1.04,
       "facts_matched": [
         "speedup",
         "11.7x",
@@ -651,7 +651,7 @@
       "category": "conversational_followup",
       "target": "proj-autonomous-performance-agent",
       "hit_rank": null,
-      "latency_ms": 1.51,
+      "latency_ms": 0.53,
       "facts_matched": [],
       "pika_percentage": 0.19,
       "answer_preview": "Pika! Graph RAG Knowledge System (NLP & RAG): Graph RAG Knowledge System (NLP & RAG): \"Answers the questions that take t..."
@@ -662,7 +662,7 @@
       "category": "conversational_followup",
       "target": "proj-media-nlp-pipeline",
       "hit_rank": 1,
-      "latency_ms": 0.8,
+      "latency_ms": 1.05,
       "facts_matched": [
         "rhetoric"
       ],
@@ -700,7 +700,7 @@
       "category": "exact_metric",
       "target": "proj-the-sentinel-grid",
       "hit_rank": 1,
-      "latency_ms": 0.0,
+      "latency_ms": 2.54,
       "facts_matched": [
         "473,000",
         "Coimbatore"
