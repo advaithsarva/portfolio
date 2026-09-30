@@ -781,7 +781,8 @@ Drop an email to jam or challenge him to a freestyle beat!"`;
         appendOutput(argStr);
       } else if (cmd === 'date' || cmd === 'uptime') {
         const now = new Date();
-        appendOutput(`Current Time : ${now.toUTCString()}\nSystem Uptime: 20 years, 8 months, 14 days (Continuous active development)`);
+        const istStr = now.toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }) + ' IST';
+        appendOutput(`Current Time : ${istStr}\nSystem Uptime: 20 years, 8 months, 14 days (Continuous active development)`);
       } else if (cmd === 'quote' || cmd === 'fortune') {
         appendOutput(staticResponses.quote);
       } else if (staticResponses[cmd]) {
@@ -1179,8 +1180,11 @@ function initLiveClock() {
 
   function update() {
     const now = new Date();
-    const utc = now.toUTCString().split(' ')[4] + ' UTC';
-    clockEl.textContent = utc;
+    const ist = now.toLocaleTimeString('en-US', {
+      timeZone: 'Asia/Kolkata',
+      hour12: false
+    }) + ' IST';
+    clockEl.textContent = ist;
   }
   update();
   setInterval(update, 1000);

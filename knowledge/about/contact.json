@@ -7,6 +7,8 @@
     "Email",
     "LinkedIn",
     "GitHub",
+    "Hugging Face",
+    "LeetCode",
     "Instagram"
   ],
   "date": "2026",
@@ -18,11 +20,14 @@
     "Contact",
     "Email",
     "LinkedIn",
+    "GitHub",
+    "Hugging Face",
+    "LeetCode",
     "Hire",
     "Social",
     "Inquiries"
   ],
   "stats": "Open to US, India & Remote Roles",
   "slug": "contact",
-  "content": "Advaith is reachable via email at advaithsarva@gmail.com. His professional profile is on LinkedIn at linkedin.com/in/sarvaadvaithnarayana/ and his public code repositories are hosted at github.com/advaithsarva. Instagram handle: @advaithsarva."
+  "content": "Advaith is reachable via email at advaithsarva@gmail.com. His professional profile is on LinkedIn at linkedin.com/in/sarvaadvaithnarayana/, his public repositories are on GitHub at github.com/advaithsarva, open source AI models are on Hugging Face at huggingface.co/advaithsarva, algorithmic problem solving is on LeetCode at leetcode.com/u/advaithsarva/, and Instagram handle is @advaithsarva."
 }

@@ -416,9 +416,11 @@
         <a href="index.html#contact">CONTACT</a>
       </div>
       <div class="footer-right">
-        <span class="time-clock" id="liveClock">UTC+00:00</span>
+        <span class="time-clock" id="liveClock">IST --:--:--</span>
         <div class="footer-icons">
-          <a href="https://github.com/advaithsarva" target="_blank" rel="noreferrer" title="GitHub">GH</a>
+          <a href="https://github.com/advaithsarva" target="_blank" rel="noreferrer" title="GitHub (@advaithsarva)">GH</a>
+          <a href="https://huggingface.co/advaithsarva" target="_blank" rel="noreferrer" title="Hugging Face (@advaithsarva)">HF</a>
+          <a href="https://leetcode.com/u/advaithsarva/" target="_blank" rel="noreferrer" title="LeetCode (@advaithsarva)">LC</a>
           <a href="https://www.linkedin.com/in/sarvaadvaithnarayana/" target="_blank" rel="noreferrer" title="LinkedIn">IN</a>
           <a href="https://instagram.com/advaithsarva" target="_blank" rel="noreferrer" title="Instagram">IG</a>
           <a href="mailto:advaithsarva@gmail.com" title="Email">EM</a>
@@ -452,12 +454,16 @@
         if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
       }
 
-      // Live UTC Clock
+      // Live IST Clock
       function updateClock() {
         const clock = document.getElementById('liveClock');
         if (clock) {
           const now = new Date();
-          clock.textContent = now.toUTCString().split(' ')[4] + ' UTC';
+          const ist = now.toLocaleTimeString('en-US', {
+            timeZone: 'Asia/Kolkata',
+            hour12: false
+          }) + ' IST';
+          clock.textContent = ist;
         }
       }
       updateClock();
