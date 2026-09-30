@@ -1118,7 +1118,6 @@ function initModals() {
     'modal-medianlp': {
       title: 'MEDIA_NLP_PIPELINE // SPECIFICATION & ARCHITECTURE',
       html: `
-        <img src="assets/projects/project-media-nlp.jpg" alt="Media NLP Pipeline Architecture" style="width:100%; border:3px solid var(--border-color); box-shadow:4px 4px 0px var(--shadow-color); margin-bottom:16px;">
         <h3 style="font-family:Manrope; font-size:1.4rem; font-weight:800; margin-bottom:12px;">Deterministic Media Rhetoric & Bias Pipeline</h3>
         <p style="margin-bottom:16px;">
           Deterministic media-analysis NLP pipeline that uncovers rhetorical manipulation, informal fallacies, and propaganda framing with <strong>character-level verbatim evidence spans</strong>.
@@ -1142,7 +1141,6 @@ function initModals() {
     'modal-graphrag': {
       title: 'GRAPH_RAG // HYBRID RETRIEVAL ARCHITECTURE',
       html: `
-        <img src="assets/projects/project-graph-rag.jpg" alt="Hybrid Graph-RAG Architecture" style="width:100%; border:3px solid var(--border-color); box-shadow:4px 4px 0px var(--shadow-color); margin-bottom:16px;">
         <h3 style="font-family:Manrope; font-size:1.4rem; font-weight:800; margin-bottom:12px;">Hybrid Graph-RAG Knowledge System</h3>
         <p style="margin-bottom:16px;">
           Solves semantic drift and hallucination in dense-vector RAG by fusing BM25 keyword search, HNSW vector similarity, and knowledge-graph traversal into an interpretable query engine.
@@ -1166,7 +1164,6 @@ function initModals() {
     'modal-perfagent': {
       title: 'AUTONOMOUS_PERF_AGENT // POSTGRES SPECIFICATION',
       html: `
-        <img src="assets/projects/project-perf-agent.jpg" alt="Autonomous Postgres Performance Agent Architecture" style="width:100%; border:3px solid var(--border-color); box-shadow:4px 4px 0px var(--shadow-color); margin-bottom:16px;">
         <h3 style="font-family:Manrope; font-size:1.4rem; font-weight:800; margin-bottom:12px;">Autonomous Postgres Performance Agent</h3>
         <p style="margin-bottom:16px;">
           Autonomous database optimization agent that monitors live PostgreSQL queries, diagnoses execution bottlenecks, formulates hypotheses, executes migrations, and evaluates performance deltas.
@@ -1190,7 +1187,6 @@ function initModals() {
     'modal-superbrain': {
       title: 'SUPERBRAIN_MCP // MULTI-AGENT STATE & MEMORY',
       html: `
-        <img src="assets/projects/project-superbrain.jpg" alt="SuperBrain MCP Architecture" style="width:100%; border:3px solid var(--border-color); box-shadow:4px 4px 0px var(--shadow-color); margin-bottom:16px;">
         <h3 style="font-family:Manrope; font-size:1.4rem; font-weight:800; margin-bottom:12px;">SuperBrain MCP Multi-Agent Memory</h3>
         <p style="margin-bottom:16px;">
           Unified Model Context Protocol (MCP) server providing persistent cross-session memory, hierarchical state tracking, and execution infrastructure for multi-agent swarms.
@@ -1214,7 +1210,6 @@ function initModals() {
     'modal-factcheck': {
       title: 'FACT_CHECK_AGENT // NLI VERIFICATION LOOP',
       html: `
-        <img src="assets/projects/project-fact-check.jpg" alt="Fact-Checking NLI Stance Agent Architecture" style="width:100%; border:3px solid var(--border-color); box-shadow:4px 4px 0px var(--shadow-color); margin-bottom:16px;">
         <h3 style="font-family:Manrope; font-size:1.4rem; font-weight:800; margin-bottom:12px;">Fact-Checking NLI Stance Agent</h3>
         <p style="margin-bottom:16px;">
           Autonomous verification agent that takes complex unverified text, decomposes it into atomic factual propositions, and conducts multi-step search and NLI stance reasoning.
@@ -1238,7 +1233,6 @@ function initModals() {
     'modal-transformer': {
       title: 'TRANSFORMER_PRIMITIVES // ARCHITECTURE SPEC',
       html: `
-        <img src="assets/projects/project-transformer.jpg" alt="Decoder-Only Transformer Architecture" style="width:100%; border:3px solid var(--border-color); box-shadow:4px 4px 0px var(--shadow-color); margin-bottom:16px;">
         <h3 style="font-family:Manrope; font-size:1.4rem; font-weight:800; margin-bottom:12px;">Decoder-Only Transformer from Primitives</h3>
         <p style="margin-bottom:16px;">
           Ground-up mathematical implementation of an autoregressive transformer written exclusively using PyTorch tensor primitives without high-level nn.Transformer abstractions.
