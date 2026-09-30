@@ -29,14 +29,14 @@
     "tags": [
       "Bio",
       "Advaith Narayana Sarva",
+      "Gen AI Engineer",
       "GenAI",
-      "Systems Engineer",
       "Profile",
       "Summary"
     ],
     "stats": "39 Repositories \u00b7 3.47 SMU CGPA \u00b7 8.69 Woxsen CGPA",
     "slug": "bio",
-    "content": "Advaith Narayana Sarva is an AI & Systems Engineer specializing in interpretable meta-inference, Graph-RAG architectures, and autonomous multi-agent harnesses. He builds low-level systems from scratch (such as a decoder-only transformer and C-level memory allocators) while engineering production RAG pipelines and clinical ML audit systems. He is actively seeking GenAI and systems engineering internships and full-time opportunities."
+    "content": "Advaith Narayana Sarva is a Gen AI Engineer specializing in interpretable meta-inference, Graph-RAG architectures, and autonomous multi-agent harnesses. He builds low-level systems from scratch (such as a decoder-only transformer and C-level memory allocators) while engineering production RAG pipelines and clinical ML audit systems. He is actively seeking Gen AI engineering internships and full-time opportunities."
   },
   {
     "id": "about-contact",
@@ -5177,7 +5177,7 @@
     if (isWhoIsAdvaith) {
       return {
         isGhost: false,
-        answer: "Pika! ⚡ Advaith Narayana Sarva is an AI & Systems Engineer specializing in interpretable Graph-RAG knowledge systems, autonomous multi-agent harnesses, and low-level PyTorch tensor primitives. He completed an academic exchange at Saint Martin's University (3.47 CGPA, Dean's List), holds an 8.69 CGPA at Woxsen University, audited clinical ML at Preventvital, and placed Top 5 in the IBM BOB National Hackathon with The Sentinel Grid!",
+        answer: "Pika! ⚡ Advaith Narayana Sarva is a Gen AI Engineer specializing in interpretable Graph-RAG knowledge systems, autonomous multi-agent harnesses, and low-level PyTorch tensor primitives. He completed an academic exchange at Saint Martin's University (3.47 CGPA, Dean's List), holds an 8.69 CGPA at Woxsen University, audited clinical ML at Preventvital, and placed Top 5 in the IBM BOB National Hackathon with The Sentinel Grid!",
         retrieval: retrieval,
         citations: [
           {"title": "Profile Summary", "url": "index.html#home"},
@@ -5189,7 +5189,7 @@
     if (!top || top.length === 0 || top[0].rrfScore < 0.01) {
       return {
         isGhost: false,
-        answer: "Pikachu! ⚡ Advaith is an AI & Systems Engineer with 39 verified repositories covering Graph-RAG, autonomous agents, and systems from scratch. What project or skill would you like to explore?",
+        answer: "Pikachu! ⚡ Advaith is a Gen AI Engineer with 39 verified repositories covering Graph-RAG, autonomous agents, and systems from scratch. What project or skill would you like to explore?",
         retrieval: retrieval,
         citations: []
       };

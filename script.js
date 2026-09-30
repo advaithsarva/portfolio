@@ -402,7 +402,7 @@ function queryPikachuRAG(rawQuery) {
   // Fallback if RAG engine hasn't loaded yet
   return {
     isGhost: false,
-    text: "Pikachu! Advaith is a GenAI & Systems Engineer (SMU 3.47 CGPA, Woxsen 8.69 CGPA) building Graph-RAG architectures. Inspect the technology desk catalog for verified reports."
+    text: "Pikachu! Advaith is a Gen AI Engineer (SMU 3.47 CGPA, Woxsen 8.69 CGPA) building Graph-RAG architectures. Inspect the technology desk catalog for verified reports."
   };
 }
 
@@ -452,7 +452,7 @@ function initTerminal() {
   history       - Command execution history`,
 
     whoami: `Advaith Narayana Sarva
-Role        : GenAI & Systems Engineer
+Role        : Gen AI Engineer
 Status      : Actively Seeking GenAI Internships & Roles (US, India, Global)
 Internship  : AI/ML Engineer Intern @ Preventvital (GruentzigAI Pvt. Ltd.)
 Exchange    : Saint Martin's University, Lacey, WA (Aug 2025 – May 2026, CGPA: 3.47 / 4.0, Completed May 2026)
@@ -579,7 +579,7 @@ nothing to commit, working tree clean`,
 
   const virtualFiles = {
     'resume.md': `# ADVAITH NARAYANA SARVA
-GenAI & Systems Engineer | advaithsarva@gmail.com | github.com/advaithsarva
+Gen AI Engineer | advaithsarva@gmail.com | github.com/advaithsarva
 
 [EDUCATION]
 • Saint Martin's University (Lacey, WA, USA) — Exchange Student, 3.47 CGPA (Completed May 2026)

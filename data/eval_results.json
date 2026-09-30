@@ -276,7 +276,7 @@
         "socket"
       ],
       "pika_percentage": 0.28,
-      "answer_preview": "Pika! Personal Bio & Engineering Profile (Profile): Advaith Narayana Sarva is an AI & Systems Engineer specializing in i..."
+      "answer_preview": "Pika! Personal Bio & Engineering Profile (Profile): Advaith Narayana Sarva is a Gen AI Engineer specializing in i..."
     },
     {
       "id": "eval-19",
@@ -289,7 +289,7 @@
         "Graph-RAG"
       ],
       "pika_percentage": 1.25,
-      "answer_preview": "Pika! Personal Bio & Engineering Profile (Profile): Advaith Narayana Sarva is an AI & Systems Engineer specializing in i..."
+      "answer_preview": "Pika! Personal Bio & Engineering Profile (Profile): Advaith Narayana Sarva is a Gen AI Engineer specializing in i..."
     },
     {
       "id": "eval-20",
@@ -383,7 +383,7 @@
       "latency_ms": 4.76,
       "facts_matched": [],
       "pika_percentage": 1.25,
-      "answer_preview": "Pika! Personal Bio & Engineering Profile (Profile): Advaith Narayana Sarva is an AI & Systems Engineer specializing in i..."
+      "answer_preview": "Pika! Personal Bio & Engineering Profile (Profile): Advaith Narayana Sarva is a Gen AI Engineer specializing in i..."
     },
     {
       "id": "eval-28",
