@@ -125,7 +125,7 @@ img:hover {
   padding: 6px;
   border: 1.5px solid var(--border-color);
   background-color: var(--bg-canvas);
-  box-shadow: 0 4px 20px rgba(22, 19, 14, 0.12);
+  box-shadow: none;
   position: relative;
 }
 
@@ -595,9 +595,10 @@ img:hover {
    Layout Wrapper
    -------------------------------------------------------------------------- */
 .main-wrapper {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 24px 20px 80px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -607,11 +608,9 @@ img:hover {
   display: grid;
   grid-template-columns: 1.18fr 0.82fr;
   gap: 0;
-  margin-bottom: 36px;
-  border-top: 3px double var(--border-color);
-  border-bottom: 3px double var(--border-color);
-  border-left: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
   background-color: var(--bg-surface);
   box-shadow: none;
 }
@@ -916,11 +915,9 @@ pre {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
-  margin-bottom: 48px;
-  border-top: 3px double var(--border-color);
-  border-bottom: 3px double var(--border-color);
-  border-left: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
   background-color: var(--bg-surface);
   box-shadow: none;
 }
@@ -929,7 +926,7 @@ pre {
   border: none;
   border-right: 1px solid var(--border-color);
   background-color: transparent;
-  padding: 22px 18px;
+  padding: 20px 16px;
   box-shadow: none;
   text-align: center;
   transition: background-color 0.15s ease;
@@ -974,7 +971,10 @@ pre {
    Sections Headers (1920s Editorial News Style)
    -------------------------------------------------------------------------- */
 .section-container {
-  margin-bottom: 64px;
+  margin: 0;
+  padding: 36px 30px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-canvas);
 }
 
 .section-header-row {
@@ -1057,7 +1057,7 @@ pre {
 .project-card {
   flex: 0 0 calc(50% - 10px);
   min-width: 460px;
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
   background-color: var(--bg-surface);
   box-shadow: none;
   position: relative;
@@ -1222,7 +1222,7 @@ pre {
 }
 
 .achievement-card {
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
   background-color: var(--bg-surface);
   padding: 22px;
   box-shadow: none;
@@ -1318,7 +1318,7 @@ pre {
 }
 
 .terminal-card {
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
   background-color: var(--bg-surface);
   box-shadow: none;
   overflow: hidden;
@@ -2499,8 +2499,13 @@ pre {
   .hero-bento {
     grid-template-columns: 1fr;
   }
+  .hero-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
   .hero-right {
-    height: 480px;
+    height: auto;
+    min-height: 440px;
   }
   .brain-container {
     height: 280px;
@@ -2518,9 +2523,23 @@ pre {
   .stats-strip {
     grid-template-columns: 1fr 1fr;
   }
+  .stat-card:nth-child(2) {
+    border-right: none;
+  }
+  .stat-card:nth-child(1),
+  .stat-card:nth-child(2) {
+    border-bottom: 1px solid var(--border-color);
+  }
 }
 
 @media (max-width: 768px) {
+  .section-container {
+    padding: 24px 16px;
+  }
+  .hero-left,
+  .hero-right {
+    padding: 22px 16px;
+  }
   .nav-menu {
     display: none;
     position: absolute;
@@ -2545,6 +2564,13 @@ pre {
   }
   .stats-strip {
     grid-template-columns: 1fr;
+  }
+  .stat-card {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .stat-card:last-child {
+    border-bottom: none;
   }
   .timeline-row {
     display: flex;
@@ -2707,6 +2733,14 @@ pre {
   display: inline-block;
   vertical-align: middle;
   flex-shrink: 0;
+}
+
+.tech-logo-icon-wrap svg,
+.tech-icon svg,
+svg.tech-icon {
+  fill: currentColor !important;
+  color: var(--text-main) !important;
+  filter: grayscale(100%) contrast(120%) !important;
 }
 
 
@@ -3145,9 +3179,9 @@ pre {
   display: grid;
   grid-template-columns: 1.8fr 1.2fr;
   gap: 32px;
-  border-bottom: 3px double var(--border-color);
-  padding-bottom: 36px;
-  margin-bottom: 36px;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .newspaper-col-rule {
@@ -3166,13 +3200,15 @@ pre {
 .newspaper-photo img {
   width: 100%;
   display: block;
-  filter: grayscale(65%) contrast(120%) brightness(96%);
+  filter: grayscale(100%) contrast(130%) brightness(95%) !important;
+  -webkit-filter: grayscale(100%) contrast(130%) brightness(95%) !important;
   border: 1px solid var(--border-color);
   transition: filter 0.2s ease;
 }
 
 .newspaper-photo:hover img {
-  filter: grayscale(15%) contrast(110%);
+  filter: grayscale(100%) contrast(145%) brightness(90%) !important;
+  -webkit-filter: grayscale(100%) contrast(145%) brightness(90%) !important;
 }
 
 .photo-caption {
@@ -3201,11 +3237,12 @@ pre {
 
 /* Front-Page Archive Search Bar (Historical Newspaper Query Desk) */
 .archive-search-section {
-  border: 1px solid var(--border-color);
+  border: none;
+  border-bottom: 1px solid var(--border-color);
   background-color: var(--bg-surface);
   box-shadow: none;
-  padding: 20px 24px;
-  margin-bottom: 40px;
+  padding: 24px 30px;
+  margin: 0;
   position: relative;
 }
 
