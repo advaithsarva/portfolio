@@ -1,0 +1,29 @@
+{
+  "id": "proj-newsgroup-text-classifier",
+  "type": "project",
+  "name": "Newsgroup Text Classifier",
+  "category": "NLP & RAG",
+  "technologies": [
+    "Python",
+    "scikit-learn",
+    "NLP",
+    "Topic Modelling"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/newsgroup-text-classifier.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/newsgroup-text-classifier",
+  "demo_url": "project.html?id=newsgroup-text-classifier",
+  "tags": [
+    "Python",
+    "scikit-learn",
+    "NLP",
+    "Topic Modelling",
+    "Newsgroup Text Classifier",
+    "NLP & RAG",
+    "newsgroup-text-classifier"
+  ],
+  "stats": "0.706 accuracy \u00b7 0.694 macro F1 over 20 classes \u00b7 20 tests",
+  "slug": "newsgroup-text-classifier",
+  "content": "Newsgroup Text Classifier (NLP & RAG): \"The old results were broken. These ones hold up.\". A classic dataset has a classic trap: the headers name the answer. This version strips them out and uses the official time-based split. That costs about 25 accuracy points and measures what actually matters. Clusters and topics come with names and an interactive map. Key highlights: **Found why every original result was wrong:** cleaning had merged the entire corpus into one document. **Caught a wrong model:** the saved \"newsgroup classifier\" was really a movie-review sentiment model. **Slimmed down** to just two dependencies. Honest limitation/tradeoff: The hardest classes differ by opinion, not vocabulary (religion, politics), and that's where it struggles. Verified metrics: 0.706 accuracy \u00b7 0.694 macro F1 over 20 classes \u00b7 20 tests."
+}

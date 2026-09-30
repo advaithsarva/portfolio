@@ -1,0 +1,26 @@
+{
+  "id": "exp-woxsen-research",
+  "type": "experience",
+  "name": "AI Research Centre, Woxsen University - Research Intern",
+  "category": "Experience",
+  "technologies": [
+    "Python",
+    "Django",
+    "Machine Learning",
+    "Applied AI"
+  ],
+  "date": "Feb 2024 - Apr 2024",
+  "source": "resume.html#experience",
+  "section": "Academic Research",
+  "github_url": "",
+  "demo_url": "resume.html#experience",
+  "tags": [
+    "AI Research Centre",
+    "Research Intern",
+    "Django",
+    "Applied ML"
+  ],
+  "stats": "Engineered Django web modules and UI interfaces for applied ML academic tools",
+  "slug": "woxsen-research-intern",
+  "content": "Advaith built Django-based web modules and UI interfaces applying applied ML methods to academic research tools at the AI Research Centre at Woxsen University."
+}

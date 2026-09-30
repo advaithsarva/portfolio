@@ -1,0 +1,29 @@
+{
+  "id": "proj-agentic-ai-foundations",
+  "type": "project",
+  "name": "Agentic AI Foundations",
+  "category": "AI Agents",
+  "technologies": [
+    "Python",
+    "Agents",
+    "ReAct",
+    "ChromaDB"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/agentic-ai-foundations.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/agentic-ai-foundations",
+  "demo_url": "project.html?id=agentic-ai-foundations",
+  "tags": [
+    "Python",
+    "Agents",
+    "ReAct",
+    "ChromaDB",
+    "Agentic AI Foundations",
+    "AI Agents",
+    "agentic-ai-foundations"
+  ],
+  "stats": "0 frameworks \u00b7 2 swappable memory backends \u00b7 0 keys needed to run",
+  "slug": "agentic-ai-foundations",
+  "content": "Agentic AI Foundations (AI Agents): \"AI agents with the framework taken away.\". Frameworks make agents easy and hide how they work. These two agents show every step: the think-act-observe loop, tool calls checked against a schema, and a memory that swaps between ChromaDB and a plain file without changing a single result. Key highlights: **Safe by construction:** the calculator tool parses math with a restricted AST, never eval. **Same answers either way:** both memory backends return identical scores. **Found a bug hiding inside a bug fix** by running two queries back to back. Honest limitation/tradeoff: These demonstrate how agents work, so there's no benchmark score. Verified metrics: 0 frameworks \u00b7 2 swappable memory backends \u00b7 0 keys needed to run."
+}

@@ -1,0 +1,28 @@
+{
+  "id": "skill-agents",
+  "type": "skill",
+  "name": "Autonomous Agent Systems & Tool Orchestration",
+  "category": "Technologies",
+  "technologies": [
+    "Model Context Protocol (MCP)",
+    "LangChain",
+    "Autonomous Agents",
+    "Tool Calling",
+    "Hierarchical State"
+  ],
+  "date": "2026",
+  "source": "resume.html#skills",
+  "section": "Agent Architectures",
+  "github_url": "https://github.com/advaithsarva",
+  "demo_url": "projects.html?cat=AI+Agents",
+  "tags": [
+    "Autonomous Agents",
+    "MCP",
+    "SuperBrain",
+    "Multi-Agent Swarms",
+    "Tool Execution"
+  ],
+  "stats": "9 Autonomous Agent repositories \u00b7 41 MCP tools \u00b7 11.7x autonomous Postgres speedup",
+  "slug": "autonomous-agents",
+  "content": "Advaith designs autonomous multi-agent harnesses with deterministic guardrails. Implementations include SuperBrain MCP (41 standardized tools with persistent vector memory across sessions), autonomous database tuning agents (executing explain analyze loops and automated rollback guards), and recursive web research verification agents."
+}

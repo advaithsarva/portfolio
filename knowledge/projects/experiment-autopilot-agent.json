@@ -1,0 +1,29 @@
+{
+  "id": "proj-experiment-autopilot-agent",
+  "type": "project",
+  "name": "Experiment Autopilot Agent",
+  "category": "AI Agents",
+  "technologies": [
+    "Python",
+    "Machine Learning",
+    "Agents",
+    "Experimentation"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/experiment-autopilot-agent.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/experiment-autopilot-agent",
+  "demo_url": "project.html?id=experiment-autopilot-agent",
+  "tags": [
+    "Python",
+    "Machine Learning",
+    "Agents",
+    "Experimentation",
+    "Experiment Autopilot Agent",
+    "AI Agents",
+    "experiment-autopilot-agent"
+  ],
+  "stats": "33.4% hypotheses refuted and logged \u00b7 32 head-to-head benchmarks \u00b7 +3.7 points from one insight",
+  "slug": "experiment-autopilot-agent",
+  "content": "Experiment Autopilot Agent (AI Agents): \"An AI researcher that writes down when it's wrong.\". Hyperparameter search tries things blindly. This agent diagnoses first (overfitting, underfitting, divergence, plateau, majority-class collapse), changes one thing as a stated hypothesis, and grades itself against what it predicted, not just whether the score went up. Key highlights: **Published the result that it lost:** random search won 0.9215 to 0.9145. The agent got there 27% faster, and every step is explained. **Separated noisy data from a too-small model,** which no single training curve can do. That was worth +3.7 points. **Didn't fall for fake accuracy:** it spots a model scoring 0.88 accuracy that is really just guessing the majority class. 17 tests. Honest limitation/tradeoff: Random search still wins on final accuracy here. Next: close that gap without losing the audit trail. Verified metrics: 33.4% hypotheses refuted and logged \u00b7 32 head-to-head benchmarks \u00b7 +3.7 points from one insight."
+}

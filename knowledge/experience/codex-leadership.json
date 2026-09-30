@@ -1,0 +1,27 @@
+{
+  "id": "exp-codex-club",
+  "type": "experience",
+  "name": "CODE{X} Programming Club - Executive Leader",
+  "category": "Experience",
+  "technologies": [
+    "Python",
+    "Full-Stack Development",
+    "Git",
+    "Competitive Programming"
+  ],
+  "date": "Mar 2024 - Aug 2025",
+  "source": "resume.html#leadership",
+  "section": "Campus Leadership",
+  "github_url": "",
+  "demo_url": "resume.html#leadership",
+  "tags": [
+    "CODE{X}",
+    "Club Executive",
+    "Hackathons",
+    "Mentorship",
+    "Algorithms"
+  ],
+  "stats": "Organized hackathons \u00b7 Conducted peer code reviews \u00b7 Mentored junior developers",
+  "slug": "codex-leadership",
+  "content": "As Executive Leader at CODE{X} Programming Club, Advaith organized algorithmic hackathons, conducted peer code reviews, coordinated competitive programming workshops, and mentored junior developers in Python and modern full-stack workflows."
+}

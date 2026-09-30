@@ -1,0 +1,29 @@
+{
+  "id": "proj-autonomous-recon-agent",
+  "type": "project",
+  "name": "Autonomous Recon Agent",
+  "category": "AI Agents",
+  "technologies": [
+    "Python",
+    "Security",
+    "Agents",
+    "Search"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/autonomous-recon-agent.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/autonomous-recon-agent",
+  "demo_url": "project.html?id=autonomous-recon-agent",
+  "tags": [
+    "Python",
+    "Security",
+    "Agents",
+    "Search",
+    "Autonomous Recon Agent",
+    "AI Agents",
+    "autonomous-recon-agent"
+  ],
+  "stats": "2.4\u00d7 a standard sweep \u00b7 43.1% vs 18.0% services found \u00b7 22 tests",
+  "slug": "autonomous-recon-agent",
+  "content": "Autonomous Recon Agent (AI Agents): \"Finds 2.4\u00d7 more of a network with the same budget.\". Scanning everything is slow, and scanning the wrong target is illegal. This agent treats recon as a budgeted search: triage, identify, dig deeper, then sweep what's left. It runs on a simulated network, and there isn't a single socket in the code, so it can't reach a real machine. Key highlights: **Out of scope means refused:** scope is checked in two separate places, default-deny, so a typo can't scan someone else's network. **No evidence, no finding:** every finding carries the probe transcript that proves it. **Never loses to the simple approach:** fixed a plateau where a plain sweep had caught up. Honest limitation/tradeoff: Simulated network only, by design. JA3 fingerprinting is left unbuilt rather than faked. Verified metrics: 2.4\u00d7 a standard sweep \u00b7 43.1% vs 18.0% services found \u00b7 22 tests."
+}

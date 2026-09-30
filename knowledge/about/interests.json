@@ -1,0 +1,30 @@
+{
+  "id": "about-interests",
+  "type": "about",
+  "name": "Technical & Personal Interests",
+  "category": "Interests",
+  "technologies": [
+    "Chess Tactics",
+    "Vocal Percussion",
+    "Geopolitics",
+    "Football"
+  ],
+  "date": "2026",
+  "source": "rag-knowledge.json#hobbies",
+  "section": "Personal Profile",
+  "github_url": "",
+  "demo_url": "index.html#home",
+  "tags": [
+    "Hobbies",
+    "Chess",
+    "Sicilian Defense",
+    "Football",
+    "Beatboxing",
+    "Debate",
+    "Geopolitics",
+    "Heritage"
+  ],
+  "stats": "Sicilian Defense (1. e4 c5) \u00b7 Blitz/Rapid @advaithsarva",
+  "slug": "interests",
+  "content": "Outside of coding, Advaith is a competitive chess player specializing in the Sicilian Defense (1. e4 c5) on Chess.com and Lichess (@advaithsarva). He plays attacking counter-football, practices vocal percussion (beatboxing), has a strong background in competitive debate and rhetorical analysis, and follows global geopolitics and technology preprints daily. Note: He has an amusing, genuine terror of horror movies and ghosts (especially Gengar)!"
+}

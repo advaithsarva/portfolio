@@ -1,0 +1,31 @@
+{
+  "id": "proj-document-data-extractor",
+  "type": "project",
+  "name": "Document Data Extractor",
+  "category": "Full-Stack",
+  "technologies": [
+    "React",
+    "Flask",
+    "OCR",
+    "spaCy",
+    "Python"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/document-data-extractor.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/document-data-extractor",
+  "demo_url": "project.html?id=document-data-extractor",
+  "tags": [
+    "React",
+    "Flask",
+    "OCR",
+    "spaCy",
+    "Python",
+    "Document Data Extractor",
+    "Full-Stack",
+    "document-data-extractor"
+  ],
+  "stats": "1.00 recall \u00b7 0 failures in 90 docs \u00b7 address recall 0.10 \u2192 1.00",
+  "slug": "document-data-extractor",
+  "content": "Document Data Extractor (Full-Stack): \"Drop in a document, get clean data back.\". The original version couldn't even read its own sample file. The rebuild reads text layers with PyMuPDF, falls back to OCR for scans, and pulls out entities with spaCy and pattern matching. Your file is processed in memory and never saved to disk. Key highlights: **Nine defects, two root causes,** found and fixed. **Faster and more accurate:** a smaller model raised name precision from 0.73 to 0.97 and runs 7\u00d7 faster. **Proven against the old code:** 10/10 tests pass on the rebuild and 1/10 on the original. Honest limitation/tradeoff: Tested on 30 seeded fixtures. Next: real-world documents. Verified metrics: 1.00 recall \u00b7 0 failures in 90 docs \u00b7 address recall 0.10 \u2192 1.00."
+}

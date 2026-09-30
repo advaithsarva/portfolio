@@ -1,0 +1,29 @@
+{
+  "id": "proj-transformer-from-scratch",
+  "type": "project",
+  "name": "Transformer from Scratch",
+  "category": "Systems from Scratch",
+  "technologies": [
+    "Python",
+    "PyTorch",
+    "Deep Learning",
+    "Transformers"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/transformer-from-scratch.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/transformer-from-scratch",
+  "demo_url": "project.html?id=transformer-from-scratch",
+  "tags": [
+    "Python",
+    "PyTorch",
+    "Deep Learning",
+    "Transformers",
+    "Transformer from Scratch",
+    "Systems from Scratch",
+    "transformer-from-scratch"
+  ],
+  "stats": "1e-5 match to PyTorch \u00b7 1.0059\u00d7 the theoretical best \u00b7 19 tests",
+  "slug": "transformer-from-scratch",
+  "content": "Transformer from Scratch (Systems from Scratch): \"Every layer of a GPT-style model, written by hand and proven correct.\". \"From scratch\" usually means \"trust me.\" Here it's tested: attention, LayerNorm and GELU are all hand-written and checked against the built-ins they replace. Training data with a known entropy gives the loss a hard floor to aim at. Key highlights: **Proved it can't cheat:** a causality test is shown to catch a deliberately leaky model. **Published three experiments that failed,** including a copy task stuck at chance. **A six-way ablation found nothing,** and the write-up explains exactly why. Honest limitation/tradeoff: On the simplest data, a counting model is optimal and edges out the transformer. Verified metrics: 1e-5 match to PyTorch \u00b7 1.0059\u00d7 the theoretical best \u00b7 19 tests."
+}

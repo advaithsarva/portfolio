@@ -1,0 +1,31 @@
+{
+  "id": "proj-multilingual-sentiment-pipeline",
+  "type": "project",
+  "name": "Multilingual Sentiment Pipeline",
+  "category": "NLP & RAG",
+  "technologies": [
+    "Python",
+    "NLP",
+    "Transformers",
+    "Multilingual",
+    "spaCy"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/multilingual-sentiment-pipeline.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/multilingual-sentiment-pipeline",
+  "demo_url": "project.html?id=multilingual-sentiment-pipeline",
+  "tags": [
+    "Python",
+    "NLP",
+    "Transformers",
+    "Multilingual",
+    "spaCy",
+    "Multilingual Sentiment Pipeline",
+    "NLP & RAG",
+    "multilingual-sentiment-pipeline"
+  ],
+  "stats": "4 languages \u00b7 1 model \u00b7 10 tests",
+  "slug": "multilingual-sentiment-pipeline",
+  "content": "Multilingual Sentiment Pipeline (NLP & RAG): \"One model reads the mood in four languages.\". Most pipelines need a separate model for every language. This one uses a single multilingual model, so adding a language is a small change rather than a new project. The result is one self-contained HTML report you can open anywhere. Key highlights: **Didn't let Telugu fail silently:** the sentence splitter has no Telugu support, so I built and tested a fallback. **Highlights land on exactly the right words:** a test checks every sentence maps back to its exact place in the original text. Honest limitation/tradeoff: The 20/20 sentiment check uses clear-cut sentences, so it's a sanity check. Telugu isn't scored yet. Verified metrics: 4 languages \u00b7 1 model \u00b7 10 tests."
+}

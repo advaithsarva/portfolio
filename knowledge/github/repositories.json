@@ -1,0 +1,27 @@
+{
+  "id": "github-all-repos",
+  "type": "github",
+  "name": "Verified GitHub Repositories Catalog",
+  "category": "Repositories",
+  "technologies": [
+    "Git",
+    "GitHub",
+    "Python",
+    "TypeScript",
+    "Docker"
+  ],
+  "date": "2026",
+  "source": "https://github.com/advaithsarva",
+  "section": "Public Code",
+  "github_url": "https://github.com/advaithsarva",
+  "demo_url": "projects.html",
+  "tags": [
+    "GitHub",
+    "Repositories",
+    "Open Source",
+    "advaithsarva"
+  ],
+  "stats": "39 Verified Repositories",
+  "slug": "repositories",
+  "content": "Advaith maintains 39 verified software engineering and research repositories on GitHub (github.com/advaithsarva). Spanning AI Agents (9), NLP & RAG (8), Systems from Scratch (6), Machine Learning & Data (5), Full-Stack Systems (6), and In-Progress Evaluation Research (4). Featured public repositories include the-sentinel-grid, media-nlp-pipeline, graph-rag-knowledge-system, autonomous-performance-agent, superbrain_mcp, and fact-checking-agent."
+}

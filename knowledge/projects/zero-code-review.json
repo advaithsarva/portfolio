@@ -1,0 +1,29 @@
+{
+  "id": "proj-zero-code-review",
+  "type": "project",
+  "name": "ZERO",
+  "category": "In Progress",
+  "technologies": [
+    "Node.js",
+    "VS Code Extension",
+    "Git",
+    "LLM"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/zero-code-review.html",
+  "section": "Engineering Repositories",
+  "github_url": "",
+  "demo_url": "project.html?id=zero-code-review",
+  "tags": [
+    "Node.js",
+    "VS Code Extension",
+    "Git",
+    "LLM",
+    "ZERO",
+    "In Progress",
+    "zero-code-review"
+  ],
+  "stats": "1 engine for terminal and editor \u00b7 0 runtime dependencies \u00b7 pre-release",
+  "slug": "zero-code-review",
+  "content": "ZERO (In Progress): \"Git remembers the code. ZERO remembers everything around it.\". Git tells you what changed. ZERO tells you who changed it, why, under which rules, and what was assumed. Some checks are plain logic (secrets, tests, ownership), and one has a model read your team's own instructions. It runs as a CLI and as a VS Code panel. Key highlights: **Records live in your repo** as markdown, so they travel with git. **Built for teams:** a pre-push gate, code ownership and access roles. Honest limitation/tradeoff: Pre-release, not published yet. Verified metrics: 1 engine for terminal and editor \u00b7 0 runtime dependencies \u00b7 pre-release."
+}

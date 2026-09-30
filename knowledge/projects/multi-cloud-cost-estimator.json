@@ -1,0 +1,31 @@
+{
+  "id": "proj-multi-cloud-cost-estimator",
+  "type": "project",
+  "name": "Multi-Cloud Cost Estimator",
+  "category": "Full-Stack",
+  "technologies": [
+    "Python",
+    "Cloud",
+    "AWS",
+    "GCP",
+    "Azure"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/multi-cloud-cost-estimator.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/multi-cloud-cost-estimator",
+  "demo_url": "project.html?id=multi-cloud-cost-estimator",
+  "tags": [
+    "Python",
+    "Cloud",
+    "AWS",
+    "GCP",
+    "Azure",
+    "Multi-Cloud Cost Estimator",
+    "Full-Stack",
+    "multi-cloud-cost-estimator"
+  ],
+  "stats": "18\u201336% price spread \u00b7 46% \"discount\" that's really 21.3% \u00b7 28 tests",
+  "slug": "multi-cloud-cost-estimator",
+  "content": "Multi-Cloud Cost Estimator (Full-Stack): \"Same app, three clouds, up to 36% price difference.\". Cloud pricing is designed to be hard to compare. This tool prices one YAML spec on all three providers from an offline price book, with units built in so an hourly rate can never be mixed up with a monthly one. Key highlights: **Cut through the marketing:** a 46% headline discount turned out to be 21.3% of the real bill. **Separates sure savings from maybe savings.** Honest limitation/tradeoff: Prices are entered by hand and dated. Next: live price feeds. Verified metrics: 18\u201336% price spread \u00b7 46% \"discount\" that's really 21.3% \u00b7 28 tests."
+}

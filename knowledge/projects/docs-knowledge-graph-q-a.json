@@ -1,0 +1,29 @@
+{
+  "id": "proj-docs-knowledge-graph-q-a",
+  "type": "project",
+  "name": "Docs Knowledge Graph Q&A",
+  "category": "NLP & RAG",
+  "technologies": [
+    "Python",
+    "NetworkX",
+    "Flask",
+    "Knowledge Graph"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/docs-knowledge-graph-q-a.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/docs-knowledge-graph-qa",
+  "demo_url": "project.html?id=docs-knowledge-graph-q-a",
+  "tags": [
+    "Python",
+    "NetworkX",
+    "Flask",
+    "Knowledge Graph",
+    "Docs Knowledge Graph Q&A",
+    "NLP & RAG",
+    "docs-knowledge-graph-q-a"
+  ],
+  "stats": "0.925 routing accuracy \u00b7 1.000 algorithm choice \u00b7 dependencies 10 \u2192 3",
+  "slug": "docs-knowledge-graph-q-a",
+  "content": "Docs Knowledge Graph Q&A (NLP & RAG): \"A dead hackathon project, brought back and made safe.\". The original hackathon code couldn't even start: every file tried to connect to a database that had expired. I rebuilt it so nothing connects at import time, replaced an LLM router with rules, and made the graph algorithms actually run. Key highlights: **Closed a code-execution hole** where model output was run directly as a function name, and removed a public database password. **Found why PageRank was a five-way tie:** it was ranking the navigation sidebar. Spurious links dropped from 8,785 to 239. **Proven better than the original:** the same tests pass 10/10 on the rebuild and fail 8/8 on the old code. Honest limitation/tradeoff: The routing eval was written by the same person who wrote the rules. Verified metrics: 0.925 routing accuracy \u00b7 1.000 algorithm choice \u00b7 dependencies 10 \u2192 3."
+}

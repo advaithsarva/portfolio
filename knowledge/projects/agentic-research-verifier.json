@@ -1,0 +1,29 @@
+{
+  "id": "proj-agentic-research-verifier",
+  "type": "project",
+  "name": "Agentic Research Verifier",
+  "category": "AI Agents",
+  "technologies": [
+    "Python",
+    "LangGraph",
+    "Multi-Agent",
+    "Pydantic"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/agentic-research-verifier.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/agentic-research-verifier",
+  "demo_url": "project.html?id=agentic-research-verifier",
+  "tags": [
+    "Python",
+    "LangGraph",
+    "Multi-Agent",
+    "Pydantic",
+    "Agentic Research Verifier",
+    "AI Agents",
+    "agentic-research-verifier"
+  ],
+  "stats": "2 agents \u00b7 1 real human-approval pause \u00b7 7/7 scenario tests",
+  "slug": "agentic-research-verifier",
+  "content": "Agentic Research Verifier (AI Agents): \"One agent researches, another fact-checks it, and a human breaks ties.\". AI research tools state things confidently whether or not they're true. Here, the claims have to survive a second agent before anyone sees them, and the human-approval pause is a real stop in the graph, not a simulation. Built-in limits on tokens and revisions stop it running forever. Key highlights: **Found a LangGraph bug through testing:** changes made inside a routing function silently vanish. **Remembers past research,** even when a new question is worded differently. **Structured, validated output** checked by Pydantic before publishing. Honest limitation/tradeoff: Runs offline on a small two-topic corpus by default. Next: wire in the live model path. Verified metrics: 2 agents \u00b7 1 real human-approval pause \u00b7 7/7 scenario tests."
+}

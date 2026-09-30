@@ -1,0 +1,31 @@
+{
+  "id": "proj-iac-drift-agent",
+  "type": "project",
+  "name": "IaC Drift Agent",
+  "category": "AI Agents",
+  "technologies": [
+    "Python",
+    "DevOps",
+    "Terraform",
+    "Cloud",
+    "Agents"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/iac-drift-agent.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/iac-drift-agent",
+  "demo_url": "project.html?id=iac-drift-agent",
+  "tags": [
+    "Python",
+    "DevOps",
+    "Terraform",
+    "Cloud",
+    "Agents",
+    "IaC Drift Agent",
+    "AI Agents",
+    "iac-drift-agent"
+  ],
+  "stats": "1.000 precision vs 0.325 \u00b7 8.3 false alarms per scan eliminated \u00b7 26 tests",
+  "slug": "iac-drift-agent",
+  "content": "IaC Drift Agent (AI Agents): \"Drift alerts you can actually trust.\". A plain diff raises about 8 false alarms per scan, because clouds change their own fields, and teams stop reading the alerts within a week. This agent filters with named rules you can audit, auto-fixes only changes that can't cause an outage, and asks a named person to approve the rest. Key highlights: **Every alert or suppression explains itself:** each dropped difference names the rule that dropped it. **Checks its own work** by re-scanning after a fix instead of trusting that the write happened. **Found a hidden severity bug:** a publicly exposed production database was rated \"high\" instead of \"critical\" in 27 of 100 scenarios. Honest limitation/tradeoff: Tested on 100 seeded scenarios. Next: a real cloud account. Verified metrics: 1.000 precision vs 0.325 \u00b7 8.3 false alarms per scan eliminated \u00b7 26 tests."
+}

@@ -1,0 +1,27 @@
+{
+  "id": "proj-zero-cursor-agent",
+  "type": "project",
+  "name": "Zero",
+  "category": "In Progress",
+  "technologies": [
+    "Electron",
+    "Node.js",
+    "Windows UI Automation"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/zero-cursor-agent.html",
+  "section": "Engineering Repositories",
+  "github_url": "",
+  "demo_url": "project.html?id=zero-cursor-agent",
+  "tags": [
+    "Electron",
+    "Node.js",
+    "Windows UI Automation",
+    "Zero",
+    "In Progress",
+    "zero-cursor-agent"
+  ],
+  "stats": "8 ms cursor follow \u00b7 7 interaction types detected \u00b7 early stage",
+  "slug": "zero-cursor-agent",
+  "content": "Zero (In Progress): \"An AI that lives on your cursor.\". Not a chatbot, not a sidebar: a layer that sits on your cursor. It already sees what you point at, including the element's name, type, app and what you can do with it. Next it learns to act, and to teach you how it did it. Key highlights: **It can already see:** it reads the UI element under the cursor twice a second. **Stays out of your way:** clicks pass straight through it. Honest limitation/tradeoff: Early stage. It sees but doesn't act yet. Verified metrics: 8 ms cursor follow \u00b7 7 interaction types detected \u00b7 early stage."
+}

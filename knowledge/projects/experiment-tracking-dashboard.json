@@ -1,0 +1,27 @@
+{
+  "id": "proj-experiment-tracking-dashboard",
+  "type": "project",
+  "name": "Experiment Tracking Dashboard",
+  "category": "ML & Data",
+  "technologies": [
+    "Python",
+    "SQLite",
+    "MLOps"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/experiment-tracking-dashboard.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/experiment-tracking-dashboard",
+  "demo_url": "project.html?id=experiment-tracking-dashboard",
+  "tags": [
+    "Python",
+    "SQLite",
+    "MLOps",
+    "Experiment Tracking Dashboard",
+    "ML & Data",
+    "experiment-tracking-dashboard"
+  ],
+  "stats": "100% bad runs caught \u00b7 55.1% compute saved \u00b7 16.7% false alarms",
+  "slug": "experiment-tracking-dashboard",
+  "content": "Experiment Tracking Dashboard (ML & Data): \"Kill bad training runs early and save half your compute.\". No server, no account, no install: just SQLite. A test kills the process mid-run to prove not a single metric is lost. Detectors watch each run and flag it before it wastes hours. Key highlights: **Crash-proof, and tested that way:** all 50 metrics survive a hard kill. **One fix for four bugs:** a moving median took detection from 11/20 to 18/20. **Shows the cost next to the win:** the 16.7% false-alarm rate is published beside the savings. Honest limitation/tradeoff: Measured on 60 seeded runs. Next: real training jobs. Verified metrics: 100% bad runs caught \u00b7 55.1% compute saved \u00b7 16.7% false alarms."
+}

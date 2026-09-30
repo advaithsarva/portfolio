@@ -1,0 +1,25 @@
+{
+  "id": "achieve-smu-deans-list",
+  "type": "achievement",
+  "name": "Saint Martin's University Dean's List Honors",
+  "category": "Achievements",
+  "technologies": [
+    "Academic Excellence",
+    "Distributed Systems",
+    "Algorithms"
+  ],
+  "date": "2025 - 2026",
+  "source": "resume.html#honors",
+  "section": "Academic Honors",
+  "github_url": "",
+  "demo_url": "resume.html#honors",
+  "tags": [
+    "Dean's List",
+    "Saint Martin's University",
+    "Academic Honors",
+    "3.47 CGPA"
+  ],
+  "stats": "Maintained 3.47 / 4.0 GPA across two rigorous semesters in the United States",
+  "slug": "smu-deans-list",
+  "content": "Earned Dean's List honors at Saint Martin's University in Lacey, WA during his international exchange program, recognizing exceptional academic standing in advanced computer science and artificial intelligence coursework."
+}

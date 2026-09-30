@@ -1,0 +1,29 @@
+{
+  "id": "proj-self-healing-system-agent",
+  "type": "project",
+  "name": "Self-Healing System Agent",
+  "category": "AI Agents",
+  "technologies": [
+    "Python",
+    "Operating Systems",
+    "Monitoring",
+    "Agents"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/self-healing-system-agent.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/self-healing-system-agent",
+  "demo_url": "project.html?id=self-healing-system-agent",
+  "tags": [
+    "Python",
+    "Operating Systems",
+    "Monitoring",
+    "Agents",
+    "Self-Healing System Agent",
+    "AI Agents",
+    "self-healing-system-agent"
+  ],
+  "stats": "0 false alarms \u00b7 0 missed faults \u00b7 120/120 fixes verified",
+  "slug": "self-healing-system-agent",
+  "content": "Self-Healing System Agent (AI Agents): \"Fixes your machine, then checks the fix worked.\". Fixed thresholds fire too late or too often. This agent learns rolling baselines, names a root cause, and repairs only through a fixed list of allowed actions. Anything destructive needs a human, and system-critical processes are off-limits entirely. Key highlights: **Caught a memory leak 32 ticks earlier** than a threshold script tuned to its best. **Can't reason its way into disaster:** allowed actions are a fixed table, so no chain of logical-sounding steps ends with killing the database. **Won't confuse a spike with a leak:** fixed a diagnosis bug caused by a trend window that started before the fault. Honest limitation/tradeoff: Faults are injected in seeded trials. Next: real incident data. Verified metrics: 0 false alarms \u00b7 0 missed faults \u00b7 120/120 fixes verified."
+}

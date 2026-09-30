@@ -1,0 +1,28 @@
+{
+  "id": "achieve-ibm-sentinel",
+  "type": "achievement",
+  "name": "IBM BOB National Hackathon 2026 - Top 5 South Zone (The Sentinel Grid)",
+  "category": "Achievements",
+  "technologies": [
+    "Python",
+    "XGBoost",
+    "LightGBM",
+    "Automated Testing",
+    "Climate AI"
+  ],
+  "date": "2026",
+  "source": "resume.html#honors",
+  "section": "Hackathons & Honors",
+  "github_url": "https://github.com/advaithsarva/the-sentinel-grid",
+  "demo_url": "project.html?id=the-sentinel-grid",
+  "tags": [
+    "IBM BOB Hackathon",
+    "The Sentinel Grid",
+    "Top 5",
+    "ROC-AUC 0.9924",
+    "Disaster AI"
+  ],
+  "stats": "Top 5 South Zone \u00b7 0.9924 ROC-AUC \u00b7 314 automated checks \u00b7 6,957 LOC",
+  "slug": "ibm-bob-sentinel-grid",
+  "content": "Advaith led engineering for The Sentinel Grid, placing in the Top 5 South Zone at the IBM BOB National Hackathon 2026. The disaster-intelligence system comprises 6,957 lines of Python, 314 automated checks, and 104 formula audits, achieving a verified ROC-AUC of 0.9924 on 473,000 real district-month soil moisture observations for Coimbatore."
+}

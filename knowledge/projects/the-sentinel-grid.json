@@ -1,0 +1,31 @@
+{
+  "id": "proj-the-sentinel-grid",
+  "type": "project",
+  "name": "The Sentinel Grid",
+  "category": "Hackathon",
+  "technologies": [
+    "Python",
+    "Machine Learning",
+    "Geospatial",
+    "Hackathon",
+    "Team"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/the-sentinel-grid.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/ibm-hackathon",
+  "demo_url": "project.html?id=the-sentinel-grid",
+  "tags": [
+    "Python",
+    "Machine Learning",
+    "Geospatial",
+    "Hackathon",
+    "Team",
+    "The Sentinel Grid",
+    "Hackathon",
+    "the-sentinel-grid"
+  ],
+  "stats": "Top 5 South zone \u00b7 314 automated checks passing \u00b7 0.9924 ROC-AUC on 473k real readings",
+  "slug": "the-sentinel-grid",
+  "content": "The Sentinel Grid (Hackathon): \"When a flood hits, which ward do you rescue first?\". In a disaster, the most dangerous words are \"probably safe.\" The Sentinel Grid turns rainfall, terrain, population and infrastructure data for 30 wards of Coimbatore into risk zones, rescue priorities and evacuation routes. Its core idea is that \"we don't know yet\" gets its own zone and its own place in the rescue queue. Built by a team of four at the zonal round, SRCAS Coimbatore. Key highlights: **6 of 30 wards flagged as unverified** from an 11-hour-old satellite pass, each with the reason it couldn't be trusted. **2 errors caught in the specification itself** by independently recomputing all 104 formulas in a 681-line spec. **ROC-AUC 0.9924** detecting drought on 473,256 real district-month soil readings. **Called out our own weak spot:** monsoon extremes reach only ROC-AUC 0.662, and we named it the open problem instead of hiding it. Honest limitation/tradeoff: The landslide and cyclone models were trained on synthetic data, so their near-perfect scores aren't the headline. Next: live data feeds for per-ward detection. Verified metrics: Top 5 South zone \u00b7 314 automated checks passing \u00b7 0.9924 ROC-AUC on 473k real readings."
+}

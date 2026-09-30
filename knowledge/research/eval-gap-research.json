@@ -1,0 +1,27 @@
+{
+  "id": "research-eval-gap",
+  "type": "research",
+  "name": "Eval Gap Research: AI Grading Without Ground Truth",
+  "category": "Research",
+  "technologies": [
+    "Python",
+    "LLM Evaluation",
+    "Confidence Scoring",
+    "Rubrics"
+  ],
+  "date": "2026",
+  "source": "projects-data.json#eval-gap-research",
+  "section": "Research & Evaluation",
+  "github_url": "",
+  "demo_url": "project.html?id=eval-gap-research",
+  "tags": [
+    "LLM Evaluation",
+    "Eval Gap",
+    "AI Judge",
+    "Checklist Rubrics",
+    "Research"
+  ],
+  "stats": "1.00 vs 0.31 good vs bad separation \u00b7 n = 8 directional study",
+  "slug": "eval-gap-research",
+  "content": "Eval Gap Research investigates how to evaluate AI agents when no formal ground truth test exists. It measures whether an AI judge using structured rubrics can separate good from bad outputs cleanly, isolating where confidence signals fail on subtly incorrect answers. Early findings demonstrated 1.00 vs 0.31 score separation on n=8 samples with ongoing multi-model cross-rubric validation."
+}

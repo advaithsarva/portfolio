@@ -347,15 +347,22 @@ function updateRagHud(res) {
   if (!res || !res.retrieval) return;
 
   if (metricEl) {
-    metricEl.innerHTML = `Query: "<strong>${res.retrieval.query}</strong>" · Latency: <strong>${res.retrieval.latencyMs}ms</strong>`;
+    const lat = res.retrieval.latencyMs || 0;
+    const mode = res.mode ? ` [${res.mode.toUpperCase()}]` : '';
+    metricEl.innerHTML = `Query: "<strong>${res.retrieval.query}</strong>" · Latency: <strong>${lat}ms</strong>${mode}`;
   }
-  if (chunksEl) {
-    chunksEl.innerHTML = res.retrieval.topChunks.map((tc, idx) => `
-      <div class="rag-hud-chunk-item">
-        <span>#${idx+1} ${tc.chunk.title.slice(0, 26)}...</span>
-        <span style="font-weight:700; color:var(--color-blueprint);">Score: ${tc.score} (Cos: ${tc.cosSim})</span>
-      </div>
-    `).join('');
+  if (chunksEl && res.retrieval.topChunks) {
+    chunksEl.innerHTML = res.retrieval.topChunks.map((tc, idx) => {
+      const doc = tc.chunk || tc;
+      const title = doc.name || doc.title || 'Knowledge Chunk';
+      const score = tc.rrfScore || tc.score || 0;
+      return `
+        <div class="rag-hud-chunk-item">
+          <span>#${idx+1} ${title.slice(0, 24)}...</span>
+          <span style="font-weight:700; color:var(--color-blueprint);">RRF: ${score} (Cos: ${tc.cosSim || 0})</span>
+        </div>
+      `;
+    }).join('');
   }
 }
 
@@ -830,8 +837,8 @@ function initPokemonCompanion() {
     chatLog.scrollTop = chatLog.scrollHeight;
   }
 
-  // Handle Query Submission
-  function handleQuery(queryText) {
+  // Handle Query Submission (Asynchronous with serverless / local fallback)
+  async function handleQuery(queryText) {
     if (!queryText || !queryText.trim()) return;
     const cleanQuery = queryText.trim();
 
@@ -844,11 +851,29 @@ function initPokemonCompanion() {
     // 3. Grant EXP
     gainExp(15);
 
-    // 4. Retrieve Answer via Pikachu RAG
+    // 4. Retrieve Answer via Pikachu RAG (Asynchronous or Local Sync)
+    if (window.AdvaithRAG && typeof window.AdvaithRAG.queryAsync === 'function') {
+      try {
+        const resp = await window.AdvaithRAG.queryAsync(cleanQuery);
+        if (resp.isGhost) {
+          playPikachuSound('ghost');
+          if (sprite) {
+            sprite.classList.add('scared-shake');
+            setTimeout(() => sprite.classList.remove('scared-shake'), 600);
+          }
+        }
+        updateRagHud(resp);
+        appendChat('⚡ PIKACHU:', resp.answer, false, resp.isGhost);
+        return;
+      } catch (err) {
+        console.warn('Async query failed, utilizing local sync fallback:', err);
+      }
+    }
+
     setTimeout(() => {
       const resp = queryPikachuRAG(cleanQuery);
       appendChat('⚡ PIKACHU:', resp.text, false, resp.isGhost);
-    }, 200);
+    }, 150);
   }
 
   // Gain EXP helper

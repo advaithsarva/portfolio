@@ -1,0 +1,31 @@
+{
+  "id": "proj-healthcare-utilization-risk-pipeline",
+  "type": "project",
+  "name": "Healthcare Utilization Risk Pipeline",
+  "category": "ML & Data",
+  "technologies": [
+    "Python",
+    "SQL",
+    "scikit-learn",
+    "Streamlit",
+    "Healthcare"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/healthcare-utilization-risk-pipeline.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/healthcare-utilization-risk-pipeline",
+  "demo_url": "project.html?id=healthcare-utilization-risk-pipeline",
+  "tags": [
+    "Python",
+    "SQL",
+    "scikit-learn",
+    "Streamlit",
+    "Healthcare",
+    "Healthcare Utilization Risk Pipeline",
+    "ML & Data",
+    "healthcare-utilization-risk-pipeline"
+  ],
+  "stats": "0.8801 ROC-AUC \u00b7 0.9051 PR-AUC \u00b7 7/7 tests on real data",
+  "slug": "healthcare-utilization-risk-pipeline",
+  "content": "Healthcare Utilization Risk Pipeline (ML & Data): \"Flags heart risk before it becomes an ER visit.\". Care teams can't call everyone, so they need to know who to call first. This pipeline loads patient data into SQLite, engineers features in SQL, trains a Random Forest, and serves the results in a Streamlit dashboard. Every modelling choice was made by measuring the data, not by following a checklist. Key highlights: **Skipped rebalancing on purpose:** the measured class ratio (1.196:1) didn't need it. **Used PCA only where it helps:** for the dashboard plot, not the model. **Dashboard never retrains:** it reads saved results, so it's fast and consistent. Honest limitation/tradeoff: 303 patients is small, so this proves the pipeline, not a clinical model. Verified metrics: 0.8801 ROC-AUC \u00b7 0.9051 PR-AUC \u00b7 7/7 tests on real data."
+}

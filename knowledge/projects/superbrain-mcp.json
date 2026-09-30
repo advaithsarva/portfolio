@@ -1,0 +1,29 @@
+{
+  "id": "proj-superbrain-mcp",
+  "type": "project",
+  "name": "Superbrain MCP",
+  "category": "Full-Stack",
+  "technologies": [
+    "Python",
+    "MCP",
+    "SQLite",
+    "AI Agents"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/superbrain-mcp.html",
+  "section": "Engineering Repositories",
+  "github_url": "",
+  "demo_url": "project.html?id=superbrain-mcp",
+  "tags": [
+    "Python",
+    "MCP",
+    "SQLite",
+    "AI Agents",
+    "Superbrain MCP",
+    "Full-Stack",
+    "superbrain-mcp"
+  ],
+  "stats": "41 tools \u00b7 8 memory types \u00b7 used daily",
+  "slug": "superbrain-mcp",
+  "content": "Superbrain MCP (Full-Stack): \"One memory shared by all my AI agents.\". Every AI chat starts from zero. Superbrain fixes that with shared short-term memory, long-term memory, a knowledge graph, an event log, saved workflows and tasks, all through the Model Context Protocol. It stores and recalls; the agent that calls it does the thinking. Key highlights: **Fast and permanent:** short-term memory lives in RAM, and everything else is stored in SQLite. **Small footprint:** only three dependencies. Honest limitation/tradeoff: No automated tests yet. Verified metrics: 41 tools \u00b7 8 memory types \u00b7 used daily."
+}

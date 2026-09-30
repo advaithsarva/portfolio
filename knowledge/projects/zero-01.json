@@ -1,0 +1,29 @@
+{
+  "id": "proj-zero-01",
+  "type": "project",
+  "name": "zero-01",
+  "category": "In Progress",
+  "technologies": [
+    "Python",
+    "PyTorch",
+    "LLM",
+    "In Progress"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/zero-01.html",
+  "section": "Engineering Repositories",
+  "github_url": "",
+  "demo_url": "project.html?id=zero-01",
+  "tags": [
+    "Python",
+    "PyTorch",
+    "LLM",
+    "In Progress",
+    "zero-01",
+    "In Progress",
+    "zero-01"
+  ],
+  "stats": "Design stage \u00b7 model size decided after a benchmark sweep",
+  "slug": "zero-01",
+  "content": "zero-01 (In Progress): \"Building a language model from the first token up.\". To really understand LLMs, build one. Every piece will be written by hand and measured, starting with the tokenizer and training on Colab. Key highlights:  Honest limitation/tradeoff: No code yet. Don't feature it until there's a trained checkpoint. Verified metrics: Design stage \u00b7 model size decided after a benchmark sweep."
+}

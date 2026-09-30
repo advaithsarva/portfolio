@@ -1,0 +1,29 @@
+{
+  "id": "proj-fact-checking-agent",
+  "type": "project",
+  "name": "Fact-Checking Agent",
+  "category": "AI Agents",
+  "technologies": [
+    "Python",
+    "NLP",
+    "NLI",
+    "Agents"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/fact-checking-agent.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/fact-checking-agent",
+  "demo_url": "project.html?id=fact-checking-agent",
+  "tags": [
+    "Python",
+    "NLP",
+    "NLI",
+    "Agents",
+    "Fact-Checking Agent",
+    "AI Agents",
+    "fact-checking-agent"
+  ],
+  "stats": "9/10 verdicts correct \u00b7 15 tests \u00b7 0 API keys needed",
+  "slug": "fact-checking-agent",
+  "content": "Fact-Checking Agent (AI Agents): \"Paste an article. Get a verdict on every claim, with sources.\". Articles mix facts, opinions and questions. This agent pulls out only the checkable facts, then searches, reads each evidence sentence to judge whether it supports or contradicts the claim, and weighs sources by reliability. It runs offline out of the box, with no paid search API. Key highlights: **Fixed two bugs that were hiding each other,** including evidence that clearly supported a claim being scored \"neutral.\" **Didn't game the eval:** traced the one miss to its root cause instead of tuning a threshold to hide it. Honest limitation/tradeoff: The gold set is 10 claims. Next: a larger public benchmark. Verified metrics: 9/10 verdicts correct \u00b7 15 tests \u00b7 0 API keys needed."
+}

@@ -1,0 +1,29 @@
+{
+  "id": "proj-query-plan-visualizer",
+  "type": "project",
+  "name": "Query Plan Visualizer",
+  "category": "Full-Stack",
+  "technologies": [
+    "React",
+    "D3",
+    "Flask",
+    "PostgreSQL"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/query-plan-visualizer.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/query-plan-visualizer",
+  "demo_url": "project.html?id=query-plan-visualizer",
+  "tags": [
+    "React",
+    "D3",
+    "Flask",
+    "PostgreSQL",
+    "Query Plan Visualizer",
+    "Full-Stack",
+    "query-plan-visualizer"
+  ],
+  "stats": "2.8\u00d7 speedup (12.1 \u2192 4.3 ms) \u00b7 8/8 eval cases \u00b7 0 risk to your schema",
+  "slug": "query-plan-visualizer",
+  "content": "Query Plan Visualizer (Full-Stack): \"See why your SQL is slow, then test the fix risk-free.\". Raw EXPLAIN ANALYZE output is a wall of nested JSON. This turns it into a clickable tree and points at the slow node. The index-compare mode creates the index inside a transaction, measures it, and rolls it back, so your live database never changes. Key highlights: **Tested before trusted:** the first eval run caught two real gaps, which are now fixed. **Found a regex bug by running against a real database** instead of trusting the code. Honest limitation/tradeoff: The 2.8\u00d7 figure is from August 2026. Next: re-measure it. Verified metrics: 2.8\u00d7 speedup (12.1 \u2192 4.3 ms) \u00b7 8/8 eval cases \u00b7 0 risk to your schema."
+}

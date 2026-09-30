@@ -1,0 +1,29 @@
+{
+  "id": "proj-personal-finance-planner",
+  "type": "project",
+  "name": "Personal Finance Planner",
+  "category": "Full-Stack",
+  "technologies": [
+    "Node.js",
+    "Express",
+    "LLM",
+    "JavaScript"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/personal-finance-planner.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/personal-finance-planner",
+  "demo_url": "project.html?id=personal-finance-planner",
+  "tags": [
+    "Node.js",
+    "Express",
+    "LLM",
+    "JavaScript",
+    "Personal Finance Planner",
+    "Full-Stack",
+    "personal-finance-planner"
+  ],
+  "stats": "17 figures per plan \u00b7 <0.005 ms to compute \u00b7 dependencies 5 \u2192 1",
+  "slug": "personal-finance-planner",
+  "content": "Personal Finance Planner (Full-Stack): \"The math is done by code. The AI just explains it.\". Asking an AI to do your finances means trusting numbers nobody checked. Here every figure is computed and tested in code: 50/30/20 budgets, savings splits, age-based allocation, inflation-adjusted projections. The LLM only explains the plan. Key highlights: **From untestable to 11 tests:** the rebuild passes 11/11, and 10 of them fail on the original. **Works even when the AI doesn't:** no key or a failed call still returns every figure. **Lighter:** React and five other packages replaced with one static page. Honest limitation/tradeoff: The AI explanation layer hasn't been run with a real key yet. Verified metrics: 17 figures per plan \u00b7 <0.005 ms to compute \u00b7 dependencies 5 \u2192 1."
+}

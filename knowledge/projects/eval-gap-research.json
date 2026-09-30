@@ -1,0 +1,27 @@
+{
+  "id": "proj-eval-gap-research",
+  "type": "project",
+  "name": "Eval Gap Research",
+  "category": "In Progress",
+  "technologies": [
+    "Python",
+    "LLM Evaluation",
+    "Research"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/eval-gap-research.html",
+  "section": "Engineering Repositories",
+  "github_url": "",
+  "demo_url": "project.html?id=eval-gap-research",
+  "tags": [
+    "Python",
+    "LLM Evaluation",
+    "Research",
+    "Eval Gap Research",
+    "In Progress",
+    "eval-gap-research"
+  ],
+  "stats": "1.00 vs 0.31 good vs bad separation \u00b7 n = 8, early results",
+  "slug": "eval-gap-research",
+  "content": "Eval Gap Research (In Progress): \"How do you grade an AI when there's no right answer?\". AI agents improve fast wherever there's a test to pass. Most real tasks have no test. This project asks whether an AI judge with a checklist can fill that gap, and measures when its confidence can be trusted. Key highlights: **The scores work:** good and bad output separate cleanly. **The confidence signal doesn't, yet:** subtly wrong answers still scored full marks, and the experiment shows why. Honest limitation/tradeoff: Eight examples on one model, so it's directional only. Next: rubrics from several different models. Verified metrics: 1.00 vs 0.31 good vs bad separation \u00b7 n = 8, early results."
+}

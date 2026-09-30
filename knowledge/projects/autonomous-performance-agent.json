@@ -1,0 +1,29 @@
+{
+  "id": "proj-autonomous-performance-agent",
+  "type": "project",
+  "name": "Autonomous Performance Agent",
+  "category": "AI Agents",
+  "technologies": [
+    "Python",
+    "PostgreSQL",
+    "Databases",
+    "Agents"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/autonomous-performance-agent.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/autonomous-performance-agent",
+  "demo_url": "project.html?id=autonomous-performance-agent",
+  "tags": [
+    "Python",
+    "PostgreSQL",
+    "Databases",
+    "Agents",
+    "Autonomous Performance Agent",
+    "AI Agents",
+    "autonomous-performance-agent"
+  ],
+  "stats": "11.7\u00d7 faster (11.7 ms \u2192 1.0 ms) \u00b7 8/8 eval cases \u00b7 200k-row table",
+  "slug": "autonomous-performance-agent",
+  "content": "Autonomous Performance Agent (AI Agents): \"Finds your slowest Postgres query and makes it 11.7\u00d7 faster.\". Slow queries hide in plain sight. The agent reads pg_stat_statements, rebuilds the real query behind Postgres's anonymised version, and tests a fix before and after. If a change hurts performance, it undoes it on its own. Key highlights: **Works on real-world queries:** safely reconstructs parameterised queries instead of skipping most of them. **Knows what not to build:** leaves join reordering to Postgres's own planner, which already does it better. Honest limitation/tradeoff: The 11.7\u00d7 figure was measured in August 2026 on a Docker Postgres. Next: re-measure it. Verified metrics: 11.7\u00d7 faster (11.7 ms \u2192 1.0 ms) \u00b7 8/8 eval cases \u00b7 200k-row table."
+}

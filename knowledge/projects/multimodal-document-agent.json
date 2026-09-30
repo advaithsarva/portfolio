@@ -1,0 +1,31 @@
+{
+  "id": "proj-multimodal-document-agent",
+  "type": "project",
+  "name": "Multimodal Document Agent",
+  "category": "AI Agents",
+  "technologies": [
+    "Python",
+    "PDF",
+    "OCR",
+    "RAG",
+    "Agents"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/multimodal-document-agent.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/multimodal-document-agent",
+  "demo_url": "project.html?id=multimodal-document-agent",
+  "tags": [
+    "Python",
+    "PDF",
+    "OCR",
+    "RAG",
+    "Agents",
+    "Multimodal Document Agent",
+    "AI Agents",
+    "multimodal-document-agent"
+  ],
+  "stats": "1.000 routing accuracy \u00b7 0.983 answer recall \u00b7 13.5\u00d7 faster than always-OCR",
+  "slug": "multimodal-document-agent",
+  "content": "Multimodal Document Agent (AI Agents): \"Give it any PDF. It works out how to read it.\". Most PDF tools guess wrong on stamped scans and half-scanned files, and then lose the whole document. This agent chooses between the text layer, OCR, a per-page hybrid or denoise-then-OCR for each PDF. It answers questions with page and bounding-box citations, and when the evidence isn't there, it says so. Key highlights: **Matched a perfect oracle** that was told the right path in advance, across 5 document types. **Caught a convincing fake:** a wrong answer that came with a real, valid citation. A new relevance gate now refuses all 3 such cases. **Cost nothing to route:** an area-ratio check picks the path for a 3-page PDF in 0.27 s without rendering anything. 21 tests. Honest limitation/tradeoff: Benchmarked on generated fixtures. Next: a public document dataset. Verified metrics: 1.000 routing accuracy \u00b7 0.983 answer recall \u00b7 13.5\u00d7 faster than always-OCR."
+}

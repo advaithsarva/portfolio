@@ -1,0 +1,30 @@
+{
+  "id": "exp-preventvital",
+  "type": "experience",
+  "name": "Preventvital (GruentzigAI Pvt. Ltd.) - AI/ML Engineer Intern",
+  "category": "Experience",
+  "technologies": [
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "RAG Safety",
+    "Clinical Risk Modeling"
+  ],
+  "date": "May 2025 - Jul 2025",
+  "source": "resume.html#experience",
+  "section": "Industry Experience",
+  "github_url": "",
+  "demo_url": "resume.html#experience",
+  "tags": [
+    "Preventvital",
+    "GruentzigAI",
+    "Clinical ML",
+    "ASCVD",
+    "Goff 2014",
+    "ICMR 2023",
+    "Internship"
+  ],
+  "stats": "Identified critical ASCVD calculation defect (0.1% vs 2.1% baseline) \u00b7 Authored ICMR sign-off protocol",
+  "slug": "preventvital-internship",
+  "content": "At Preventvital (GruentzigAI), Advaith audited backend ML inference architectures for cardiovascular risk calculation. He identified a critical coefficient sign inversion error in the ASCVD clinical risk calculation that was artificially calculating 0.1% baseline risk for untreated patients. He reproduced the calculation against the published Goff 2014 trial baseline (expected 2.1%), wrote the bug report for clinical sign-off, and authored RAG & safety rules adhering to ICMR 2023 guidelines on an 'engine computes, LLM explains, clinician signs' protocol."
+}

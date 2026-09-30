@@ -1,0 +1,27 @@
+{
+  "id": "proj-tcp-stack-from-scratch",
+  "type": "project",
+  "name": "TCP Stack from Scratch",
+  "category": "Systems from Scratch",
+  "technologies": [
+    "Python",
+    "Networking",
+    "Protocols"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/tcp-stack-from-scratch.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/tcp-stack-from-scratch",
+  "demo_url": "project.html?id=tcp-stack-from-scratch",
+  "tags": [
+    "Python",
+    "Networking",
+    "Protocols",
+    "TCP Stack from Scratch",
+    "Systems from Scratch",
+    "tcp-stack-from-scratch"
+  ],
+  "stats": "30% packet loss survived \u00b7 16\u00d7 faster than stop-and-wait \u00b7 28 tests",
+  "slug": "tcp-stack-from-scratch",
+  "content": "TCP Stack from Scratch (Systems from Scratch): \"The internet's core protocol, rebuilt from raw bytes.\". TCP is the protocol almost everything relies on, and almost nobody has built. This stack implements the full RFC 793 lifecycle with no socket in the protocol code. An injected clock makes a 60-second timeout testable in microseconds. Key highlights: **Fixed three bugs that hang silently,** including a handshake deadlock when the final ACK is lost. **Measured, not assumed:** fast retransmit recovers 1.32\u00d7 faster, and throughput collapses 6,600\u00d7 between 5% and 20% loss. Honest limitation/tradeoff: Runs over a simulated link, not a real network card. Verified metrics: 30% packet loss survived \u00b7 16\u00d7 faster than stop-and-wait \u00b7 28 tests."
+}

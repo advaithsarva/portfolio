@@ -1,0 +1,35 @@
+{
+  "id": "skill-systems-backend",
+  "type": "skill",
+  "name": "Systems Programming, Databases & Backend Engineering",
+  "category": "Technologies",
+  "technologies": [
+    "Python",
+    "PostgreSQL",
+    "Docker",
+    "FastAPI",
+    "TypeScript",
+    "Node.js",
+    "Linux",
+    "AWS"
+  ],
+  "date": "2026",
+  "source": "resume.html#skills",
+  "section": "Systems & Infrastructure",
+  "github_url": "https://github.com/advaithsarva",
+  "demo_url": "resume.html#skills",
+  "tags": [
+    "Python",
+    "SQL",
+    "PostgreSQL",
+    "FastAPI",
+    "Docker",
+    "Linux",
+    "Bash",
+    "AWS Cloud",
+    "Systems"
+  ],
+  "stats": "C memory allocators \u00b7 Custom HTTP servers \u00b7 Asynchronous query pipelines",
+  "slug": "systems-and-infrastructure",
+  "content": "Advaith is grounded in systems engineering and low-level mechanics: Linux/Bash scripting, Docker containerization, asynchronous FastAPI/AsyncPG backends, PostgreSQL query optimization and indexing, TypeScript/Node.js, and low-level systems implemented from scratch (custom malloc/free with mmap, custom HTTP/1.1 server socket engines, and deterministic cache architectures)."
+}

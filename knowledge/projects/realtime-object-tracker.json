@@ -1,0 +1,29 @@
+{
+  "id": "proj-realtime-object-tracker",
+  "type": "project",
+  "name": "Realtime Object Tracker",
+  "category": "ML & Data",
+  "technologies": [
+    "Python",
+    "Computer Vision",
+    "Kalman Filter",
+    "NumPy"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/realtime-object-tracker.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/realtime-object-tracker",
+  "demo_url": "project.html?id=realtime-object-tracker",
+  "tags": [
+    "Python",
+    "Computer Vision",
+    "Kalman Filter",
+    "NumPy",
+    "Realtime Object Tracker",
+    "ML & Data",
+    "realtime-object-tracker"
+  ],
+  "stats": "0 ID switches \u00b7 1.000 identity purity \u00b7 MOTA 0.980\u20130.985",
+  "slug": "realtime-object-tracker",
+  "content": "Realtime Object Tracker (ML & Data): \"It never loses track of who's who.\". A tracker that renumbers people every few frames looks fine in each frame and is useless overall. This ByteTrack-style tracker predicts motion with a Kalman filter, matches in two stages, and measures identity, not just boxes. Key highlights: **Crowd scene: 76 ID switches down to 0,** after fixing a bug that made track aging impossible. **Found an inverted threshold** that had sunk accuracy to 0.010 while every part looked correct on its own. **Detector is plug-and-play,** so tracking is measured separately from detection. 23 tests. Honest limitation/tradeoff: Tested on synthetic scenes. Next: a public MOT benchmark video. Verified metrics: 0 ID switches \u00b7 1.000 identity purity \u00b7 MOTA 0.980\u20130.985."
+}

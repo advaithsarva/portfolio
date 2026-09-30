@@ -1,0 +1,28 @@
+{
+  "id": "about-contact",
+  "type": "about",
+  "name": "Contact & Social Channels",
+  "category": "Contact",
+  "technologies": [
+    "Email",
+    "LinkedIn",
+    "GitHub",
+    "Instagram"
+  ],
+  "date": "2026",
+  "source": "index.html#contact",
+  "section": "Contact Information",
+  "github_url": "https://github.com/advaithsarva",
+  "demo_url": "mailto:advaithsarva@gmail.com",
+  "tags": [
+    "Contact",
+    "Email",
+    "LinkedIn",
+    "Hire",
+    "Social",
+    "Inquiries"
+  ],
+  "stats": "Open to US, India & Remote Roles",
+  "slug": "contact",
+  "content": "Advaith is reachable via email at advaithsarva@gmail.com. His professional profile is on LinkedIn at linkedin.com/in/sarvaadvaithnarayana/ and his public code repositories are hosted at github.com/advaithsarva. Instagram handle: @advaithsarva."
+}

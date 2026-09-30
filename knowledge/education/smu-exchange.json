@@ -1,0 +1,30 @@
+{
+  "id": "edu-smu",
+  "type": "education",
+  "name": "Saint Martin's University (Lacey, WA) - Exchange Scholar",
+  "category": "Education",
+  "technologies": [
+    "Distributed Systems",
+    "Machine Learning",
+    "Computer Vision",
+    "Advanced Algorithms"
+  ],
+  "date": "Aug 2025 - May 2026",
+  "source": "resume.html#education",
+  "section": "International Academic Exchange",
+  "github_url": "",
+  "demo_url": "resume.html#education",
+  "tags": [
+    "Saint Martin's University",
+    "SMU",
+    "Lacey",
+    "Washington",
+    "USA",
+    "Exchange",
+    "Dean's List",
+    "3.47 CGPA"
+  ],
+  "stats": "3.47 / 4.0 CGPA \u00b7 Dean's List Honors \u00b7 Completed May 2026",
+  "slug": "smu-exchange",
+  "content": "Advaith attended Saint Martin's University in Lacey, Washington, USA as an International Exchange Scholar from August 2025 to May 2026 (completed in May 2026 across two semesters) in BS Computer Science (AI & ML track). He maintained a 3.47 / 4.0 CGPA, earned Dean's List honors, and studied Distributed Systems, Machine Learning, Computer Vision, and Advanced Algorithms, while serving as a peer mentor in the Center for Student Success."
+}

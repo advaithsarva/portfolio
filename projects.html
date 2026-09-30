@@ -392,7 +392,7 @@
 
     <!-- 03 // Search Bar & Count Strip -->
     <div class="catalog-search-strip">
-      <input type="text" id="projectSearch" class="catalog-search-box" placeholder="🔍 Search projects by keyword, metric, or stack...">
+      <input type="text" id="projectSearch" class="catalog-search-box" placeholder="⚡ Intelligent Hybrid Search: e.g. 'projects involving RAG', 'what has Advaith built from scratch?', 'measurable results'...">
       <div class="catalog-count-label">
         Showing <span id="matchCount" style="color:var(--color-blueprint); font-weight:800;">39</span> of 39 verified repositories
       </div>
@@ -427,6 +427,7 @@
     </div>
   </footer>
 
+  <script src="rag-engine.js"></script>
   <script src="projects-data.js"></script>
   <script src="tech-icons.js"></script>
   <script>
@@ -504,23 +505,68 @@
 
       function render() {
         grid.innerHTML = '';
+        let listToRender = [];
+
+        // Check if intelligent hybrid search is active
+        const q = searchQuery.trim();
+        let ragMatchMap = new Map();
+
+        if (q && window.AdvaithRAG && typeof window.AdvaithRAG.retrieve === 'function') {
+          const retrieval = window.AdvaithRAG.retrieve(q, 39);
+          if (retrieval && retrieval.topChunks) {
+            retrieval.topChunks.forEach(tc => {
+              const chunk = tc.chunk;
+              if (chunk.slug) {
+                ragMatchMap.set(chunk.slug, {
+                  score: tc.rrfScore || 0,
+                  whyMatched: tc.whyMatched || 'Hybrid semantic match'
+                });
+              }
+            });
+          }
+        }
+
         const filtered = window.ALL_PROJECTS.filter(p => {
           const matchCat = (currentCat === 'All' || p.category === currentCat || (currentCat === 'Systems from Scratch' && p.category.includes('System')));
           const matchT = matchesTool(p, currentTool);
-          const q = searchQuery.toLowerCase();
-          const matchQ = !q || 
-            p.title.toLowerCase().includes(q) || 
-            p.tagline.toLowerCase().includes(q) || 
-            p.overview.toLowerCase().includes(q) || 
-            p.tags.some(t => t.toLowerCase().includes(q)) || 
-            p.stats.toLowerCase().includes(q);
-          return matchCat && matchT && matchQ;
+          
+          if (!q) {
+            p._whyMatched = null;
+            p._searchScore = 0;
+            return matchCat && matchT;
+          }
+
+          // If hybrid RAG matched this project
+          const ragInfo = ragMatchMap.get(p.slug);
+          const qLow = q.toLowerCase();
+          const fallbackMatch = p.title.toLowerCase().includes(qLow) ||
+                                p.tagline.toLowerCase().includes(qLow) ||
+                                p.overview.toLowerCase().includes(qLow) ||
+                                p.tags.some(t => t.toLowerCase().includes(qLow)) ||
+                                p.stats.toLowerCase().includes(qLow);
+
+          if (ragInfo && ragInfo.score > 0.005) {
+            p._searchScore = ragInfo.score;
+            p._whyMatched = ragInfo.whyMatched;
+            return matchCat && matchT;
+          } else if (fallbackMatch) {
+            p._searchScore = 0.01;
+            p._whyMatched = `Matched keywords in title or tags`;
+            return matchCat && matchT;
+          }
+
+          return false;
         });
+
+        // If search is active, sort by relevance score
+        if (q) {
+          filtered.sort((a, b) => (b._searchScore || 0) - (a._searchScore || 0));
+        }
 
         matchCountSpan.textContent = filtered.length;
 
         if (filtered.length === 0) {
-          grid.innerHTML = '<div style="grid-column: 1/-1; padding: 40px; text-align: center; border: 2px dashed var(--border-color); background:var(--bg-card); font-family: monospace;">No projects match your current filter. Try selecting "ALL TOOLS" or clearing keywords.</div>';
+          grid.innerHTML = '<div style="grid-column: 1/-1; padding: 40px; text-align: center; border: 2px dashed var(--border-color); background:var(--bg-card); font-family: monospace;">No projects match your current filter. Try asking a different query or selecting "ALL TECHNOLOGIES".</div>';
           return;
         }
 
@@ -540,6 +586,13 @@
           // Tech tags with logos
           const tagsHtml = p.tags.map(t => window.TechIcons ? window.TechIcons.renderTechBadge(t) : `<span class="badge-tag">${t}</span>`).join('');
 
+          // Why matched snippet for intelligent search
+          const whyMatchedHtml = p._whyMatched ? `
+            <div class="project-why-matched" style="margin-top:12px; margin-bottom:12px; padding:6px 10px; background:var(--bg-surface); border-left:3px solid var(--color-blueprint); font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--text-main);">
+              <span style="color:var(--color-blueprint); font-weight:700;">⚡ MATCHED BECAUSE:</span> ${p._whyMatched}
+            </div>
+          ` : '';
+
           card.innerHTML = `
             <div>
               <div class="card-meta-row">
@@ -553,6 +606,8 @@
               <div class="project-stat-pill">
                 ⚡ ${p.stats}
               </div>
+
+              ${whyMatchedHtml}
 
               <div class="project-tags-row">
                 ${tagsHtml}

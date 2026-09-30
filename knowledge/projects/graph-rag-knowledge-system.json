@@ -1,0 +1,31 @@
+{
+  "id": "proj-graph-rag-knowledge-system",
+  "type": "project",
+  "name": "Graph RAG Knowledge System",
+  "category": "NLP & RAG",
+  "technologies": [
+    "Python",
+    "RAG",
+    "Knowledge Graph",
+    "spaCy",
+    "NetworkX"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/graph-rag-knowledge-system.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/graph-rag-knowledge-system",
+  "demo_url": "project.html?id=graph-rag-knowledge-system",
+  "tags": [
+    "Python",
+    "RAG",
+    "Knowledge Graph",
+    "spaCy",
+    "NetworkX",
+    "Graph RAG Knowledge System",
+    "NLP & RAG",
+    "graph-rag-knowledge-system"
+  ],
+  "stats": "0.900 MRR hybrid \u00b7 beats 0.867 and 0.733 \u00b7 10 tests",
+  "slug": "graph-rag-knowledge-system",
+  "content": "Graph RAG Knowledge System (NLP & RAG): \"Answers the questions that take two hops to find.\". Ordinary search finds documents that mention your words. It can't connect \"who acquired the company that makes X?\" across two documents. This system builds a knowledge graph from the text and walks it, with no database server and no credentials. Key highlights: **Fixed backwards facts:** \"Acme was acquired by Globex\" had been extracted the wrong way round. **Picked a metric that could tell methods apart** after the first one scored everything 5/5. Honest limitation/tradeoff: The eval is 5 queries, so it's directional. Next: a larger multi-hop set. Verified metrics: 0.900 MRR hybrid \u00b7 beats 0.867 and 0.733 \u00b7 10 tests."
+}

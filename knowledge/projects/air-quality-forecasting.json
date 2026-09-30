@@ -1,0 +1,29 @@
+{
+  "id": "proj-air-quality-forecasting",
+  "type": "project",
+  "name": "Air Quality Forecasting",
+  "category": "ML & Data",
+  "technologies": [
+    "Python",
+    "Time Series",
+    "PyTorch",
+    "scikit-learn"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/air-quality-forecasting.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/air-quality-multivariate-forecasting",
+  "demo_url": "project.html?id=air-quality-forecasting",
+  "tags": [
+    "Python",
+    "Time Series",
+    "PyTorch",
+    "scikit-learn",
+    "Air Quality Forecasting",
+    "ML & Data",
+    "air-quality-forecasting"
+  ],
+  "stats": "MAE 41.47 linear vs 44.97 LSTM \u00b7 5-fold walk-forward \u00b7 7/7 tests",
+  "slug": "air-quality-forecasting",
+  "content": "Air Quality Forecasting (ML & Data): \"Linear regression beat the LSTM, and here's the proof.\". Deep learning isn't always the answer, and this project measures it. Using 43,824 hourly readings and strict walk-forward validation (no peeking at the future), it compares a seasonal baseline, linear regression and a tuned LSTM. Key highlights: **Honest winner:** linear regression, MAE 41.47. The LSTM beats the naive baseline but not linear. **Found and fixed a scaling bug** that had made the first LSTM worse than every baseline (MAE 86.7). Honest limitation/tradeoff: Forecasts are daily, not hourly, and the LSTM search was kept small. Verified metrics: MAE 41.47 linear vs 44.97 LSTM \u00b7 5-fold walk-forward \u00b7 7/7 tests."
+}

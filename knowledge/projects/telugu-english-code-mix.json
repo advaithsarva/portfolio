@@ -1,0 +1,29 @@
+{
+  "id": "proj-telugu-english-code-mix",
+  "type": "project",
+  "name": "Telugu-English Code-Mix",
+  "category": "NLP & RAG",
+  "technologies": [
+    "Python",
+    "NLP",
+    "NLLB-200",
+    "Indic Languages"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/telugu-english-code-mix.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/telugu-english-codemix",
+  "demo_url": "project.html?id=telugu-english-code-mix",
+  "tags": [
+    "Python",
+    "NLP",
+    "NLLB-200",
+    "Indic Languages",
+    "Telugu-English Code-Mix",
+    "NLP & RAG",
+    "telugu-english-code-mix"
+  ],
+  "stats": "5 silent bugs fixed \u00b7 1M-sentence fake corpus exposed \u00b7 45 tests",
+  "slug": "telugu-english-code-mix",
+  "content": "Telugu-English Code-Mix (NLP & RAG): \"How people really text: half Telugu, half English, translated.\". Millions of people mix languages in every message, and most NLP tools choke on it. This pipeline cleans mixed-script text, translates it, embeds it and scores the result. The scoring core uses only the standard library. Key highlights: **Found that cleaning erased all of the Telugu** without raising a single error. **Fixed a translator talking to itself:** the model had been given the wrong language code all along. **Exposed a fake dataset:** the audit showed 1 million sentences were randomly generated from 36 words. Honest limitation/tradeoff: No translation score until it's re-run on a real corpus (LinCE, GLUECoS or L3Cube). Verified metrics: 5 silent bugs fixed \u00b7 1M-sentence fake corpus exposed \u00b7 45 tests."
+}

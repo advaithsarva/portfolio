@@ -1,0 +1,27 @@
+{
+  "id": "proj-mini-container-orchestrator",
+  "type": "project",
+  "name": "Mini Container Orchestrator",
+  "category": "Systems from Scratch",
+  "technologies": [
+    "Python",
+    "Distributed Systems",
+    "Kubernetes Concepts"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/mini-container-orchestrator.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/mini-container-orchestrator",
+  "demo_url": "project.html?id=mini-container-orchestrator",
+  "tags": [
+    "Python",
+    "Distributed Systems",
+    "Kubernetes Concepts",
+    "Mini Container Orchestrator",
+    "Systems from Scratch",
+    "mini-container-orchestrator"
+  ],
+  "stats": "6/6 pods survive node death \u00b7 \u22653/4 ready during every rollout \u00b7 25 tests",
+  "slug": "mini-container-orchestrator",
+  "content": "Mini Container Orchestrator (Systems from Scratch): \"A working mini-Kubernetes, in plain Python.\". The ideas behind Kubernetes, built from the ground up: a versioned state store, a bin-packing scheduler, controllers that keep reconciling, and a kubectl-style CLI. Compare-and-swap makes the classic \"two controllers, four pods\" race impossible. Key highlights: **Rolls back bad deploys by itself:** a broken image returns to 3/3 healthy. **Solved the mystery of a cluster that did nothing:** mismatched clocks had made every node look dead. Honest limitation/tradeoff: The real Docker runtime is written but untested, since no Docker daemon was available. Verified metrics: 6/6 pods survive node death \u00b7 \u22653/4 ready during every rollout \u00b7 25 tests."
+}

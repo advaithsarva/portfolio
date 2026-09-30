@@ -1,0 +1,32 @@
+{
+  "id": "skill-ai-ml-nlp",
+  "type": "skill",
+  "name": "AI, NLP, LLMs & Deep Learning Architecture",
+  "category": "Technologies",
+  "technologies": [
+    "PyTorch",
+    "Hugging Face Transformers",
+    "spaCy",
+    "Neo4j",
+    "Graph-RAG",
+    "Cross-Encoder NLI"
+  ],
+  "date": "2026",
+  "source": "resume.html#skills",
+  "section": "Core Technologies",
+  "github_url": "https://github.com/advaithsarva",
+  "demo_url": "resume.html#skills",
+  "tags": [
+    "PyTorch",
+    "Transformers",
+    "NLP",
+    "LLMs",
+    "RAG",
+    "Graph-RAG",
+    "Embeddings",
+    "Meta-Inference"
+  ],
+  "stats": "15+ AI & NLP pipelines \u00b7 Custom transformer from scratch \u00b7 Graph-RAG RRF",
+  "slug": "ai-ml-nlp",
+  "content": "Advaith specializes in deep learning architectures, computational semantics, and retrieval augmented generation. Key competencies: PyTorch from primitives (attention mechanisms, KV-cache, rotary embeddings, LayerNorm), Hugging Face Transformers, spaCy custom tokenization DAGs, cross-encoder NLI for factual verification, and Graph-RAG hybrid search fusing BM25, dense HNSW, and multi-hop Neo4j Cypher traversals."
+}

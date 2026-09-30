@@ -1,0 +1,29 @@
+{
+  "id": "proj-protocol-dissector-dashboard",
+  "type": "project",
+  "name": "Protocol Dissector Dashboard",
+  "category": "Systems from Scratch",
+  "technologies": [
+    "Python",
+    "Networking",
+    "Security",
+    "Packet Analysis"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/protocol-dissector-dashboard.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/protocol-dissector-dashboard",
+  "demo_url": "project.html?id=protocol-dissector-dashboard",
+  "tags": [
+    "Python",
+    "Networking",
+    "Security",
+    "Packet Analysis",
+    "Protocol Dissector Dashboard",
+    "Systems from Scratch",
+    "protocol-dissector-dashboard"
+  ],
+  "stats": "1/1 hidden scanner found \u00b7 0 false alarms \u00b7 29 tests",
+  "slug": "protocol-dissector-dashboard",
+  "content": "Protocol Dissector Dashboard (Systems from Scratch): \"Wireshark-style packet analysis, built with no packet library.\". Capture files can lie about their own lengths, and a careless parser will read the next packet as this one's data without ever crashing. This dissector treats every length field as hostile and checks every read, from Ethernet up to the application layer. Key highlights: **Found the planted port scanner** with zero false alarms. **Every alert shows its receipts:** the packet numbers behind it. **Survives malformed input:** 8 deliberately broken frames are handled cleanly. Honest limitation/tradeoff: Live capture needs raw-socket access and hasn't been run yet. Verified metrics: 1/1 hidden scanner found \u00b7 0 false alarms \u00b7 29 tests."
+}

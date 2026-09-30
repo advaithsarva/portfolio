@@ -1,0 +1,29 @@
+{
+  "id": "proj-document-layout-intelligence",
+  "type": "project",
+  "name": "Document Layout Intelligence",
+  "category": "ML & Data",
+  "technologies": [
+    "Python",
+    "Computer Vision",
+    "PDF",
+    "Document AI"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/document-layout-intelligence.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/document-layout-intelligence",
+  "demo_url": "project.html?id=document-layout-intelligence",
+  "tags": [
+    "Python",
+    "Computer Vision",
+    "PDF",
+    "Document AI",
+    "Document Layout Intelligence",
+    "ML & Data",
+    "document-layout-intelligence"
+  ],
+  "stats": "1.000 reading order vs 0.566 \u00b7 0.992 recall \u00b7 22 tests",
+  "slug": "document-layout-intelligence",
+  "content": "Document Layout Intelligence (ML & Data): \"Reads two-column PDFs in the right order, every time.\". Multi-column PDFs trip up almost every extractor. Text comes out jumbled, or silently goes missing. This system gets the order right and accounts for every piece of text, reporting coverage next to every score so nothing can vanish unnoticed. Key highlights: **Fixed the textbook algorithm itself:** standard XY-cut scrambles two-column pages whose paragraphs break at the same height. **Added AI only where it pays:** a learned classifier ties the rules on digital PDFs and beats them on scans (0.9840 vs 0.9572). **Built only what was missing:** measured the existing table finder first, then filled its one gap. Honest limitation/tradeoff: Ground truth is 36 pages built for this project. Next: a public layout benchmark. Verified metrics: 1.000 reading order vs 0.566 \u00b7 0.992 recall \u00b7 22 tests."
+}

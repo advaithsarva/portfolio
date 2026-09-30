@@ -1,0 +1,31 @@
+{
+  "id": "proj-local-pdf-rag",
+  "type": "project",
+  "name": "Local PDF RAG",
+  "category": "NLP & RAG",
+  "technologies": [
+    "Python",
+    "RAG",
+    "Sentence Transformers",
+    "PyMuPDF",
+    "NLP"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/local-pdf-rag.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/local-pdf-rag",
+  "demo_url": "project.html?id=local-pdf-rag",
+  "tags": [
+    "Python",
+    "RAG",
+    "Sentence Transformers",
+    "PyMuPDF",
+    "NLP",
+    "Local PDF RAG",
+    "NLP & RAG",
+    "local-pdf-rag"
+  ],
+  "stats": "100% exact-quote chunks (was 79%) \u00b7 12/12 off-topic questions refused \u00b7 23 tests",
+  "slug": "local-pdf-rag",
+  "content": "Local PDF RAG (NLP & RAG): \"Ask a 1,208-page textbook anything, and check every citation.\". A citation is worthless if the quoted text isn't really on that page. This system runs with no GPU, no API key and no vector database, and it's built on one rule: every chunk is a real slice of its page. If that rule breaks, the build stops. Key highlights: **Found a bug inherited from a popular tutorial** that glued sentences together (\"clear?Yes\") and broke 21% of chunks. Now 1,715 out of 1,715 are exact. **Knows when to say \"I don't know\":** it refused all 12 out-of-scope questions and still answered all 34 in-scope ones. **Let the evidence decide:** a simple keyword search beat the AI retriever on one test (0.990 vs 0.971), and an LLM answer layer lost on grounding (0.632 vs 1.000). Both results are published, and the better option ships. **Fine-tuned the retriever** and showed both sides: better in-domain (0.952 \u2192 1.000), worse on real questions (1.000 \u2192 0.912). Honest limitation/tradeoff: Grounding shows where the words came from, not whether they're true, so there's no factual-accuracy score. Verified metrics: 100% exact-quote chunks (was 79%) \u00b7 12/12 off-topic questions refused \u00b7 23 tests."
+}

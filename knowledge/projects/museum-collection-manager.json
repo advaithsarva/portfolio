@@ -1,0 +1,31 @@
+{
+  "id": "proj-museum-collection-manager",
+  "type": "project",
+  "name": "Museum Collection Manager",
+  "category": "Full-Stack",
+  "technologies": [
+    "Node.js",
+    "Express",
+    "SQLite",
+    "JavaScript",
+    "Flask"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/museum-collection-manager.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/museum-collection-manager",
+  "demo_url": "project.html?id=museum-collection-manager",
+  "tags": [
+    "Node.js",
+    "Express",
+    "SQLite",
+    "JavaScript",
+    "Flask",
+    "Museum Collection Manager",
+    "Full-Stack",
+    "museum-collection-manager"
+  ],
+  "stats": "17 REST endpoints \u00b7 2 data leaks closed \u00b7 35 tests",
+  "slug": "museum-collection-manager",
+  "content": "Museum Collection Manager (Full-Stack): \"A museum's collection online, with its secrets kept.\". Museums publish some things and must protect others: who donated a piece, and what it's worth. Every page here passes through one publish gate, and hidden works return \"not found\" so nobody can count what's unreleased. Search forgives typos, and falls back to plain SQL if that service is down. Key highlights: **Closed two live leaks** that exposed unpublished works and donor valuations. **Secure logins with no auth library:** signed, expiring sessions and lockout after 5 failed attempts. **Brought a dead feature back:** creating artworks had been failing on every request. Honest limitation/tradeoff: The UI still uses emoji as icons. Next: a proper icon set. Verified metrics: 17 REST endpoints \u00b7 2 data leaks closed \u00b7 35 tests."
+}

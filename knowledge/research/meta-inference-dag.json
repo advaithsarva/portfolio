@@ -1,0 +1,28 @@
+{
+  "id": "research-meta-inference",
+  "type": "research",
+  "name": "Interpretable Meta-Inference DAG Topologies",
+  "category": "Research",
+  "technologies": [
+    "Python",
+    "DAG",
+    "spaCy",
+    "Symbolic AI",
+    "Formal Fallacies"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects-data.json#media-nlp-pipeline",
+  "section": "Computational Semantics",
+  "github_url": "https://github.com/advaithsarva/media-nlp-pipeline",
+  "demo_url": "project.html?id=media-nlp-pipeline",
+  "tags": [
+    "Meta-Inference",
+    "DAG",
+    "Verbatim Evidence",
+    "Informal Fallacy",
+    "NLP"
+  ],
+  "stats": "0.175 false positive rate per 1,000 words on Wikipedia \u00b7 23 fallacy detectors",
+  "slug": "meta-inference-dag",
+  "content": "Advaith's research in interpretable meta-inference focuses on deterministic Directed Acyclic Graph (DAG) engines that uncouple semantic interpretation from black-box LLMs. By combining syntactic sentence disambiguation, lexical boundary checks, and verbatim evidence spans, the Media NLP Pipeline achieves a rigorous false positive rate of 0.175 per 1,000 words on neutral Wikipedia ground truth across 23 informal fallacy detectors."
+}

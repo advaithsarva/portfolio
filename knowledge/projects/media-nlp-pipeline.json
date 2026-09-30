@@ -1,0 +1,31 @@
+{
+  "id": "proj-media-nlp-pipeline",
+  "type": "project",
+  "name": "Media NLP Pipeline",
+  "category": "NLP & RAG",
+  "technologies": [
+    "Python",
+    "NLP",
+    "spaCy",
+    "FastAPI",
+    "Ray"
+  ],
+  "date": "2025 - 2026",
+  "source": "projects/media-nlp-pipeline.html",
+  "section": "Engineering Repositories",
+  "github_url": "https://github.com/advaithsarva/media-nlp-pipeline",
+  "demo_url": "project.html?id=media-nlp-pipeline",
+  "tags": [
+    "Python",
+    "NLP",
+    "spaCy",
+    "FastAPI",
+    "Ray",
+    "Media NLP Pipeline",
+    "NLP & RAG",
+    "media-nlp-pipeline"
+  ],
+  "stats": "23 detectors \u00b7 100% of findings quote exact source text \u00b7 164 tests",
+  "slug": "media-nlp-pipeline",
+  "content": "Media NLP Pipeline (NLP & RAG): \"Spots spin in the news, and quotes the exact words.\". An accusation of bias is only useful if you can see the evidence. This pipeline gives the same output on every run, and every finding carries the exact quote and its position in the article. Rules and scoring live in config files, so you can change them without touching code. Key highlights: **Caught a 5\u00d7 scoring error in the spec** and shipped a corrected formula alongside the original. **Rarely cries wolf:** 0.175 false flags per 1,000 words of Wikipedia. **Holds back weak detectors:** nine categories are parked rather than shipped as noise. Honest limitation/tradeoff: No validated accuracy score yet. Benchmarking against the BABE dataset is in progress. Verified metrics: 23 detectors \u00b7 100% of findings quote exact source text \u00b7 164 tests."
+}

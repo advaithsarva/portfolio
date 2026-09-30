@@ -1,0 +1,29 @@
+{
+  "id": "edu-woxsen",
+  "type": "education",
+  "name": "Woxsen University (Hyderabad, India) - B.Tech in CSE",
+  "category": "Education",
+  "technologies": [
+    "Data Structures",
+    "Deep Learning",
+    "Operating Systems",
+    "Computer Networks",
+    "Database Management Systems"
+  ],
+  "date": "Aug 2023 - Aug 2027",
+  "source": "resume.html#education",
+  "section": "Undergraduate Degree",
+  "github_url": "",
+  "demo_url": "resume.html#education",
+  "tags": [
+    "Woxsen University",
+    "Hyderabad",
+    "B.Tech",
+    "Computer Science",
+    "AI & ML",
+    "8.69 CGPA"
+  ],
+  "stats": "8.69 / 10.0 CGPA \u00b7 Expected August 2027",
+  "slug": "woxsen-degree",
+  "content": "Advaith is pursuing his Bachelor of Technology in Computer Science and Engineering with specialization in Artificial Intelligence & Machine Learning at Woxsen University, Hyderabad, India. He currently holds an 8.69 / 10.0 cumulative CGPA with anticipated graduation in August 2027. Relevant coursework: Design & Analysis of Algorithms, NLP, Autonomous Multi-Agent Systems, Neural Networks, Database Systems."
+}
