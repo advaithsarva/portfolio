@@ -1,5 +1,5 @@
 /* ==========================================================================
-   THE ADVAITH DAILY — 1920s NEWSPAPER & ENGINEERING ARCHIVE DESIGN SYSTEM
+   THE ADVAITH DAILY â€” 1920s NEWSPAPER & ENGINEERING ARCHIVE DESIGN SYSTEM
    Visual System: Black Ink + Warm Newsprint Paper + Editorial Newspaper Grid +
                   Double Rules + Halftone Printing + Localized Amber CRT Terminal
    Typography: Playfair Display, Newsreader & IBM Plex Mono
@@ -9,21 +9,22 @@
 
 :root,
 html[data-theme="light"] {
-  /* 1920s Editorial Newsprint & Ink Palette (Calibrated to Reference Broadsheet) */
-  --bg-canvas: #E6D8BE;          /* Warm Newsprint / Aged Paper from reference */
+  /* THE ADVAITH DAILY â€” Exact Color System from design_skill.md */
+  --bg-canvas: #E8DCC2;          /* Primary Newsprint Paper */
   --bg-card: #DFCFB0;            /* Shaded Editorial Column / Box Tint */
-  --bg-surface: #EDE3CF;         /* Elevated Newsprint Box Surface */
-  --text-main: #16130E;          /* Dense Printer's Carbon Black */
-  --text-muted: #4F473B;         /* Typesetter Antique Charcoal */
-  --border-color: #16130E;       /* Cast-Iron Lead Newspaper Rules */
-  --border-subtle: #7A7060;      /* Hairline Column Divider */
-  --rule-color: #16130E;
-  --color-blueprint: #16130E;    /* Pure Monochrome Black Ink */
-  --color-oxide: #16130E;        /* Pure Monochrome Black Ink */
-  --color-moss: #16130E;         /* Pure Monochrome Black Ink */
-  --color-gold: #16130E;         /* Pure Monochrome Black Ink */
-  --shadow-color: #16130E;
-  --grid-line: rgba(22, 19, 14, 0.14);
+  --bg-surface: #EDE4CC;         /* Elevated Newsprint Box Surface */
+  --text-main: #171512;          /* Primary Dense Printer's Carbon Black */
+  --text-muted: #3A3731;         /* Secondary Editorial Ink */
+  --border-color: #292621;       /* Rules and Borders */
+  --border-subtle: #5A544A;      /* Subtle Hairline Column Divider */
+  --rule-color: #292621;
+  --color-oxide: #6F2923;        /* Preferred Restrained Editorial Accent (Oxblood Ink) */
+  --color-navy: #263A42;         /* Alternative Editorial Accent (Prussian Navy) */
+  --color-blueprint: #263A42;
+  --color-moss: #171512;
+  --color-gold: #171512;
+  --shadow-color: #292621;
+  --grid-line: rgba(41, 38, 33, 0.12);
 
   /* Terminal Amber Phosphor CRT (Strictly localized to terminal) */
   --term-amber: #FFB000;
@@ -34,17 +35,18 @@ html[data-theme="light"] {
 }
 
 html[data-theme="dark"] {
-  /* Archival Carbon Negative Print (Preserves historic broadsheet in dark mode) */
-  --bg-canvas: #151413;          /* Dark Carbon Archive */
-  --bg-card: #1F1D1B;            /* Dark Charcoal Column */
-  --bg-surface: #272522;         /* Elevated Archival Slab */
-  --text-main: #EFE8DC;          /* Aged Ivory Lettering */
-  --text-muted: #A6A095;         /* Muted Carbon Type */
-  --border-color: #EFE8DC;       /* Ivory Cast Rule */
-  --border-subtle: #57524A;      /* Subtle Hairline */
+  /* Archival Carbon Negative Print */
+  --bg-canvas: #151413;
+  --bg-card: #1F1D1B;
+  --bg-surface: #272522;
+  --text-main: #EFE8DC;
+  --text-muted: #A6A095;
+  --border-color: #EFE8DC;
+  --border-subtle: #57524A;
   --rule-color: #EFE8DC;
-  --color-blueprint: #EFE8DC;
-  --color-oxide: #EFE8DC;
+  --color-oxide: #D9685B;
+  --color-navy: #7FAEC2;
+  --color-blueprint: #7FAEC2;
   --color-moss: #EFE8DC;
   --color-gold: #EFE8DC;
   --shadow-color: #000000;
@@ -75,8 +77,19 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   transition: background-color 0.2s ease, color 0.2s ease;
-  background-image: radial-gradient(circle, rgba(20, 20, 20, 0.035) 1px, transparent 1px);
-  background-size: 8px 8px;
+  /* Subtle newsprint grain texture â€” low opacity, barely perceptible per design_skill.md Â§12 */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Accessibility: Reduced Motion (design_skill.md Â§28) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 ::selection {
@@ -123,7 +136,7 @@ img:hover {
   max-width: 1380px;
   margin: 12px auto 40px;
   padding: 6px;
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
   background-color: var(--bg-canvas);
   box-shadow: none;
   position: relative;
@@ -170,7 +183,7 @@ img:hover {
 }
 
 /* --------------------------------------------------------------------------
-   THE ADVAITH DAILY — GRAND 1920s NEWSPAPER MASTHEAD
+   THE ADVAITH DAILY â€” GRAND 1920s NEWSPAPER MASTHEAD
    -------------------------------------------------------------------------- */
 .newspaper-masthead-wrap {
   width: 100%;
@@ -257,7 +270,7 @@ img:hover {
   font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.14em;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   border-bottom: 1px dashed var(--border-subtle);
   padding-bottom: 3px;
   margin-bottom: 4px;
@@ -522,7 +535,7 @@ img:hover {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 9px 18px;
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
   background-color: var(--bg-surface);
   color: var(--text-main);
   box-shadow: none;
@@ -548,7 +561,7 @@ img:hover {
 .btn-primary {
   background-color: var(--text-main);
   color: var(--bg-canvas) !important;
-  border: 1.5px solid var(--text-main);
+  border: 1px solid var(--text-main);
 }
 
 .btn-primary:hover {
@@ -560,7 +573,7 @@ img:hover {
 .btn-secondary {
   background-color: transparent;
   color: var(--text-main);
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
 }
 
 .btn-secondary:hover {
@@ -571,7 +584,7 @@ img:hover {
 .cta-btn {
   background-color: var(--color-oxide);
   color: #FFFFFF !important;
-  border: 1.5px solid var(--color-oxide);
+  border: 1px solid var(--color-oxide);
 }
 
 .cta-btn:hover {
@@ -695,7 +708,7 @@ img:hover {
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.12em;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   text-transform: uppercase;
 }
 
@@ -879,7 +892,7 @@ img:hover {
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.1em;
-  color: var(--color-oxide);
+  color: var(--text-muted);
 }
 
 .code-badge-bar .dot {
@@ -957,7 +970,7 @@ pre {
   font-weight: 800;
   letter-spacing: 0.08em;
   margin-bottom: 4px;
-  color: var(--color-oxide);
+  color: var(--text-muted);
 }
 
 .stat-sub {
@@ -992,7 +1005,7 @@ pre {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.75rem;
   font-weight: 800;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   letter-spacing: 0.14em;
   margin-bottom: 4px;
 }
@@ -1024,7 +1037,7 @@ pre {
 .carousel-arrow {
   width: 38px;
   height: 38px;
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
   background-color: var(--bg-surface);
   color: var(--text-main);
   font-family: 'IBM Plex Mono', monospace;
@@ -1077,14 +1090,14 @@ pre {
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   padding: 3px 10px;
-  border-right: 1.5px solid var(--border-color);
-  border-bottom: 1.5px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   box-shadow: none;
 }
 
 .project-visual {
   height: 220px;
-  border-bottom: 1.5px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1109,7 +1122,7 @@ pre {
 .project-preview-mockup {
   width: 90%;
   max-width: 360px;
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
   background-color: var(--bg-surface);
   box-shadow: none;
 }
@@ -1194,7 +1207,7 @@ pre {
   gap: 6px;
   background-color: transparent;
   color: var(--text-main);
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
   box-shadow: none;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.72rem;
@@ -1274,7 +1287,7 @@ pre {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.74rem;
   font-weight: 700;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   margin-bottom: 10px;
 }
 
@@ -1296,7 +1309,7 @@ pre {
 .dot-indicator {
   width: 12px;
   height: 12px;
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
   background-color: var(--bg-card);
   cursor: pointer;
   transition: all 0.12s;
@@ -1361,7 +1374,7 @@ pre {
 }
 
 .skill-meter {
-  color: var(--color-oxide);
+  color: var(--text-main);
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.74rem;
   font-weight: 700;
@@ -1400,7 +1413,7 @@ pre {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 800;
   font-size: 0.8rem;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   letter-spacing: 0.05em;
 }
 
@@ -1439,7 +1452,7 @@ pre {
 }
 
 .timeline-card {
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
   background-color: var(--bg-surface);
   padding: 18px 22px;
   box-shadow: none;
@@ -1463,7 +1476,7 @@ pre {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.74rem;
   font-weight: 800;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   margin-bottom: 10px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -1477,7 +1490,7 @@ pre {
 }
 
 /* --------------------------------------------------------------------------
-   ENGINEERING ARCHIVES — VINTAGE AMBER CRT TERMINAL No. 001
+   ENGINEERING ARCHIVES â€” VINTAGE AMBER CRT TERMINAL No. 001
    -------------------------------------------------------------------------- */
 .terminal-card.full-terminal {
   background-color: var(--term-bezel);
@@ -1489,7 +1502,7 @@ pre {
 }
 
 .terminal-card.full-terminal::before {
-  content: "ENGINEERING ARCHIVES // SYSTEM No. 001 · DEDICATED TELETYPE TERMINAL";
+  content: "ENGINEERING ARCHIVES // SYSTEM No. 001 Â· DEDICATED TELETYPE TERMINAL";
   display: block;
   background-color: #12100C;
   color: var(--term-amber);
@@ -1646,7 +1659,7 @@ pre {
 }
 
 /* --------------------------------------------------------------------------
-   THE ADVAITH DAILY — THE ARCHIVE DETECTIVE (CHIEF INVESTIGATOR PIKACHU)
+   THE ADVAITH DAILY â€” THE ARCHIVE DETECTIVE (CHIEF INVESTIGATOR PIKACHU)
    1920s Newspaper Technical Archive Detective Column
    -------------------------------------------------------------------------- */
 .pokemon-widget,
@@ -1824,7 +1837,7 @@ pre {
   font-size: 0.56rem;
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 700;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 1px;
@@ -1890,7 +1903,7 @@ pre {
 
 .ticker-label {
   font-weight: 800;
-  color: var(--color-oxide);
+  color: var(--text-main);
   letter-spacing: 0.06em;
 }
 
@@ -1937,7 +1950,7 @@ pre {
 
 .rag-hud-metric {
   font-size: 0.62rem;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   font-weight: 700;
   margin-bottom: 6px;
 }
@@ -2001,7 +2014,7 @@ pre {
   font-size: 0.64rem;
   letter-spacing: 0.08em;
   display: block;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   text-transform: uppercase;
 }
 
@@ -2047,7 +2060,7 @@ pre {
 .evidence-header-label {
   font-size: 0.60rem;
   font-weight: 800;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   letter-spacing: 0.08em;
   display: block;
   margin-bottom: 4px;
@@ -2464,7 +2477,7 @@ pre {
 
 .rag-hud-title {
   font-weight: 800;
-  color: var(--color-oxide);
+  color: var(--text-main);
 }
 
 .rag-hud-badge {
@@ -2617,7 +2630,7 @@ pre {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.72rem;
   font-weight: 800;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   letter-spacing: 0.08em;
   display: inline-block;
   margin-bottom: 6px;
@@ -2694,7 +2707,7 @@ pre {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.68rem;
   font-weight: 700;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   margin-bottom: 6px;
   text-transform: uppercase;
 }
@@ -2745,7 +2758,7 @@ svg.tech-icon {
 
 
 /* ==========================================================================
-   THE ADVAITH DAILY — BROADSHEET CATALOG & DISPATCH ARCHIVES
+   THE ADVAITH DAILY â€” BROADSHEET CATALOG & DISPATCH ARCHIVES
    ========================================================================== */
 .projects-hero-banner {
   padding: 30px 24px;
@@ -2809,7 +2822,7 @@ svg.tech-icon {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.72rem;
   font-weight: 800;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   margin-bottom: 8px;
   display: block;
   letter-spacing: 0.08em;
@@ -3146,7 +3159,7 @@ svg.tech-icon {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--color-oxide);
+  color: var(--text-main);
   box-shadow: none;
 }
 
@@ -3173,7 +3186,7 @@ svg.tech-icon {
 }
 
 /* ==========================================================================
-   THE ADVAITH DAILY — HISTORICAL EDITORIAL SPREAD & ARCHIVE RULES
+   THE ADVAITH DAILY â€” HISTORICAL EDITORIAL SPREAD & ARCHIVE RULES
    ========================================================================== */
 .newspaper-spread {
   display: grid;
@@ -3333,7 +3346,7 @@ svg.tech-icon {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.68rem;
   font-weight: 800;
-  color: var(--color-oxide);
+  color: var(--text-muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
