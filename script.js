@@ -822,9 +822,13 @@ The engineer has evacuated the pressroom under three woolen blankets!
    -------------------------------------------------------------------------- */
 function initPokemonCompanion() {
   const sprite = document.getElementById('pokemonSprite');
+  const spriteFront = document.getElementById('pokemonSpriteFront');
   const chatLog = document.getElementById('pkmnChatLog');
+  const chatLogFront = document.getElementById('pkmnChatLogFront');
   const chatForm = document.getElementById('pkmnChatForm');
+  const chatFormFront = document.getElementById('pkmnChatFormFront');
   const chatInput = document.getElementById('pkmnChatInput');
+  const chatInputFront = document.getElementById('pkmnChatInputFront');
   const quickChips = document.querySelectorAll('.chip-btn');
   const minBtn = document.getElementById('pkmnMinBtn');
   const widget = document.getElementById('pokedexWidget');
@@ -833,14 +837,16 @@ function initPokemonCompanion() {
   const feedBtn = document.getElementById('pkmnFeedBtn');
   const clearBtn = document.getElementById('pkmnClearBtn');
   const tickerText = document.getElementById('tickerText');
+  const tickerTextFront = document.getElementById('tickerTextFront');
 
-  if (!chatLog) return;
+  if (!chatLog && !chatLogFront) return;
 
   // Contextual memory tracking for multi-turn queries
   let lastInvestigatedSubject = null;
 
   function setTicker(text) {
     if (tickerText) tickerText.textContent = text;
+    if (tickerTextFront) tickerTextFront.textContent = text;
   }
 
   // Escape HTML helper
@@ -855,40 +861,42 @@ function initPokemonCompanion() {
 
   // Append message to chat log
   function appendChat(speaker, text, isUser = false, isGhost = false, citations = null) {
-    const msg = document.createElement('div');
-    msg.className = `chat-msg ${isUser ? 'user-msg' : 'bot-msg'}${isGhost ? ' ghost-scared' : ''}`;
-
-    if (isUser) {
-      msg.innerHTML = `
-        <span class="chat-speaker">${speaker}</span>
-        <div class="user-query-text">${escapeHtml(text)}</div>
-      `;
-    } else {
-      let citationsHtml = '';
-      // If text doesn't already contain evidence block and citations exist
-      if (!text.includes('evidence-consulted-box') && citations && citations.length > 0) {
-        citationsHtml = `
-          <div class="evidence-consulted-box">
-            <span class="evidence-header-label">EVIDENCE CONSULTED:</span>
-            <ul class="evidence-list">
-              ${citations.map(c => `<li>• <a href="${c.url}" class="evidence-link">${c.title}</a> <span class="evidence-report-action">[READ REPORT →]</span></li>`).join('')}
-            </ul>
-          </div>
-        `;
-      }
-
-      msg.innerHTML = `
-        <div class="case-header-stamp">
-          <span class="chat-speaker">${speaker}</span>
-          <span class="case-stamp-tag">${isGhost ? 'SPECTRAL ANOMALY' : 'VERIFIED ARCHIVAL EVIDENCE'}</span>
+    const logs = [chatLog, chatLogFront].filter(Boolean);
+    let citationsHtml = '';
+    if (!isUser && !text.includes('evidence-consulted-box') && citations && citations.length > 0) {
+      citationsHtml = `
+        <div class="evidence-consulted-box">
+          <span class="evidence-header-label">EVIDENCE CONSULTED:</span>
+          <ul class="evidence-list">
+            ${citations.map(c => `<li>• <a href="${c.url}" class="evidence-link">${c.title}</a> <span class="evidence-report-action">[READ REPORT →]</span></li>`).join('')}
+          </ul>
         </div>
-        <div class="findings-body">${text}</div>
-        ${citationsHtml}
       `;
     }
 
-    chatLog.appendChild(msg);
-    chatLog.scrollTop = chatLog.scrollHeight;
+    logs.forEach(log => {
+      const msg = document.createElement('div');
+      msg.className = `chat-msg ${isUser ? 'user-msg' : 'bot-msg'}${isGhost ? ' ghost-scared' : ''}`;
+
+      if (isUser) {
+        msg.innerHTML = `
+          <span class="chat-speaker">${speaker}</span>
+          <div class="user-query-text">${escapeHtml(text)}</div>
+        `;
+      } else {
+        msg.innerHTML = `
+          <div class="case-header-stamp">
+            <span class="chat-speaker">${speaker}</span>
+            <span class="case-stamp-tag">${isGhost ? 'SPECTRAL ANOMALY' : 'VERIFIED ARCHIVAL EVIDENCE'}</span>
+          </div>
+          <div class="findings-body">${text}</div>
+          ${citationsHtml}
+        `;
+      }
+
+      log.appendChild(msg);
+      log.scrollTop = log.scrollHeight;
+    });
   }
 
   // Handle Query Submission with 3-Stage Investigation Pipeline
@@ -995,7 +1003,7 @@ function initPokemonCompanion() {
     });
   });
 
-  // Event Listener: Chat Form Submit
+  // Event Listener: Chat Form Submit (Drawer & Front Broadsheet)
   if (chatForm && chatInput) {
     chatForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -1005,12 +1013,21 @@ function initPokemonCompanion() {
     });
   }
 
+  if (chatFormFront && chatInputFront) {
+    chatFormFront.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = chatInputFront.value;
+      chatInputFront.value = '';
+      handleQuery(val);
+    });
+  }
+
   // Event Listener: Detective Avatar Tap
-  if (sprite) {
-    sprite.addEventListener('click', () => {
+  [sprite, spriteFront].filter(Boolean).forEach(el => {
+    el.addEventListener('click', () => {
       playPikachuSound('spark');
-      sprite.style.transform = 'scale(1.1) rotate(3deg)';
-      setTimeout(() => sprite.style.transform = 'scale(1) rotate(0deg)', 180);
+      el.style.transform = 'scale(1.1) rotate(3deg)';
+      setTimeout(() => el.style.transform = 'scale(1) rotate(0deg)', 180);
       appendChat(
         'THE ARCHIVE DETECTIVE // OFFICIAL DISPATCH:',
         "Pika! Case file active. I am cross-examining Advaith's 39 verified repositories and technical dossiers. Submit any enquiry to inspect the documented evidence.",
@@ -1018,7 +1035,7 @@ function initPokemonCompanion() {
         false
       );
     });
-  }
+  });
 
   // Event Listener: Case Chime Button
   if (chimeBtn) {

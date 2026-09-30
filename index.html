@@ -147,117 +147,313 @@
   <!-- Main Container -->
   <main class="main-wrapper" id="home">
 
-    <!-- FRONT PAGE LEAD EDITORIAL SPREAD -->
-    <section class="hero-bento" id="front-page-lead">
-      <!-- Left Column: Front-Page Lead Report -->
-      <div class="hero-card hero-left">
-        <div class="hero-header-tags">
-          <span class="status-pill"><span class="pulse-dot"></span> FRONT-PAGE SPECIAL REPORT // DIGITAL EDITION</span>
-          <span class="badge-tag">EXCHANGE ALUM @ SMU (3.47 CGPA)</span>
-        </div>
+    <!-- =========================================================================
+         AUTHENTIC 1920s BROADSHEET FRONT PAGE SPREAD
+         Direct 1:1 Editorial Layout matching reference_newspaper.jpg
+         ========================================================================= -->
+    <div class="broadsheet-front-spread" id="front-page-lead">
 
-        <div class="byline-bar">
-          <span>BY THE EDITORIAL DESK</span>
-          <span>SPECIAL ARCHIVAL DISPATCH</span>
-          <span>HYDERABAD &amp; OLYMPIA</span>
-        </div>
+      <!-- ---------------------------------------------------------------------
+           COLUMN 1 (LEFT COLUMN ~22%): 3 STACKED EDITORIAL BOXES
+           --------------------------------------------------------------------- -->
+      <aside class="broadsheet-col broadsheet-col-left">
 
-        <h1 class="hero-title">
-          ENGINEER BUILDS GRAPH-RAG SYSTEMS &amp; AUTONOMOUS AGENTS<span class="blink">_</span>
-        </h1>
-
-        <p class="editorial-deck">
-          Advaith Narayana Sarva publishes 39 verified repositories spanning Graph-RAG knowledge systems, autonomous PostgreSQL query optimizers, and low-level PyTorch tensor primitives.
-        </p>
-
-        <p class="hero-bio drop-cap">
-          From the computational engineering laboratories in Hyderabad to academic exchange research at Saint Martin's University in Washington State, systems engineer Advaith Narayana Sarva has architected and audited end-to-end deep learning systems. Merging rigorous mathematical inference with robust systems engineering, his work spans the IBM BOB National Hackathon (Top 5 South Zone, ROC-AUC 0.9924), critical clinical ML algorithm audits at Preventvital, and 39 reproducible open-source repositories.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#projects" class="neo-btn btn-primary">
-            READ TECHNOLOGY DESK REPORTS ↘
-          </a>
-          <a href="resume.html" class="neo-btn btn-secondary" id="resumeViewBtn">
-            EXAMINE CAREER RECORD &amp; DOSSIER ↗
-          </a>
-        </div>
-
-        <div class="hero-social-strip">
-          <span class="social-label">CORRESPONDENCE ARCHIVES:</span>
-          <a href="https://github.com/advaithsarva" target="_blank" rel="noreferrer" class="social-icon-btn" title="Engineering Archives on GitHub (@advaithsarva)">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-          <a href="https://huggingface.co/advaithsarva" target="_blank" rel="noreferrer" class="social-icon-btn" title="Model Weights on Hugging Face (@advaithsarva)">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M7.5 10.5C7.5 9.67 8.17 9 9 9s1.5.67 1.5 1.5S9.83 12 9 12s-1.5-.67-1.5-1.5zm6 0c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5z" fill="currentColor"/><path d="M8.5 14.5c.8 1.5 2.1 2.5 3.5 2.5s2.7-1 3.5-2.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 14c-.6.8-.7 1.8-.2 2.5.5.8 1.5.9 2.2.4l1.5-1.1M19 14c.6.8.7 1.8.2 2.5-.5.8-1.5.9-2.2.4l-1.5-1.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </a>
-          <a href="https://leetcode.com/u/advaithsarva/" target="_blank" rel="noreferrer" class="social-icon-btn" title="Algorithmic Record on LeetCode (@advaithsarva)">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 4.818 3.558 5.88 5.88 0 0 0 3.738-1.026l3.968-3.66a1.374 1.374 0 0 0-.936-2.378H8.56a1.374 1.374 0 0 1-1.374-1.374 1.374 1.374 0 0 1 1.374-1.374h8.337a1.374 1.374 0 0 0 1.374-1.374 1.374 1.374 0 0 0-1.374-1.374H8.56a4.122 4.122 0 0 0-4.122 4.122 4.122 4.122 0 0 0 4.122 4.122h4.542l-2.613 2.41a3.14 3.14 0 0 1-2.001.55 3.18 3.18 0 0 1-2.583-1.908 3.01 3.01 0 0 1-.188-.545 2.8 2.8 0 0 1-.033-1.267 2.84 2.84 0 0 1 .65-1.132l3.855-4.128 5.405-5.787a1.374 1.374 0 0 0-.96-2.348z"/><path d="m18.777 15.356 5.214-5.214a1.374 1.374 0 0 0-1.943-1.943l-5.214 5.214a1.374 1.374 0 0 0 1.943 1.943z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/sarvaadvaithnarayana/" target="_blank" rel="noreferrer" class="social-icon-btn" title="LinkedIn Professional Network">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
-          <a href="mailto:advaithsarva@gmail.com" class="social-icon-btn" title="Dispatch Direct Email">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          </a>
-          <span class="email-text">advaithsarva@gmail.com</span>
-        </div>
-      </div>
-
-      <!-- Right Column: Technical Illustration & 3D Neural Substrate -->
-      <div class="hero-card hero-right">
-        <div class="card-window-header">
-          <span class="window-title">PLATE I. — PERSPECTIVE PROJECTION OF NEURAL GRAPH TOPOLOGY</span>
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--text-muted);">FIG. 01 · REAL-TIME</span>
-        </div>
-
-        <div class="brain-container" id="brainCanvasContainer">
-          <!-- Three.js Canvas mounts here -->
-          <div class="brain-hint">INTERACTIVE PLATE I: ROTATE TOPOLOGY</div>
-        </div>
-
-        <div style="font-family:'Newsreader',serif; font-style:italic; font-size:0.82rem; color:var(--text-muted); border-bottom:1px solid var(--border-subtle); padding:6px 0 10px 0; margin-bottom:12px;">
-          Fig. 1. — Mathematical representation of high-dimensional synaptic tensors, rendered in real time. Courtesy of the Engineering Archive.
-        </div>
-
-        <!-- Official Gazette Dossier -->
-        <div class="floating-code-badge">
-          <div class="code-badge-bar">
-            <span class="badge-file">OFFICIAL REGISTRY DOSSIER NO. 042 // RECORD OF SERVICE</span>
-            <span>HYDERABAD &amp; OLYMPIA</span>
+        <!-- Box 1: Lead Profile / Editor's Note (Ut Quis Nostrud equivalent) -->
+        <article class="broadsheet-box lead-profile-box">
+          <div class="box-kicker">EDITORIAL PROFILE // SPECIAL DISPATCH</div>
+          <h2 class="box-headline-serif-italic">Advaith Narayana Sarva</h2>
+          <div class="box-deck-italic">Chief Systems Engineer &amp; Machine Learning Researcher</div>
+          <div class="box-rule-thin"></div>
+          <p class="newspaper-body newspaper-drop-cap">
+            Operating from computational laboratories in Hyderabad to academic exchange research at Saint Martin's University in Washington State, systems engineer Advaith Narayana Sarva has architected and audited end-to-end deep learning systems. Merging rigorous mathematical inference with robust systems engineering, his work spans 39 verified repositories, Graph-RAG knowledge systems, and autonomous PostgreSQL query optimizers.
+          </p>
+          <div class="box-dateline">HYDERABAD &amp; OLYMPIA · ANNUAL EDITION 2026</div>
+          <div class="box-action-wrap">
+            <a href="#editor-profile" class="newspaper-link">EXAMINE COMPLETE EDITOR'S NOTE →</a>
           </div>
-          <pre><code><span class="keyword">RECORD</span>: <span class="str">Advaith Narayana Sarva</span>
-<span class="prop">ROLE</span>: <span class="str">AI &amp; Systems Engineer</span>
-<span class="prop">SPECIALIZATION</span>: [<span class="str">'Graph-RAG'</span>, <span class="str">'Multi-Agent Swarms'</span>, <span class="str">'PyTorch'</span>]
-<span class="prop">CREDENTIALS</span>: <span class="str">SMU Exchange (3.47 CGPA) · Woxsen (8.69 CGPA)</span>
-<span class="prop">STATUS</span>: <span class="str">Seeking GenAI Internships &amp; Engineering Roles</span></code></pre>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <!-- EDITORIAL METRICS & STATS STRIP -->
-    <section class="stats-strip">
-      <div class="stat-card">
-        <div class="stat-number">39</div>
-        <div class="stat-label">VERIFIED REPORTS</div>
-        <div class="stat-sub">Audited Repositories in Code Archive</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">3.47</div>
-        <div class="stat-label">SMU EXCHANGE CGPA</div>
-        <div class="stat-sub">Saint Martin's Dean's Honors Alum</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">0.9924</div>
-        <div class="stat-label">ROC-AUC AT IBM BOB</div>
-        <div class="stat-sub">The Sentinel Grid (Top 5 South Zone)</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">11.7x</div>
-        <div class="stat-label">QUERY SPEEDUP</div>
-        <div class="stat-sub">Autonomous Postgres Optimization Agent</div>
-      </div>
-    </section>
+        <!-- Box 2: Recognition & Portrait (Lincoln Woodcut equivalent) -->
+        <article class="broadsheet-box lead-recognition-box">
+          <div class="box-kicker">NATIONAL RECOGNITION // VERIFIED RECORD</div>
+          <div class="woodcut-frame">
+            <img src="assets/newspaper/portrait_woodcut.png" alt="Archival Woodcut Portrait" class="woodcut-img">
+            <span class="woodcut-caption">ADVAITH NARAYANA SARVA · RECORD OF SERVICE</span>
+          </div>
+          <h3 class="box-subhead-bold">IBM BOB NATIONAL HACKATHON 2026</h3>
+          <div class="box-highlight-banner">TOP 5 SOUTH ZONE // ROC-AUC: 0.9924</div>
+          <p class="newspaper-body">
+            In an exhaustive computational benchmark conducted on IBM z16 enterprise architecture, The Sentinel Grid achieved an audited <strong>0.9924 ROC-AUC</strong> across 473,000 district-month soil moisture observations for real-time disaster intelligence and flood forecasting.
+          </p>
+          <div class="box-action-wrap">
+            <a href="#achievements" class="newspaper-link">READ HACKATHON DISPATCH →</a>
+          </div>
+        </article>
+
+        <!-- Box 3: Field Notes & Pursuits (Car & Clock Woodcuts equivalent) -->
+        <article class="broadsheet-box pursuits-box">
+          <div class="box-kicker">FIELD NOTES // PURSUITS &amp; AVOCATIONS</div>
+          <div class="woodcut-duo-frame">
+            <img src="assets/newspaper/car_front_woodcut.png" alt="Vintage Car Front Engraving" class="woodcut-duo-img car-img">
+            <img src="assets/newspaper/clock_woodcut.png" alt="Vintage Clock Engraving" class="woodcut-duo-img clock-img">
+          </div>
+          <h3 class="box-subhead-bold">TACTICAL CHESS &amp; CADENCE</h3>
+          <p class="newspaper-body">
+            <strong>Tactical Chess:</strong> Aggressive positional mastery specializing in the Sicilian Defense (1. e4 c5). Challenge open for telegraphic correspondence.<br>
+            <strong>Association Football:</strong> High-press midfield strategist and tactical analyst.<br>
+            <strong>Vocal Percussion:</strong> Acoustic rhythmic cadences and vocal bass arrangements.<br>
+            <strong>The Spectral Mystery:</strong> Harbors an unconquerable terror of ghosts, haunted halls, and supernatural cinema.
+          </p>
+        </article>
+
+      </aside>
+
+      <!-- ---------------------------------------------------------------------
+           COLUMN 2 & 3 (CENTER LEAD SPREAD ~48%): MAIN HEADLINE & ARTICLES
+           --------------------------------------------------------------------- -->
+      <section class="broadsheet-col broadsheet-col-center">
+
+        <!-- Top Lead Banner Headline (Matches Lorem Ipsum Sit Amet) -->
+        <header class="broadsheet-center-lead-header">
+          <div class="kicker-lead">FRONT-PAGE SPECIAL INVESTIGATION // TECHNOLOGY DESK</div>
+          <h1 class="broadsheet-main-headline">
+            ENGINEER BUILDS GRAPH-RAG SYSTEMS &amp; AUTONOMOUS AGENTS
+          </h1>
+          <p class="broadsheet-lead-deck">
+            Advaith Narayana Sarva publishes 39 verified repositories spanning Graph-RAG knowledge systems, autonomous PostgreSQL query optimizers, and low-level PyTorch tensor primitives.
+          </p>
+          <div class="byline-strip">
+            <span>BY THE TECHNICAL EDITORIAL DESK</span>
+            <span class="sep">❖</span>
+            <span>HYDERABAD &amp; OLYMPIA</span>
+            <span class="sep">❖</span>
+            <span>OCTOBER 2026 EDITION</span>
+          </div>
+        </header>
+
+        <!-- Two-Column Editorial Article (Matches Esse Cil Dolore / Utptate Velit E) -->
+        <div class="broadsheet-two-col-stories">
+
+          <!-- Left Story: Autonomous Postgres Agent (11.7x Query Speedup) -->
+          <article class="sub-col-story sub-col-left">
+            <div class="sub-col-header">
+              <span class="sub-col-tag">REPORT No. 003</span>
+              <h2 class="sub-col-headline">AUTONOMOUS POSTGRES AGENT</h2>
+              <div class="metric-highlight-bar">AUDITED 11.7X QUERY ACCELERATION</div>
+            </div>
+            <p class="newspaper-body newspaper-drop-cap">
+              In rigorous computational trials conducted on high-throughput database workloads, an autonomous database optimization agent demonstrated an <strong>11.7x query acceleration</strong>. Operating directly on PostgreSQL execution trees, the agent diagnoses query bottlenecks, synthesizes indexes, benchmarks regressions with automated rollback guards, and prevents database performance degradation without manual developer intervention.
+            </p>
+            <div class="story-proof-pill">
+              <span>PROVEN: 11.7x Faster Execution · Zero Manual Schema Changes</span>
+            </div>
+            <div class="box-action-wrap">
+              <a href="https://github.com/advaithsarva/autonomous-performance-agent" target="_blank" rel="noreferrer" class="newspaper-link">CODE ARCHIVE (GITHUB) ↗</a>
+            </div>
+          </article>
+
+          <!-- Right Story: Hybrid Graph-RAG Knowledge System -->
+          <article class="sub-col-story sub-col-right">
+            <div class="sub-col-header">
+              <span class="sub-col-tag">REPORT No. 002</span>
+              <h2 class="sub-col-headline">HYBRID GRAPH-RAG INFERENCE</h2>
+              <div class="metric-highlight-bar">CREDENTIAL-FREE MULTI-HOP GRAPH</div>
+            </div>
+            <p class="newspaper-body newspaper-drop-cap">
+              Fusing BM25 lexical precision, HNSW dense embeddings, and Neo4j topological multi-hop traversals, the hybrid knowledge retrieval architecture eliminates hallucinations and provides deterministic, citation-backed factual synthesis. Operating completely free of proprietary cloud lock-in, the system achieves sub-second retrieval across complex interconnected entities.
+            </p>
+            <div class="story-proof-pill">
+              <span>PROVEN: Sub-Second Multi-Hop Traversal · Zero Hallucinations</span>
+            </div>
+            <div class="box-action-wrap">
+              <a href="https://github.com/advaithsarva/graph-rag-knowledge-system" target="_blank" rel="noreferrer" class="newspaper-link">CODE ARCHIVE (GITHUB) ↗</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Middle Lead Box: Clinical Algorithm Audit (Reprehende Voluptate equivalent) -->
+        <article class="broadsheet-box clinical-audit-box">
+          <div class="box-kicker">CLINICAL HEALTHCARE AUDIT // PREVENTVITAL (GRUENTZIGAI)</div>
+          <h2 class="box-headline-serif">CARDIOVASCULAR RISK ENGINE RESOLUTION</h2>
+          <div class="box-deck-italic">Diagnosis &amp; Correction of Critical ASCVD Sign Inversion under ICMR 2023 Guidelines</div>
+          <p class="newspaper-body">
+            At GruentzigAI Preventvital, the engineer diagnosed and resolved a critical coefficient sign inversion in the baseline cardiovascular (ASCVD) risk calculation engine that was artificially suppressing patient risk scores to 0.1%. The corrected pipeline was verified against published Goff 2014 clinical trials and aligned with ICMR 2023 safety specifications.
+          </p>
+          <div class="box-action-wrap">
+            <a href="#achievements" class="newspaper-link">INSPECT CLINICAL AUDIT DISPATCH →</a>
+          </div>
+        </article>
+
+        <!-- Feature Section: THE ARCHIVE DETECTIVE (Detective Pikachu) -->
+        <section class="broadsheet-box detective-feature-box" id="frontDetectiveSection">
+          <div class="detective-feature-header">
+            <div class="detective-feature-title">
+              <span class="ornament-bullet">✦</span>
+              <span>THE ARCHIVE DETECTIVE // CHIEF INVESTIGATOR PIKACHU</span>
+            </div>
+            <span class="detective-case-badge">CASE FILE No. 001</span>
+          </div>
+
+          <div class="detective-feature-body">
+            <!-- Left: Detective Pikachu Engraving -->
+            <div class="detective-plate-col">
+              <div class="detective-avatar-frame" id="pokemonSpriteFront" title="Consult Chief Investigator Detective Pikachu">
+                <img src="assets/pikachu.png" alt="Detective Pikachu · Chief Archive Investigator" class="detective-img" id="pikachuImgFront">
+                <span class="detective-fig-caption">FIG. DET-01 · CHIEF INVESTIGATOR</span>
+              </div>
+              <div class="detective-creds-caption">
+                <strong>DETECTIVE PIKACHU</strong><br>
+                <span>CHIEF ARCHIVE INVESTIGATOR</span><br>
+                <span class="creds-status">● CASE ACTIVE · 39 DOSSIERS</span>
+              </div>
+            </div>
+
+            <!-- Right: Interactive Inquiry Terminal & Live Results -->
+            <div class="detective-inquiry-col">
+              <p class="detective-intro-text">
+                <strong>INVESTIGATE THE ADVAITH ARCHIVES:</strong> Inquire directly into 39 verified repositories, SMU exchange honors (3.47 CGPA), clinical ML audits, and autonomous agent swarms.
+              </p>
+
+              <!-- Dynamic Investigation Ticker -->
+              <div class="investigation-ticker-bar" id="investigationTickerFront">
+                <span class="ticker-label">STATUS:</span>
+                <span class="ticker-text" id="tickerTextFront">CASE FILE OPENED · READY FOR INQUIRY</span>
+              </div>
+
+              <!-- Interactive Case Log Window -->
+              <div class="pkmn-chat-log detective-chat-log" id="pkmnChatLogFront" role="log" aria-live="polite">
+                <div class="chat-msg bot-msg detective-msg">
+                  <div class="case-header-stamp">
+                    <span class="chat-speaker">THE ARCHIVE DETECTIVE // CASE FILE No. 001</span>
+                    <span class="case-stamp-tag">OFFICIAL INQUIRY OPEN</span>
+                  </div>
+                  <div class="findings-body">
+                    Pika! Detective Pikachu reporting for duty. Welcome to the technical archives of <em>The Advaith Daily</em>. I examine verified evidence across Advaith's 39 audited repositories, his SMU exchange honors (3.47 CGPA), clinical ML audit at Preventvital, and autonomous systems.
+                  </div>
+                  <div class="evidence-consulted-box">
+                    <span class="evidence-header-label">ASK ABOUT:</span>
+                    <div class="archive-topics-hint">
+                      <span>• "What projects involve RAG?"</span>
+                      <span>• "Tell me about Postgres 11.7x Speedup"</span>
+                      <span>• "What did he audit at Preventvital?"</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Inquiry Case Chips -->
+              <div class="pkmn-quick-chips detective-quick-chips" id="pkmnQuickChipsFront">
+                <button type="button" class="chip-btn" data-query="What projects involve RAG?">What projects involve RAG?</button>
+                <button type="button" class="chip-btn" data-query="Tell me about the Autonomous Postgres Performance Agent">Postgres Optimization (11.7x)</button>
+                <button type="button" class="chip-btn" data-query="What did he audit at Preventvital?">Preventvital Clinical Audit</button>
+                <button type="button" class="chip-btn" data-query="What was his academic CGPA at SMU?">SMU Academic Honors (3.47)</button>
+                <button type="button" class="chip-btn" data-query="Tell me about The Sentinel Grid IBM hackathon">IBM BOB National Finalist</button>
+                <button type="button" class="chip-btn" data-query="What technologies does he use?">Technologies &amp; Tooling</button>
+              </div>
+
+              <!-- Chat Input Form -->
+              <form class="pkmn-input-form detective-input-form" id="pkmnChatFormFront">
+                <input type="text" id="pkmnChatInputFront" class="pkmn-chat-input detective-chat-input" placeholder="Submit an enquiry to the Archive Detective..." autocomplete="off">
+                <button type="submit" class="pkmn-send-btn detective-send-btn" id="pkmnSendBtnFront">INVESTIGATE →</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+      </section>
+
+      <!-- ---------------------------------------------------------------------
+           COLUMN 4 & 5 (RIGHT COLUMN ~30%): FEATURE PLATE & VINTAGE CLASSIFIEDS
+           --------------------------------------------------------------------- -->
+      <aside class="broadsheet-col broadsheet-col-right">
+
+        <!-- Top Large Feature Plate (Interactive 3D Neural Canvas / Illustration) -->
+        <article class="broadsheet-box feature-plate-box">
+          <div class="plate-header-row">
+            <span class="plate-label">PLATE I. — HIGH-DIMENSIONAL SYNAPTIC TOPOLOGY</span>
+            <span class="plate-fig-tag">FIG. 01</span>
+          </div>
+          <div class="brain-container" id="brainCanvasContainer">
+            <!-- Three.js Canvas mounts here -->
+            <div class="brain-hint">INTERACTIVE PLATE I: ROTATE TOPOLOGY</div>
+          </div>
+          <p class="plate-caption">
+            <em>Fig. 1.</em> — Mathematical representation of high-dimensional synaptic tensors, rendered in real time. Courtesy of the Engineering Archive.
+          </p>
+        </article>
+
+        <!-- Middle Story Box: Technology Desk Overview (Illum Dolore equivalent) -->
+        <article class="broadsheet-box tech-desk-overview-box">
+          <div class="box-kicker">TECHNOLOGY DESK // ARCHIVE REGISTER</div>
+          <h2 class="box-headline-serif">RECORDS FROM THE CODE ARCHIVE</h2>
+          <div class="box-deck-italic">39 Audited Repositories Spanning AI Agents, NLP, Systems &amp; RAG</div>
+          <p class="newspaper-body">
+            From decoder-only transformers implemented from scratch in pure PyTorch tensors, to Model Context Protocol (MCP) servers with 41 tools across 8 domains, to deterministic NLI stance verification pipelines. Every report is accompanied by reproducible benchmarks and open-source code.
+          </p>
+          <div class="box-action-wrap">
+            <a href="projects.html" class="newspaper-link">EXAMINE ALL 39 REPORTS (TECHNOLOGY DESK) →</a>
+          </div>
+        </article>
+
+        <!-- Bottom 3 Vintage Newspaper Classified Ads (Bigfoot, Fashion Lady, Coffee Cafe) -->
+        <div class="broadsheet-classifieds-group">
+
+          <!-- Classified 1: Code Archive on GitHub (Bigfoot 87 equivalent) -->
+          <article class="classified-ad-box ad-github">
+            <div class="ad-image-wrap">
+              <img src="assets/newspaper/bigfoot.png" alt="Code Archive Vintage Engraving" class="ad-engraving-img">
+            </div>
+            <div class="ad-content">
+              <h3 class="ad-headline">CODE ARCHIVE ON GITHUB</h3>
+              <div class="ad-tagline">39 REPOSITORIES · OPEN ACCESS</div>
+              <p class="ad-text">
+                Examine reproducible research, automated test suites, and architectural schematics on GitHub (@advaithsarva). Free to all citizens.
+              </p>
+              <a href="https://github.com/advaithsarva" target="_blank" rel="noreferrer" class="ad-link">GITHUB ARCHIVE ↗</a>
+            </div>
+          </article>
+
+          <!-- Classified 2: Academic Record (Fashion Lady equivalent) -->
+          <article class="classified-ad-box ad-academic">
+            <div class="ad-image-wrap">
+              <img src="assets/newspaper/fashion_lady.png" alt="Academic Credentials Vintage Engraving" class="ad-engraving-img">
+            </div>
+            <div class="ad-content">
+              <h3 class="ad-headline">ACADEMIC HONORS DOSSIER</h3>
+              <div class="ad-tagline">SAINT MARTIN'S &amp; WOXSEN</div>
+              <p class="ad-text">
+                Saint Martin's Dean's Honors Alum (3.47 / 4.0 CGPA) · Woxsen University B.Tech AI &amp; ML (8.69 / 10 CGPA). Dual-institution certified record.
+              </p>
+              <a href="resume.html" class="ad-link">INSPECT OFFICIAL CV ↗</a>
+            </div>
+          </article>
+
+          <!-- Classified 3: Correspondence (Coffee Cafe equivalent) -->
+          <article class="classified-ad-box ad-telegraph">
+            <div class="ad-image-wrap">
+              <img src="assets/newspaper/coffee_cafe.png" alt="Vintage Correspondence Telegraph Engraving" class="ad-engraving-img full-width-ad-img">
+            </div>
+            <div class="ad-content">
+              <h3 class="ad-headline">CORRESPONDENCE &amp; TELEGRAPH</h3>
+              <div class="ad-tagline">advaithsarva@gmail.com</div>
+              <p class="ad-text">
+                Direct inquiries regarding Machine Learning, GenAI, and Systems Engineering Internships 2026 reach the editorial desk directly.
+              </p>
+              <a href="mailto:advaithsarva@gmail.com" class="ad-link">TRANSMIT DIRECT TELEGRAPH ↗</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Colophon Box (Designed by TinyNewspaper.com equivalent) -->
+        <div class="broadsheet-colophon">
+          <span>Designed &amp; Published by The Advaith Daily Press — Digital Broadsheet Vol. I — 2026</span>
+        </div>
+
+      </aside>
+
+    </div>
 
     <!-- SECTION: THE EDITOR // ABOUT THE ENGINEER -->
     <section class="section-container" id="editor-profile">
@@ -970,7 +1166,7 @@
   </main>
 
   <!-- THE ARCHIVE DETECTIVE (1920s NEWSPAPER INVESTIGATION COLUMN // DETECTIVE PIKACHU) -->
-  <aside class="pokemon-widget detective-widget" id="pokedexWidget">
+  <aside class="pokemon-widget detective-widget minimized" id="pokedexWidget">
     <div class="pokemon-bar detective-bar" id="pokedexBar">
       <div class="pkmn-title">
         <span class="detective-badge-icon">CASE</span>
