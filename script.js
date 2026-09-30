@@ -1292,7 +1292,8 @@ function initModals() {
    -------------------------------------------------------------------------- */
 function initLiveClock() {
   const clockEl = document.getElementById('liveClock');
-  if (!clockEl) return;
+  const mastheadClockEl = document.getElementById('liveClockMasthead');
+  if (!clockEl && !mastheadClockEl) return;
 
   function update() {
     const now = new Date();
@@ -1300,7 +1301,8 @@ function initLiveClock() {
       timeZone: 'Asia/Kolkata',
       hour12: false
     }) + ' IST';
-    clockEl.textContent = ist;
+    if (clockEl) clockEl.textContent = ist;
+    if (mastheadClockEl) mastheadClockEl.textContent = ist;
   }
   update();
   setInterval(update, 1000);
