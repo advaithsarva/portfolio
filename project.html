@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <style>
     .project-header-box {
       border: 3px solid var(--border-color);
@@ -39,8 +39,8 @@
       box-shadow: 3px 3px 0px var(--shadow-color);
     }
     .stat-tile-val {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
       font-weight: 800;
       color: var(--color-blueprint);
     }
@@ -59,8 +59,8 @@
       margin-bottom: 24px;
     }
     .detail-section h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.4rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
       font-weight: 800;
       margin-bottom: 14px;
       border-bottom: 2px solid var(--border-color);
@@ -104,32 +104,47 @@
   </style>
 </head>
 <body>
-  <!-- Header Bar -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="brand-link">
-        <span class="brand-feather">🪶</span>
-        <span class="brand-title">ADVAITH // SYSTEMS</span>
-      </a>
-      <nav class="nav-links">
-        <a href="index.html" class="nav-tab">HOME</a>
-        <a href="projects.html" class="nav-tab">PROJECTS (39)</a>
-        <a href="resume.html" class="nav-tab">RESUME</a>
-        <a href="index.html#terminal-section" class="nav-tab">TERMINAL</a>
-        <a href="index.html#contact" class="nav-tab">CONTACT</a>
-      </nav>
-      <div class="header-controls">
-        <button id="themeToggle" class="neo-btn icon-btn" title="Toggle Light/Dark Theme">
-          <span class="theme-icon">🌙</span>
-        </button>
+  <!-- THE ADVAITH DAILY NEWSPAPER MASTHEAD -->
+  <header class="newspaper-masthead">
+    <div class="masthead-ears">
+      <div class="masthead-ear-box ear-left">
+        <span class="ear-vol">VOL. I — ISSUE No. 042</span>
+        <span class="ear-geo">HYDERABAD &amp; OLYMPIA</span>
+      </div>
+      <div class="masthead-ear-center">
+        <a href="index.html" class="masthead-brand-link">
+          <span class="masthead-title">THE ADVAITH DAILY</span>
+          <span class="masthead-sub">AI • COMPUTING • RESEARCH &amp; ENGINEERING ARCHIVE</span>
+        </a>
+      </div>
+      <div class="masthead-ear-box ear-right">
+        <span class="ear-edition">DIGITAL EDITION · 2026</span>
+        <span class="ear-circ">39 AUDITED DISPATCHES</span>
       </div>
     </div>
+
+    <div class="masthead-dateline-bar">
+      <span>PRICE: OPEN SOURCE</span>
+      <span>TECHNOLOGY DESK — SPECIAL INVESTIGATION DOSSIER</span>
+      <span>CONTINUOUS TRANSMISSION</span>
+    </div>
+
+    <nav class="masthead-nav-bar" id="navMenu">
+      <a href="index.html" class="masthead-nav-link">FRONT PAGE</a>
+      <a href="projects.html" class="masthead-nav-link active">TECHNOLOGY DESK (39)</a>
+      <a href="resume.html" class="masthead-nav-link">CAREER RECORD</a>
+      <a href="index.html#terminal-section" class="masthead-nav-link">ARCHIVE TERMINAL</a>
+      <a href="index.html#contact" class="masthead-nav-link">DISPATCH</a>
+      <button id="themeToggle" class="masthead-theme-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+        <span class="theme-icon">◐</span>
+      </button>
+    </nav>
   </header>
 
   <main class="page-container" style="max-width: 1000px; margin: 0 auto; padding: 20px;">
     <!-- Breadcrumbs -->
     <div class="breadcrumbs">
-      <a href="index.html">HOME</a> / <a href="projects.html">PROJECTS</a> / <span id="breadCrumbCurrent">PROJECT_ID</span>
+      <a href="index.html">FRONT PAGE</a> / <a href="projects.html">TECHNOLOGY DESK</a> / <span id="breadCrumbCurrent">REPORT_DOSSIER</span>
     </div>
 
     <!-- Project Hero Header -->
@@ -138,7 +153,7 @@
         <span class="badge-tag bg-blueprint text-white" id="projCat">CATEGORY</span>
         <div id="projLinkBox"></div>
       </div>
-      <h1 id="projTitle" style="font-family:'Space Grotesk',sans-serif; font-size:2.4rem; font-weight:800; margin:16px 0 8px 0;">PROJECT TITLE</h1>
+      <h1 id="projTitle" style="font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:900; margin:16px 0 8px 0;">REPORT TITLE</h1>
       <p id="projTagline" style="font-size:1.15rem; font-style:italic; opacity:0.9; margin-bottom:18px;">Tagline hook goes here...</p>
       
       <!-- Stats Strip -->
@@ -150,7 +165,7 @@
 
     <!-- Overview Section -->
     <section class="detail-section">
-      <h2>01 // THE PROBLEM & THE ARCHITECTURE</h2>
+      <h2>DISPATCH 01 // ARCHITECTURAL FORMULATION &amp; HYPOTHESIS</h2>
       <p id="projOverview" style="font-size:1.02rem; line-height:1.7; margin-bottom:16px;">
         Overview content...
       </p>
@@ -158,32 +173,32 @@
 
     <!-- Highlights Section -->
     <section class="detail-section">
-      <h2>02 // VERIFIED RESULTS & WHAT I BUILT</h2>
+      <h2>DISPATCH 02 // VERIFIED REPRODUCIBLE BENCHMARKS</h2>
       <ul class="highlight-list" id="projHighlights">
       </ul>
     </section>
 
     <!-- Google XYZ & Audit Section -->
     <section class="detail-section" id="resumeBulletsSection" style="display:none;">
-      <h2>03 // GOOGLE XYZ AUDIT & CREDENTIALS</h2>
+      <h2>DISPATCH 03 // CLINICAL AUDIT &amp; CREDENTIAL PROOF</h2>
       <ul class="highlight-list" id="projResumeBullets">
       </ul>
     </section>
 
     <!-- Honest Note Section -->
     <section class="detail-section">
-      <h2>04 // HONEST ENGINEERING LIMITATIONS</h2>
+      <h2>DISPATCH 04 // HONEST ENGINEERING LIMITATIONS</h2>
       <div class="honest-box">
-        <strong style="font-family:'IBM Plex Mono',monospace; font-size:0.85rem; display:block; margin-bottom:6px;">⚠️ TRANSPARENCY & WHAT'S NEXT:</strong>
+        <strong style="font-family:'IBM Plex Mono',monospace; font-size:0.85rem; display:block; margin-bottom:6px;">⚠️ TRANSPARENCY &amp; UNRESOLVED BOUNDARIES:</strong>
         <p id="projHonest" style="font-size:0.95rem; line-height:1.6; margin:0;"></p>
       </div>
     </section>
 
     <!-- Pager Navigation -->
     <div class="nav-pager">
-      <a href="#" id="prevProjectBtn" class="neo-btn btn-secondary">← PREVIOUS PROJECT</a>
-      <a href="projects.html" class="neo-btn btn-primary">ALL 39 PROJECTS ⊞</a>
-      <a href="#" id="nextProjectBtn" class="neo-btn btn-secondary">NEXT PROJECT →</a>
+      <a href="#" id="prevProjectBtn" class="neo-btn btn-secondary">← PREVIOUS REPORT</a>
+      <a href="projects.html" class="neo-btn btn-primary">ALL 39 REPORTS IN DESK ⊞</a>
+      <a href="#" id="nextProjectBtn" class="neo-btn btn-secondary">NEXT REPORT →</a>
     </div>
   </main>
 
@@ -191,15 +206,15 @@
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-left">
-        <span class="footer-stamp">© 2026 ADVAITH NARAYANA SARVA</span>
-        <span class="footer-sub">39 Verified Engineering Repositories</span>
+        <span class="footer-stamp">THE ADVAITH DAILY — DIGITAL EDITION // VOL. I</span>
+        <span class="footer-sub">© 2026 Advaith Narayana Sarva · 39 Audited Repositories</span>
       </div>
       <div class="footer-center">
-        <a href="index.html">HOME</a> · 
-        <a href="projects.html">PROJECTS (39)</a> · 
-        <a href="resume.html">RESUME</a> · 
-        <a href="index.html#terminal-section">TERMINAL</a> · 
-        <a href="index.html#contact">CONTACT</a>
+        <a href="index.html">FRONT PAGE</a> · 
+        <a href="projects.html">TECHNOLOGY DESK (39)</a> · 
+        <a href="resume.html">CAREER RECORD</a> · 
+        <a href="index.html#terminal-section">ARCHIVE TERMINAL</a> · 
+        <a href="index.html#contact">DISPATCH</a>
       </div>
       <div class="footer-right">
         <span class="time-clock" id="liveClock">IST --:--:--</span>

@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
   initTerminal();
   initPokemonCompanion();
+  initArchiveSearch();
   initModals();
   initLiveClock();
   initCopyEmail();
@@ -656,7 +657,7 @@ FAVORITE_OPENING="1. e4 c5 (Sicilian Defense)"`
       // Print prompt echo
       const userLine = document.createElement('p');
       userLine.className = 'term-line';
-      userLine.innerHTML = `<span class="term-prompt">advaith@systems:~$</span> ${rawVal}`;
+      userLine.innerHTML = `<span class="term-prompt">ARCHIVE://advaith/systems&gt;&nbsp;</span>${rawVal}`;
       consoleOutput.insertBefore(userLine, input.parentElement);
 
       // Parse command and args
@@ -673,6 +674,12 @@ FAVORITE_OPENING="1. e4 c5 (Sicilian Defense)"`
       if (cmd === 'clear') {
         const lines = consoleOutput.querySelectorAll('.term-line');
         lines.forEach(l => l.remove());
+      } else if (cmd === 'archive' || cmd === 'archives' || cmd === 'reports') {
+        appendOutput(staticResponses.projects);
+      } else if (cmd === 'correspondent') {
+        appendOutput(staticResponses.pokedex);
+      } else if (cmd === 'credentials' || cmd === 'academics') {
+        appendOutput(virtualFiles['academics.txt']);
       } else if (cmd === 'theme') {
         const themeBtn = document.getElementById('themeToggle');
         if (themeBtn) themeBtn.click();
@@ -864,7 +871,7 @@ function initPokemonCompanion() {
           }
         }
         updateRagHud(resp);
-        appendChat('⚡ PIKACHU:', resp.answer, false, resp.isGhost);
+        appendChat('⚡ THE CORRESPONDENT:', resp.answer, false, resp.isGhost);
         return;
       } catch (err) {
         console.warn('Async query failed, utilizing local sync fallback:', err);
@@ -873,7 +880,7 @@ function initPokemonCompanion() {
 
     setTimeout(() => {
       const resp = queryPikachuRAG(cleanQuery);
-      appendChat('⚡ PIKACHU:', resp.text, false, resp.isGhost);
+      appendChat('⚡ THE CORRESPONDENT:', resp.text, false, resp.isGhost);
     }, 150);
   }
 
@@ -885,7 +892,7 @@ function initPokemonCompanion() {
       level++;
       if (pkmnLevel) pkmnLevel.textContent = `Lv.${level}`;
       playPikachuSound('levelup');
-      appendChat('⚡ SYSTEM:', `LEVEL UP! Pikachu leveled up to <strong>Lv.${level}</strong>! Electric RAG precision boosted!`, false, false);
+      appendChat('⚡ EDITORIAL DESK:', `PROMOTION! The Correspondent leveled up to <strong>Lv.${level}</strong>! Press archival retrieval accuracy boosted!`, false, false);
     }
 
     if (widget) {
@@ -924,7 +931,7 @@ function initPokemonCompanion() {
       sprite.style.transform = 'scale(1.25) rotate(8deg)';
       setTimeout(() => sprite.style.transform = 'scale(1) rotate(0deg)', 180);
       gainExp(10);
-      appendChat('⚡ PIKACHU:', "Pika-CHUUU! ⚡ <em>*cheeks spark with electricity*</em> Ready to answer anything about Advaith! Try tapping the chips below!", false, false);
+      appendChat('⚡ THE CORRESPONDENT:', "Pika-CHUUU! ⚡ Press pass accredited! The Technology Desk is ready to answer any inquiry across Advaith's 39 verified reports!", false, false);
     });
   }
 
@@ -932,7 +939,7 @@ function initPokemonCompanion() {
   if (chimeBtn) {
     chimeBtn.addEventListener('click', () => {
       playPikachuSound('spark');
-      appendChat('⚡ PIKACHU:', "Pika-pi! ⚡ Synthesized 8-bit electro sparkle!", false, false);
+      appendChat('⚡ THE CORRESPONDENT:', "Pika-pi! ⚡ Transmitting electro sparkle from the press bureau!", false, false);
     });
   }
 
@@ -941,7 +948,7 @@ function initPokemonCompanion() {
     feedBtn.addEventListener('click', () => {
       gainExp(35);
       playPikachuSound('levelup');
-      appendChat('⚡ PIKACHU:', "Crunch crunch! ⚡ Fed Pikachu 512GB of GPU compute & embeddings! [EXP boosted!]", false, false);
+      appendChat('⚡ THE CORRESPONDENT:', "Crunch crunch! ⚡ Allocated 512GB of GPU compute & embeddings into the archive index! [Signal boosted!]", false, false);
     });
   }
 
@@ -1227,3 +1234,86 @@ function initMobileNav() {
     });
   });
 }
+
+/* --------------------------------------------------------------------------
+   8. Front-Page Archive Intelligent Search (Search the Archives)
+   -------------------------------------------------------------------------- */
+function initArchiveSearch() {
+  const input = document.getElementById('archiveSearchInput');
+  const btn = document.getElementById('archiveSearchBtn');
+  const results = document.getElementById('archiveSearchResults');
+  const chips = document.querySelectorAll('.archive-search-chip');
+  if (!input || !results) return;
+
+  function performSearch(query) {
+    if (!query || !query.trim()) {
+      results.style.display = 'none';
+      results.innerHTML = '';
+      return;
+    }
+    const q = query.trim();
+
+    if (!window.AdvaithRAG) {
+      results.innerHTML = `<div style="padding:16px; font-family:'IBM Plex Mono',monospace; font-size:0.85rem;">Initializing archive index...</div>`;
+      results.style.display = 'block';
+      return;
+    }
+
+    const retrieval = window.AdvaithRAG.retrieve(q, 4);
+    if (!retrieval || !retrieval.topChunks || retrieval.topChunks.length === 0) {
+      results.innerHTML = `<div style="padding:16px; font-family:'IBM Plex Mono',monospace; font-size:0.85rem; border:2px dashed var(--border-color); background:var(--bg-card);">No archived reports directly matched "<strong>${q}</strong>". Try querying "autonomous agents", "RAG", or "clinical audit".</div>`;
+      results.style.display = 'block';
+      return;
+    }
+
+    let html = `<div style="margin-bottom:12px; font-family:'IBM Plex Mono',monospace; font-size:0.75rem; font-weight:800; color:var(--color-blueprint);">RETRIEVED ${retrieval.topChunks.length} ARCHIVAL DISPATCHES (${retrieval.latencyMs}ms latency · Dense + BM25):</div>`;
+
+    retrieval.topChunks.forEach((item, idx) => {
+      const doc = item.chunk;
+      const score = Math.round(item.score * 100);
+      const category = doc.category || 'Technology';
+      const slug = doc.slug || (doc.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      const snippet = doc.whyMatched || (doc.text ? doc.text.slice(0, 150) + '...' : 'Verified archival technical report.');
+      const link = doc.type === 'project' ? `project.html?id=${slug}` : 'resume.html';
+
+      html += `
+        <div class="archive-result-card">
+          <div class="archive-result-meta">
+            <span class="badge-tag">${category.toUpperCase()}</span>
+            <span class="archive-result-score">RELEVANCE: ${score}%</span>
+          </div>
+          <h4 class="archive-result-title">${doc.title || doc.name}</h4>
+          <p class="archive-result-snippet">${snippet}</p>
+          <div style="margin-top:10px;">
+            <a href="${link}" class="neo-btn btn-primary" style="font-size:0.72rem; padding:4px 10px;">EXAMINE REPORT ↗</a>
+          </div>
+        </div>
+      `;
+    });
+
+    results.innerHTML = html;
+    results.style.display = 'block';
+  }
+
+  if (btn) {
+    btn.addEventListener('click', () => performSearch(input.value));
+  }
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      performSearch(input.value);
+    }
+  });
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const q = chip.getAttribute('data-query');
+      if (q) {
+        input.value = q;
+        performSearch(q);
+      }
+    });
+  });
+}
+

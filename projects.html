@@ -3,26 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects // Advaith Narayana Sarva — 39 Verified Repositories</title>
-  <meta name="description" content="39 verified repositories by Advaith Narayana Sarva across AI Agents, NLP, Graph-RAG, Systems from Scratch, and Full-Stack.">
+  <title>The Advaith Daily — Technology Desk (39 Verified Reports)</title>
+  <meta name="description" content="The Advaith Daily Technology Desk — 39 verified engineering reports by Advaith Narayana Sarva across AI Agents, NLP, Graph-RAG, Systems, and Full-Stack.">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* Header layout lock - prevent orphan wrap of theme toggle */
-    .header-inner {
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      flex-wrap: nowrap !important;
-    }
-    .header-controls {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-    }
-
     /* Page container */
     .catalog-main {
       max-width: 1350px;
@@ -33,16 +20,21 @@
     /* Sleek, clean catalog heading */
     .catalog-title-strip {
       margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 3px double var(--rule-color);
     }
     .catalog-title-strip h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.2rem;
-      font-weight: 800;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 900;
       margin: 0 0 6px 0;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
     .catalog-title-strip p {
-      font-size: 1.02rem;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
       color: var(--text-muted);
       margin: 0;
     }
@@ -302,38 +294,49 @@
   </style>
 </head>
 <body>
-  <!-- Header Bar -->
-  <header class="site-header">
-    <div class="nav-container">
-      <a href="index.html#home" class="brand-badge">
-        <img src="assets/feather-mark.svg" alt="Feather Mark" class="brand-icon">
-        <span class="brand-name">ADVAITH<span class="slash">//</span>SARVA</span>
-      </a>
-
-      <!-- Desktop Nav Tabs -->
-      <nav class="nav-menu" id="navMenu">
-        <a href="index.html#home" class="nav-tab">HOME</a>
-        <a href="projects.html" class="nav-tab active">PROJECTS (39)</a>
-        <a href="resume.html" class="nav-tab">RESUME</a>
-        <a href="index.html#terminal-section" class="nav-tab">TERMINAL</a>
-        <a href="index.html#contact" class="nav-tab">CONTACT</a>
-      </nav>
-
-      <!-- Action & Theme Switcher -->
-      <div class="header-actions">
-        <button id="themeToggle" class="neo-btn icon-btn" aria-label="Toggle Theme" title="Switch Theme">
-          <span class="theme-icon">🌙</span>
-        </button>
+  <!-- THE ADVAITH DAILY NEWSPAPER MASTHEAD -->
+  <header class="newspaper-masthead">
+    <div class="masthead-ears">
+      <div class="masthead-ear-box ear-left">
+        <span class="ear-vol">VOL. I — ISSUE No. 042</span>
+        <span class="ear-geo">HYDERABAD &amp; OLYMPIA</span>
+      </div>
+      <div class="masthead-ear-center">
+        <a href="index.html" class="masthead-brand-link">
+          <span class="masthead-title">THE ADVAITH DAILY</span>
+          <span class="masthead-sub">AI • COMPUTING • RESEARCH &amp; ENGINEERING ARCHIVE</span>
+        </a>
+      </div>
+      <div class="masthead-ear-box ear-right">
+        <span class="ear-edition">DIGITAL EDITION · 2026</span>
+        <span class="ear-circ">39 AUDITED DISPATCHES</span>
       </div>
     </div>
-  </header>
 
+    <div class="masthead-dateline-bar">
+      <span>PRICE: OPEN SOURCE</span>
+      <span>TECHNOLOGY DESK — 39 VERIFIED ENGINEERING REPORTS</span>
+      <span>CONTINUOUS TRANSMISSION</span>
+    </div>
+
+    <nav class="masthead-nav-bar" id="navMenu">
+      <a href="index.html" class="masthead-nav-link">FRONT PAGE</a>
+      <a href="projects.html" class="masthead-nav-link active">TECHNOLOGY DESK (39)</a>
+      <a href="resume.html" class="masthead-nav-link">CAREER RECORD</a>
+      <a href="index.html#terminal-section" class="masthead-nav-link">ARCHIVE TERMINAL</a>
+      <a href="index.html#contact" class="masthead-nav-link">DISPATCH</a>
+      <button id="themeToggle" class="masthead-theme-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+        <span class="theme-icon">◐</span>
+      </button>
+    </nav>
+  </header>
 
   <main class="catalog-main">
     <!-- Title Strip -->
     <div class="catalog-title-strip">
-      <h1>ENGINEERING REPOSITORIES &amp; ARCHITECTURES</h1>
-      <p>"I build systems, then prove they work." 39 verified repositories with reproducible code, automated test suites, and honest limitations.</p>
+      <span class="section-num" style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; font-weight:800; color:var(--color-oxide); letter-spacing:0.08em; display:block; margin-bottom:4px;">TECHNOLOGY DESK // COMPLETE ARCHIVE</span>
+      <h1>ENGINEERING REPORTS &amp; ARCHIVAL REPOSITORIES</h1>
+      <p>"I build systems, then prove they work." 39 verified reports with reproducible code, automated test suites, and honest limitations.</p>
     </div>
 
     <!-- 01 // Category Headings Tabs (Clean at the top) -->
@@ -392,9 +395,9 @@
 
     <!-- 03 // Search Bar & Count Strip -->
     <div class="catalog-search-strip">
-      <input type="text" id="projectSearch" class="catalog-search-box" placeholder="⚡ Intelligent Hybrid Search: e.g. 'projects involving RAG', 'what has Advaith built from scratch?', 'measurable results'...">
+      <input type="text" id="projectSearch" class="catalog-search-box" placeholder="SEARCH THE ARCHIVES (e.g., 'projects involving RAG', 'autonomous agents', 'what was built from scratch?')...">
       <div class="catalog-count-label">
-        Showing <span id="matchCount" style="color:var(--color-blueprint); font-weight:800;">39</span> of 39 verified repositories
+        Showing <span id="matchCount" style="color:var(--color-blueprint); font-weight:800;">39</span> of 39 verified reports
       </div>
     </div>
 
@@ -405,15 +408,15 @@
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-left">
-        <span class="footer-stamp">© 2026 ADVAITH NARAYANA SARVA</span>
-        <span class="footer-sub">39 Verified Engineering Repositories</span>
+        <span class="footer-stamp">THE ADVAITH DAILY — DIGITAL EDITION // VOL. I</span>
+        <span class="footer-sub">© 2026 Advaith Narayana Sarva · 39 Audited Repositories</span>
       </div>
       <div class="footer-center">
-        <a href="index.html">HOME</a> · 
-        <a href="projects.html">PROJECTS (39)</a> · 
-        <a href="resume.html">RESUME</a> · 
-        <a href="index.html#terminal-section">TERMINAL</a> · 
-        <a href="index.html#contact">CONTACT</a>
+        <a href="index.html">FRONT PAGE</a> · 
+        <a href="projects.html">TECHNOLOGY DESK (39)</a> · 
+        <a href="resume.html">CAREER RECORD</a> · 
+        <a href="index.html#terminal-section">ARCHIVE TERMINAL</a> · 
+        <a href="index.html#contact">DISPATCH</a>
       </div>
       <div class="footer-right">
         <span class="time-clock" id="liveClock">IST --:--:--</span>
@@ -621,7 +624,7 @@
             </div>
 
             <div class="project-card-actions">
-              <a href="project.html?id=${p.slug}" class="btn-project-primary">DEEP DIVE →</a>
+              <a href="project.html?id=${p.slug}" class="btn-project-primary">READ THE REPORT →</a>
               ${repoBtn}
             </div>
           `;

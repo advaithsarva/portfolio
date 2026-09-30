@@ -10,13 +10,14 @@
   <link rel="icon" type="image/svg+xml" href="assets/feather-mark.svg">
 
   <!-- Typography: IBM Plex Mono & Manrope -->
+  <!-- Typography: IBM Plex Mono, Newsreader & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     /* --------------------------------------------------------------------------
-       ZER0 Brandkit & Neo-Brutalist Design Tokens
+       THE ADVAITH DAILY: Career Record Design Tokens
        -------------------------------------------------------------------------- */
     :root {
       --bg-canvas: #FAF6ED;
@@ -27,8 +28,8 @@
       --border-color: #131200;
       --shadow-color: #131200;
       --color-gold: #FBBF24;
-      --color-oxide: #D63031;
-      --color-blueprint: #2547C9;
+      --color-oxide: #87201C;
+      --color-blueprint: #1B365D;
       --color-moss: #0D9488;
       --color-purple: #4F46E5;
     }
@@ -57,7 +58,7 @@
     body {
       background-color: var(--bg-canvas);
       color: var(--text-main);
-      font-family: 'IBM Plex Mono', monospace;
+      font-family: 'Newsreader', serif;
       line-height: 1.5;
       padding: 30px 16px;
       -webkit-font-smoothing: antialiased;
@@ -110,7 +111,7 @@
     }
 
     .resume-btn.btn-accent:hover {
-      background-color: #1D3AA8;
+      background-color: #142742;
       color: #FFFFFF;
     }
 
@@ -126,7 +127,7 @@
 
     /* Header Section */
     .resume-header {
-      border-bottom: 3px solid var(--border-color);
+      border-bottom: 3px double var(--border-color);
       padding-bottom: 24px;
       margin-bottom: 28px;
     }
@@ -141,16 +142,17 @@
     }
 
     .name-block h1 {
-      font-family: 'Manrope', sans-serif;
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      font-weight: 900;
+      letter-spacing: -0.01em;
       line-height: 1.1;
       margin-bottom: 6px;
     }
 
     .name-block .role-tag {
-      font-size: 1.05rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.95rem;
       font-weight: 700;
       color: var(--color-blueprint);
       display: inline-block;
@@ -210,10 +212,10 @@
     }
 
     .section-title {
-      font-family: 'Manrope', sans-serif;
-      font-size: 1.15rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
       font-weight: 800;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
       border-bottom: 2px solid var(--border-color);
       padding-bottom: 6px;
@@ -532,13 +534,13 @@
   <header class="action-bar">
     <div class="action-group">
       <a href="index.html" class="resume-btn">
-        ← BACK TO PORTFOLIO
+        ← THE ADVAITH DAILY
       </a>
       <a href="projects.html" class="resume-btn">
-        PROJECTS (39) ⊞
+        TECHNOLOGY DESK (39) ⊞
       </a>
-      <a href="https://github.com/advaithsarva" target="_blank" rel="noreferrer" class="resume-btn">
-        GITHUB PROFILE ↗
+      <a href="index.html#terminal-section" class="resume-btn">
+        ARCHIVE TERMINAL &gt;
       </a>
     </div>
 
@@ -547,7 +549,7 @@
         📋 COPY EMAIL
       </button>
       <button onclick="window.print()" class="resume-btn btn-accent">
-        🖨️ PRINT / SAVE AS PDF
+        🖨️ PRINT RECORD / SAVE AS PDF
       </button>
     </div>
   </header>

@@ -1,36 +1,58 @@
 /* ==========================================================================
-   ZER0 NEO-BRUTALIST DEVELOPER DESIGN SYSTEM
-   Brandkit: Blueprint (#2547C9), Oxide (#D63031), Moss (#168F3E), Ink (#16161F), Paper (#E7DFC9)
-   Typography: IBM Plex Mono & Manrope
+   THE ADVAITH DAILY — 1920s NEWSPAPER & ENGINEERING ARCHIVE DESIGN SYSTEM
+   Visual System: Black Ink + Warm Newsprint Paper + Editorial Newspaper Grid +
+                  Double Rules + Halftone Printing + Localized Amber CRT Terminal
+   Typography: Playfair Display, Newsreader & IBM Plex Mono
    ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,400;1,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
 
 :root,
 html[data-theme="light"] {
-  --bg-canvas: #E7DFC9;          /* ZER0 Paper */
-  --bg-card: #F4EFE2;            /* Lightened Paper for cards */
-  --bg-surface: #FFFFFF;         /* Crisp card background */
-  --text-main: #16161F;          /* ZER0 Ink */
-  --text-muted: #585A65;         /* Muted Slate */
-  --border-color: #16161F;       /* Heavy Ink border */
-  --color-blueprint: #2547C9;    /* ZER0 Blueprint */
-  --color-oxide: #D63031;        /* ZER0 Oxide */
-  --color-moss: #168F3E;         /* ZER0 Moss */
-  --shadow-color: #16161F;
-  --grid-line: rgba(22, 22, 31, 0.08);
+  /* 1920s Editorial Newsprint & Ink Palette */
+  --bg-canvas: #F6F1E8;          /* Warm Newsprint / Aged Paper */
+  --bg-card: #ECE4D6;            /* Shaded Editorial Column / Box */
+  --bg-surface: #FAF7F0;         /* Fresh Newsprint Surface */
+  --text-main: #141414;          /* Dense Printer's Carbon Black */
+  --text-muted: #4A463F;         /* Typesetter Charcoal */
+  --border-color: #141414;       /* Cast-Iron Lead Newspaper Rules */
+  --border-subtle: #8A847A;      /* Hairline Column Divider */
+  --color-blueprint: #1B365D;    /* Historic Newsroom Navy */
+  --color-oxide: #87201C;        /* Letterpress Oxblood Red */
+  --color-moss: #225C38;         /* Archival Olive/Dark Green */
+  --color-gold: #D4AF37;         /* Antique Brass */
+  --shadow-color: #141414;
+  --grid-line: rgba(20, 20, 20, 0.14);
+
+  /* Terminal Amber Phosphor CRT (Strictly localized to terminal) */
+  --term-amber: #FFB000;
+  --term-amber-glow: rgba(255, 176, 0, 0.50);
+  --term-amber-dim: #996A00;
+  --term-crt-bg: #0B0905;
+  --term-bezel: #1F1C16;
 }
 
 html[data-theme="dark"] {
-  --bg-canvas: #12121A;          /* Deep Obsidian */
-  --bg-card: #1C1C28;            /* Dark Charcoal Card */
-  --bg-surface: #222232;         /* Elevated Surface */
-  --text-main: #F4EFE2;          /* Parchment White */
-  --text-muted: #9E9EB2;         /* Cool Grey */
-  --border-color: #F4EFE2;       /* Crisp White Border */
-  --color-blueprint: #3E63FA;    /* Brightened Blueprint for dark contrast */
-  --color-oxide: #E5484D;        /* Brightened Oxide */
-  --color-moss: #1EB852;         /* Brightened Moss */
+  /* Archival Carbon Negative Print (Preserves historic feel in dark mode) */
+  --bg-canvas: #151413;          /* Dark Carbon Archive */
+  --bg-card: #1F1D1B;            /* Dark Charcoal Column */
+  --bg-surface: #272522;         /* Elevated Archival Slab */
+  --text-main: #EFE8DC;          /* Aged Ivory Lettering */
+  --text-muted: #A6A095;         /* Muted Carbon Type */
+  --border-color: #EFE8DC;       /* Ivory Cast Rule */
+  --border-subtle: #57524A;      /* Subtle Hairline */
+  --color-blueprint: #4E7AC7;    /* Slate Blue */
+  --color-oxide: #C94C47;        /* Historic Vermilion */
+  --color-moss: #429E65;         /* Archival Sage */
+  --color-gold: #E5C158;
   --shadow-color: #000000;
-  --grid-line: rgba(244, 239, 226, 0.08);
+  --grid-line: rgba(239, 232, 220, 0.1);
+
+  --term-amber: #FFB000;
+  --term-amber-glow: rgba(255, 176, 0, 0.50);
+  --term-amber-dim: #996A00;
+  --term-crt-bg: #080704;
+  --term-bezel: #181510;
 }
 
 /* Reset & Global */
@@ -45,17 +67,19 @@ html {
 }
 
 body {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
   background-color: var(--bg-canvas);
   color: var(--text-main);
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: hidden;
   transition: background-color 0.2s ease, color 0.2s ease;
+  background-image: radial-gradient(circle, rgba(20, 20, 20, 0.035) 1px, transparent 1px);
+  background-size: 8px 8px;
 }
 
 ::selection {
-  background: var(--color-blueprint);
-  color: #FFFFFF;
+  background: var(--text-main);
+  color: var(--bg-canvas);
 }
 
 a {
@@ -89,19 +113,205 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   Header Navigation
+   THE ADVAITH DAILY — GRAND 1920s NEWSPAPER MASTHEAD
    -------------------------------------------------------------------------- */
+.newspaper-masthead-wrap {
+  width: 100%;
+  background-color: var(--bg-canvas);
+  border-bottom: 3px double var(--border-color);
+  padding: 0;
+  position: relative;
+}
+
+.newspaper-topbar {
+  border-bottom: 1px solid var(--border-color);
+  padding: 6px 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: var(--bg-card);
+  color: var(--text-muted);
+}
+
+.topbar-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.topbar-inner .sep {
+  margin: 0 8px;
+  opacity: 0.5;
+}
+
+.masthead-main {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 24px 20px 18px;
+}
+
+.masthead-inner {
+  display: grid;
+  grid-template-columns: 240px 1fr 240px;
+  align-items: center;
+  gap: 20px;
+}
+
+.masthead-ear {
+  border: 1px solid var(--border-color);
+  padding: 10px 14px;
+  background-color: var(--bg-surface);
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  box-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+.ear-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--color-oxide);
+  border-bottom: 1px dashed var(--border-subtle);
+  padding-bottom: 3px;
+  margin-bottom: 4px;
+}
+
+.ear-number {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.ear-sub {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.ear-tag {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+}
+
+.masthead-brand {
+  text-align: center;
+}
+
+.masthead-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 5.2vw, 4.2rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--text-main);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.masthead-subtitle {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 6px 0 8px;
+}
+
+.masthead-motto {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-blueprint);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  display: inline-block;
+  padding: 4px 18px;
+}
+
+/* Newspaper Editorial Navigation Bar with Double Rules */
+.newspaper-nav-bar {
+  border-top: 3px double var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+  background-color: var(--bg-canvas);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.newspaper-nav-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 20px;
+}
+
+.news-nav-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.news-nav-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 6px 10px;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: all 0.1s ease;
+  border: 1px solid transparent;
+}
+
+.news-nav-link:hover {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+.news-nav-link.active {
+  background-color: var(--text-main);
+  color: var(--bg-canvas) !important;
+  font-weight: 800;
+}
+
+.news-nav-sep {
+  color: var(--border-subtle);
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+/* Compatibility Header Navigation */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
   background-color: var(--bg-canvas);
-  border-bottom: 3px solid var(--border-color);
-  padding: 12px 24px;
+  border-bottom: 3px double var(--border-color);
+  padding: 10px 20px;
 }
 
 .nav-container {
-  max-width: 1300px;
+  max-width: 1320px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -114,19 +324,19 @@ a {
   align-items: center;
   gap: 10px;
   background-color: var(--bg-card);
-  border: 3px solid var(--border-color);
-  padding: 6px 14px;
-  box-shadow: 3px 3px 0px var(--shadow-color);
-  font-family: 'Manrope', sans-serif;
+  border: 2px solid var(--border-color);
+  padding: 5px 12px;
+  box-shadow: 2px 2px 0px var(--shadow-color);
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   letter-spacing: -0.01em;
   transition: transform 0.1s, box-shadow 0.1s;
 }
 
 .brand-badge:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0px var(--shadow-color);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--shadow-color);
 }
 
 .brand-icon {
@@ -142,15 +352,18 @@ a {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .nav-tab {
   display: inline-block;
-  font-size: 0.82rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.76rem;
   font-weight: 700;
-  padding: 6px 12px;
-  border: 2px solid transparent;
+  letter-spacing: 0.05em;
+  padding: 5px 10px;
+  border: 1px solid transparent;
   color: var(--text-main);
   transition: all 0.1s ease;
 }
@@ -163,11 +376,11 @@ a {
 }
 
 .nav-tab.active {
-  background-color: var(--color-blueprint);
-  color: #FFFFFF !important;
+  background-color: var(--text-main);
+  color: var(--bg-canvas) !important;
   border-color: var(--border-color);
-  box-shadow: 3px 3px 0px var(--shadow-color);
-  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 0px var(--shadow-color);
+  transform: translate(-1px, -1px);
 }
 
 .header-actions {
@@ -345,20 +558,22 @@ a {
 .text-white { color: #FFFFFF !important; }
 
 .hero-title {
-  font-family: 'Manrope', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
   margin-bottom: 18px;
+  text-transform: uppercase;
+  color: var(--text-main);
 }
 
 .title-accent {
-  color: var(--color-blueprint);
-  background-color: rgba(37, 71, 201, 0.08);
+  color: var(--color-oxide);
+  background-color: rgba(135, 32, 28, 0.08);
   padding: 2px 6px;
   display: inline-block;
-  border: 2px dashed var(--color-blueprint);
+  border: 2px dashed var(--color-oxide);
 }
 
 .blink {
@@ -371,7 +586,8 @@ a {
 }
 
 .hero-bio {
-  font-size: 0.96rem;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.1rem;
   color: var(--text-main);
   margin-bottom: 28px;
   max-width: 580px;
@@ -545,28 +761,31 @@ pre {
 }
 
 .stat-number {
-  font-family: 'Manrope', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 800;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 900;
   color: var(--color-blueprint);
   line-height: 1;
   margin-bottom: 8px;
 }
 
 .stat-label {
-  font-size: 0.8rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   margin-bottom: 4px;
 }
 
 .stat-sub {
-  font-size: 0.72rem;
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 0.88rem;
   color: var(--text-muted);
 }
 
 /* --------------------------------------------------------------------------
-   Sections Headers
+   Sections Headers (1920s Editorial News Style)
    -------------------------------------------------------------------------- */
 .section-container {
   margin-bottom: 64px;
@@ -577,29 +796,33 @@ pre {
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 24px;
-  border-bottom: 3px solid var(--border-color);
+  border-bottom: 3px double var(--border-color);
   padding-bottom: 16px;
   gap: 16px;
 }
 
 .section-num {
   display: block;
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
   color: var(--color-oxide);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   margin-bottom: 4px;
 }
 
 .section-title {
-  font-family: 'Manrope', sans-serif;
-  font-size: 2rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 
 .section-desc {
-  font-size: 0.88rem;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.05rem;
+  font-style: italic;
   color: var(--text-muted);
   margin-top: 4px;
 }
@@ -1042,42 +1265,99 @@ pre {
 }
 
 /* --------------------------------------------------------------------------
-   Terminal Interactive Console
+   ENGINEERING ARCHIVES — VINTAGE AMBER CRT TERMINAL No. 001
    -------------------------------------------------------------------------- */
-.full-terminal {
-  background-color: #12121A;
-  color: #F4EFE2;
-  border-color: #16161F;
+.terminal-card.full-terminal {
+  background-color: var(--term-bezel);
+  border: 4px solid var(--border-color);
+  box-shadow: 8px 8px 0px var(--shadow-color);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.terminal-card.full-terminal::before {
+  content: "ENGINEERING ARCHIVES // SYSTEM No. 001 · ARCHIVE ACCESS TERMINAL";
+  display: block;
+  background-color: #12100C;
+  color: var(--term-amber);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  padding: 6px 14px;
+  border-bottom: 2px solid #2B2519;
+  text-shadow: 0 0 4px var(--term-amber-glow);
+}
+
+.full-terminal .terminal-bar {
+  background-color: #191610;
+  color: var(--term-amber);
+  border-bottom: 2px solid #2B2519;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 4px var(--term-amber-glow);
 }
 
 .interactive-console {
-  background-color: #12121A;
-  color: #F4EFE2;
+  background-color: var(--term-crt-bg) !important;
+  color: var(--term-amber) !important;
+  font-family: 'IBM Plex Mono', monospace !important;
   font-size: 0.88rem;
-  min-height: 220px;
-  max-height: 380px;
+  min-height: 280px;
+  max-height: 440px;
   overflow-y: auto;
+  position: relative;
+  padding: 24px;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.95);
+  text-shadow: 0 0 4px var(--term-amber-glow);
+  scrollbar-color: #553B00 #0B0905;
+}
+
+/* Authentic CRT Scanlines Overlay */
+.interactive-console::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.42) 50%);
+  background-size: 100% 4px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.7;
 }
 
 .term-line {
+  position: relative;
+  z-index: 3;
   margin-bottom: 6px;
+  color: var(--term-amber) !important;
+  text-shadow: 0 0 4px var(--term-amber-glow);
+  line-height: 1.55;
 }
 
 .cmd-highlight {
-  color: #D63031;
-  font-weight: bold;
+  color: #FFF2B2 !important;
+  font-weight: 800;
+  text-decoration: underline;
+  text-shadow: 0 0 6px rgba(255, 242, 178, 0.65);
 }
 
 .term-input-row {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 12px;
+  margin-top: 14px;
+  position: relative;
+  z-index: 3;
 }
 
 .term-prompt {
-  color: #1EB852;
-  font-weight: 700;
+  color: var(--term-amber) !important;
+  font-weight: 800;
+  text-shadow: 0 0 6px var(--term-amber-glow);
+  letter-spacing: 0.04em;
 }
 
 .term-input {
@@ -1087,7 +1367,21 @@ pre {
   outline: none;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.88rem;
-  color: #F4EFE2;
+  color: var(--term-amber) !important;
+  caret-color: var(--term-amber) !important;
+  text-shadow: 0 0 5px var(--term-amber-glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-console::after {
+    display: none;
+  }
+  .interactive-console,
+  .term-line,
+  .term-prompt,
+  .term-input {
+    text-shadow: none !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1320,58 +1614,75 @@ pre {
   margin-top: 2px;
 }
 
-/* Pikachu Interactive RAG Chat Log */
+.pokemon-widget {
+  background-color: var(--bg-surface);
+  border: 3px solid var(--border-color);
+  box-shadow: 6px 6px 0px var(--shadow-color);
+}
+
+.pokemon-bar {
+  background-color: var(--color-blueprint);
+  color: #FFFFFF;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 6px 10px;
+}
+
+.pokemon-screen {
+  background-color: var(--bg-card);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.pokemon-sprite {
+  background-color: #FAF7F0;
+  border: 2px solid var(--border-color);
+  box-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+.pixel-pikachu {
+  filter: contrast(110%) sepia(20%) saturate(115%);
+}
+
 .pkmn-chat-log {
-  height: 135px;
-  overflow-y: auto;
   background-color: var(--bg-surface);
   border: 2px solid var(--border-color);
-  padding: 8px;
-  margin-bottom: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 0.73rem;
-  box-shadow: inset 2px 2px 0px rgba(0,0,0,0.08);
-  scrollbar-width: thin;
+  padding: 10px;
+  font-family: 'Newsreader', Georgia, serif;
 }
 
 .chat-msg {
-  padding: 6px 9px;
+  padding: 8px 12px;
   border: 1.5px solid var(--border-color);
-  line-height: 1.45;
-  word-break: break-word;
-  box-shadow: 1.5px 1.5px 0px var(--shadow-color);
-  max-width: 92%;
+  line-height: 1.55;
+  box-shadow: 2px 2px 0px var(--shadow-color);
 }
 
 .chat-msg.bot-msg {
-  align-self: flex-start;
   background-color: var(--bg-card);
-  border-left: 4px solid var(--color-gold);
-}
-
-.chat-msg.bot-msg.ghost-scared {
-  background-color: #FEE2E2;
-  border-color: #DC2626;
-  border-left: 4px solid #DC2626;
-  color: #991B1B;
-  animation: pkmnShake 0.4s ease-in-out;
+  border-left: 4px solid var(--color-oxide);
+  color: var(--text-main);
+  font-size: 0.88rem;
 }
 
 .chat-msg.user-msg {
-  align-self: flex-end;
-  background-color: var(--color-gold);
-  color: #131200;
+  background-color: var(--bg-surface);
+  border-left: 4px solid var(--color-blueprint);
+  color: var(--text-main);
+  font-size: 0.88rem;
   font-weight: 600;
 }
 
 .chat-speaker {
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 800;
-  font-size: 0.67rem;
-  margin-bottom: 3px;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
   display: block;
   color: var(--color-blueprint);
+  text-transform: uppercase;
 }
 
 .chat-msg.ghost-scared .chat-speaker {
@@ -1966,15 +2277,18 @@ pre {
 }
 
 .projects-hero-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 800;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.3rem;
+  font-weight: 900;
   margin: 0 0 10px 0;
   letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
 .projects-hero-sub {
-  font-size: 1.05rem;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.1rem;
+  font-style: italic;
   line-height: 1.6;
   color: var(--text-main);
   max-width: 880px;
@@ -2377,4 +2691,292 @@ pre {
 [data-theme="dark"] .tech-honest-banner {
   background-color: #2D2516;
   color: #FBBF24;
+}
+
+/* ==========================================================================
+   THE ADVAITH DAILY — HISTORICAL EDITORIAL SPREAD & ARCHIVE RULES
+   ========================================================================== */
+.newspaper-spread {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr;
+  gap: 32px;
+  border-bottom: 3px double var(--border-color);
+  padding-bottom: 36px;
+  margin-bottom: 36px;
+}
+
+.newspaper-col-rule {
+  border-right: 1px solid var(--border-color);
+  padding-right: 32px;
+}
+
+.byline-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 6px 0;
+  margin: 14px 0 20px 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.editorial-deck {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.drop-cap::first-letter {
+  font-family: 'Playfair Display', Georgia, serif;
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.8;
+  padding: 4px 10px 4px 0;
+  font-weight: 900;
+  color: var(--color-oxide);
+}
+
+.newspaper-photo {
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-card);
+  padding: 8px;
+  box-shadow: 4px 4px 0px var(--shadow-color);
+  margin-bottom: 16px;
+}
+
+.newspaper-photo img {
+  width: 100%;
+  display: block;
+  filter: grayscale(65%) contrast(120%) brightness(96%);
+  border: 1px solid var(--border-color);
+  transition: filter 0.2s ease;
+}
+
+.newspaper-photo:hover img {
+  filter: grayscale(15%) contrast(110%);
+}
+
+.photo-caption {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  padding-top: 6px;
+  margin-top: 4px;
+  border-top: 1px dashed var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.double-rule {
+  border: none;
+  border-top: 3px double var(--border-color);
+  margin: 28px 0;
+}
+
+.hairline-rule {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 20px 0;
+}
+
+/* Front-Page Archive Search Bar (Historical Newspaper Query Desk) */
+.archive-search-section {
+  border: 3px solid var(--border-color);
+  background-color: var(--bg-surface);
+  box-shadow: 6px 6px 0px var(--shadow-color);
+  padding: 24px 28px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.archive-search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 12px;
+}
+
+.archive-search-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.archive-search-input-wrap {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.archive-search-field {
+  flex: 1;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.92rem;
+  padding: 10px 14px;
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  box-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+.archive-search-field:focus {
+  outline: none;
+  border-color: var(--color-blueprint);
+  box-shadow: 4px 4px 0px var(--shadow-color);
+}
+
+.archive-search-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.archive-search-chip {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-card);
+  cursor: pointer;
+  box-shadow: 1.5px 1.5px 0px var(--shadow-color);
+  transition: all 0.1s ease;
+}
+
+.archive-search-chip:hover {
+  background-color: var(--color-blueprint);
+  color: #FFFFFF;
+  transform: translate(-1px, -1px);
+}
+
+.archive-search-results {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.archive-result-card {
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-card);
+  padding: 16px;
+  box-shadow: 3px 3px 0px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.archive-result-desk {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--color-oxide);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.archive-result-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin: 4px 0 6px 0;
+}
+
+.archive-result-why {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  border-left: 2px solid var(--color-blueprint);
+  padding-left: 8px;
+  margin: 6px 0 10px;
+}
+
+.archive-result-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--color-blueprint);
+  text-decoration: underline;
+  align-self: flex-start;
+}
+
+/* Site Footer Editorial Edition End */
+.site-footer {
+  border-top: 3px double var(--border-color);
+  background-color: var(--bg-card);
+  padding: 36px 20px 24px;
+  margin-top: 80px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.footer-edition-banner {
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.footer-edition-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.footer-edition-sub {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+}
+
+.footer-edition-end {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  padding: 3px 14px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+}
+
+@media (max-width: 900px) {
+  .masthead-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .masthead-ear {
+    display: none;
+  }
+  .newspaper-spread {
+    grid-template-columns: 1fr;
+  }
+  .newspaper-col-rule {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+  }
 }
