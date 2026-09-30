@@ -818,14 +818,8 @@ function initPokemonCompanion() {
   const chimeBtn = document.getElementById('pkmnChimeBtn');
   const feedBtn = document.getElementById('pkmnFeedBtn');
   const clearBtn = document.getElementById('pkmnClearBtn');
-  const hpFill = document.getElementById('hpFill');
-  const hpVal = document.getElementById('hpVal');
-  const pkmnLevel = document.getElementById('pkmnLevel');
 
   if (!chatLog) return;
-
-  let level = 50;
-  let exp = 0;
 
   // Append message to chat log
   function appendChat(speaker, text, isUser = false, isGhost = false) {
@@ -856,10 +850,7 @@ function initPokemonCompanion() {
     // 2. Play Spark
     playPikachuSound('spark');
 
-    // 3. Grant EXP
-    gainExp(15);
-
-    // 4. Retrieve Answer via Pikachu RAG (Asynchronous or Local Sync)
+    // 3. Retrieve Answer via Pikachu RAG (Asynchronous or Local Sync)
     if (window.AdvaithRAG && typeof window.AdvaithRAG.queryAsync === 'function') {
       try {
         const resp = await window.AdvaithRAG.queryAsync(cleanQuery);
@@ -884,28 +875,6 @@ function initPokemonCompanion() {
     }, 150);
   }
 
-  // Gain EXP helper
-  function gainExp(amount) {
-    exp += amount;
-    if (exp >= 100) {
-      exp = 0;
-      level++;
-      if (pkmnLevel) pkmnLevel.textContent = `Lv.${level}`;
-      playPikachuSound('levelup');
-      appendChat('⚡ EDITORIAL DESK:', `PROMOTION! The Correspondent leveled up to <strong>Lv.${level}</strong>! Press archival retrieval accuracy boosted!`, false, false);
-    }
-
-    if (widget) {
-      const float = document.createElement('div');
-      float.className = 'exp-float';
-      float.textContent = `+${amount} EXP!`;
-      float.style.left = '45%';
-      float.style.top = '25%';
-      widget.appendChild(float);
-      setTimeout(() => float.remove(), 900);
-    }
-  }
-
   // Event Listeners: Quick Topic Chips
   quickChips.forEach(chip => {
     chip.addEventListener('click', () => {
@@ -928,27 +897,25 @@ function initPokemonCompanion() {
   if (sprite) {
     sprite.addEventListener('click', () => {
       playPikachuSound('spark');
-      sprite.style.transform = 'scale(1.25) rotate(8deg)';
+      sprite.style.transform = 'scale(1.15) rotate(4deg)';
       setTimeout(() => sprite.style.transform = 'scale(1) rotate(0deg)', 180);
-      gainExp(10);
       appendChat('⚡ THE CORRESPONDENT:', "Pika-CHUUU! ⚡ Press pass accredited! The Technology Desk is ready to answer any inquiry across Advaith's 39 verified reports!", false, false);
     });
   }
 
-  // Event Listener: Chime Button
+  // Event Listener: Wire Chime Button
   if (chimeBtn) {
     chimeBtn.addEventListener('click', () => {
       playPikachuSound('spark');
-      appendChat('⚡ THE CORRESPONDENT:', "Pika-pi! ⚡ Transmitting electro sparkle from the press bureau!", false, false);
+      appendChat('⚡ THE CORRESPONDENT:', "Pika-pi! ⚡ Transmitting wire electro chime from the correspondence bureau!", false, false);
     });
   }
 
-  // Event Listener: Feed Compute Button
+  // Event Listener: Wire Sync Button
   if (feedBtn) {
     feedBtn.addEventListener('click', () => {
-      gainExp(35);
       playPikachuSound('levelup');
-      appendChat('⚡ THE CORRESPONDENT:', "Crunch crunch! ⚡ Allocated 512GB of GPU compute & embeddings into the archive index! [Signal boosted!]", false, false);
+      appendChat('⚡ THE CORRESPONDENT:', "Wire sync confirmed! ⚡ Subspace vector index re-verified across 39 audited repositories and 52 archival documents.", false, false);
     });
   }
 

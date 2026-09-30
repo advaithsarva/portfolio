@@ -10,61 +10,64 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <style>
     .project-header-box {
-      border: 3px solid var(--border-color);
-      background: var(--bg-card);
-      padding: 36px;
-      box-shadow: 6px 6px 0px var(--shadow-color);
-      margin: 30px 0;
+      border: 3px double var(--border-color);
+      background: var(--bg-surface);
+      padding: 30px 24px;
+      box-shadow: none;
+      margin: 24px 0;
     }
     .breadcrumbs {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.8rem;
-      margin-bottom: 16px;
+      font-size: 0.78rem;
+      margin-bottom: 14px;
       color: var(--text-muted);
     }
     .breadcrumbs a {
-      color: var(--color-blueprint);
+      color: var(--color-oxide);
       text-decoration: underline;
     }
     .stats-strip {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin: 24px 0;
+      gap: 12px;
+      margin: 20px 0;
     }
     .stat-tile {
-      border: 2px solid var(--border-color);
-      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
       padding: 14px 18px;
-      box-shadow: 3px 3px 0px var(--shadow-color);
+      box-shadow: none;
     }
     .stat-tile-val {
       font-family: 'Playfair Display', serif;
       font-size: 1.6rem;
       font-weight: 800;
-      color: var(--color-blueprint);
+      color: var(--text-main);
     }
     .stat-tile-label {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 700;
+      font-size: 0.7rem;
+      font-weight: 800;
       text-transform: uppercase;
       margin-top: 4px;
+      color: var(--color-oxide);
+      letter-spacing: 0.06em;
     }
     .detail-section {
-      border: 3px solid var(--border-color);
-      background: var(--bg-card);
-      padding: 28px;
-      box-shadow: 5px 5px 0px var(--shadow-color);
+      border: 1px solid var(--border-color);
+      background: var(--bg-surface);
+      padding: 24px;
+      box-shadow: none;
       margin-bottom: 24px;
     }
     .detail-section h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 800;
-      margin-bottom: 14px;
-      border-bottom: 2px solid var(--border-color);
-      padding-bottom: 8px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 6px;
+      text-transform: uppercase;
     }
     .highlight-list {
       list-style: none;

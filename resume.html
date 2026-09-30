@@ -85,9 +85,9 @@
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.8rem;
       font-weight: 700;
-      padding: 8px 16px;
-      border: 2px solid var(--border-color);
-      box-shadow: 3px 3px 0px var(--shadow-color);
+      padding: 7px 16px;
+      border: 1px solid var(--border-color);
+      box-shadow: none;
       text-decoration: none;
       color: var(--text-main);
       background-color: var(--bg-card);
@@ -99,20 +99,20 @@
     }
 
     .resume-btn:hover {
-      transform: translate(-1px, -1px);
-      box-shadow: 4px 4px 0px var(--shadow-color);
-      background-color: var(--color-gold);
-      color: #131200;
+      background-color: var(--text-main);
+      color: var(--bg-canvas) !important;
+      transform: none;
+      box-shadow: none;
     }
 
     .resume-btn.btn-accent {
-      background-color: var(--color-blueprint);
-      color: #FFFFFF;
+      background-color: var(--text-main);
+      color: var(--bg-canvas);
     }
 
     .resume-btn.btn-accent:hover {
-      background-color: #142742;
-      color: #FFFFFF;
+      background-color: transparent;
+      color: var(--text-main);
     }
 
     /* Resume Document Wrapper (Sheet) */
@@ -120,8 +120,8 @@
       max-width: 960px;
       margin: 0 auto;
       background-color: var(--bg-card);
-      border: 3px solid var(--border-color);
-      box-shadow: 6px 6px 0px var(--shadow-color);
+      border: 3px double var(--border-color);
+      box-shadow: none;
       padding: 44px;
     }
 
@@ -163,11 +163,11 @@
       align-items: center;
       gap: 8px;
       background-color: var(--bg-surface);
-      border: 2px solid var(--border-color);
+      border: 1px solid var(--border-color);
       padding: 6px 12px;
       font-size: 0.76rem;
       font-weight: 700;
-      box-shadow: 2px 2px 0px var(--shadow-color);
+      box-shadow: none;
     }
 
     .pulse-dot {
@@ -232,13 +232,15 @@
 
     /* Executive Summary */
     .summary-text {
-      font-size: 0.88rem;
+      font-family: 'Newsreader', serif;
+      font-size: 0.95rem;
       line-height: 1.65;
       color: var(--text-main);
       background-color: var(--bg-surface);
-      border: 2px solid var(--border-color);
+      border: 1px solid var(--border-color);
       padding: 14px 18px;
-      box-shadow: 3px 3px 0px var(--shadow-color);
+      box-shadow: none;
+      text-align: justify;
     }
 
     /* Experience & Education Items */
@@ -311,36 +313,39 @@
     .achievements-table {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 14px;
     }
 
     .achieve-box {
-      border: 2px solid var(--border-color);
+      border: 1px solid var(--border-color);
       background-color: var(--bg-surface);
       padding: 14px;
-      box-shadow: 3px 3px 0px var(--shadow-color);
+      box-shadow: none;
     }
 
     .achieve-badge {
       display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
       font-size: 0.68rem;
       font-weight: 800;
       padding: 2px 6px;
       border: 1px solid var(--border-color);
       margin-bottom: 6px;
-      background-color: var(--color-gold);
-      color: #131200;
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      text-transform: uppercase;
     }
 
     .achieve-title {
-      font-family: 'Manrope', sans-serif;
-      font-size: 0.95rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
       font-weight: 800;
       margin-bottom: 4px;
     }
 
     .achieve-text {
-      font-size: 0.78rem;
+      font-family: 'Newsreader', serif;
+      font-size: 0.88rem;
       line-height: 1.5;
       color: var(--text-main);
     }
@@ -349,14 +354,14 @@
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 14px;
     }
 
     .project-resume-card {
-      border: 2px solid var(--border-color);
-      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-surface);
       padding: 16px;
-      box-shadow: 3px 3px 0px var(--shadow-color);
+      box-shadow: none;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -371,17 +376,18 @@
     }
 
     .proj-title {
-      font-family: 'Manrope', sans-serif;
-      font-size: 0.98rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
       font-weight: 800;
     }
 
     .proj-gh-btn {
-      font-size: 0.72rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
       font-weight: 700;
       padding: 2px 6px;
       border: 1px solid var(--border-color);
-      background-color: var(--bg-surface);
+      background-color: var(--bg-card);
       color: var(--text-main);
       text-decoration: none;
       display: inline-flex;
@@ -391,39 +397,41 @@
     }
 
     .proj-gh-btn:hover {
-      background-color: var(--color-gold);
-      color: #131200;
+      background-color: var(--text-main);
+      color: var(--bg-canvas);
     }
 
     .proj-desc {
-      font-size: 0.8rem;
+      font-family: 'Newsreader', serif;
+      font-size: 0.86rem;
       line-height: 1.55;
       margin-bottom: 10px;
     }
 
     .proj-tags {
-      font-size: 0.72rem;
-      color: var(--color-blueprint);
-      font-weight: 600;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--color-oxide);
+      font-weight: 700;
     }
 
     /* Skills Matrix */
     .skills-matrix {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 12px;
     }
 
     .skill-col {
-      border: 2px solid var(--border-color);
+      border: 1px solid var(--border-color);
       background-color: var(--bg-surface);
       padding: 14px;
-      box-shadow: 2px 2px 0px var(--shadow-color);
+      box-shadow: none;
     }
 
     .skill-cat {
-      font-family: 'Manrope', sans-serif;
-      font-size: 0.85rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
       font-weight: 800;
       color: var(--color-oxide);
       margin-bottom: 8px;
@@ -431,12 +439,11 @@
       padding-bottom: 4px;
     }
 
-    
     /* Tech badges with logos */
     .resume-tech-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 5px;
       margin-bottom: 10px;
     }
     .resume-tech-chip {
@@ -444,13 +451,13 @@
       align-items: center;
       gap: 5px;
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      padding: 3px 8px;
-      border: 1.5px solid var(--border-color);
+      padding: 2px 7px;
+      border: 1px solid var(--border-color);
       background-color: var(--bg-card);
       color: var(--text-main);
-      box-shadow: 1.5px 1.5px 0px var(--shadow-color);
+      box-shadow: none;
       white-space: nowrap;
     }
     .resume-tech-chip svg {
@@ -460,7 +467,8 @@
     }
 
     .skill-list {
-      font-size: 0.78rem;
+      font-family: 'Newsreader', serif;
+      font-size: 0.84rem;
       line-height: 1.6;
     }
 
