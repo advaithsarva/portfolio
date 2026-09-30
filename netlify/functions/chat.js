@@ -99,6 +99,126 @@ exports.handler = async function(event, context) {
       };
     }
 
+    // 2.5 Conversational Greetings, Chitchat & Help Handling
+    const cleanWords = lowerQ.replace(/[^a-z0-9\s]/g, ' ').trim().split(/\s+/).filter(Boolean);
+    const cleanText = cleanWords.join(' ');
+
+    const isGreeting = (
+      cleanWords.length <= 3 && 
+      cleanWords.some(w => ['hi', 'hello', 'hey', 'hiya', 'yo', 'sup', 'heyy', 'hola', 'pika', 'pikachu', 'greetings'].includes(w))
+    ) || [
+      'good morning', 'good afternoon', 'good evening', 'good day', 'whats up', "what's up"
+    ].some(phrase => cleanText.startsWith(phrase) || cleanText === phrase);
+
+    if (isGreeting) {
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+          answer: "Pika-pika! ⚡ Hey there! I'm Pikachu, Advaith's AI companion & portfolio guide! I can walk you through his 39 engineering repositories, Graph-RAG architectures, SMU exchange (3.47 CGPA), clinical ML audit at Preventvital, or even his chess tactics and beatboxing! What would you like to explore?",
+          sources: [
+            { title: "Engineering Profile & Bio", url: "index.html#home" },
+            { title: "39 Verified Repositories", url: "projects.html" }
+          ],
+          grounded: true,
+          mode: 'chitchat_greeting'
+        })
+      };
+    }
+
+    const isIdentity = ['who are you', 'what are you', 'whats your name', "what's your name", 'who made you', 'who created you', 'who built you', 'who developed you', 'tell me about yourself', 'introduce yourself'].some(phrase => cleanText.includes(phrase));
+    if (isIdentity) {
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+          answer: "Pika! ⚡ I'm Pikachu, the AI companion for Advaith Narayana Sarva's portfolio! I'm wired directly into his 55 verified knowledge documents covering his deep learning systems, autonomous agents, and systems code. Ask me anything about what he's built!",
+          sources: [{ title: "About Advaith", url: "index.html#home" }],
+          grounded: true,
+          mode: 'chitchat_identity'
+        })
+      };
+    }
+
+    const isHelp = ['what can you do', 'help', 'commands', 'what should i ask', 'what do you know', 'how does this work', 'suggest questions'].some(phrase => cleanText.includes(phrase)) || cleanText === 'help' || cleanText === '?';
+    if (isHelp) {
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+          answer: "Pika! ⚡ Here are some great questions to try asking me:<br><br>" +
+            "• 🏆 <strong>Hackathons:</strong> <em>'Tell me about The Sentinel Grid at IBM BOB'</em><br>" +
+            "• 🔍 <strong>Clinical Audit:</strong> <em>'What did Advaith do at Preventvital?'</em><br>" +
+            "• ⚡ <strong>Projects:</strong> <em>'Tell me about Graph-RAG'</em> or <em>'What is SuperBrain MCP?'</em><br>" +
+            "• 🎓 <strong>Education:</strong> <em>'What was his CGPA at Saint Martin\\'s University?'</em><br>" +
+            "• ♟️ <strong>Hobbies:</strong> <em>'What chess opening does he play?'</em> or <em>'Can he beatbox?'</em><br>" +
+            "• 👻 <strong>Easter Egg:</strong> <em>'Is he afraid of ghosts?!'</em>",
+          sources: [{ title: "Projects Catalog", url: "projects.html" }],
+          grounded: true,
+          mode: 'chitchat_help'
+        })
+      };
+    }
+
+    const isHowAreYou = ['how are you', 'hows it going', "how's it going", 'how do you do', 'how are you doing'].some(phrase => cleanText.includes(phrase));
+    if (isHowAreYou) {
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+          answer: "Pika-chuuu! ⚡ My electrical cheeks are fully charged with 64-dimensional embeddings and ready to roll! How can I help you navigate Advaith's portfolio today?",
+          sources: [],
+          grounded: true,
+          mode: 'chitchat_howareyou'
+        })
+      };
+    }
+
+    const isThanks = cleanWords.some(w => ['thanks', 'thx', 'thankyou'].includes(w)) || cleanText.includes('thank you') || cleanText.includes('appreciate it');
+    if (isThanks) {
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+          answer: "Pika! ⚡ You're very welcome! Let me know if you want to explore more projects, see his resume, or get in touch with Advaith!",
+          sources: [{ title: "View Resume", url: "resume.html" }],
+          grounded: true,
+          mode: 'chitchat_thanks'
+        })
+      };
+    }
+
+    const isBye = cleanWords.some(w => ['bye', 'goodbye', 'cya'].includes(w)) || cleanText.includes('see you') || cleanText.includes('talk to you later');
+    if (isBye) {
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+          answer: "Pika-pi! ⚡ Thanks for stopping by Advaith's portfolio! Feel free to reach out to him directly at advaithsarva@gmail.com anytime. Have an awesome day!",
+          sources: [{ title: "Contact Advaith", url: "mailto:advaithsarva@gmail.com" }],
+          grounded: true,
+          mode: 'chitchat_bye'
+        })
+      };
+    }
+
+    const isWhoIsAdvaith = ['who is advaith', 'tell me about advaith', 'who is he', 'about advaith', 'what does advaith do'].some(phrase => cleanText.includes(phrase));
+    if (isWhoIsAdvaith) {
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+          answer: "Pika! ⚡ Advaith Narayana Sarva is an AI & Systems Engineer specializing in interpretable Graph-RAG knowledge systems, autonomous multi-agent harnesses, and low-level PyTorch tensor primitives. He completed an academic exchange at Saint Martin's University (3.47 CGPA, Dean's List), holds an 8.69 CGPA at Woxsen University, audited clinical ML at Preventvital, and placed Top 5 in the IBM BOB National Hackathon with The Sentinel Grid!",
+          sources: [
+            { title: "Profile Summary", url: "index.html#home" },
+            { title: "Resume / CV", url: "resume.html" }
+          ],
+          grounded: true,
+          mode: 'chitchat_about'
+        })
+      };
+    }
+
     // 3. Prepare Grounded Context String
     let contextStr = "Retrieved Portfolio Knowledge Documents:\n";
     if (topChunks.length > 0) {

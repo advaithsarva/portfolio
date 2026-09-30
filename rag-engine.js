@@ -5088,6 +5088,104 @@
       };
     }
 
+    const cleanWords = qLower.replace(/[^a-z0-9\s]/g, ' ').trim().split(/\s+/).filter(Boolean);
+    const cleanText = cleanWords.join(' ');
+
+    // 1. Conversational Greetings & Welcomes
+    const isGreeting = (
+      cleanWords.length <= 3 && 
+      cleanWords.some(w => ['hi', 'hello', 'hey', 'hiya', 'yo', 'sup', 'heyy', 'hola', 'pika', 'pikachu', 'greetings'].includes(w))
+    ) || [
+      'good morning', 'good afternoon', 'good evening', 'good day', 'whats up', "what's up"
+    ].some(phrase => cleanText.startsWith(phrase) || cleanText === phrase);
+
+    if (isGreeting) {
+      return {
+        isGhost: false,
+        answer: "Pika-pika! ⚡ Hey there! I'm Pikachu, Advaith's AI companion & portfolio guide! I can walk you through his 39 engineering repositories, Graph-RAG architectures, SMU exchange (3.47 CGPA), clinical ML audit at Preventvital, or even his chess tactics and beatboxing! What would you like to explore?",
+        retrieval: retrieval,
+        citations: [
+          {"title": "Engineering Profile & Bio", "url": "index.html#home"},
+          {"title": "39 Verified Repositories", "url": "projects.html"}
+        ]
+      };
+    }
+
+    // 2. Identity / Who are you
+    const isIdentity = ['who are you', 'what are you', 'whats your name', "what's your name", 'who made you', 'who created you', 'who built you', 'who developed you', 'tell me about yourself', 'introduce yourself'].some(phrase => cleanText.includes(phrase));
+    if (isIdentity) {
+      return {
+        isGhost: false,
+        answer: "Pika! ⚡ I'm Pikachu, the AI companion for Advaith Narayana Sarva's portfolio! I'm wired directly into his 55 verified knowledge documents covering his deep learning systems, autonomous agents, and systems code. Ask me anything about what he's built!",
+        retrieval: retrieval,
+        citations: [{"title": "About Advaith", "url": "index.html#home"}]
+      };
+    }
+
+    // 3. Capabilities / Help / Suggestions
+    const isHelp = ['what can you do', 'help', 'commands', 'what should i ask', 'what do you know', 'how does this work', 'suggest questions'].some(phrase => cleanText.includes(phrase)) || cleanText === 'help' || cleanText === '?';
+    if (isHelp) {
+      return {
+        isGhost: false,
+        answer: "Pika! ⚡ Here are some great questions to try asking me:<br><br>" +
+          "• 🏆 <strong>Hackathons:</strong> <em>'Tell me about The Sentinel Grid at IBM BOB'</em><br>" +
+          "• 🔍 <strong>Clinical Audit:</strong> <em>'What did Advaith do at Preventvital?'</em><br>" +
+          "• ⚡ <strong>Projects:</strong> <em>'Tell me about Graph-RAG'</em> or <em>'What is SuperBrain MCP?'</em><br>" +
+          "• 🎓 <strong>Education:</strong> <em>'What was his CGPA at Saint Martin\'s University?'</em><br>" +
+          "• ♟️ <strong>Hobbies:</strong> <em>'What chess opening does he play?'</em> or <em>'Can he beatbox?'</em><br>" +
+          "• 👻 <strong>Easter Egg:</strong> <em>'Is he afraid of ghosts?!'</em>",
+        retrieval: retrieval,
+        citations: [{"title": "Projects Catalog", "url": "projects.html"}]
+      };
+    }
+
+    // 4. How are you / small talk
+    const isHowAreYou = ['how are you', 'hows it going', "how's it going", 'how do you do', 'how are you doing'].some(phrase => cleanText.includes(phrase));
+    if (isHowAreYou) {
+      return {
+        isGhost: false,
+        answer: "Pika-chuuu! ⚡ My electrical cheeks are fully charged with 64-dimensional embeddings and ready to roll! How can I help you navigate Advaith's portfolio today?",
+        retrieval: retrieval,
+        citations: []
+      };
+    }
+
+    // 5. Thanks / Appreciation
+    const isThanks = cleanWords.some(w => ['thanks', 'thx', 'thankyou'].includes(w)) || cleanText.includes('thank you') || cleanText.includes('appreciate it');
+    if (isThanks) {
+      return {
+        isGhost: false,
+        answer: "Pika! ⚡ You're very welcome! Let me know if you want to explore more projects, see his resume, or get in touch with Advaith!",
+        retrieval: retrieval,
+        citations: [{"title": "View Resume", "url": "resume.html"}]
+      };
+    }
+
+    // 6. Farewell
+    const isBye = cleanWords.some(w => ['bye', 'goodbye', 'cya'].includes(w)) || cleanText.includes('see you') || cleanText.includes('talk to you later');
+    if (isBye) {
+      return {
+        isGhost: false,
+        answer: "Pika-pi! ⚡ Thanks for stopping by Advaith's portfolio! Feel free to reach out to him directly at advaithsarva@gmail.com anytime. Have an awesome day!",
+        retrieval: retrieval,
+        citations: [{"title": "Contact Advaith", "url": "mailto:advaithsarva@gmail.com"}]
+      };
+    }
+
+    // 7. Overview of Advaith
+    const isWhoIsAdvaith = ['who is advaith', 'tell me about advaith', 'who is he', 'about advaith', 'what does advaith do'].some(phrase => cleanText.includes(phrase));
+    if (isWhoIsAdvaith) {
+      return {
+        isGhost: false,
+        answer: "Pika! ⚡ Advaith Narayana Sarva is an AI & Systems Engineer specializing in interpretable Graph-RAG knowledge systems, autonomous multi-agent harnesses, and low-level PyTorch tensor primitives. He completed an academic exchange at Saint Martin's University (3.47 CGPA, Dean's List), holds an 8.69 CGPA at Woxsen University, audited clinical ML at Preventvital, and placed Top 5 in the IBM BOB National Hackathon with The Sentinel Grid!",
+        retrieval: retrieval,
+        citations: [
+          {"title": "Profile Summary", "url": "index.html#home"},
+          {"title": "Resume / CV", "url": "resume.html"}
+        ]
+      };
+    }
+
     if (!top || top.length === 0 || top[0].rrfScore < 0.01) {
       return {
         isGhost: false,
