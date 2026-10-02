@@ -91,7 +91,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html { overflow-x: clip; }
 body {
+  overflow-x: clip; /* ponytail: masthead ornaments bleed ~10px on phones; clip instead of re-tuning each */
   font-family: var(--font-body);
   background-color: var(--bg-canvas);
   color: var(--text-main);
@@ -1973,6 +1975,16 @@ img {
     text-align: center;
     gap: 4px;
   }
+
+  .topbar-left, .topbar-right {
+    white-space: normal;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .topbar-center span { display: inline-block; max-width: 100%; }
+
+  .terminal-input { min-width: 0; }
 
   .masthead-inner, .masthead-ears {
     grid-template-columns: 1fr;

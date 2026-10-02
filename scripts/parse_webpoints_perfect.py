@@ -3,7 +3,7 @@ import json
 import os
 
 WEBPOINTS_PATH = r"C:\Projects\webpoints.md"
-PORTFOLIO_DIR = r"C:\Users\advai\OneDrive\Desktop\portfolio-zer0"
+PORTFOLIO_DIR = r"C:\Projects\portfolio-zer0"
 
 with open(WEBPOINTS_PATH, "r", encoding="utf-8") as f:
     content = f.read()
@@ -97,6 +97,6 @@ with open(os.path.join(PORTFOLIO_DIR, "projects-data.json"), "w", encoding="utf-
     json.dump(projects, f, indent=2, ensure_ascii=False)
 
 with open(os.path.join(PORTFOLIO_DIR, "projects-data.js"), "w", encoding="utf-8") as f:
-    f.write(f"/* 39 Verified Engineering Repositories - Advaith Narayana Sarva */\nwindow.ALL_PROJECTS = {json.dumps(projects, indent=2, ensure_ascii=False)};\n")
+    f.write(f"/* 39 Projects - Advaith Narayana Sarva */\nwindow.ALL_PROJECTS = {json.dumps(projects, indent=2, ensure_ascii=False)};\n")
 
 print("Saved pristine projects-data.json and projects-data.js without backticks!")

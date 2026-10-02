@@ -7,9 +7,9 @@
     "PyTorch",
     "Hugging Face Transformers",
     "spaCy",
-    "Neo4j",
-    "Graph-RAG",
-    "Cross-Encoder NLI"
+    "sentence-transformers",
+    "BM25",
+    "NLI"
   ],
   "date": "2026",
   "source": "resume.html#skills",
@@ -22,11 +22,10 @@
     "NLP",
     "LLMs",
     "RAG",
-    "Graph-RAG",
-    "Embeddings",
-    "Meta-Inference"
+    "Hybrid Retrieval",
+    "Embeddings"
   ],
-  "stats": "15+ AI & NLP pipelines \u00b7 Custom transformer from scratch \u00b7 Graph-RAG RRF",
+  "stats": "Transformer from scratch · Hybrid BM25 + dense retrieval with RRF · 23-detector NLP pipeline",
   "slug": "ai-ml-nlp",
-  "content": "Advaith specializes in deep learning architectures, computational semantics, and retrieval augmented generation. Key competencies: PyTorch from primitives (attention mechanisms, KV-cache, rotary embeddings, LayerNorm), Hugging Face Transformers, spaCy custom tokenization DAGs, cross-encoder NLI for factual verification, and Graph-RAG hybrid search fusing BM25, dense HNSW, and multi-hop Neo4j Cypher traversals."
+  "content": "Advaith works across deep learning, NLP and retrieval. Key work: a decoder-only transformer written from plain PyTorch tensors (causal self-attention, LayerNorm), matching PyTorch's reference within 1e-5; Hugging Face Transformers and sentence-transformers; spaCy pipelines; NLI-based claim verification; and hybrid retrieval that fuses BM25 and dense embeddings with Reciprocal Rank Fusion (0.900 MRR vs 0.867 and 0.733 for either alone)."
 }

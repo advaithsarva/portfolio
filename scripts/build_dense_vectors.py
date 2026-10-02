@@ -1,7 +1,7 @@
 """
 Build dense semantic vector representations for portfolio knowledge base
 Produces: data/knowledge_embeddings.json
-Compatible with Qwen3-Embedding schema and drop-in replaceable with Colab output.
+TF-IDF + truncated SVD (LSA), 64 dims. Same JSON schema a real embedding model (e.g. Qwen3-Embedding from Colab) could drop into.
 """
 
 import json
@@ -40,7 +40,7 @@ def main():
         embeddings_dict[d["id"]] = [round(float(val), 5) for val in dense_vecs[i]]
 
     output_data = {
-        "model": "Qwen3-Embedding-0.6B-compatible-dense-subspace",
+        "model": "tfidf-svd-64",
         "dimension": dim,
         "num_chunks": len(docs),
         "doc_ids": [d["id"] for d in docs],

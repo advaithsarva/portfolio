@@ -104,8 +104,8 @@ class PythonHybridRAG:
             q_proc += ' Fact Checking NLI Stance Agent atomic decomposition'
         elif 'drift' in q_low or 'terraform' in q_low:
             q_proc += ' Terraform IaC Drift Agent AWS'
-        elif 'neo4j' in q_low or 'graph' in q_low:
-            q_proc += ' Graph-RAG Cypher'
+        elif 'graph' in q_low:
+            q_proc += ' Graph-RAG knowledge graph'
 
         q_tokens = tokenize(q_proc)
         
@@ -189,29 +189,23 @@ class PythonHybridRAG:
         best = top_chunks[0]["chunk"]
 
         if 'roc' in q_lower or 'sentinel' in q_lower or 'bob' in q_lower:
-            return "In the IBM BOB National Hackathon 2026, Advaith led engineering for The Sentinel Grid, placing Top 5 in the South Zone! The system comprises 6,957 lines of Python, 314 automated checks, and achieved a verified ROC-AUC of 0.9924 on 473,000 district-month soil moisture observations in Coimbatore. Pika!"
+            return "Advaith's team of four built The Sentinel Grid and placed Top 5 in the South Zone! The disaster-triage system has 314 automated checks, and its drought detector reached ROC-AUC 0.9924 on 473,256 real soil readings in Coimbatore (monsoon extremes only 0.662, reported as the open problem). Pika!"
         elif 'postgres' in q_lower or 'speedup' in q_lower:
-            return "The Autonomous Postgres Performance Agent diagnoses live query bottlenecks via EXPLAIN ANALYZE, formulates index hypotheses, and executes migrations with an automated rollback guard. It achieved an 11.7x query speedup on real database workloads. Pika pika!"
+            return "The Autonomous Postgres Performance Agent diagnoses slow queries via EXPLAIN ANALYZE and proposes an index. Once a person approves, it applies the change, benchmarks before and after, and rolls back if things got slower. It measured an 11.7x speedup (11.7 ms to 1.0 ms) on a 200k-row table. Pika pika!"
         elif 'smu' in q_lower or 'saint martin' in q_lower or '3.47' in q_lower:
             return "Pika! Advaith completed his international exchange at Saint Martin's University in Lacey, WA (completed May 2026 across two semesters) in BS CS (AI & ML), graduating with a 3.47 / 4.0 CGPA and Dean's List honors!"
         elif 'woxsen' in q_lower or '8.69' in q_lower:
             return "Advaith is pursuing his B.Tech in CSE (AI & ML) at Woxsen University (Hyderabad, India) with an 8.69 / 10.0 CGPA, expected graduation August 2027. Pika!"
         elif 'preventvital' in q_lower or 'clinical' in q_lower or 'ascvd' in q_lower or 'goff' in q_lower:
-            return "At Preventvital (GruentzigAI), Advaith caught a critical coefficient sign inversion error in the ASCVD clinical risk calculation that was artificially calculating 0.1% baseline risk for untreated patients (expected 2.1% from Goff 2014 trial baseline). He authored the formal bug report and authored RAG & safety rules adhering to ICMR 2023 guidelines on an 'engine computes, LLM explains, clinician signs' protocol. Pika!"
+            return "At Preventvital (GruentzigAI), Advaith found a flipped coefficient sign in the ASCVD risk calculation that drove untreated patients to the 0.1% floor (the published Goff 2014 coefficients give about 2.1%). He wrote it up for clinical sign-off, which the fix is waiting on, and drafted RAG & safety rules adhering to ICMR 2023 guidelines on an 'engine computes, LLM explains, clinician signs' protocol. Pika!"
         elif 'media nlp' in q_lower or '0.175' in q_lower or 'rhetoric' in q_lower or 'fallacy' in q_lower:
             return "The Media NLP Pipeline is a deterministic rhetoric analysis engine featuring 23 informal fallacy detectors with character-level verbatim evidence spans, achieving a false positive rate of 0.175 per 1,000 words evaluated on Wikipedia neutral ground truth with 164 automated tests. Pika!"
         elif 'mcp' in q_lower or 'superbrain' in q_lower:
-            return "SuperBrain MCP is a Model Context Protocol server featuring 41 specialized tools across 8 domains, providing persistent cross-session vector memory and sub-2ms protocol overhead. Pika pika!"
+            return "SuperBrain MCP is a Model Context Protocol server with 41 tools over 8 memory types (episodic, semantic, procedural and more), giving agents persistent memory across sessions in SQLite. It's private and used daily. Pika pika!"
         elif 'eval gap' in q_lower or 'score separation' in q_lower:
             return "In Eval Gap Research, Advaith measured AI grading without ground truth rubrics, finding 1.00 vs 0.31 good vs bad separation on an n = 8 directional study. Pika!"
         elif 'transformer' in q_lower and ('scratch' in q_lower or 'primitives' in q_lower):
-            return "Advaith built a Decoder-Only Transformer from scratch in PyTorch primitives, implementing multi-head self-attention, rotary positional embeddings (RoPE), KV-cache for generation, and LayerNorm directly without high-level wrappers. Pika!"
-        elif 'beatbox' in q_lower:
-            return "Pika-tsh! Yes, Advaith can beatbox and perform vocal percussion with acoustic rhythm loops!"
-        elif 'chess' in q_lower:
-            return "Pika! Advaith plays chess and specializes in the Sicilian Defense (1. e4 c5) on Chess.com and Lichess."
-        elif 'ghost' in q_lower:
-            return "P-Pika?! Yes! Between you and me, Advaith is genuinely scared of ghosts, horror movies, and Gengar! 👻"
+            return "Advaith built a Decoder-Only Transformer from scratch in PyTorch primitives, implementing causal multi-head self-attention and LayerNorm directly. It matches PyTorch's reference within 1e-5 and trains to 1.0059x the theoretical best loss, with 19 tests. Pika!"
         elif 'contact' in q_lower:
             return "You can reach Advaith directly at advaithsarva@gmail.com, on LinkedIn, or on GitHub. Pika!"
         else:
@@ -341,7 +335,7 @@ def main():
         "hallucination_rate": round(hallucination_rate, 2),
         "avg_pikachu_token_percentage": round(avg_pika_pct, 2),
         "avg_latency_ms": round(avg_latency, 2),
-        "status": "PASS - Meets all technical, factual, and personality criteria (< 10% Pikachu, zero hallucination)"
+        "status": "PASS - Meets all technical, factual, and personality criteria (< 10% Pikachu)"
     }
 
     report = {

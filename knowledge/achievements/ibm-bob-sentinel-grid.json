@@ -13,7 +13,7 @@
   "date": "2026",
   "source": "resume.html#honors",
   "section": "Hackathons & Honors",
-  "github_url": "https://github.com/advaithsarva/the-sentinel-grid",
+  "github_url": "https://github.com/advaithsarva/ibm-hackathon",
   "demo_url": "project.html?id=the-sentinel-grid",
   "tags": [
     "IBM BOB Hackathon",
@@ -22,7 +22,7 @@
     "ROC-AUC 0.9924",
     "Disaster AI"
   ],
-  "stats": "Top 5 South Zone \u00b7 0.9924 ROC-AUC \u00b7 314 automated checks \u00b7 6,957 LOC",
+  "stats": "Top 5 South Zone · 0.9924 ROC-AUC · 314 automated checks · team of 4",
   "slug": "ibm-bob-sentinel-grid",
-  "content": "Advaith led engineering for The Sentinel Grid, placing in the Top 5 South Zone at the IBM BOB National Hackathon 2026. The disaster-intelligence system comprises 6,957 lines of Python, 314 automated checks, and 104 formula audits, achieving a verified ROC-AUC of 0.9924 on 473,000 real district-month soil moisture observations for Coimbatore."
+  "content": "Advaith's team of four built The Sentinel Grid and placed in the Top 5 of the South Zone at the IBM BOB National Hackathon 2026 (zonal round, SRCAS Coimbatore). The disaster-intelligence system has 314 automated checks and recomputed all 104 formulas in its specification, catching 2 errors in the spec itself. Its drought detector reached ROC-AUC 0.9924 on 473,256 real district-month soil readings for Coimbatore; monsoon extremes reach only 0.662, which the team reported as the open problem."
 }

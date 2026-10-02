@@ -1,4 +1,4 @@
-/* 39 Verified Engineering Repositories - Advaith Narayana Sarva */
+/* 39 Projects - Advaith Narayana Sarva */
 window.ALL_PROJECTS = [
   {
     "title": "The Sentinel Grid",

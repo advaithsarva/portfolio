@@ -5,10 +5,10 @@
   "category": "Technologies",
   "technologies": [
     "Model Context Protocol (MCP)",
-    "LangChain",
+    "LangGraph",
     "Autonomous Agents",
     "Tool Calling",
-    "Hierarchical State"
+    "Human-in-the-loop"
   ],
   "date": "2026",
   "source": "resume.html#skills",
@@ -19,10 +19,10 @@
     "Autonomous Agents",
     "MCP",
     "SuperBrain",
-    "Multi-Agent Swarms",
+    "Multi-Agent",
     "Tool Execution"
   ],
-  "stats": "9 Autonomous Agent repositories \u00b7 41 MCP tools \u00b7 11.7x autonomous Postgres speedup",
+  "stats": "9 agent projects · 41 MCP tools · 11.7x Postgres speedup with approval-gated changes",
   "slug": "autonomous-agents",
-  "content": "Advaith designs autonomous multi-agent harnesses with deterministic guardrails. Implementations include SuperBrain MCP (41 standardized tools with persistent vector memory across sessions), autonomous database tuning agents (executing explain analyze loops and automated rollback guards), and recursive web research verification agents."
+  "content": "Advaith builds agents with deterministic guardrails and human approval where it matters. Examples: SuperBrain MCP (41 tools, 8 memory types, private), a Postgres performance agent that diagnoses slow queries with EXPLAIN ANALYZE and, once approved, applies an index, benchmarks before and after, and rolls back if things get worse (11.7x on a 200k-row table), and a research verifier with a real human-approval pause."
 }

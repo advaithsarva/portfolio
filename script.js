@@ -43,7 +43,7 @@ function initTheme() {
 function updateThemeIcon(theme) {
   const icon = document.querySelector('.theme-icon');
   if (icon) {
-    icon.textContent = 'CONTRAST';
+    icon.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
   }
 }
 
@@ -431,9 +431,6 @@ function initTerminal() {
 
   [INTERACTIVE & EASTER EGGS]
   neofetch      - System specs, stack overview & ASCII badge
-  chess         - Interactive Sicilian board & challenge link
-  beatbox       - Play 8-bit live beatbox synth & soundwave
-  ghost / spook - Test the engineer's archival aversion to spectral apparitions!
   matrix        - Stream digital cyber cascade
   detective     - The Archive Detective (Detective Pikachu) dossier
   rag <query>   - Query Detective Pikachu's RAG knowledge engine directly in CLI!
@@ -443,7 +440,7 @@ function initTerminal() {
 
   [SHELL UTILITIES]
   ls            - List files in current directory
-  cat <file>    - Read file (e.g. cat hobbies.txt, cat secret.env)
+  cat <file>    - Read file (e.g. cat resume.md, cat stack.json)
   git log       - View commit history
   git status    - Check working tree status
   ping <host>   - Simulate ICMP ping
@@ -465,15 +462,14 @@ Core Focus  : Graph-RAG, Multi-Agent Orchestration, Interpretable NLP, PyTorch`,
      → https://github.com/advaithsarva/graph-rag-knowledge-system
 [03] autonomous-performance-agent: PostgreSQL query watcher & index tuner (11.7x speedup)
      → https://github.com/advaithsarva/autonomous-performance-agent
-[04] superbrain_mcp: Unified memory & state MCP server (41 tools across 8 domains)
-     → https://github.com/advaithsarva/superbrain_mcp
+[04] superbrain_mcp: Persistent-memory MCP server (41 tools, 8 memory types) — private repo
 [05] fact-checking-agent: Multi-step NLI claim verification (9/10 verdict accuracy)
      → https://github.com/advaithsarva/fact-checking-agent
-[06] transformer-from-scratch: Decoder-only transformer from PyTorch primitives (1.0059x floor)
+[06] transformer-from-scratch: Decoder-only transformer from PyTorch primitives (1.0059x theoretical best loss)
      → https://github.com/advaithsarva/transformer-from-scratch`,
 
     achievements: `[01] Top 5 South Zone — IBM BOB National Hackathon 2026 (The Sentinel Grid, ROC-AUC 0.9924)
-[02] Algorithmic Audit — Preventvital Clinical ASCVD Risk Formula Sign Inversion Resolution
+[02] Clinical Audit — Found a sign error in Preventvital's ASCVD risk formula (0.1% vs ~2.1%)
 [03] Academic Honors — 3.47 / 4.0 CGPA Dean's Honors @ Saint Martin's University (Completed May 2026)
 [04] Leadership — CODE{X} Programming Club Executive Leader (200+ members)`,
 
@@ -483,9 +479,9 @@ Core Focus  : Graph-RAG, Multi-Agent Orchestration, Interpretable NLP, PyTorch`,
 [2024-2025] CODE{X} — The Programming Club - Executive Club Leader
 [2024-2024] AI Research Centre - Research Intern (Woxsen University)`,
 
-    skills: `GenAI & Agents       : Graph-RAG, Multi-Agent Swarms, MCP Protocol, DSPy, Vector DBs (Chroma, Qdrant)
-Deep Learning & NLP  : PyTorch, Transformers, HuggingFace, CUDA, spaCy, NLTK, NLI, Causal Attention
-Languages & Systems  : Python (Async/CFFI), TypeScript, Node.js, FastAPI, PostgreSQL, Docker, Git, C++`,
+    skills: `GenAI & Agents       : Hybrid RAG (BM25 + dense + RRF), MCP, LangGraph, ChromaDB, human-in-the-loop agents
+Deep Learning & NLP  : PyTorch, Transformers, Hugging Face, sentence-transformers, spaCy, NLTK, NLI
+Languages & Systems  : Python, TypeScript, Node.js, FastAPI, Flask, PostgreSQL, SQLite, Docker, Linux`,
 
     contact: `Email    : advaithsarva@gmail.com
 LinkedIn : https://www.linkedin.com/in/sarvaadvaithnarayana/
@@ -500,38 +496,19 @@ Instagram: @advaithsarva (https://instagram.com/advaithsarva)`,
                       Uptime   : 20+ years (Continuous learning)
                       Shell    : zsh 5.9 (x86_64-systems)
                       Terminal : Neo-Brutalist v2.4 (xterm-256color)
-                      CPU      : Neural Engine (PyTorch, DSPy, Transformers)
-                      Memory   : 41 MCP Tools @ 8 Domains
+                      CPU      : Neural Engine (PyTorch, Transformers)
+                      Memory   : 41 MCP Tools · 8 Memory Types
                       Academia : SMU (3.47 CGPA) | Woxsen (8.69 CGPA)
-                      Hobbies  : Chess (Sicilian Defense), Football, Beatbox, Debate
-                      Dread    : Spectral Entities & Haunted Halls (Code 404: Fortitude Not Found)`,
-
-    chess: `    +-----------------+
-  8 | r  n  b  q  k  b  n  r |
-  7 | p  p  .  p  p  p  p  p |
-  6 | .  .  .  .  .  .  .  . |
-  5 | .  .  p  .  .  .  .  . |
-  4 | .  .  .  .  P  .  .  . |
-  3 | .  .  .  .  .  .  .  . |
-  2 | P  P  P  P  .  P  P  P |
-  1 | R  N  B  Q  K  B  N  R |
-    +-----------------+
-      a  b  c  d  e  f  g  h
-
-Opening: 1. e4 c5 (Sicilian Defense)
-Playing Style: Aggressive tactical sharpness, deep calculation, endgame precision.
-Challenge Advaith to a match:
-• Chess.com / Lichess: @advaithsarva
-• Email: advaithsarva@gmail.com (Open for 3+2 blitz or 10m rapid!)`,
+                      Projects : 39 (34 public on GitHub)`,
 
     detective: `THE ARCHIVE DETECTIVE // CASE No. 001
 Character: Detective Pikachu · Chief Archive Investigator
 Department: Special Investigations Branch · The Advaith Daily
-Jurisdiction: 39 Verified Engineering Repositories & Academic Archives
+Jurisdiction: 39 Projects (34 Public Repositories) & Academic Records
 Grounded Evidence:
   • SMU International Exchange (3.47 / 4.0 CGPA, Dean's List)
   • Woxsen University B.Tech AI/ML (8.69 / 10.0 CGPA)
-  • Preventvital Clinical Audit (ASCVD Risk Fix, ICMR 2023 Rules)
+  • Preventvital Clinical Audit (ASCVD sign error found, awaiting clinical sign-off)
   • IBM BOB South Zone Top 5 (The Sentinel Grid, 0.9924 ROC-AUC)
   • Autonomous Postgres Performance Agent (11.7x Speedup)
 Status: Active. Type 'rag <query>' or inquire via the bottom-right Archive Detective!`,
@@ -539,21 +516,19 @@ Status: Active. Type 'rag <query>' or inquire via the bottom-right Archive Detec
     pokedex: `THE ARCHIVE DETECTIVE // CASE No. 001
 Character: Detective Pikachu · Chief Archive Investigator
 Department: Special Investigations Branch · The Advaith Daily
-Audit Record: 39 Repositories · 55 Chunks · Hybrid Dense & Sparse RRF
+Audit Record: 39 Projects · Hybrid Retrieval · Hybrid Dense & Sparse RRF
 Status: Active. Type 'rag <query>' or use the Archive Detective console!`,
 
     pikachu: `THE ARCHIVE DETECTIVE // CASE No. 001
 Character: Detective Pikachu · Chief Archive Investigator
 Department: Special Investigations Branch · The Advaith Daily
-Audit Record: 39 Repositories · 55 Chunks · Hybrid Dense & Sparse RRF
+Audit Record: 39 Projects · Hybrid Retrieval · Hybrid Dense & Sparse RRF
 Status: Active. Type 'rag <query>' or use the Archive Detective console!`,
 
     ls: `total 48
 -rw-r--r-- 1 advaith staff  3.4K  resume.md
--rw-r--r-- 1 advaith staff  1.8K  hobbies.txt
 -rw-r--r-- 1 advaith staff  2.1K  stack.json
 -rw-r--r-- 1 advaith staff  1.1K  academics.txt
--rw------- 1 advaith staff   210  secret.env
 drwxr-xr-x 6 advaith staff   192  projects/
 -rwxr-xr-x 1 advaith staff  5.2M  pikachu.bin*`,
 
@@ -562,12 +537,7 @@ Your branch is up to date with 'origin/main'.
 
 nothing to commit, working tree clean`,
 
-    'git log': `* 7f9a204 (HEAD -> main) feat(rag): hybrid BM25 + KG multi-hop retrieval
-* 3b1c8e1 fix(eval): clinical ASCVD sign inversion audit & ICMR protocol
-* a4d021f feat(mcp): 41 tools across 8 operational domains for SuperBrain
-* 8e91b5c chore(edu): update SMU exchange credentials to 3.47 CGPA
-* e528990 feat(agent): autonomous PostgreSQL index tuner with 11.7x speedup
-* 109ac2d init: initial commit of Neo-Brutalist developer portfolio`,
+    'git log': `* (HEAD -> main) real history: github.com/advaithsarva/portfolio/commits/main`,
 
     quote: `[ENGINEERING MAXIM]
 "Simplicity is prerequisite for reliability." — Edsger W. Dijkstra
@@ -586,23 +556,13 @@ Gen AI Engineer | advaithsarva@gmail.com | github.com/advaithsarva
 • Woxsen University (Hyderabad, India) — B.Tech CSE AI/ML, 8.69 / 10 CGPA (Expected 2027)
 
 [EXPERIENCE]
-• Preventvital (GruentzigAI) — AI/ML Engineer Intern (Clinical ML, ASCVD audit, RAG gates)
+• Preventvital (GruentzigAI) — AI/ML Engineer Intern (ASCVD risk-formula audit, clinical RAG safety rules)
 • CODE{X} — Executive Club Leader (200+ members, workshops, open-source sprints)
 
 [STACK]
-PyTorch, Graph-RAG, DSPy, Transformers, MCP Protocol, FastAPI, PostgreSQL, TypeScript`,
+PyTorch, Hybrid RAG, Transformers, MCP, FastAPI, PostgreSQL, TypeScript`,
 
-    'hobbies.txt': `[PERSONAL HOBBIES & INTERESTS]
-• Chess       : Tactical Sicilian Defense (1.e4 c5), Rapid & Blitz matches (@advaithsarva)
-• Football    : High-press striker / attacking midfield, European football fanatic
-• Beatbox     : Vocal percussion, acoustic bass drops, rhythm jams
-• Debate      : Former CODE{X} Leader, structural rhetoric & argument dissection
-• News Maniac : Obsessive consumer of global news, arXiv preprints, geopolitics
-• Culture     : Grounded in timeless heritage, classical philosophy, deep cultural roots
-• Pokémon     : Lifelong trainer, competitive synergy geek, partner of Pikachu #025
-• Archival Dread : GHOSTS! An enduring, humorous dread of supernatural manifestations.`,
-
-    'stack.json': `{\n  "genai": ["Graph-RAG", "Multi-Agent Swarms", "MCP Protocol", "DSPy", "ChromaDB", "Qdrant", "Neo4j"],\n  "deep_learning": ["PyTorch", "Transformers", "CUDA", "HuggingFace", "spaCy", "NLI"],\n  "systems_and_web": ["Python (Async/CFFI)", "TypeScript", "FastAPI", "PostgreSQL", "Docker", "Node.js"]\n}`,
+    'stack.json': `{\n  "genai": ["Hybrid RAG", "MCP", "LangGraph", "ChromaDB"],\n  "deep_learning": ["PyTorch", "Transformers", "Hugging Face", "spaCy", "NLI"],\n  "systems_and_web": ["Python", "TypeScript", "FastAPI", "PostgreSQL", "Docker", "Node.js"]\n}`,
 
     'academics.txt': `[ACADEMIC CREDENTIALS]
 1. Saint Martin's University (Lacey, WA, USA)
@@ -613,12 +573,7 @@ PyTorch, Graph-RAG, DSPy, Transformers, MCP Protocol, FastAPI, PostgreSQL, TypeS
 2. Woxsen University (Hyderabad, India)
    - Program: B.Tech in Computer Science & Engineering (AI & ML)
    - Status : Expected August 2027
-   - CGPA   : 8.69 / 10.0`,
-
-    'secret.env': `TOP_SECRET_ARCHIVAL_NOTE="A well-documented dread of ghosts, haunted halls, and horror films."
-DREAM="Pioneering autonomous multi-agent systems and verified Graph-RAG"
-DAILY_FUEL="Coffee, arXiv preprints, geopolitical feeds & beatbox rhythms"
-FAVORITE_OPENING="1. e4 c5 (Sicilian Defense)"`
+   - CGPA   : 8.69 / 10.0`
   };
 
   function appendOutput(content, isHtml = false, colorClass = '') {
@@ -703,39 +658,12 @@ FAVORITE_OPENING="1. e4 c5 (Sicilian Defense)"`
         window.open('resume.html', '_blank');
       } else if (cmd === 'neofetch' || cmd === 'fetch') {
         appendOutput(staticResponses.neofetch);
-      } else if (cmd === 'chess') {
-        appendOutput(staticResponses.chess);
-      } else if (cmd === 'beatbox' || cmd === 'dropbeat') {
-        playPikachuSound('beatbox');
-        const beatAnim = `[BEATBOX_ENGINE] Synthesizing 8-bit live vocal beatbox loop...
-[CADENCE] | █ ▅ ▃ ▇ █ ▄ ▆ █ ▅ ▃ ▇ █ | [CADENCE END]
-Pattern: [B]oom (Kick) -> [t]sh (Hi-hat) -> [K]a (Snare) -> [t]sh (Hi-hat)
-"Advaith drops rhythmic basslines and acoustic beatbox patterns between model training.
-Drop an enquiry to jam or challenge him to a freestyle beat!"`;
-        appendOutput(beatAnim, false, 'text-moss');
-      } else if (cmd === 'ghost' || cmd === 'spook' || cmd === 'boo') {
-        playPikachuSound('ghost');
-        if (termCard) {
-          termCard.classList.add('scared-shake');
-          setTimeout(() => termCard.classList.remove('scared-shake'), 600);
-        }
-        const sprite = document.getElementById('pokemonSprite');
-        if (sprite) {
-          sprite.classList.add('scared-shake');
-          setTimeout(() => sprite.classList.remove('scared-shake'), 600);
-        }
-        const spookLog = `[CRITICAL TELETYPE ALARM // CODE SPECTRE]:
-UNIDENTIFIED SUPERNATURAL MANIFESTATION IN SECTOR 4!
-Detective Pikachu retreats behind the teletype machine!
-The engineer has evacuated the pressroom under three woolen blankets!
->> "FATAL: Advaith harbors an absolute dread of ghosts! Please return to verified topics like PyTorch, Chess, or Football!"`;
-        appendOutput(spookLog, false, 'text-oxide');
       } else if (cmd === 'matrix') {
         const matrixLines = [
           '01000001 01100100 01110110 01100001 01101001 01110100 01101000',
           'SYS_INIT: Booting Neural Graph Substrate...',
-          'KNOWLEDGE_VECTORS: Neo4j Knowledge Graph connected (24,810 triples)',
-          'MCP_ORCHESTRATOR: 41 tools loaded across 8 operational domains',
+          'KNOWLEDGE_GRAPH: NetworkX graph loaded',
+          'MCP_ORCHESTRATOR: 41 tools loaded',
           'Wake up, Developer...',
           'The Matrix has you.',
           'Follow the Chief Archive Investigator.',
@@ -744,7 +672,7 @@ The engineer has evacuated the pressroom under three woolen blankets!
         appendOutput(matrixLines.join('\n'), false, 'text-moss');
       } else if (cmd === 'cat') {
         if (!lowerArgStr) {
-          appendOutput("usage: cat <filename>\nAvailable files:\n  resume.md, hobbies.txt, stack.json, academics.txt, secret.env", false, 'text-oxide');
+          appendOutput("usage: cat <filename>\nAvailable files:\n  resume.md, stack.json, academics.txt", false, 'text-oxide');
         } else if (virtualFiles[lowerArgStr]) {
           appendOutput(virtualFiles[lowerArgStr]);
         } else if (lowerArgStr === 'pikachu.bin') {
@@ -770,7 +698,7 @@ The engineer has evacuated the pressroom under three woolen blankets!
         appendOutput(pingLog);
       } else if (cmd === 'rag' || cmd === 'ask') {
         if (!lowerArgStr) {
-          appendOutput("usage: rag <query> (or 'rag debug <query>')\nExamples:\n  rag chess\n  rag smu\n  rag sentinel\n  rag multimodal doc\n  rag debug preventvital", false, 'text-blue');
+          appendOutput("usage: rag <query> (or 'rag debug <query>')\nExamples:\n  rag graph rag\n  rag smu\n  rag sentinel\n  rag multimodal doc\n  rag debug preventvital", false, 'text-blue');
         } else if (lowerArgStr.startsWith('debug ')) {
           const debugQuery = lowerArgStr.replace(/^debug\s+/, '');
           if (window.AdvaithRAG) {
@@ -1030,7 +958,7 @@ function initPokemonCompanion() {
       setTimeout(() => el.style.transform = 'scale(1) rotate(0deg)', 180);
       appendChat(
         'THE ARCHIVE DETECTIVE // OFFICIAL DISPATCH:',
-        "Pika! Case file active. I am cross-examining Advaith's 39 verified repositories and technical dossiers. Submit any enquiry to inspect the documented evidence.",
+        "Pika! Case file active. I am cross-examining Advaith's 39 projects and technical dossiers. Submit any enquiry to inspect the documented evidence.",
         false,
         false
       );
@@ -1049,7 +977,7 @@ function initPokemonCompanion() {
   if (feedBtn) {
     feedBtn.addEventListener('click', () => {
       playPikachuSound('levelup');
-      appendChat('THE ARCHIVE DETECTIVE // ARCHIVE SYNC:', "Archive index synchronized. Verified 55 knowledge dossiers across 39 audited repositories in the hybrid broadsheet register.", false, false);
+      appendChat('THE ARCHIVE DETECTIVE // ARCHIVE SYNC:', "Archive index synchronized. Knowledge dossiers for all 39 projects are loaded in the hybrid broadsheet register.", false, false);
       setTicker('ARCHIVE SYNC CONFIRMED · 39 REPOSITORIES');
     });
   }
@@ -1114,146 +1042,7 @@ function initModals() {
   const title = document.getElementById('modalTitle');
   const openBtns = document.querySelectorAll('.open-modal-btn');
 
-  const projectDetails = {
-    'modal-medianlp': {
-      title: 'MEDIA_NLP_PIPELINE // SPECIFICATION & ARCHITECTURE',
-      html: `
-        <h3 style="font-family:Manrope; font-size:1.4rem; font-weight:800; margin-bottom:12px;">Deterministic Media Rhetoric & Bias Pipeline</h3>
-        <p style="margin-bottom:16px;">
-          Deterministic media-analysis NLP pipeline that uncovers rhetorical manipulation, informal fallacies, and propaganda framing with <strong>character-level verbatim evidence spans</strong>.
-        </p>
-        <div style="background:var(--bg-card); border:2px solid var(--border-color); padding:14px; margin-bottom:16px; font-size:0.82rem;">
-          <strong>Verified Benchmarks & Architecture:</strong><br>
-          • <strong>23 Specialized Detectors</strong>: Ad Hominem, Straw Man, False Equivalence, Loaded Language, Appeal to Authority.<br>
-          • <strong>164 Automated Unit & Integration Tests</strong> covering token boundaries and sentence disambiguation.<br>
-          • <strong>Measured False Positive Rate</strong>: Only <strong>0.175 per 1,000 words</strong> evaluated on Wikipedia neutral ground truth.<br>
-          • <strong>Meta-Inference Topology</strong>: Directed Acyclic Graph (DAG) evaluating compound persuasion intensity.
-        </div>
-        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">
-          Stack: Python, spaCy, PySBD, PyTorch, NLTK, VADER, Custom DAG Engine.
-        </p>
-        <a href="https://github.com/advaithsarva/media-nlp-pipeline" target="_blank" rel="noreferrer" class="btn-gh" style="font-size:0.82rem; padding:8px 16px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          EXPLORE REPOSITORY ON GITHUB ↗
-        </a>
-      `
-    },
-    'modal-graphrag': {
-      title: 'GRAPH_RAG // HYBRID RETRIEVAL ARCHITECTURE',
-      html: `
-        <h3 style="font-family:Manrope; font-size:1.4rem; font-weight:800; margin-bottom:12px;">Hybrid Graph-RAG Knowledge System</h3>
-        <p style="margin-bottom:16px;">
-          Solves semantic drift and hallucination in dense-vector RAG by fusing BM25 keyword search, HNSW vector similarity, and knowledge-graph traversal into an interpretable query engine.
-        </p>
-        <div style="background:var(--bg-card); border:2px solid var(--border-color); padding:14px; margin-bottom:16px; font-size:0.82rem;">
-          <strong>Architecture Highlights:</strong><br>
-          • <strong>Multi-Hop Traversal:</strong> Traverses up to 4 relationship links in Neo4j with full citation back-tracing.<br>
-          • <strong>Hybrid Scoring:</strong> Reciprocal Rank Fusion (RRF) blending BM25 (0.35) and Dense Embeddings (0.65).<br>
-          • <strong>Credential-Free Local Execution:</strong> Designed to run offline without paid external model APIs.<br>
-          • <strong>Rigorous Validation:</strong> 10/10 verified test cases with documented MRR retrieval scores.
-        </div>
-        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">
-          Stack: Neo4j, Cypher, FastAPI, LangChain, HuggingFace Transformers, ChromaDB.
-        </p>
-        <a href="https://github.com/advaithsarva/graph-rag-knowledge-system" target="_blank" rel="noreferrer" class="btn-gh" style="font-size:0.82rem; padding:8px 16px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          EXPLORE REPOSITORY ON GITHUB ↗
-        </a>
-      `
-    },
-    'modal-perfagent': {
-      title: 'AUTONOMOUS_PERF_AGENT // POSTGRES SPECIFICATION',
-      html: `
-        <h3 style="font-family:Manrope; font-size:1.4rem; font-weight:800; margin-bottom:12px;">Autonomous Postgres Performance Agent</h3>
-        <p style="margin-bottom:16px;">
-          Autonomous database optimization agent that monitors live PostgreSQL queries, diagnoses execution bottlenecks, formulates hypotheses, executes migrations, and evaluates performance deltas.
-        </p>
-        <div style="background:var(--bg-card); border:2px solid var(--border-color); padding:14px; margin-bottom:16px; font-size:0.82rem;">
-          <strong>Measured Impact & Safety:</strong><br>
-          • <strong>Measured 11.7x Query Speedup:</strong> Benchmarked on real PostgreSQL workloads across 8/8 evaluation scenarios.<br>
-          • <strong>EXPLAIN ANALYZE Cost Parsing:</strong> Accurately isolates sequential scans, hash joins, and memory spillage.<br>
-          • <strong>Automated Rollback Guard:</strong> Instantly reverses index creation if latency or buffer cache degrades.<br>
-          • <strong>Non-blocking Inspection:</strong> Gathers stats via pg_stat_statements without interrupting live read/write traffic.
-        </div>
-        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">
-          Stack: PostgreSQL, Python, AsyncPG, Docker, SQL Query Optimization.
-        </p>
-        <a href="https://github.com/advaithsarva/autonomous-performance-agent" target="_blank" rel="noreferrer" class="btn-gh" style="font-size:0.82rem; padding:8px 16px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          EXPLORE REPOSITORY ON GITHUB ↗
-        </a>
-      `
-    },
-    'modal-superbrain': {
-      title: 'SUPERBRAIN_MCP // MULTI-AGENT STATE & MEMORY',
-      html: `
-        <h3 style="font-family:Manrope; font-size:1.4rem; font-weight:800; margin-bottom:12px;">SuperBrain MCP Multi-Agent Memory</h3>
-        <p style="margin-bottom:16px;">
-          Unified Model Context Protocol (MCP) server providing persistent cross-session memory, hierarchical state tracking, and execution infrastructure for multi-agent swarms.
-        </p>
-        <div style="background:var(--bg-card); border:2px solid var(--border-color); padding:14px; margin-bottom:16px; font-size:0.82rem;">
-          <strong>Capabilities & Scale:</strong><br>
-          • <strong>41 Specialized Tools across 8 Domains:</strong> File manipulation, process control, memory retrieval, task execution.<br>
-          • <strong>Persistent Vector Memory:</strong> Vector-embedded episodic memories survive agent restart and workspace switches.<br>
-          • <strong>Decoupled Tool Orchestration:</strong> Standardized JSON-RPC protocol implementation with zero memory leaks.<br>
-          • <strong>Sub-2ms Protocol Overhead:</strong> Ultra-lean latency enabling real-time agentic tool invocation loops.
-        </div>
-        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">
-          Stack: TypeScript, Node.js, Model Context Protocol (MCP), ChromaDB, Vector Embeddings.
-        </p>
-        <a href="https://github.com/advaithsarva/superbrain_mcp" target="_blank" rel="noreferrer" class="btn-gh" style="font-size:0.82rem; padding:8px 16px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          EXPLORE REPOSITORY ON GITHUB ↗
-        </a>
-      `
-    },
-    'modal-factcheck': {
-      title: 'FACT_CHECK_AGENT // NLI VERIFICATION LOOP',
-      html: `
-        <h3 style="font-family:Manrope; font-size:1.4rem; font-weight:800; margin-bottom:12px;">Fact-Checking NLI Stance Agent</h3>
-        <p style="margin-bottom:16px;">
-          Autonomous verification agent that takes complex unverified text, decomposes it into atomic factual propositions, and conducts multi-step search and NLI stance reasoning.
-        </p>
-        <div style="background:var(--bg-card); border:2px solid var(--border-color); padding:14px; margin-bottom:16px; font-size:0.82rem;">
-          <strong>Verification Methodology:</strong><br>
-          • <strong>Atomic Decomposition:</strong> Breaks claims into independently verifiable subject-predicate triples.<br>
-          • <strong>Iterative Search Loop:</strong> Issues targeted queries, assesses source credibility, and gathers evidence passages.<br>
-          • <strong>NLI Stance Classification:</strong> Evaluates entailment, neutral, and contradiction with confidence thresholds.<br>
-          • <strong>Benchmark Metrics:</strong> 9/10 verdict accuracy on benchmark claims, 15/15 unit test suites passing.
-        </div>
-        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">
-          Stack: Python, Transformers, Cross-Encoder NLI, spaCy, PyTorch, Retrieval Systems.
-        </p>
-        <a href="https://github.com/advaithsarva/fact-checking-agent" target="_blank" rel="noreferrer" class="btn-gh" style="font-size:0.82rem; padding:8px 16px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          EXPLORE REPOSITORY ON GITHUB ↗
-        </a>
-      `
-    },
-    'modal-transformer': {
-      title: 'TRANSFORMER_PRIMITIVES // ARCHITECTURE SPEC',
-      html: `
-        <h3 style="font-family:Manrope; font-size:1.4rem; font-weight:800; margin-bottom:12px;">Decoder-Only Transformer from Primitives</h3>
-        <p style="margin-bottom:16px;">
-          Ground-up mathematical implementation of an autoregressive transformer written exclusively using PyTorch tensor primitives without high-level nn.Transformer abstractions.
-        </p>
-        <div style="background:var(--bg-card); border:2px solid var(--border-color); padding:14px; margin-bottom:16px; font-size:0.82rem;">
-          <strong>Rigorous Numerical Verification:</strong><br>
-          • <strong>1e-5 Torch Parity:</strong> Every layer (Multi-Head Attention, RMSNorm/LayerNorm, SwiGLU) verified to 1e-5 against PyTorch.<br>
-          • <strong>Convergence:</strong> Achieved <strong>1.0059x of computable entropy floor</strong> on synthetic language tasks.<br>
-          • <strong>Published Negative Ablations:</strong> Explicitly documented 3 architectural ablations that failed to match baseline.<br>
-          • <strong>19/19 Test Cases:</strong> Verified causal masking, gradient flow, residual scaling, and batch training.
-        </div>
-        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;">
-          Stack: PyTorch, Pure Tensor Algebra, CUDA Kernels, Mathematical Optimization.
-        </p>
-        <a href="https://github.com/advaithsarva/transformer-from-scratch" target="_blank" rel="noreferrer" class="btn-gh" style="font-size:0.82rem; padding:8px 16px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          EXPLORE REPOSITORY ON GITHUB ↗
-        </a>
-      `
-    }
-  };
+  const projectDetails = {};  // ponytail: no page has .open-modal-btn; old specs held false claims
 
   openBtns.forEach(btn => {
     btn.addEventListener('click', () => {

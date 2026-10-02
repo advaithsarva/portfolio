@@ -2,7 +2,7 @@ import os
 import json
 import re
 
-PORTFOLIO_DIR = r"C:\Users\advai\OneDrive\Desktop\portfolio-zer0"
+PORTFOLIO_DIR = r"C:\Projects\portfolio-zer0"
 PROJECTS_DIR = os.path.join(PORTFOLIO_DIR, "projects")
 
 # 1. Tech SVG Icons Dictionary

@@ -96,13 +96,13 @@ def main():
     # 4. Multi-hop & Synthesis (15 examples)
     synth_samples = [
         ("Which projects combine both databases and AI?",
-         "Pika! Advaith has multiple projects bridging databases and AI:\n1. **Autonomous Postgres Performance Agent**: An autonomous agent monitoring live PostgreSQL queries, analyzing EXPLAIN ANALYZE bottlenecks, and executing migrations with an automated rollback guard (11.7x measured speedup).\n2. **Hybrid Graph-RAG Knowledge System**: Combines Neo4j graph database multi-hop traversal with dense embeddings and BM25 full-text search.\n\nSources:\n• [Autonomous Postgres Agent](project.html?id=autonomous-performance-agent)\n• [Hybrid Graph-RAG](project.html?id=graph-rag-knowledge-system)"),
+         "Pika! Advaith has multiple projects bridging databases and AI:\n1. **Autonomous Postgres Performance Agent**: An autonomous agent monitoring live PostgreSQL queries, analyzing EXPLAIN ANALYZE plans, and, once a person approves, applying an index with a benchmark and automatic rollback (11.7x measured speedup).\n2. **Hybrid Graph-RAG Knowledge System**: Combines NetworkX knowledge-graph multi-hop traversal with dense embeddings and BM25 keyword search.\n\nSources:\n• [Autonomous Postgres Agent](project.html?id=autonomous-performance-agent)\n• [Hybrid Graph-RAG](project.html?id=graph-rag-knowledge-system)"),
 
         ("What projects use RAG in his portfolio?",
-         "Advaith has built several RAG-driven architectures, notably:\n1. **Hybrid Graph-RAG Knowledge System**: Fuses BM25 lexical search, HNSW vector similarity, and Neo4j graph traversal with Reciprocal Rank Fusion.\n2. **Clinical RAG Gates at Preventvital**: Designed RAG safety rules adhering to ICMR 2023 guidelines ensuring deterministic clinical sign-off.\n3. **Portfolio Hybrid RAG Engine**: The in-browser hybrid vector + BM25 retrieval system powering this chatbot.\n\nSources:\n• [Hybrid Graph-RAG](project.html?id=graph-rag-knowledge-system)\n• [Preventvital Audit](resume.html#experience)"),
+         "Advaith has built several RAG-driven architectures, notably:\n1. **Hybrid Graph-RAG Knowledge System**: Fuses BM25 keyword search and dense embeddings with Reciprocal Rank Fusion, plus knowledge-graph traversal (0.900 MRR).\n2. **Clinical RAG Gates at Preventvital**: Drafted RAG safety rules following ICMR 2023 guidance, with clinician sign-off on every answer.\n3. **Portfolio Hybrid RAG Engine**: The in-browser hybrid vector + BM25 retrieval system powering this chatbot.\n\nSources:\n• [Hybrid Graph-RAG](project.html?id=graph-rag-knowledge-system)\n• [Preventvital Audit](resume.html#experience)"),
 
         ("What has Advaith built from scratch without high-level frameworks?",
-         "Advaith has built several foundational systems from first principles:\n1. **Decoder-Only Transformer from Primitives**: Implemented multi-head attention, rotary positional embeddings, KV-cache, and LayerNorm directly in PyTorch.\n2. **C Memory Allocator**: Implemented custom malloc/free mechanics using mmap and segregated free lists.\n3. **HTTP/1.1 Web Server**: Low-level socket programming and HTTP parsing.\n\nSources:\n• [Decoder-Only Transformer](project.html?id=decoder-only-transformer)\n• [Systems from Scratch](projects.html?cat=Systems+from+Scratch)")
+         "Advaith has built several foundational systems from first principles:\n1. **Decoder-Only Transformer from Primitives**: Causal multi-head attention and LayerNorm in plain PyTorch tensors, matching PyTorch within 1e-5.\n2. **TCP Stack from Scratch**: Survives 30% packet loss, 16x faster than stop-and-wait.\n3. **Mini DB Engine**: B+tree index and crash-safe write-ahead log.\n\nSources:\n• [Decoder-Only Transformer](project.html?id=transformer-from-scratch)\n• [Systems from Scratch](projects.html?cat=Systems+from+Scratch)")
     ]
     for q, a in synth_samples:
         examples.append({
@@ -165,12 +165,6 @@ def main():
 
     # 7. Personal & Personality Questions (15 examples)
     personal_samples = [
-        ("What are his favorite hobbies?",
-         "Pika! When he is not engineering neural nets or writing systems code, Advaith is a passionate chess player (Sicilian Defense), plays football, beatboxes (vocal percussion), follows global geopolitics, and studies classical Indian philosophy! Just don't mention spooky ghosts or horror movies! 👻"),
-        ("Can he beatbox?",
-         "Pika-tsh-ka! 🎤 Yes! Advaith does vocal percussion and beatboxing, dropping acoustic basslines and rhythm loops."),
-        ("Is he afraid of ghosts?",
-         "P-Pika?! 👻 Yes! Between you and me, Advaith has a genuine terror of haunted houses, horror movies, and Ghost-type Pokémon like Gengar! He'd much rather face a complex C memory leak than a ghost! 🙈⚡"),
         ("How do I get in touch with Advaith?",
          "You can reach Advaith directly via email at advaithsarva@gmail.com, connect with him on LinkedIn at linkedin.com/in/sarvaadvaithnarayana/, or inspect his public code at github.com/advaithsarva. Pika!")
     ]

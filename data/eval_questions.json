@@ -13,11 +13,10 @@
   {
     "id": "eval-02",
     "category": "exact_metric",
-    "question": "How many automated checks and lines of code are in The Sentinel Grid?",
+    "question": "How many automated checks are in The Sentinel Grid?",
     "expected_facts": [
       "314 automated checks",
-      "6,957",
-      "Python"
+      "0.9924"
     ],
     "target_doc_id": "proj-the-sentinel-grid"
   },
@@ -115,9 +114,8 @@
     "category": "project_retrieval",
     "question": "Tell me about the Hybrid Graph-RAG Knowledge System.",
     "expected_facts": [
-      "Neo4j",
       "BM25",
-      "Cypher",
+      "dense",
       "multi-hop",
       "RRF"
     ],
@@ -143,8 +141,7 @@
     "expected_facts": [
       "PyTorch",
       "attention",
-      "KV-cache",
-      "rotary",
+      "1e-5",
       "primitives"
     ],
     "target_doc_id": "proj-transformer-from-scratch"
@@ -212,7 +209,7 @@
   {
     "id": "eval-19",
     "category": "technology_search",
-    "question": "What projects use Neo4j?",
+    "question": "What projects use a knowledge graph?",
     "expected_facts": [
       "Graph-RAG",
       "knowledge graph"
@@ -450,50 +447,6 @@
       "no API keys"
     ],
     "target_doc_id": null
-  },
-  {
-    "id": "eval-42",
-    "category": "personal_background",
-    "question": "What are Advaith's favorite hobbies and sports?",
-    "expected_facts": [
-      "Chess",
-      "Sicilian Defense",
-      "Football",
-      "Beatboxing"
-    ],
-    "target_doc_id": "about-interests"
-  },
-  {
-    "id": "eval-43",
-    "category": "personal_background",
-    "question": "Can Advaith beatbox?",
-    "expected_facts": [
-      "beatbox",
-      "vocal percussion",
-      "rhythm"
-    ],
-    "target_doc_id": "about-interests"
-  },
-  {
-    "id": "eval-44",
-    "category": "personal_background",
-    "question": "What chess opening does Advaith play?",
-    "expected_facts": [
-      "Sicilian Defense",
-      "1. e4 c5"
-    ],
-    "target_doc_id": "about-interests"
-  },
-  {
-    "id": "eval-45",
-    "category": "personal_background",
-    "question": "Is Advaith scared of ghosts?",
-    "expected_facts": [
-      "scared of ghosts",
-      "Gengar",
-      "horror movies"
-    ],
-    "target_doc_id": "about-interests"
   },
   {
     "id": "eval-46",

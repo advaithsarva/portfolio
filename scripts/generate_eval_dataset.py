@@ -29,8 +29,8 @@ EVAL_QUESTIONS = [
     {
         "id": "eval-02",
         "category": "exact_metric",
-        "question": "How many automated checks and lines of code are in The Sentinel Grid?",
-        "expected_facts": ["314 automated checks", "6,957", "Python"],
+        "question": "How many automated checks are in The Sentinel Grid?",
+        "expected_facts": ["314 automated checks", "0.9924"],
         "target_doc_id": "proj-the-sentinel-grid"
     },
     {
@@ -95,7 +95,7 @@ EVAL_QUESTIONS = [
         "id": "eval-11",
         "category": "project_retrieval",
         "question": "Tell me about the Hybrid Graph-RAG Knowledge System.",
-        "expected_facts": ["Neo4j", "BM25", "Cypher", "multi-hop", "RRF"],
+        "expected_facts": ["BM25", "dense", "multi-hop", "RRF"],
         "target_doc_id": "proj-graph-rag-knowledge-system"
     },
     {
@@ -109,7 +109,7 @@ EVAL_QUESTIONS = [
         "id": "eval-13",
         "category": "project_retrieval",
         "question": "Explain Advaith's Decoder-Only Transformer built from primitives.",
-        "expected_facts": ["PyTorch", "attention", "KV-cache", "rotary", "primitives"],
+        "expected_facts": ["PyTorch", "attention", "1e-5", "primitives"],
         "target_doc_id": "proj-transformer-from-scratch"
     },
     {
@@ -152,7 +152,7 @@ EVAL_QUESTIONS = [
     {
         "id": "eval-19",
         "category": "technology_search",
-        "question": "What projects use Neo4j?",
+        "question": "What projects use a knowledge graph?",
         "expected_facts": ["Graph-RAG", "knowledge graph"],
         "target_doc_id": "proj-graph-rag-knowledge-system"
     },
@@ -318,34 +318,6 @@ EVAL_QUESTIONS = [
     },
 
     # Category 7: Personal Background & Conversational
-    {
-        "id": "eval-42",
-        "category": "personal_background",
-        "question": "What are Advaith's favorite hobbies and sports?",
-        "expected_facts": ["Chess", "Sicilian Defense", "Football", "Beatboxing"],
-        "target_doc_id": "about-interests"
-    },
-    {
-        "id": "eval-43",
-        "category": "personal_background",
-        "question": "Can Advaith beatbox?",
-        "expected_facts": ["beatbox", "vocal percussion", "rhythm"],
-        "target_doc_id": "about-interests"
-    },
-    {
-        "id": "eval-44",
-        "category": "personal_background",
-        "question": "What chess opening does Advaith play?",
-        "expected_facts": ["Sicilian Defense", "1. e4 c5"],
-        "target_doc_id": "about-interests"
-    },
-    {
-        "id": "eval-45",
-        "category": "personal_background",
-        "question": "Is Advaith scared of ghosts?",
-        "expected_facts": ["scared of ghosts", "Gengar", "horror movies"],
-        "target_doc_id": "about-interests"
-    },
     {
         "id": "eval-46",
         "category": "personal_background",

@@ -11,16 +11,16 @@
       "Profile",
       "Summary"
     ],
-    "content": "Advaith Narayana Sarva is a Gen AI Engineer specializing in interpretable meta-inference, Graph-RAG architectures, and autonomous multi-agent harnesses. He builds low-level systems from scratch (such as a decoder-only transformer and C-level memory allocators) while engineering production RAG pipelines and clinical ML audit systems. He is actively seeking Gen AI engineering internships and full-time opportunities.",
-    "stats": "39 Repositories \u00b7 3.47 SMU CGPA \u00b7 8.69 Woxsen CGPA",
+    "content": "Advaith Narayana Sarva is a Gen AI engineer who builds retrieval systems, autonomous agents and systems from scratch, and measures each one against a baseline. His work includes a hybrid BM25 + dense retrieval system, a decoder-only transformer written in plain PyTorch, a TCP stack, a mini database engine, and agents that report what they could not verify. He is looking for Gen AI engineering internships and full-time roles.",
+    "stats": "39 projects (34 public on GitHub) \u00b7 3.47 SMU CGPA \u00b7 8.69 Woxsen CGPA",
     "slug": "bio",
     "type": "about",
     "technologies": [
       "Python",
       "PyTorch",
-      "Neo4j",
+      "PostgreSQL",
       "Docker",
-      "FastAPI"
+      "Node.js"
     ],
     "source": "index.html#home",
     "github_url": "https://github.com/advaithsarva",
@@ -58,34 +58,6 @@
     "demo_url": "mailto:advaithsarva@gmail.com"
   },
   {
-    "id": "about-interests",
-    "title": "Technical & Personal Interests",
-    "category": "Interests",
-    "tags": [
-      "Hobbies",
-      "Chess",
-      "Sicilian Defense",
-      "Football",
-      "Beatboxing",
-      "Debate",
-      "Geopolitics",
-      "Heritage"
-    ],
-    "content": "Outside of coding, Advaith is a competitive chess player specializing in the Sicilian Defense (1. e4 c5) on Chess.com and Lichess (@advaithsarva). He plays attacking counter-football, practices vocal percussion (beatboxing), has a strong background in competitive debate and rhetorical analysis, and follows global geopolitics and technology preprints daily. Note: He has an amusing, genuine terror of horror movies and ghosts (especially Gengar)!",
-    "stats": "Sicilian Defense (1. e4 c5) \u00b7 Blitz/Rapid @advaithsarva",
-    "slug": "interests",
-    "type": "about",
-    "technologies": [
-      "Chess Tactics",
-      "Vocal Percussion",
-      "Geopolitics",
-      "Football"
-    ],
-    "source": "rag-knowledge.json#hobbies",
-    "github_url": "",
-    "demo_url": "index.html#home"
-  },
-  {
     "id": "achieve-ibm-sentinel",
     "title": "IBM BOB National Hackathon 2026 - Top 5 South Zone (The Sentinel Grid)",
     "category": "Achievements",
@@ -96,8 +68,8 @@
       "ROC-AUC 0.9924",
       "Disaster AI"
     ],
-    "content": "Advaith led engineering for The Sentinel Grid, placing in the Top 5 South Zone at the IBM BOB National Hackathon 2026. The disaster-intelligence system comprises 6,957 lines of Python, 314 automated checks, and 104 formula audits, achieving a verified ROC-AUC of 0.9924 on 473,000 real district-month soil moisture observations for Coimbatore.",
-    "stats": "Top 5 South Zone \u00b7 0.9924 ROC-AUC \u00b7 314 automated checks \u00b7 6,957 LOC",
+    "content": "Advaith's team of four built The Sentinel Grid and placed in the Top 5 of the South Zone at the IBM BOB National Hackathon 2026 (zonal round, SRCAS Coimbatore). The disaster-intelligence system has 314 automated checks and recomputed all 104 formulas in its specification, catching 2 errors in the spec itself. Its drought detector reached ROC-AUC 0.9924 on 473,256 real district-month soil readings for Coimbatore; monsoon extremes reach only 0.662, which the team reported as the open problem.",
+    "stats": "Top 5 South Zone \u00b7 0.9924 ROC-AUC \u00b7 314 automated checks \u00b7 team of 4",
     "slug": "ibm-bob-sentinel-grid",
     "type": "achievement",
     "technologies": [
@@ -108,7 +80,7 @@
       "Climate AI"
     ],
     "source": "resume.html#honors",
-    "github_url": "https://github.com/advaithsarva/the-sentinel-grid",
+    "github_url": "https://github.com/advaithsarva/ibm-hackathon",
     "demo_url": "project.html?id=the-sentinel-grid"
   },
   {
@@ -227,16 +199,15 @@
       "ICMR 2023",
       "Internship"
     ],
-    "content": "At Preventvital (GruentzigAI), Advaith audited backend ML inference architectures for cardiovascular risk calculation. He identified a critical coefficient sign inversion error in the ASCVD clinical risk calculation that was artificially calculating 0.1% baseline risk for untreated patients. He reproduced the calculation against the published Goff 2014 trial baseline (expected 2.1%), wrote the bug report for clinical sign-off, and authored RAG & safety rules adhering to ICMR 2023 guidelines on an 'engine computes, LLM explains, clinician signs' protocol.",
-    "stats": "Identified critical ASCVD calculation defect (0.1% vs 2.1% baseline) \u00b7 Authored ICMR sign-off protocol",
+    "content": "At Preventvital (GruentzigAI), Advaith audits the ML and risk-calculation code behind cardiovascular risk scores. He found a sign error in a coefficient of the ASCVD risk calculation that drove untreated patients to the 0.1% floor, reproduced the calculation against the published Goff 2014 coefficients (expected about 2.1% for the reference case), and wrote it up for clinical sign-off. The fix waits on that sign-off. He also drafted RAG and safety rules following ICMR 2023 guidance on an 'engine computes, LLM explains, clinician signs' protocol.",
+    "stats": "Found an ASCVD calculation defect (0.1% vs published 2.1%) \u00b7 Wrote the clinical sign-off report",
     "slug": "preventvital-internship",
     "type": "experience",
     "technologies": [
       "Python",
-      "FastAPI",
-      "PostgreSQL",
+      "Clinical Risk Modeling",
       "RAG Safety",
-      "Clinical Risk Modeling"
+      "LLM Guardrails"
     ],
     "source": "resume.html#experience",
     "github_url": "",
@@ -276,8 +247,8 @@
       "Open Source",
       "advaithsarva"
     ],
-    "content": "Advaith maintains 39 verified software engineering and research repositories on GitHub (github.com/advaithsarva). Spanning AI Agents (9), NLP & RAG (8), Systems from Scratch (6), Machine Learning & Data (5), Full-Stack Systems (6), and In-Progress Evaluation Research (4). Featured public repositories include the-sentinel-grid, media-nlp-pipeline, graph-rag-knowledge-system, autonomous-performance-agent, superbrain_mcp, and fact-checking-agent.",
-    "stats": "39 Verified Repositories",
+    "content": "Advaith's portfolio lists 39 projects; 34 are public repositories on GitHub (github.com/advaithsarva) and 5 are private or not yet published. Categories: AI Agents (9), NLP & RAG (8), Systems from Scratch (6), ML & Data (5), Full-Stack (6), In Progress (4), plus the IBM hackathon project. Featured public repositories include ibm-hackathon, media-nlp-pipeline, graph-rag-knowledge-system, autonomous-performance-agent and fact-checking-agent.",
+    "stats": "39 projects \u00b7 34 public repositories",
     "slug": "repositories",
     "type": "github",
     "technologies": [
@@ -1415,21 +1386,20 @@
       "NLP",
       "LLMs",
       "RAG",
-      "Graph-RAG",
-      "Embeddings",
-      "Meta-Inference"
+      "Hybrid Retrieval",
+      "Embeddings"
     ],
-    "content": "Advaith specializes in deep learning architectures, computational semantics, and retrieval augmented generation. Key competencies: PyTorch from primitives (attention mechanisms, KV-cache, rotary embeddings, LayerNorm), Hugging Face Transformers, spaCy custom tokenization DAGs, cross-encoder NLI for factual verification, and Graph-RAG hybrid search fusing BM25, dense HNSW, and multi-hop Neo4j Cypher traversals.",
-    "stats": "15+ AI & NLP pipelines \u00b7 Custom transformer from scratch \u00b7 Graph-RAG RRF",
+    "content": "Advaith works across deep learning, NLP and retrieval. Key work: a decoder-only transformer written from plain PyTorch tensors (causal self-attention, LayerNorm), matching PyTorch's reference within 1e-5; Hugging Face Transformers and sentence-transformers; spaCy pipelines; NLI-based claim verification; and hybrid retrieval that fuses BM25 and dense embeddings with Reciprocal Rank Fusion (0.900 MRR vs 0.867 and 0.733 for either alone).",
+    "stats": "Transformer from scratch \u00b7 Hybrid BM25 + dense retrieval with RRF \u00b7 23-detector NLP pipeline",
     "slug": "ai-ml-nlp",
     "type": "skill",
     "technologies": [
       "PyTorch",
       "Hugging Face Transformers",
       "spaCy",
-      "Neo4j",
-      "Graph-RAG",
-      "Cross-Encoder NLI"
+      "sentence-transformers",
+      "BM25",
+      "NLI"
     ],
     "source": "resume.html#skills",
     "github_url": "https://github.com/advaithsarva",
@@ -1443,19 +1413,19 @@
       "Autonomous Agents",
       "MCP",
       "SuperBrain",
-      "Multi-Agent Swarms",
+      "Multi-Agent",
       "Tool Execution"
     ],
-    "content": "Advaith designs autonomous multi-agent harnesses with deterministic guardrails. Implementations include SuperBrain MCP (41 standardized tools with persistent vector memory across sessions), autonomous database tuning agents (executing explain analyze loops and automated rollback guards), and recursive web research verification agents.",
-    "stats": "9 Autonomous Agent repositories \u00b7 41 MCP tools \u00b7 11.7x autonomous Postgres speedup",
+    "content": "Advaith builds agents with deterministic guardrails and human approval where it matters. Examples: SuperBrain MCP (41 tools, 8 memory types, private), a Postgres performance agent that diagnoses slow queries with EXPLAIN ANALYZE and, once approved, applies an index, benchmarks before and after, and rolls back if things get worse (11.7x on a 200k-row table), and a research verifier with a real human-approval pause.",
+    "stats": "9 agent projects \u00b7 41 MCP tools \u00b7 11.7x Postgres speedup with approval-gated changes",
     "slug": "autonomous-agents",
     "type": "skill",
     "technologies": [
       "Model Context Protocol (MCP)",
-      "LangChain",
+      "LangGraph",
       "Autonomous Agents",
       "Tool Calling",
-      "Hierarchical State"
+      "Human-in-the-loop"
     ],
     "source": "resume.html#skills",
     "github_url": "https://github.com/advaithsarva",
@@ -1469,26 +1439,23 @@
       "Python",
       "SQL",
       "PostgreSQL",
-      "FastAPI",
       "Docker",
       "Linux",
       "Bash",
-      "AWS Cloud",
       "Systems"
     ],
-    "content": "Advaith is grounded in systems engineering and low-level mechanics: Linux/Bash scripting, Docker containerization, asynchronous FastAPI/AsyncPG backends, PostgreSQL query optimization and indexing, TypeScript/Node.js, and low-level systems implemented from scratch (custom malloc/free with mmap, custom HTTP/1.1 server socket engines, and deterministic cache architectures).",
-    "stats": "C memory allocators \u00b7 Custom HTTP servers \u00b7 Asynchronous query pipelines",
+    "content": "Advaith builds systems from scratch to understand them: a TCP stack that survives 30% packet loss, a database engine with a B+tree index and crash-safe write-ahead log, a mini container orchestrator that reschedules pods after node death, and a CPU scheduler simulator tested on 1,500 workloads. Day to day he works in Python, TypeScript/Node.js, PostgreSQL, Docker and Linux.",
+    "stats": "TCP stack \u00b7 B+tree database engine with WAL \u00b7 container orchestrator \u00b7 CPU scheduler simulator",
     "slug": "systems-and-infrastructure",
     "type": "skill",
     "technologies": [
       "Python",
       "PostgreSQL",
+      "SQLite",
       "Docker",
-      "FastAPI",
       "TypeScript",
       "Node.js",
-      "Linux",
-      "AWS"
+      "Linux"
     ],
     "source": "resume.html#skills",
     "github_url": "https://github.com/advaithsarva",

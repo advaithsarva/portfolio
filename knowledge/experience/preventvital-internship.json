@@ -5,12 +5,11 @@
   "category": "Experience",
   "technologies": [
     "Python",
-    "FastAPI",
-    "PostgreSQL",
+    "Clinical Risk Modeling",
     "RAG Safety",
-    "Clinical Risk Modeling"
+    "LLM Guardrails"
   ],
-  "date": "May 2025 - Jul 2025",
+  "date": "Sep 2026 - Present",
   "source": "resume.html#experience",
   "section": "Industry Experience",
   "github_url": "",
@@ -24,7 +23,7 @@
     "ICMR 2023",
     "Internship"
   ],
-  "stats": "Identified critical ASCVD calculation defect (0.1% vs 2.1% baseline) \u00b7 Authored ICMR sign-off protocol",
+  "stats": "Found an ASCVD calculation defect (0.1% vs published 2.1%) · Wrote the clinical sign-off report",
   "slug": "preventvital-internship",
-  "content": "At Preventvital (GruentzigAI), Advaith audited backend ML inference architectures for cardiovascular risk calculation. He identified a critical coefficient sign inversion error in the ASCVD clinical risk calculation that was artificially calculating 0.1% baseline risk for untreated patients. He reproduced the calculation against the published Goff 2014 trial baseline (expected 2.1%), wrote the bug report for clinical sign-off, and authored RAG & safety rules adhering to ICMR 2023 guidelines on an 'engine computes, LLM explains, clinician signs' protocol."
+  "content": "At Preventvital (GruentzigAI), Advaith audits the ML and risk-calculation code behind cardiovascular risk scores. He found a sign error in a coefficient of the ASCVD risk calculation that drove untreated patients to the 0.1% floor, reproduced the calculation against the published Goff 2014 coefficients (expected about 2.1% for the reference case), and wrote it up for clinical sign-off. The fix waits on that sign-off. He also drafted RAG and safety rules following ICMR 2023 guidance on an 'engine computes, LLM explains, clinician signs' protocol."
 }

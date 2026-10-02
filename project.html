@@ -100,6 +100,7 @@
     }
     .nav-pager {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       gap: 16px;
       margin: 40px 0;
@@ -122,7 +123,7 @@
       </div>
       <div class="masthead-ear-box ear-right">
         <span class="ear-edition">DIGITAL EDITION · 2026</span>
-        <span class="ear-circ">39 AUDITED DISPATCHES</span>
+        <span class="ear-circ">39 PROJECT REPORTS</span>
       </div>
     </div>
 
@@ -136,8 +137,8 @@
       <a href="index.html" class="masthead-nav-link">FRONT PAGE</a>
       <a href="projects.html" class="masthead-nav-link active">TECHNOLOGY DESK (39)</a>
       <a href="resume.html" class="masthead-nav-link">CAREER RECORD</a>
-      <a href="index.html#terminal-section" class="masthead-nav-link">ARCHIVE TERMINAL</a>
-      <a href="index.html#contact" class="masthead-nav-link">DISPATCH</a>
+      <a href="index.html#frontDetectiveSection" class="masthead-nav-link">ARCHIVE DETECTIVE</a>
+      <a href="mailto:advaithsarva@gmail.com" class="masthead-nav-link">CORRESPONDENCE</a>
       <button id="themeToggle" class="masthead-theme-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
         <span class="theme-icon">◐</span>
       </button>
@@ -190,7 +191,7 @@
 
     <!-- Honest Note Section -->
     <section class="detail-section">
-      <h2>DISPATCH 04 // HONEST ENGINEERING LIMITATIONS</h2>
+      <h2 id="honestHeading">DISPATCH 04 // HONEST ENGINEERING LIMITATIONS</h2>
       <div class="honest-box">
         <strong style="font-family:'IBM Plex Mono',monospace; font-size:0.85rem; display:block; margin-bottom:6px;">⚠️ TRANSPARENCY &amp; UNRESOLVED BOUNDARIES:</strong>
         <p id="projHonest" style="font-size:0.95rem; line-height:1.6; margin:0;"></p>
@@ -210,14 +211,14 @@
     <div class="footer-container">
       <div class="footer-left">
         <span class="footer-stamp">THE ADVAITH DAILY — DIGITAL EDITION // VOL. I</span>
-        <span class="footer-sub">© 2026 Advaith Narayana Sarva · 39 Audited Repositories</span>
+        <span class="footer-sub">© 2026 Advaith Narayana Sarva · 39 Projects</span>
       </div>
       <div class="footer-center">
         <a href="index.html">FRONT PAGE</a> · 
         <a href="projects.html">TECHNOLOGY DESK (39)</a> · 
         <a href="resume.html">CAREER RECORD</a> · 
-        <a href="index.html#terminal-section">ARCHIVE TERMINAL</a> · 
-        <a href="index.html#contact">DISPATCH</a>
+        <a href="index.html#frontDetectiveSection">ARCHIVE DETECTIVE</a> · 
+        <a href="mailto:advaithsarva@gmail.com">CORRESPONDENCE</a>
       </div>
       <div class="footer-right">
         <span class="time-clock" id="liveClock">IST --:--:--</span>
@@ -254,7 +255,7 @@
 
       function updateThemeIcon(theme) {
         const icon = document.querySelector('.theme-icon');
-        if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        if (icon) icon.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
       }
 
       // Live IST Clock
@@ -302,7 +303,6 @@
       const statParts = proj.stats.split('·');
       statsStrip.innerHTML = statParts.map(s => {
         return `<div class="stat-tile">
-          <div class="stat-tile-val">⚡</div>
           <div class="stat-tile-label">${s.trim()}</div>
         </div>`;
       }).join('');
@@ -316,7 +316,9 @@
 
       // Highlights
       const hlBox = document.getElementById('projHighlights');
-      hlBox.innerHTML = proj.highlights.map(h => `<li>${h}</li>`).join('');
+      // highlights carry **bold** markdown from projects-data.json
+      const md = s => s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      hlBox.innerHTML = proj.highlights.map(h => `<li>${md(h)}</li>`).join('');
 
       // Resume Bullets if available
       if (proj.resume_bullets && proj.resume_bullets.length > 0) {
@@ -324,6 +326,8 @@
         const rbBox = document.getElementById('projResumeBullets');
         rbBox.innerHTML = proj.resume_bullets.map(b => `<li>${b}</li>`).join('');
         rbSec.style.display = 'block';
+      } else {
+        document.getElementById('honestHeading').textContent = 'DISPATCH 03 // HONEST ENGINEERING LIMITATIONS';
       }
 
       // Honest Note

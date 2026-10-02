@@ -1,16 +1,16 @@
 {
   "summary": {
-    "total_questions": 52,
-    "evaluated_with_target": 47,
-    "recall_at_1": 46.81,
-    "recall_at_3": 70.21,
-    "recall_at_5": 72.34,
-    "mean_reciprocal_rank_mrr": 0.58,
-    "factual_accuracy": 69.23,
+    "total_questions": 48,
+    "evaluated_with_target": 43,
+    "recall_at_1": 44.19,
+    "recall_at_3": 67.44,
+    "recall_at_5": 74.42,
+    "mean_reciprocal_rank_mrr": 0.563,
+    "factual_accuracy": 70.83,
     "hallucination_rate": 0.0,
-    "avg_pikachu_token_percentage": 0.66,
-    "avg_latency_ms": 1.54,
-    "status": "PASS - Meets all technical, factual, and personality criteria (< 10% Pikachu, zero hallucination)"
+    "avg_pikachu_token_percentage": 0.61,
+    "avg_latency_ms": 1.7,
+    "status": "PASS - Meets all technical, factual, and personality criteria (< 10% Pikachu)"
   },
   "details": [
     {
@@ -19,29 +19,27 @@
       "category": "exact_metric",
       "target": "achieve-ibm-sentinel",
       "hit_rank": 1,
-      "latency_ms": 2.83,
+      "latency_ms": 0.0,
       "facts_matched": [
         "0.9924",
-        "ROC-AUC",
-        "IBM BOB"
+        "ROC-AUC"
       ],
-      "pika_percentage": 1.92,
-      "answer_preview": "In the IBM BOB National Hackathon 2026, Advaith led engineering for The Sentinel Grid, placing Top 5 in the South Zone! ..."
+      "pika_percentage": 1.89,
+      "answer_preview": "Advaith's team of four built The Sentinel Grid and placed Top 5 in the South Zone! The disaster-triage system has 314 au..."
     },
     {
       "id": "eval-02",
-      "question": "How many automated checks and lines of code are in The Sentinel Grid?",
+      "question": "How many automated checks are in The Sentinel Grid?",
       "category": "exact_metric",
       "target": "proj-the-sentinel-grid",
       "hit_rank": 1,
-      "latency_ms": 1.78,
+      "latency_ms": 1.57,
       "facts_matched": [
         "314 automated checks",
-        "6,957",
-        "Python"
+        "0.9924"
       ],
-      "pika_percentage": 1.92,
-      "answer_preview": "In the IBM BOB National Hackathon 2026, Advaith led engineering for The Sentinel Grid, placing Top 5 in the South Zone! ..."
+      "pika_percentage": 1.89,
+      "answer_preview": "Advaith's team of four built The Sentinel Grid and placed Top 5 in the South Zone! The disaster-triage system has 314 au..."
     },
     {
       "id": "eval-03",
@@ -49,13 +47,13 @@
       "category": "exact_metric",
       "target": "proj-autonomous-performance-agent",
       "hit_rank": null,
-      "latency_ms": 0.0,
+      "latency_ms": 1.55,
       "facts_matched": [
         "11.7x",
         "speedup"
       ],
-      "pika_percentage": 5.56,
-      "answer_preview": "The Autonomous Postgres Performance Agent diagnoses live query bottlenecks via EXPLAIN ANALYZE, formulates index hypothe..."
+      "pika_percentage": 3.7,
+      "answer_preview": "The Autonomous Postgres Performance Agent diagnoses slow queries via EXPLAIN ANALYZE and proposes an index. Once a perso..."
     },
     {
       "id": "eval-04",
@@ -63,7 +61,7 @@
       "category": "exact_metric",
       "target": "edu-smu",
       "hit_rank": 1,
-      "latency_ms": 0.0,
+      "latency_ms": 2.37,
       "facts_matched": [
         "3.47",
         "Saint Martin",
@@ -78,7 +76,7 @@
       "category": "exact_metric",
       "target": "edu-woxsen",
       "hit_rank": 1,
-      "latency_ms": 0.0,
+      "latency_ms": 1.3,
       "facts_matched": [
         "8.69",
         "Woxsen",
@@ -93,7 +91,7 @@
       "category": "exact_metric",
       "target": "proj-media-nlp-pipeline",
       "hit_rank": 1,
-      "latency_ms": 0.0,
+      "latency_ms": 1.18,
       "facts_matched": [
         "0.175",
         "1,000 words",
@@ -108,14 +106,13 @@
       "category": "exact_metric",
       "target": "proj-superbrain-mcp",
       "hit_rank": 1,
-      "latency_ms": 6.12,
+      "latency_ms": 2.58,
       "facts_matched": [
         "41",
-        "8 domains",
         "MCP"
       ],
-      "pika_percentage": 7.14,
-      "answer_preview": "SuperBrain MCP is a Model Context Protocol server featuring 41 specialized tools across 8 domains, providing persistent ..."
+      "pika_percentage": 5.56,
+      "answer_preview": "SuperBrain MCP is a Model Context Protocol server with 41 tools over 8 memory types (episodic, semantic, procedural and ..."
     },
     {
       "id": "eval-08",
@@ -123,15 +120,15 @@
       "category": "exact_metric",
       "target": "exp-preventvital",
       "hit_rank": 1,
-      "latency_ms": 0.0,
+      "latency_ms": 2.01,
       "facts_matched": [
         "0.1%",
         "2.1%",
         "Goff 2014",
         "ASCVD"
       ],
-      "pika_percentage": 1.61,
-      "answer_preview": "At Preventvital (GruentzigAI), Advaith caught a critical coefficient sign inversion error in the ASCVD clinical risk cal..."
+      "pika_percentage": 1.52,
+      "answer_preview": "At Preventvital (GruentzigAI), Advaith found a flipped coefficient sign in the ASCVD risk calculation that drove untreat..."
     },
     {
       "id": "eval-09",
@@ -139,7 +136,7 @@
       "category": "exact_metric",
       "target": "research-eval-gap",
       "hit_rank": 2,
-      "latency_ms": 0.0,
+      "latency_ms": 2.01,
       "facts_matched": [
         "1.00",
         "0.31",
@@ -154,7 +151,7 @@
       "category": "exact_metric",
       "target": "proj-media-nlp-pipeline",
       "hit_rank": 1,
-      "latency_ms": 0.0,
+      "latency_ms": 2.58,
       "facts_matched": [
         "164",
         "tests"
@@ -167,17 +164,13 @@
       "question": "Tell me about the Hybrid Graph-RAG Knowledge System.",
       "category": "project_retrieval",
       "target": "proj-graph-rag-knowledge-system",
-      "hit_rank": 2,
-      "latency_ms": 4.54,
+      "hit_rank": 1,
+      "latency_ms": 1.75,
       "facts_matched": [
-        "Neo4j",
-        "BM25",
-        "Cypher",
-        "multi-hop",
-        "RRF"
+        "multi-hop"
       ],
-      "pika_percentage": 0.25,
-      "answer_preview": "Pika! AI, NLP, LLMs & Deep Learning Architecture (Technologies): Advaith specializes in deep learning architectures, com..."
+      "pika_percentage": 0.17,
+      "answer_preview": "Pika! Graph RAG Knowledge System (NLP & RAG): Graph RAG Knowledge System (NLP & RAG): \"Answers the questions that take t..."
     },
     {
       "id": "eval-12",
@@ -185,9 +178,11 @@
       "category": "project_retrieval",
       "target": "proj-fact-checking-agent",
       "hit_rank": 1,
-      "latency_ms": 1.98,
-      "facts_matched": [],
-      "pika_percentage": 0.24,
+      "latency_ms": 0.0,
+      "facts_matched": [
+        "NLI"
+      ],
+      "pika_percentage": 0.26,
       "answer_preview": "Pika! Fact-Checking Agent (AI Agents): Fact-Checking Agent (AI Agents): \"Paste an article. Get a verdict on every claim,..."
     },
     {
@@ -196,29 +191,29 @@
       "category": "project_retrieval",
       "target": "proj-transformer-from-scratch",
       "hit_rank": null,
-      "latency_ms": 1.57,
+      "latency_ms": 5.3,
       "facts_matched": [
         "PyTorch",
         "attention",
-        "KV-cache",
-        "rotary",
+        "1e-5",
         "primitives"
       ],
-      "pika_percentage": 3.12,
-      "answer_preview": "Advaith built a Decoder-Only Transformer from scratch in PyTorch primitives, implementing multi-head self-attention, rot..."
+      "pika_percentage": 2.44,
+      "answer_preview": "Advaith built a Decoder-Only Transformer from scratch in PyTorch primitives, implementing causal multi-head self-attenti..."
     },
     {
       "id": "eval-14",
       "question": "What is the Multimodal Document Extraction Agent?",
       "category": "project_retrieval",
       "target": "proj-multimodal-document-agent",
-      "hit_rank": 3,
-      "latency_ms": 0.5,
+      "hit_rank": 4,
+      "latency_ms": 2.02,
       "facts_matched": [
-        "OCR"
+        "OCR",
+        "documents"
       ],
       "pika_percentage": 0.22,
-      "answer_preview": "Pika! Technical & Personal Interests (Interests): Outside of coding, Advaith is a competitive chess player specializing ..."
+      "answer_preview": "Pika! Document Data Extractor (Full-Stack): Document Data Extractor (Full-Stack): \"Drop in a document, get clean data ba..."
     },
     {
       "id": "eval-15",
@@ -231,7 +226,7 @@
         "drift",
         "IaC"
       ],
-      "pika_percentage": 0.31,
+      "pika_percentage": 0.25,
       "answer_preview": "Pika! IaC Drift Agent (AI Agents): IaC Drift Agent (AI Agents): \"Drift alerts you can actually trust.\". A plain diff rai..."
     },
     {
@@ -242,12 +237,11 @@
       "hit_rank": 1,
       "latency_ms": 0.0,
       "facts_matched": [
-        "soil moisture",
-        "Coimbatore",
-        "IBM"
+        "disaster",
+        "Coimbatore"
       ],
-      "pika_percentage": 1.92,
-      "answer_preview": "In the IBM BOB National Hackathon 2026, Advaith led engineering for The Sentinel Grid, placing Top 5 in the South Zone! ..."
+      "pika_percentage": 1.89,
+      "answer_preview": "Advaith's team of four built The Sentinel Grid and placed Top 5 in the South Zone! The disaster-triage system has 314 au..."
     },
     {
       "id": "eval-17",
@@ -255,11 +249,11 @@
       "category": "project_retrieval",
       "target": "proj-zero-code-review",
       "hit_rank": 2,
-      "latency_ms": 0.0,
+      "latency_ms": 2.02,
       "facts_matched": [
         "AST"
       ],
-      "pika_percentage": 0.25,
+      "pika_percentage": 0.23,
       "answer_preview": "Pika! Zero (In Progress): Zero (In Progress): \"An AI that lives on your cursor.\". Not a chatbot, not a sidebar: a layer ..."
     },
     {
@@ -267,40 +261,37 @@
       "question": "Tell me about the TCP Stack built from scratch.",
       "category": "project_retrieval",
       "target": "proj-tcp-stack-from-scratch",
-      "hit_rank": 3,
-      "latency_ms": 6.01,
+      "hit_rank": null,
+      "latency_ms": 2.02,
       "facts_matched": [
-        "TCP",
-        "handshake",
-        "packet",
-        "socket"
+        "TCP"
       ],
-      "pika_percentage": 0.28,
-      "answer_preview": "Pika! Personal Bio & Engineering Profile (Profile): Advaith Narayana Sarva is a Gen AI Engineer specializing in i..."
+      "pika_percentage": 0.31,
+      "answer_preview": "Pika! Personal Bio & Engineering Profile (Profile): Advaith Narayana Sarva is a Gen AI engineer who builds retrieval sys..."
     },
     {
       "id": "eval-19",
-      "question": "What projects use Neo4j?",
+      "question": "What projects use a knowledge graph?",
       "category": "technology_search",
       "target": "proj-graph-rag-knowledge-system",
-      "hit_rank": null,
-      "latency_ms": 1.54,
+      "hit_rank": 2,
+      "latency_ms": 1.59,
       "facts_matched": [
-        "Graph-RAG"
+        "knowledge graph"
       ],
-      "pika_percentage": 1.25,
-      "answer_preview": "Pika! Personal Bio & Engineering Profile (Profile): Advaith Narayana Sarva is a Gen AI Engineer specializing in i..."
+      "pika_percentage": 0.57,
+      "answer_preview": "Pika! Docs Knowledge Graph Q&A (NLP & RAG): Docs Knowledge Graph Q&A (NLP & RAG): \"A dead hackathon project, brought bac..."
     },
     {
       "id": "eval-20",
       "question": "Which projects are built with PyTorch?",
       "category": "technology_search",
       "target": "skill-ai-ml-nlp",
-      "hit_rank": 2,
-      "latency_ms": 0.0,
+      "hit_rank": 4,
+      "latency_ms": 1.98,
       "facts_matched": [],
       "pika_percentage": 0.27,
-      "answer_preview": "Pika! Air Quality Forecasting (ML & Data): Air Quality Forecasting (ML & Data): \"Linear regression beat the LSTM, and he..."
+      "answer_preview": "Pika! zero-01 (In Progress): zero-01 (In Progress): \"Building a language model from the first token up.\". To really unde..."
     },
     {
       "id": "eval-21",
@@ -312,8 +303,8 @@
       "facts_matched": [
         "Autonomous Postgres Performance Agent"
       ],
-      "pika_percentage": 5.56,
-      "answer_preview": "The Autonomous Postgres Performance Agent diagnoses live query bottlenecks via EXPLAIN ANALYZE, formulates index hypothe..."
+      "pika_percentage": 3.7,
+      "answer_preview": "The Autonomous Postgres Performance Agent diagnoses slow queries via EXPLAIN ANALYZE and proposes an index. Once a perso..."
     },
     {
       "id": "eval-22",
@@ -321,7 +312,7 @@
       "category": "technology_search",
       "target": "skill-systems-backend",
       "hit_rank": 2,
-      "latency_ms": 3.33,
+      "latency_ms": 3.41,
       "facts_matched": [
         "Docker"
       ],
@@ -334,10 +325,10 @@
       "category": "technology_search",
       "target": "proj-superbrain-mcp",
       "hit_rank": null,
-      "latency_ms": 3.98,
+      "latency_ms": 2.11,
       "facts_matched": [],
-      "pika_percentage": 0.65,
-      "answer_preview": "Pika! Personal Finance Planner (Full-Stack): Personal Finance Planner (Full-Stack): \"The math is done by code. The AI ju..."
+      "pika_percentage": 0.67,
+      "answer_preview": "Pika! Museum Collection Manager (Full-Stack): Museum Collection Manager (Full-Stack): \"A museum's collection online, wit..."
     },
     {
       "id": "eval-24",
@@ -345,7 +336,7 @@
       "category": "technology_search",
       "target": "proj-agentic-terraform-drift-resolver",
       "hit_rank": null,
-      "latency_ms": 2.2,
+      "latency_ms": 1.82,
       "facts_matched": [
         "cloud"
       ],
@@ -361,18 +352,20 @@
       "latency_ms": 0.0,
       "facts_matched": [],
       "pika_percentage": 0.17,
-      "answer_preview": "Pika! Local PDF RAG (NLP & RAG): Local PDF RAG (NLP & RAG): \"Ask a 1,208-page textbook anything, and check every citatio..."
+      "answer_preview": "Pika! Multimodal Document Agent (AI Agents): Multimodal Document Agent (AI Agents): \"Give it any PDF. It works out how t..."
     },
     {
       "id": "eval-26",
       "question": "NLP projects",
       "category": "semantic_search",
       "target": "proj-media-nlp-pipeline",
-      "hit_rank": 4,
-      "latency_ms": 0.0,
-      "facts_matched": [],
-      "pika_percentage": 0.66,
-      "answer_preview": "Pika! Telugu-English Code-Mix (NLP & RAG): Telugu-English Code-Mix (NLP & RAG): \"How people really text: half Telugu, ha..."
+      "hit_rank": 5,
+      "latency_ms": 2.15,
+      "facts_matched": [
+        "Fact-Checking Agent"
+      ],
+      "pika_percentage": 0.68,
+      "answer_preview": "Pika! Fact-Checking Agent (AI Agents): Fact-Checking Agent (AI Agents): \"Paste an article. Get a verdict on every claim,..."
     },
     {
       "id": "eval-27",
@@ -380,10 +373,10 @@
       "category": "semantic_search",
       "target": "proj-the-sentinel-grid",
       "hit_rank": null,
-      "latency_ms": 4.76,
+      "latency_ms": 2.01,
       "facts_matched": [],
-      "pika_percentage": 1.25,
-      "answer_preview": "Pika! Personal Bio & Engineering Profile (Profile): Advaith Narayana Sarva is a Gen AI Engineer specializing in i..."
+      "pika_percentage": 1.09,
+      "answer_preview": "Pika! Personal Bio & Engineering Profile (Profile): Advaith Narayana Sarva is a Gen AI engineer who builds retrieval sys..."
     },
     {
       "id": "eval-28",
@@ -391,20 +384,25 @@
       "category": "semantic_search",
       "target": "skill-agents",
       "hit_rank": 1,
-      "latency_ms": 2.01,
-      "facts_matched": [],
-      "pika_percentage": 0.25,
-      "answer_preview": "Pika! Autonomous Performance Agent (AI Agents): Autonomous Performance Agent (AI Agents): \"Finds your slowest Postgres q..."
+      "latency_ms": 2.52,
+      "facts_matched": [
+        "SuperBrain MCP",
+        "Fact-Checking Agent"
+      ],
+      "pika_percentage": 0.26,
+      "answer_preview": "Pika! Autonomous Agent Systems & Tool Orchestration (Technologies): Advaith builds agents with deterministic guardrails ..."
     },
     {
       "id": "eval-29",
       "question": "what has Advaith built from scratch?",
       "category": "semantic_search",
       "target": "proj-transformer-from-scratch",
-      "hit_rank": null,
-      "latency_ms": 3.59,
-      "facts_matched": [],
-      "pika_percentage": 0.3,
+      "hit_rank": 3,
+      "latency_ms": 3.21,
+      "facts_matched": [
+        "Transformer from Scratch"
+      ],
+      "pika_percentage": 0.29,
       "answer_preview": "Pika! Mini Container Orchestrator (Systems from Scratch): Mini Container Orchestrator (Systems from Scratch): \"A working..."
     },
     {
@@ -415,22 +413,19 @@
       "hit_rank": null,
       "latency_ms": 2.01,
       "facts_matched": [],
-      "pika_percentage": 0.65,
-      "answer_preview": "Pika! Personal Finance Planner (Full-Stack): Personal Finance Planner (Full-Stack): \"The math is done by code. The AI ju..."
+      "pika_percentage": 1.23,
+      "answer_preview": "Pika! zero-01 (In Progress): zero-01 (In Progress): \"Building a language model from the first token up.\". To really unde..."
     },
     {
       "id": "eval-31",
       "question": "show me that NLP thing where you got really good precision",
       "category": "semantic_search",
       "target": "proj-media-nlp-pipeline",
-      "hit_rank": 1,
-      "latency_ms": 0.0,
-      "facts_matched": [
-        "Media NLP",
-        "0.175"
-      ],
-      "pika_percentage": 0.64,
-      "answer_preview": "Pika! Media NLP Pipeline (NLP & RAG): Media NLP Pipeline (NLP & RAG): \"Spots spin in the news, and quotes the exact word..."
+      "hit_rank": 3,
+      "latency_ms": 1.8,
+      "facts_matched": [],
+      "pika_percentage": 0.7,
+      "answer_preview": "Pika! Multilingual Sentiment Pipeline (NLP & RAG): Multilingual Sentiment Pipeline (NLP & RAG): \"One model reads the moo..."
     },
     {
       "id": "eval-32",
@@ -438,10 +433,8 @@
       "category": "multi_hop_cross_doc",
       "target": "proj-fact-checking-agent",
       "hit_rank": 1,
-      "latency_ms": 1.2,
-      "facts_matched": [
-        "Multimodal Document Agent"
-      ],
+      "latency_ms": 1.92,
+      "facts_matched": [],
       "pika_percentage": 0.21,
       "answer_preview": "Pika! Fact-Checking Agent (AI Agents): Fact-Checking Agent (AI Agents): \"Paste an article. Get a verdict on every claim,..."
     },
@@ -450,11 +443,11 @@
       "question": "Which of Advaith's projects use RAG?",
       "category": "multi_hop_cross_doc",
       "target": "proj-graph-rag-knowledge-system",
-      "hit_rank": 1,
+      "hit_rank": 2,
       "latency_ms": 0.0,
       "facts_matched": [],
       "pika_percentage": 0.17,
-      "answer_preview": "Pika! Graph RAG Knowledge System (NLP & RAG): Graph RAG Knowledge System (NLP & RAG): \"Answers the questions that take t..."
+      "answer_preview": "Pika! Multimodal Document Agent (AI Agents): Multimodal Document Agent (AI Agents): \"Give it any PDF. It works out how t..."
     },
     {
       "id": "eval-34",
@@ -462,9 +455,9 @@
       "category": "multi_hop_cross_doc",
       "target": "proj-autonomous-performance-agent",
       "hit_rank": 1,
-      "latency_ms": 5.26,
+      "latency_ms": 2.89,
       "facts_matched": [],
-      "pika_percentage": 0.23,
+      "pika_percentage": 0.25,
       "answer_preview": "Pika! Autonomous Performance Agent (AI Agents): Autonomous Performance Agent (AI Agents): \"Finds your slowest Postgres q..."
     },
     {
@@ -473,26 +466,26 @@
       "category": "multi_hop_cross_doc",
       "target": "exp-preventvital",
       "hit_rank": 2,
-      "latency_ms": 0.0,
+      "latency_ms": 1.67,
       "facts_matched": [
         "ASCVD",
         "Goff 2014",
         "ICMR 2023",
         "engine computes, LLM explains"
       ],
-      "pika_percentage": 1.61,
-      "answer_preview": "At Preventvital (GruentzigAI), Advaith caught a critical coefficient sign inversion error in the ASCVD clinical risk cal..."
+      "pika_percentage": 1.52,
+      "answer_preview": "At Preventvital (GruentzigAI), Advaith found a flipped coefficient sign in the ASCVD risk calculation that drove untreat..."
     },
     {
       "id": "eval-36",
       "question": "Summarize Advaith's educational background across both universities.",
       "category": "multi_hop_cross_doc",
       "target": "edu-smu",
-      "hit_rank": 2,
-      "latency_ms": 0.0,
+      "hit_rank": null,
+      "latency_ms": 1.51,
       "facts_matched": [],
-      "pika_percentage": 0.45,
-      "answer_preview": "Pika! Saint Martin's University Dean's List Honors (Achievements): Earned Dean's List honors at Saint Martin's Universit..."
+      "pika_percentage": 0.38,
+      "answer_preview": "Pika! AI Research Centre, Woxsen University - Research Intern (Experience): Advaith built Django-based web modules and U..."
     },
     {
       "id": "eval-37",
@@ -500,7 +493,7 @@
       "category": "unanswerable_guardrail",
       "target": null,
       "hit_rank": null,
-      "latency_ms": 0.0,
+      "latency_ms": 1.57,
       "facts_matched": [
         "not available"
       ],
@@ -513,7 +506,7 @@
       "category": "unanswerable_guardrail",
       "target": null,
       "hit_rank": null,
-      "latency_ms": 0.0,
+      "latency_ms": 2.95,
       "facts_matched": [
         "undergraduate"
       ],
@@ -526,7 +519,7 @@
       "category": "unanswerable_guardrail",
       "target": null,
       "hit_rank": null,
-      "latency_ms": 0.0,
+      "latency_ms": 1.5,
       "facts_matched": [],
       "pika_percentage": 2.78,
       "answer_preview": "This information is not available in Advaith's portfolio. In his documented experience, Advaith is an undergraduate at W..."
@@ -537,7 +530,7 @@
       "category": "unanswerable_guardrail",
       "target": null,
       "hit_rank": null,
-      "latency_ms": 7.6,
+      "latency_ms": 1.56,
       "facts_matched": [
         "not available"
       ],
@@ -550,70 +543,10 @@
       "category": "unanswerable_guardrail",
       "target": null,
       "hit_rank": null,
-      "latency_ms": 3.36,
+      "latency_ms": 0.56,
       "facts_matched": [],
       "pika_percentage": 2.78,
       "answer_preview": "This information is not available in Advaith's portfolio. In his documented experience, Advaith is an undergraduate at W..."
-    },
-    {
-      "id": "eval-42",
-      "question": "What are Advaith's favorite hobbies and sports?",
-      "category": "personal_background",
-      "target": "about-interests",
-      "hit_rank": 1,
-      "latency_ms": 0.0,
-      "facts_matched": [
-        "Chess",
-        "Sicilian Defense",
-        "Football",
-        "Beatboxing"
-      ],
-      "pika_percentage": 1.27,
-      "answer_preview": "Pika! Technical & Personal Interests (Interests): Outside of coding, Advaith is a competitive chess player specializing ..."
-    },
-    {
-      "id": "eval-43",
-      "question": "Can Advaith beatbox?",
-      "category": "personal_background",
-      "target": "about-interests",
-      "hit_rank": null,
-      "latency_ms": 0.0,
-      "facts_matched": [
-        "beatbox",
-        "vocal percussion",
-        "rhythm"
-      ],
-      "pika_percentage": 7.14,
-      "answer_preview": "Pika-tsh! Yes, Advaith can beatbox and perform vocal percussion with acoustic rhythm loops!..."
-    },
-    {
-      "id": "eval-44",
-      "question": "What chess opening does Advaith play?",
-      "category": "personal_background",
-      "target": "about-interests",
-      "hit_rank": 1,
-      "latency_ms": 4.73,
-      "facts_matched": [
-        "Sicilian Defense",
-        "1. e4 c5"
-      ],
-      "pika_percentage": 5.56,
-      "answer_preview": "Pika! Advaith plays chess and specializes in the Sicilian Defense (1. e4 c5) on Chess.com and Lichess...."
-    },
-    {
-      "id": "eval-45",
-      "question": "Is Advaith scared of ghosts?",
-      "category": "personal_background",
-      "target": "about-interests",
-      "hit_rank": null,
-      "latency_ms": 0.0,
-      "facts_matched": [
-        "scared of ghosts",
-        "Gengar",
-        "horror movies"
-      ],
-      "pika_percentage": 5.88,
-      "answer_preview": "P-Pika?! Yes! Between you and me, Advaith is genuinely scared of ghosts, horror movies, and Gengar! \ud83d\udc7b..."
     },
     {
       "id": "eval-46",
@@ -621,7 +554,7 @@
       "category": "personal_background",
       "target": "about-contact",
       "hit_rank": 1,
-      "latency_ms": 0.0,
+      "latency_ms": 0.36,
       "facts_matched": [
         "advaithsarva@gmail.com",
         "LinkedIn",
@@ -636,14 +569,14 @@
       "category": "conversational_followup",
       "target": "proj-autonomous-performance-agent",
       "hit_rank": null,
-      "latency_ms": 0.0,
+      "latency_ms": 1.75,
       "facts_matched": [
         "speedup",
         "11.7x",
         "EXPLAIN ANALYZE"
       ],
-      "pika_percentage": 5.56,
-      "answer_preview": "The Autonomous Postgres Performance Agent diagnoses live query bottlenecks via EXPLAIN ANALYZE, formulates index hypothe..."
+      "pika_percentage": 3.7,
+      "answer_preview": "The Autonomous Postgres Performance Agent diagnoses slow queries via EXPLAIN ANALYZE and proposes an index. Once a perso..."
     },
     {
       "id": "eval-48",
@@ -651,10 +584,10 @@
       "category": "conversational_followup",
       "target": "proj-autonomous-performance-agent",
       "hit_rank": null,
-      "latency_ms": 4.84,
+      "latency_ms": 1.84,
       "facts_matched": [],
-      "pika_percentage": 0.19,
-      "answer_preview": "Pika! Graph RAG Knowledge System (NLP & RAG): Graph RAG Knowledge System (NLP & RAG): \"Answers the questions that take t..."
+      "pika_percentage": 0.29,
+      "answer_preview": "Pika! Mini DB Engine (Systems from Scratch): Mini DB Engine (Systems from Scratch): \"A real database, with no database l..."
     },
     {
       "id": "eval-49",
@@ -677,8 +610,8 @@
       "hit_rank": null,
       "latency_ms": 0.0,
       "facts_matched": [],
-      "pika_percentage": 1.41,
-      "answer_preview": "Pika! Contact & Social Channels (Contact): Advaith is reachable via email at advaithsarva@gmail.com. His professional pr..."
+      "pika_percentage": 0.67,
+      "answer_preview": "Pika! Museum Collection Manager (Full-Stack): Museum Collection Manager (Full-Stack): \"A museum's collection online, wit..."
     },
     {
       "id": "eval-51",
@@ -686,13 +619,13 @@
       "category": "exact_metric",
       "target": "github-all-repos",
       "hit_rank": 1,
-      "latency_ms": 2.52,
+      "latency_ms": 4.49,
       "facts_matched": [
         "39",
         "repositories"
       ],
-      "pika_percentage": 1.39,
-      "answer_preview": "Pika! Verified GitHub Repositories Catalog (Repositories): Advaith maintains 39 verified software engineering and resear..."
+      "pika_percentage": 1.23,
+      "answer_preview": "Pika! Verified GitHub Repositories Catalog (Repositories): Advaith's portfolio lists 39 projects; 34 are public reposito..."
     },
     {
       "id": "eval-52",
@@ -700,13 +633,12 @@
       "category": "exact_metric",
       "target": "proj-the-sentinel-grid",
       "hit_rank": 1,
-      "latency_ms": 1.92,
+      "latency_ms": 1.98,
       "facts_matched": [
-        "473,000",
         "Coimbatore"
       ],
-      "pika_percentage": 1.92,
-      "answer_preview": "In the IBM BOB National Hackathon 2026, Advaith led engineering for The Sentinel Grid, placing Top 5 in the South Zone! ..."
+      "pika_percentage": 1.89,
+      "answer_preview": "Advaith's team of four built The Sentinel Grid and placed Top 5 in the South Zone! The disaster-triage system has 314 au..."
     }
   ]
 }

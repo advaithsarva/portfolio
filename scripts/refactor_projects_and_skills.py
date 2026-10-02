@@ -1,7 +1,7 @@
 import os
 import re
 
-PORTFOLIO_DIR = r"C:\Users\advai\OneDrive\Desktop\portfolio-zer0"
+PORTFOLIO_DIR = r"C:\Projects\portfolio-zer0"
 
 # 1. Update index.html Section 04 to ONLY include the 10 tools Advaith used
 with open(os.path.join(PORTFOLIO_DIR, "index.html"), "r", encoding="utf-8") as f:

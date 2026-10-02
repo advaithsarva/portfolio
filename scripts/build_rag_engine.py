@@ -169,7 +169,7 @@ js_content = f"""/* ============================================================
       intent = 'EXACT_METRIC';
     }} else if (/\\b(project|projects|repo|repositories|code)\\b/i.test(lower)) {{
       intent = 'PROJECT_SEARCH';
-    }} else if (/\\b(python|postgres|sql|pytorch|neo4j|docker|fastapi|aws|linux|typescript)\\b/i.test(lower)) {{
+    }} else if (/\\b(python|postgres|sql|pytorch|networkx|docker|fastapi|linux|typescript)\\b/i.test(lower)) {{
       intent = 'TECHNOLOGY_SEARCH';
     }} else if (/\\b(research|paper|study|eval|benchmark)\\b/i.test(lower)) {{
       intent = 'RESEARCH_QUERY';
@@ -177,7 +177,7 @@ js_content = f"""/* ============================================================
       intent = 'EXPERIENCE_QUERY';
     }} else if (/\\b(smu|woxsen|university|college|education|degree)\\b/i.test(lower)) {{
       intent = 'EDUCATION_QUERY';
-    }} else if (/\\b(chess|football|beatbox|hobbies|interests|ghost)\\b/i.test(lower)) {{
+    }} else if (/\\b(hobbies|interests)\\b/i.test(lower)) {{
       intent = 'PERSONAL_QUERY';
     }} else if (/\\b(both|and|compare|multiple|combine)\\b/i.test(lower)) {{
       intent = 'MULTI_HOP';
@@ -351,20 +351,10 @@ js_content = f"""/* ============================================================
     return sources.slice(0, 3);
   }}
 
-  // 10. Local Grounded Response Synthesizer (Pikachu Tone < 10%, Zero Hallucination)
+  // 10. Local Grounded Response Synthesizer (Pikachu Tone < 10%, answers only from retrieved chunks)
   function synthesizeLocal(rawQuery, retrieval) {{
     const qLower = (rawQuery || '').toLowerCase();
     const top = retrieval.topChunks;
-
-    // Easter egg check
-    if (['ghost', 'ghosts', 'gengar', 'gastly', 'haunter', 'horror', 'scary', 'spooky'].some(w => qLower.includes(w))) {{
-      return {{
-        isGhost: true,
-        answer: "P-Pika-PI?! 👻⚡ <em>*shivers and cowers behind tail*</em> SHHHH! Don't summon Gengar! Between you and me, Advaith is <strong>genuinely terrified of ghosts</strong>, haunted houses, horror movies, and Ghost-type Pokémon! He will literally sprint across the pitch to escape! Please, let's stick to chess, PyTorch, or Electric types! 🙈⚡",
-        retrieval: retrieval,
-        citations: [{{"title": "Technical & Personal Interests", "url": "index.html#home"}}]
-      }};
-    }}
 
     // Unanswerable guardrail (Section 13)
     if (['2015', 'stanford', 'phd', 'google', 'microsoft', 'solana', 'codeforces'].some(w => qLower.includes(w))) {{
@@ -390,11 +380,11 @@ js_content = f"""/* ============================================================
     if (isGreeting) {{
       return {{
         isGhost: false,
-        answer: "Pika-pika! ⚡ Hey there! I'm Pikachu, Advaith's AI companion & portfolio guide! I can walk you through his 39 engineering repositories, Graph-RAG architectures, SMU exchange (3.47 CGPA), clinical ML audit at Preventvital, or even his chess tactics and beatboxing! What would you like to explore?",
+        answer: "Pika-pika! ⚡ Hey there! I'm Pikachu, Advaith's AI companion & portfolio guide! I can walk you through his 39 projects, hybrid RAG work, SMU exchange (3.47 CGPA), or his clinical ML audit at Preventvital. What would you like to explore?",
         retrieval: retrieval,
         citations: [
           {{"title": "Engineering Profile & Bio", "url": "index.html#home"}},
-          {{"title": "39 Verified Repositories", "url": "projects.html"}}
+          {{"title": "39 Projects", "url": "projects.html"}}
         ]
       }};
     }}
@@ -420,8 +410,7 @@ js_content = f"""/* ============================================================
           "• 🔍 <strong>Clinical Audit:</strong> <em>'What did Advaith do at Preventvital?'</em><br>" +
           "• ⚡ <strong>Projects:</strong> <em>'Tell me about Graph-RAG'</em> or <em>'What is SuperBrain MCP?'</em><br>" +
           "• 🎓 <strong>Education:</strong> <em>'What was his CGPA at Saint Martin\\'s University?'</em><br>" +
-          "• ♟️ <strong>Hobbies:</strong> <em>'What chess opening does he play?'</em> or <em>'Can he beatbox?'</em><br>" +
-          "• 👻 <strong>Easter Egg:</strong> <em>'Is he afraid of ghosts?!'</em>",
+          "• 🛠️ <strong>Skills:</strong> <em>'What has he built from scratch?'</em>",
         retrieval: retrieval,
         citations: [{{"title": "Projects Catalog", "url": "projects.html"}}]
       }};
@@ -477,7 +466,7 @@ js_content = f"""/* ============================================================
     if (!top || top.length === 0 || top[0].rrfScore < 0.01) {{
       return {{
         isGhost: false,
-        answer: "Pikachu! ⚡ Advaith is an AI & Systems Engineer with 39 verified repositories covering Graph-RAG, autonomous agents, and systems from scratch. What project or skill would you like to explore?",
+        answer: "Pikachu! ⚡ Advaith is an AI & Systems Engineer with 39 projects (34 public on GitHub) covering Graph-RAG, autonomous agents, and systems from scratch. What project or skill would you like to explore?",
         retrieval: retrieval,
         citations: []
       }};
@@ -489,21 +478,21 @@ js_content = f"""/* ============================================================
 
     // Exact answers
     if (qLower.includes('roc') || qLower.includes('sentinel') || qLower.includes('bob')) {{
-      text = "In the IBM BOB National Hackathon 2026, Advaith led engineering for <strong>The Sentinel Grid</strong>, placing <strong>Top 5 in the South Zone</strong>! The disaster-intelligence system comprises 6,957 lines of Python, 314 automated checks, and achieved a verified <strong>ROC-AUC of 0.9924</strong> on 473,000 soil moisture observations in Coimbatore. Pika!";
+      text = "In the IBM BOB National Hackathon 2026, Advaith's team of four built <strong>The Sentinel Grid</strong> and placed <strong>Top 5 in the South Zone</strong>! The disaster-triage system has 314 automated checks, and its drought detector reached <strong>ROC-AUC 0.9924</strong> on 473,256 real soil readings in Coimbatore (monsoon extremes only 0.662, reported as the open problem). Pika!";
     }} else if (qLower.includes('postgres') || qLower.includes('speedup') || qLower.includes('slow query')) {{
-      text = "The <strong>Autonomous Postgres Performance Agent</strong> diagnoses live query bottlenecks via EXPLAIN ANALYZE, formulates index hypotheses, and executes migrations with an automated rollback guard. It achieved an <strong>11.7x query speedup</strong> on real database workloads. Pika pika!";
+      text = "The <strong>Autonomous Postgres Performance Agent</strong> diagnoses slow queries via EXPLAIN ANALYZE and proposes an index. Once a person approves, it applies the change, benchmarks before and after, and rolls back if things got slower. It measured an <strong>11.7x speedup</strong> (11.7 ms to 1.0 ms) on a 200k-row table. Pika pika!";
     }} else if (qLower.includes('smu') || (qLower.includes('saint') && qLower.includes('martin')) || qLower.includes('3.47')) {{
       text = "Pika! Advaith completed his international exchange at <strong>Saint Martin's University</strong> in Lacey, WA (completed May 2026 across two semesters) in BS CS (AI & ML), graduating with a <strong>3.47 / 4.0 CGPA</strong> and Dean's List honors!";
     }} else if (qLower.includes('woxsen') || qLower.includes('8.69')) {{
       text = "Advaith is pursuing his B.Tech in CSE (AI & ML) at <strong>Woxsen University</strong> (Hyderabad, India) with an <strong>8.69 / 10.0 CGPA</strong>, expected graduation August 2027. Pika!";
     }} else if (qLower.includes('preventvital') || qLower.includes('clinical') || qLower.includes('ascvd') || qLower.includes('goff')) {{
-      text = "At Preventvital (GruentzigAI), Advaith caught a critical coefficient sign inversion in the ASCVD clinical risk calculation that was artificially calculating 0.1% baseline risk for untreated patients (expected 2.1% from Goff 2014 trial baseline). He authored the formal bug report and authored RAG & safety rules adhering to ICMR 2023 guidelines on an 'engine computes, LLM explains, clinician signs' protocol. Pika!";
+      text = "At Preventvital (GruentzigAI), Advaith found a flipped coefficient sign in the ASCVD risk calculation that drove untreated patients to the 0.1% floor (the published Goff 2014 coefficients give about 2.1%). He wrote it up for clinical sign-off, which the fix is waiting on, and drafted RAG & safety rules adhering to ICMR 2023 guidelines on an 'engine computes, LLM explains, clinician signs' protocol. Pika!";
     }} else if (qLower.includes('media nlp') || qLower.includes('rhetoric') || qLower.includes('fallacy') || qLower.includes('0.175')) {{
       text = "The <strong>Media NLP Pipeline</strong> is a deterministic rhetoric analysis engine featuring 23 informal fallacy detectors with character-level verbatim evidence spans, achieving a false positive rate of <strong>0.175 per 1,000 words</strong> evaluated on Wikipedia neutral ground truth with 164 automated tests. Pika!";
     }} else if (qLower.includes('mcp') || qLower.includes('superbrain')) {{
-      text = "<strong>SuperBrain MCP</strong> is a Model Context Protocol server featuring <strong>41 specialized tools</strong> across 8 domains, providing persistent cross-session vector memory and sub-2ms protocol overhead. Pika pika!";
+      text = "<strong>SuperBrain MCP</strong> is a Model Context Protocol server with <strong>41 tools</strong> over 8 memory types (episodic, semantic, procedural and more), giving agents persistent memory across sessions in SQLite. It's private and used daily. Pika pika!";
     }} else if (qLower.includes('transformer') && qLower.includes('scratch')) {{
-      text = "Advaith built a <strong>Decoder-Only Transformer</strong> from scratch in PyTorch primitives, implementing multi-head self-attention, rotary positional embeddings (RoPE), KV-cache for generation, and LayerNorm directly without high-level wrappers. Pika!";
+      text = "Advaith built a <strong>Decoder-Only Transformer</strong> from scratch in PyTorch primitives, implementing causal multi-head self-attention and LayerNorm directly. It matches PyTorch's reference within 1e-5 and trains to 1.0059x the theoretical best loss, with 19 tests. Pika!";
     }} else if (best.slug) {{
       text = `Pika! <strong>${{best.name}}</strong> (${{best.category}}):<br>${{best.content}}<br><em>Key Verified Metrics:</em> <code>${{best.stats || 'Audited repository'}}</code>.`;
       if (top[1] && (qLower.includes('both') || qLower.includes('which projects') || qLower.includes('and'))) {{

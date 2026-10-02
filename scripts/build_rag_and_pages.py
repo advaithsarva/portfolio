@@ -2,7 +2,7 @@ import json
 import os
 import re
 
-PORTFOLIO_DIR = r"C:\Users\advai\OneDrive\Desktop\portfolio-zer0"
+PORTFOLIO_DIR = r"C:\Projects\portfolio-zer0"
 PROJECTS_DIR = os.path.join(PORTFOLIO_DIR, "projects")
 os.makedirs(PROJECTS_DIR, exist_ok=True)
 
@@ -588,7 +588,7 @@ projects_html = """<!DOCTYPE html>
     <div class="footer-container">
       <div class="footer-left">
         <span class="footer-stamp">© 2026 ADVAITH NARAYANA SARVA</span>
-        <span class="footer-sub">39 Verified Engineering Repositories</span>
+        <span class="footer-sub">39 Projects</span>
       </div>
       <div class="footer-center">
         <a href="index.html">HOME</a> · 
@@ -922,7 +922,7 @@ project_detail_html = """<!DOCTYPE html>
     <div class="footer-container">
       <div class="footer-left">
         <span class="footer-stamp">© 2026 ADVAITH NARAYANA SARVA</span>
-        <span class="footer-sub">39 Verified Engineering Repositories</span>
+        <span class="footer-sub">39 Projects</span>
       </div>
       <div class="footer-center">
         <a href="index.html">HOME</a> · 
@@ -1259,7 +1259,7 @@ for idx, p in enumerate(projects):
     <div class="footer-container">
       <div class="footer-left">
         <span class="footer-stamp">© 2026 ADVAITH NARAYANA SARVA</span>
-        <span class="footer-sub">39 Verified Engineering Repositories</span>
+        <span class="footer-sub">39 Projects</span>
       </div>
       <div class="footer-center">
         <a href="../index.html">HOME</a> · 

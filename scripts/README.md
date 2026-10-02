@@ -1,55 +1,29 @@
-# 🛠️ Scripts & Build Tooling
+# Scripts
 
-This directory contains the data pipelines, knowledge ingestion engines, RAG compilation scripts, and model training utilities for **THE ADVAITH DAILY** portfolio.
+Build tooling for the portfolio. Run everything from the repo root.
 
-## Pipeline Architecture
+## Chatbot pipeline
 
 ```text
-knowledge/ (Raw Documents & Metadata)
-     │
-     ▼
-scripts/ingest_knowledge.py ─────────► data/knowledge_corpus.json & data/bm25_index.json
-     │
-     ▼
-scripts/build_dense_vectors.py ──────► data/knowledge_embeddings.json
-     │
-     ▼
-scripts/build_rag_engine.py ─────────► rag-engine.js (Client Hybrid RAG System)
-     │
-     ▼
-scripts/evaluate_rag.py ─────────────► data/eval_results.json (MRR & Recall Benchmarks)
+knowledge/*/*.json
+  -> ingest_knowledge.py      data/knowledge_corpus.json, data/bm25_index.json, rag-knowledge.json
+  -> build_dense_vectors.py   data/knowledge_embeddings.json (TF-IDF + SVD, 64 dims)
+  -> build_rag_engine.py      rag-engine.js
+  -> generate_eval_dataset.py data/eval_questions.json
+  -> evaluate_rag.py          data/eval_results.json (recall@k, MRR, latency)
 ```
 
-## Script Reference
+`evaluate_rag.py` grades answers it writes itself for several questions, so only its retrieval metrics are meaningful.
 
-### 1. RAG Knowledge & Pipeline Tooling
-- `ingest_knowledge.py`: Parses all structured documents in `knowledge/*/*.json`, generates canonical `data/knowledge_corpus.json`, and indexes BM25 lexical tokens.
-- `build_dense_vectors.py`: Calculates normalized 64-dimensional semantic dense vectors for all corpus documents.
-- `build_rag_engine.py`: Compiles the unified hybrid client-side RAG engine into `rag-engine.js` (dense vectors + BM25 index + Reciprocal Rank Fusion + query rewriting).
-- `evaluate_rag.py`: Runs automated benchmark queries against ground-truth pairs, measuring Hit@K, MRR, and latency.
+## Project catalogue
 
-### 2. Dataset Generation & Training
-- `generate_eval_dataset.py`: Synthesizes evaluation test suites from verified portfolio repositories and credentials.
-- `generate_chat_dataset.py`: Formats conversational training pairs in JSONL format for fine-tuning.
-- `colab_qwen_experiments.py`: Experimentation harness for Qwen series LLMs.
-- `train_lora_colab.py`: LoRA fine-tuning script optimized for Google Colab GPU runtimes.
+- `parse_webpoints_perfect.py`: reads `C:\Projects\webpoints.md` and writes `projects-data.json` and `projects-data.js`.
 
-### 3. Catalog & Knowledge Generators
-- `build_structured_knowledge.py`: Reconstructs the `knowledge/` category trees.
-- `build_new_projects_catalog.py`: Compiles project catalog cards for `projects.html`.
-- `build_rag_and_pages.py`: Page generation utilities.
-- `update_all_skills_and_netlify.py`: Netlify functions and skill index synchronization.
+## Training experiments
 
-## How to Rebuild the RAG Engine
+- `generate_chat_dataset.py`: writes question/answer pairs to `data/chat_dataset.jsonl`.
+- `colab_qwen_experiments.py`, `train_lora_colab.py`: LoRA fine-tuning experiments for Colab. They aren't used by the live site.
 
-From the repository root:
-```bash
-# 1. Ingest updated knowledge files
-python scripts/ingest_knowledge.py
+## Older one-off generators
 
-# 2. Recompile client-side hybrid RAG engine
-python scripts/build_rag_engine.py
-
-# 3. Verify benchmarks
-python scripts/evaluate_rag.py
-```
+`build_structured_knowledge.py`, `build_new_projects_catalog.py`, `build_rag_and_pages.py`, `refactor_projects_and_skills.py` and `update_all_skills_and_netlify.py` produced earlier versions of the pages and knowledge files. They still contain text that has since been corrected (Neo4j, hobbies, "39 verified repositories"). Re-running any of them overwrites the current files with that old text, so don't, unless you update them first.

@@ -6,12 +6,11 @@
   "technologies": [
     "Python",
     "PostgreSQL",
+    "SQLite",
     "Docker",
-    "FastAPI",
     "TypeScript",
     "Node.js",
-    "Linux",
-    "AWS"
+    "Linux"
   ],
   "date": "2026",
   "source": "resume.html#skills",
@@ -22,14 +21,12 @@
     "Python",
     "SQL",
     "PostgreSQL",
-    "FastAPI",
     "Docker",
     "Linux",
     "Bash",
-    "AWS Cloud",
     "Systems"
   ],
-  "stats": "C memory allocators \u00b7 Custom HTTP servers \u00b7 Asynchronous query pipelines",
+  "stats": "TCP stack · B+tree database engine with WAL · container orchestrator · CPU scheduler simulator",
   "slug": "systems-and-infrastructure",
-  "content": "Advaith is grounded in systems engineering and low-level mechanics: Linux/Bash scripting, Docker containerization, asynchronous FastAPI/AsyncPG backends, PostgreSQL query optimization and indexing, TypeScript/Node.js, and low-level systems implemented from scratch (custom malloc/free with mmap, custom HTTP/1.1 server socket engines, and deterministic cache architectures)."
+  "content": "Advaith builds systems from scratch to understand them: a TCP stack that survives 30% packet loss, a database engine with a B+tree index and crash-safe write-ahead log, a mini container orchestrator that reschedules pods after node death, and a CPU scheduler simulator tested on 1,500 workloads. Day to day he works in Python, TypeScript/Node.js, PostgreSQL, Docker and Linux."
 }
